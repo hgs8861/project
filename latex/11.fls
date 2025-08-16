@@ -1,8 +1,8 @@
-PWD c:/Users/hyeon/OneDrive/바탕 화면/프로젝트/latex
+PWD c:/Users/hyeon/프로젝트/latex
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/hyeon/OneDrive/바탕 화면/프로젝트/latex/11.tex
+INPUT c:/Users/hyeon/프로젝트/latex/11.tex
 OUTPUT 11.log
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
