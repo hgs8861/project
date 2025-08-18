@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  18 AUG 2025 16:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  18 AUG 2025 20:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/USER/Desktop/project/latex/exercise/9.2exercise .tex"
-(c:/Users/USER/Desktop/project/latex/exercise/9.2exercise .tex
+**"c:/Users/hyeon/project/latex/exercise/9.2exercise .tex"
+(c:/Users/hyeon/project/latex/exercise/9.2exercise .tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -327,12 +327,12 @@ L3 programming layer <2025-07-20>
  ) 
 Here is how much of TeX's memory you used:
  3578 strings out of 467801
- 53001 string characters out of 5436089
+ 52980 string characters out of 5436089
  462067 words of memory out of 5000000
  32175 multiletter control sequences out of 15000+600000
  636800 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,6n,65p,415b,375s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 59i,6n,65p,408b,375s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb3.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb>
 Output written on "9.2exercise .pdf" (3 pages, 396964 bytes).
 PDF statistics:
