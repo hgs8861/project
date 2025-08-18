@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1755490790.76246 "c:/Users/USER/Desktop/project/latex/exercise/9.2exercise .tex" "9.2exercise .pdf" "9.2exercise " 1755490791.72112 0
-  "9.2exercise .aux" 1755490791 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
-  "9.2exercise .tex" 1755490790 4918 baae41130c16423b7c66fb627d75b7cb ""
-  "c:/Users/USER/Desktop/project/latex/exercise/9.2exercise .tex" 1755490790 4918 baae41130c16423b7c66fb627d75b7cb ""
+["pdflatex"] 1755494486.1995 "c:/Users/USER/Desktop/project/latex/exercise/9.3exercise.tex" "9.3exercise.pdf" "9.3exercise" 1755494487.01631 0
+  "9.3exercise.aux" 1755494486 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
+  "9.3exercise.tex" 1755494484 4147 262c2b0857e236c279d05998e2d24873 ""
+  "c:/Users/USER/Desktop/project/latex/exercise/9.3exercise.tex" 1755494484 4147 262c2b0857e236c279d05998e2d24873 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1755075921 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1755065650 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1755065650 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -79,12 +79,8 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1755097355 5574045 c1864b6d576eca8ff04839113c3d8c41 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1755098199 3605799 b16085c568bbf43ec0a1a32c164f2cc1 ""
   "c:/texlive/2025/texmf.cnf" 1755097321 713 e69b156964470283e0530f5060668171 ""
-  "graph/graph1.png" 1755486786 38511 a65f1a7868907f1e1e4b02678d545ffc ""
-  "graph/graph2.png" 1755486786 118295 7787e8df9312554cbd92031430667412 ""
-  "graph/graph3.png" 1755486786 37368 e389c15c2b3a5884cd9437668bcc27ff ""
-  "graph/graph4.png" 1755486786 11652 e7f4ade7d0ab96046e21a1f72f039ccc ""
   (generated)
-  "9.2exercise .aux"
-  "9.2exercise .log"
-  "9.2exercise .pdf"
+  "9.3exercise.aux"
+  "9.3exercise.log"
+  "9.3exercise.pdf"
   (rewritten before read)

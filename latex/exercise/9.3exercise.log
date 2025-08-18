@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  18 AUG 2025 13:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  18 AUG 2025 14:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/USER/Desktop/project/latex/exercise/9.2exercise .tex"
-(c:/Users/USER/Desktop/project/latex/exercise/9.2exercise .tex
+**c:/Users/USER/Desktop/project/latex/exercise/9.3exercise.tex
+(c:/Users/USER/Desktop/project/latex/exercise/9.3exercise.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -202,29 +202,29 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 ) (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count300
-) (./9.2exercise .aux)
-\openout1 = `"9.2exercise .aux"'.
+) (./9.3exercise.aux)
+\openout1 = `9.3exercise.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 11.
-LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 11.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 12.
+LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 12.
  (c:/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
-LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    ... okay on input line 12.
  (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count301
@@ -278,66 +278,44 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 12.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Warning: No \author given.
 
-<graph/graph1.png, id=1, 163.73672pt x 150.5625pt>
-File: graph/graph1.png Graphic file (type png)
-<use graph/graph1.png>
-Package pdftex.def Info: graph/graph1.png  used on input line 24.
-(pdftex.def)             Requested size: 135.89174pt x 124.95764pt.
-<graph/graph2.png, id=3, 238.64156pt x 222.4561pt>
-File: graph/graph2.png Graphic file (type png)
-<use graph/graph2.png>
-Package pdftex.def Info: graph/graph2.png  used on input line 44.
-(pdftex.def)             Requested size: 226.48395pt x 211.12163pt.
 
 
 [1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./graph/graph1.png>]
-<graph/graph3.png, id=22, 237.13594pt x 162.2311pt>
-File: graph/graph3.png Graphic file (type png)
-<use graph/graph3.png>
-Package pdftex.def Info: graph/graph3.png  used on input line 63.
-(pdftex.def)             Requested size: 226.48395pt x 154.9504pt.
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
+[2]
 
-[2 <./graph/graph2.png> <./graph/graph3.png>]
-<graph/graph4.png, id=29, 157.33781pt x 88.45547pt>
-File: graph/graph4.png Graphic file (type png)
-<use graph/graph4.png>
-Package pdftex.def Info: graph/graph4.png  used on input line 79.
-(pdftex.def)             Requested size: 181.18439pt x 101.8674pt.
-
-
-[3 <./graph/graph4.png>] (./9.2exercise .aux)
+[3] (./9.3exercise.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3578 strings out of 467801
- 53001 string characters out of 5436089
- 462067 words of memory out of 5000000
- 32175 multiletter control sequences out of 15000+600000
+ 3540 strings out of 467801
+ 52187 string characters out of 5436089
+ 466088 words of memory out of 5000000
+ 32138 multiletter control sequences out of 15000+600000
  636800 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,6n,65p,415b,375s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 59i,6n,65p,407b,247s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb3.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb>
-Output written on "9.2exercise .pdf" (3 pages, 396966 bytes).
+Output written on 9.3exercise.pdf (3 pages, 200022 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 84 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

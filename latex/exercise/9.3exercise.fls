@@ -2,8 +2,8 @@ PWD c:/Users/USER/Desktop/project/latex/exercise
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/USER/Desktop/project/latex/exercise/9.2exercise .tex
-OUTPUT 9.2exercise .log
+INPUT c:/Users/USER/Desktop/project/latex/exercise/9.3exercise.tex
+OUTPUT 9.3exercise.log
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/size12.clo
@@ -64,10 +64,10 @@ INPUT c:/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 INPUT c:/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./9.2exercise .aux
-INPUT ./9.2exercise .aux
-INPUT 9.2exercise .aux
-OUTPUT 9.2exercise .aux
+INPUT ./9.3exercise.aux
+INPUT ./9.3exercise.aux
+INPUT 9.3exercise.aux
+OUTPUT 9.3exercise.aux
 INPUT c:/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
@@ -120,27 +120,11 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT ./graph/graph1.png
-INPUT ./graph/graph1.png
-INPUT ./graph/graph1.png
-OUTPUT 9.2exercise .pdf
-INPUT ./graph/graph1.png
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc9.tfm
-INPUT ./graph/graph2.png
-INPUT ./graph/graph2.png
-INPUT ./graph/graph2.png
-INPUT ./graph/graph2.png
+OUTPUT 9.3exercise.pdf
 INPUT c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT ./graph/graph3.png
-INPUT ./graph/graph3.png
-INPUT ./graph/graph3.png
-INPUT ./graph/graph3.png
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc0.tfm
-INPUT ./graph/graph4.png
-INPUT ./graph/graph4.png
-INPUT ./graph/graph4.png
-INPUT ./graph/graph4.png
-INPUT 9.2exercise .aux
+INPUT 9.3exercise.aux
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
