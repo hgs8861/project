@@ -1,0 +1,106 @@
+\documentclass[12pt, a4paper]{article}
+
+% Required Packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{kotex} % For Korean text
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+% Title
+\title{Calculus - Chapter 9.4 Representative Exercises (Models for Population Growth)}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\hrulefill
+\vspace{1em}
+
+\subsection*{난이도 하 }
+\begin{enumerate}
+    \item \textbf{Exercise 1:} A population grows according to the given logistic equation, where t is measured in weeks.
+    \[ \frac{dP}{dt} = 0.04P\left(1 - \frac{P}{1200}\right), \quad P(0) = 60 \]
+    \begin{itemize}
+        \item[(a)] What is the carrying capacity? What is the value of k?
+        \item[(b)] Write the solution of the equation.
+        \item[(c)] What is the population after 10 weeks?
+    \end{itemize}
+
+    \item \textbf{Exercise 2:} A population grows according to the given logistic equation, where t is measured in weeks.
+    \[ \frac{dP}{dt} = 0.02P - 0.0004P^2, \quad P(0) = 40 \]
+    
+    \item \textbf{Exercise 6:} Suppose a population $P(t)$ satisfies $\frac{dP}{dt} = 0.4P - 0.001P^2, P(0)=50$, where t is measured in years.
+    \begin{itemize}
+        \item[(a)] What is the carrying capacity?
+        \item[(c)] When will the population reach 50\% of the carrying capacity?
+    \end{itemize}
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+\subsection*{난이도 중 }
+\begin{enumerate}
+    \setcounter{enumi}{3} % Continue numbering
+    \item \textbf{Exercise 3:} Suppose that a population develops according to the logistic equation $\frac{dP}{dt} = 0.05P - 0.0005P^2$, where t is measured in weeks.
+    \begin{itemize}
+        \item[(a)] What is the carrying capacity? What is the value of k?
+        \item[(c)] Use the direction field to sketch solutions for initial populations of 20, 40, 60, 80, 120, and 140. Which solutions have inflection points?
+        \item[(d)] What are the equilibrium solutions?
+    \end{itemize}
+
+    \item \textbf{Exercise 5:} The Pacific halibut fishery has been modeled by the differential equation $\frac{dy}{dt} = ky(1 - \frac{y}{M})$ where $y(t)$ is the biomass, $M=8 \times 10^7$ kg, and $k=0.71$ per year.
+    \begin{itemize}
+        \item[(a)] If $y(0) = 2 \times 10^7$ kg, find the biomass a year later.
+        \item[(b)] How long will it take for the biomass to reach $4 \times 10^7$ kg?
+    \end{itemize}
+
+    \item \textbf{Exercise 7:} Suppose a population grows according to a logistic model with initial population 1000 and carrying capacity 10,000. If the population grows to 2500 after one year, what will the population be after another three years?
+
+    \item \textbf{Exercise 9:} The population of the world was about 6.1 billion in 2000. Assume the carrying capacity is 20 billion.
+    \begin{itemize}
+        \item[(a)] Write the logistic differential equation for these data.
+        \item[(b)] Use the logistic model to estimate the world population in the year 2010.
+    \end{itemize}
+    
+    \item \textbf{Exercise 11:} One model for the spread of a rumor is that the rate of spread is proportional to the product of the fraction y of the population who have heard the rumor and the fraction who have not.
+    \begin{itemize}
+        \item[(a)] Write a differential equation that is satisfied by y.
+        \item[(b)] Solve the differential equation.
+    \end{itemize}
+    
+    \item \textbf{Exercise 17:} A population is modeled by {\large$\frac{dP}{dt}$} $= kP - m$ where $k = \alpha - \beta$.
+    \begin{itemize}
+        \item[(a)] Find the solution that satisfies $P(0) = P_0$.
+        \item[(b)] What condition on m will lead to an exponential expansion?
+    \end{itemize}
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+\subsection*{난이도 상 }
+\begin{enumerate}
+    \setcounter{enumi}{9} % Continue numbering
+    \item \textbf{Exercise 13:}
+    \begin{itemize}
+        \item[(a)] Show that if P satisfies the logistic equation, then {\large$\frac{d^2P}{dt^2}$} $=k^2P\left(1 - \frac{P}{M}\right)\left(1 - \frac{2P}{M}\right)$.
+        \item[(b)] Deduce that a population grows fastest when it reaches half its carrying capacity.
+    \end{itemize}
+
+    \item \textbf{Exercise 19:} Consider the modified logistic equation: {\large$\frac{dP}{dt}$} $= 0.08P\left(1 - \frac{P}{1000}\right) - 15$.
+    \begin{itemize}
+        \item[(a)] Explain the meaning of the term -15 if $P(t)$ is a fish population.
+        \item[(c)] What are the equilibrium solutions?
+        \item[(d)] Describe what happens to the fish population for various initial populations.
+    \end{itemize}
+
+    \item \textbf{Exercise 21:} Consider the modified logistic model {\large$\frac{dP}{dt}$} $= kP\left(1 - \frac{P}{M}\right)\left(1 - \frac{m}{P}\right)$.
+    \begin{itemize}
+        \item[(a)] Show that any solution is increasing if $m < P < M$ and decreasing if $0 < P < m$.
+        \item[(b)] For $k=0.08$, $M=1000$, and $m=200$, draw a direction field and sketch several solution curves. What are the equilibrium solutions?
+    \end{itemize}
+\end{enumerate}
+
+\end{document}

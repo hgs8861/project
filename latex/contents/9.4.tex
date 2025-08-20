@@ -1,15 +1,27 @@
 \documentclass{article}
 \usepackage{amsmath} % For advanced math environments
 \usepackage{geometry} % To adjust margins
+\usepackage{xcolor}
+\usepackage{titlesec}
+\title{9.4 Models for Population Growth}
+\author{}
+\date{}
+
+% \section의 형식을 지정
+% 형식: \titleformat{\section}{<모양>}{<번호>}{<번호와 제목 간격>}{<색상 등 제목 스타일>}
+\titleformat{name=\section, numberless}
+  {\normalfont\Large\bfseries\color{blue}} % 글꼴, 크기, 굵기, 색상
+  {} % 섹션 번호
+  {1em}        % 번호와 제목 사이 간격
+  {}           % 제목 텍스트 (여기서는 비워둠)
 \geometry{a4paper, margin=1in}
 
 \begin{document}
-
-\section*{9.4 Models for Population Growth}
+\maketitle
 
 This section expands on the population growth models introduced in Section 9.1, using techniques from Section 9.3 to derive explicit formulas for population dynamics.
 
-\subsection*{The Law of Natural Growth}
+\section*{The Law of Natural Growth}
 
 One basic model assumes that population growth rate is proportional to the population size:
 \[
@@ -30,7 +42,7 @@ P(t) = P_0 e^{kt}
 \]
 This model implies a constant relative growth rate ($\frac{dP/dt}{P} = k$), leading to exponential growth.
 
-\subsection*{The Logistic Model}
+\section*{The Logistic Model}
 
 A more realistic model accounts for limited resources and a carrying capacity $M$, the maximum population an environment can sustain. 
 The relative growth rate decreases as population $P$ increases. 
@@ -129,7 +141,7 @@ t &= \frac{\ln(81)}{0.08} \approx 54.9
 \end{align*}
 The population reaches 900 at approximately $t \approx 55$.
 
-\subsection*{Comparison of the Natural Growth and Logistic Models}
+\section*{Comparison of the Natural Growth and Logistic Models}
 
 \subsubsection*{Example 3: Gause's Paramecium Data}
 Find the exponential and logistic models for G. F. Gause's Paramecium data (initial relative growth rate $k = 0.7944$, carrying capacity $M = 64$, initial population $P_0 = 2$). Compare predicted values with observed values.
@@ -145,7 +157,7 @@ P(t) = \frac{64}{1 + 31e^{-0.7944t}}
 \]
 It shows that the exponential model is accurate for the first few days but becomes highly inaccurate later, while the logistic model fits the observations reasonably well, especially as the population approaches the carrying capacity.
 
-\subsection*{Other Models for Population Growth}
+\section*{Other Models for Population Growth}
 Beyond the natural growth and logistic models, other variations exist:
 \begin{description}
     \item[Harvesting Model:] $\frac{dP}{dt} = kP\left(1 - \frac{P}{M}\right) - c$ (where $c$ is a constant harvesting rate).
