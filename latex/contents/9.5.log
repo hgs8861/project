@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  22 AUG 2025 13:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  22 AUG 2025 13:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -250,24 +250,6 @@ Package caption Info: End \AtBeginDocument code.
 LaTeX Warning: No \author given.
 
 
-c:/Users/USER/Desktop/project/latex/contents/9.5.tex:49: LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.49 \\I
-        dentify $P(x)$ and $Q(x)$ \\
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--55
-
- []
-
-
 
 [1
 
@@ -275,17 +257,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--55
 <graph/graph5.png, id=16, 225.09094pt x 263.48438pt>
 File: graph/graph5.png Graphic file (type png)
 <use graph/graph5.png>
-Package pdftex.def Info: graph/graph5.png  used on input line 90.
+Package pdftex.def Info: graph/graph5.png  used on input line 89.
 (pdftex.def)             Requested size: 135.89174pt x 159.07684pt.
 <graph/graph6.png, id=18, 216.81pt x 230.36063pt>
 File: graph/graph6.png Graphic file (type png)
 <use graph/graph6.png>
-Package pdftex.def Info: graph/graph6.png  used on input line 91.
+Package pdftex.def Info: graph/graph6.png  used on input line 90.
 (pdftex.def)             Requested size: 135.89174pt x 144.39331pt.
 <graph/graph7.png, id=19, 228.10219pt x 260.47313pt>
 File: graph/graph7.png Graphic file (type png)
 <use graph/graph7.png>
-Package pdftex.def Info: graph/graph7.png  used on input line 92.
+Package pdftex.def Info: graph/graph7.png  used on input line 91.
 (pdftex.def)             Requested size: 135.89174pt x 155.18016pt.
 
 
@@ -295,12 +277,12 @@ Package pdftex.def Info: graph/graph7.png  used on input line 92.
 <graph/graph8.png, id=32, 208.52907pt x 225.84375pt>
 File: graph/graph8.png Graphic file (type png)
 <use graph/graph8.png>
-Package pdftex.def Info: graph/graph8.png  used on input line 125.
+Package pdftex.def Info: graph/graph8.png  used on input line 124.
 (pdftex.def)             Requested size: 135.89174pt x 147.18265pt.
 <graph/graph9.png, id=33, 219.06844pt x 236.38312pt>
 File: graph/graph9.png Graphic file (type png)
 <use graph/graph9.png>
-Package pdftex.def Info: graph/graph9.png  used on input line 126.
+Package pdftex.def Info: graph/graph9.png  used on input line 125.
 (pdftex.def)             Requested size: 135.89174pt x 146.63536pt.
 
 
@@ -311,15 +293,15 @@ L3 programming layer <2025-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4805 strings out of 467801
- 77009 string characters out of 5436089
- 498778 words of memory out of 5000000
- 33430 multiletter control sequences out of 15000+600000
+ 4807 strings out of 467801
+ 77071 string characters out of 5436089
+ 499778 words of memory out of 5000000
+ 33432 multiletter control sequences out of 15000+600000
  631603 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,7n,65p,322b,256s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on 9.5.pdf (4 pages, 241532 bytes).
+Output written on 9.5.pdf (4 pages, 241300 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
