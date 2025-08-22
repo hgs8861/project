@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  22 AUG 2025 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  22 AUG 2025 13:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -257,17 +257,17 @@ LaTeX Warning: No \author given.
 <graph/graph5.png, id=16, 225.09094pt x 263.48438pt>
 File: graph/graph5.png Graphic file (type png)
 <use graph/graph5.png>
-Package pdftex.def Info: graph/graph5.png  used on input line 89.
+Package pdftex.def Info: graph/graph5.png  used on input line 90.
 (pdftex.def)             Requested size: 135.89174pt x 159.07684pt.
 <graph/graph6.png, id=18, 216.81pt x 230.36063pt>
 File: graph/graph6.png Graphic file (type png)
 <use graph/graph6.png>
-Package pdftex.def Info: graph/graph6.png  used on input line 90.
+Package pdftex.def Info: graph/graph6.png  used on input line 91.
 (pdftex.def)             Requested size: 135.89174pt x 144.39331pt.
 <graph/graph7.png, id=19, 228.10219pt x 260.47313pt>
 File: graph/graph7.png Graphic file (type png)
 <use graph/graph7.png>
-Package pdftex.def Info: graph/graph7.png  used on input line 91.
+Package pdftex.def Info: graph/graph7.png  used on input line 92.
 (pdftex.def)             Requested size: 135.89174pt x 155.18016pt.
 
 
@@ -277,12 +277,12 @@ Package pdftex.def Info: graph/graph7.png  used on input line 91.
 <graph/graph8.png, id=32, 208.52907pt x 225.84375pt>
 File: graph/graph8.png Graphic file (type png)
 <use graph/graph8.png>
-Package pdftex.def Info: graph/graph8.png  used on input line 124.
+Package pdftex.def Info: graph/graph8.png  used on input line 125.
 (pdftex.def)             Requested size: 135.89174pt x 147.18265pt.
 <graph/graph9.png, id=33, 219.06844pt x 236.38312pt>
 File: graph/graph9.png Graphic file (type png)
 <use graph/graph9.png>
-Package pdftex.def Info: graph/graph9.png  used on input line 125.
+Package pdftex.def Info: graph/graph9.png  used on input line 126.
 (pdftex.def)             Requested size: 135.89174pt x 146.63536pt.
 
 
