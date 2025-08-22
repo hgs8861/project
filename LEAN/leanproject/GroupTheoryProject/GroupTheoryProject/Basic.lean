@@ -42,11 +42,35 @@ variable(a b cb d e f :ℝ) --이렇게 변수만 따로 지정하고
 example(h:a*b=c*d)(h' :e=f): a*(b*e)=c*(d*f):= by --바로 (조건)으로 형성 해도 가능
 rw[h', ← mul_assoc, h, mul_assoc]
 
-variable(a b c:ℝ)
+variable(a b c:ℝ) -- check는 어떤 식인지 확인하는거
 #check a
 #check a+b
 #check mul_comm a b
 #check mul_assoc c a b
 #check mul_comm a
+#check mul_comm
+#check mul_add
+#check add_mul
 
-example (a b c : ℝ ) :
+example : (a+b)*(a+b)= a*a + 2*(a*b)+b*b:= by
+rw [add_mul, mul_add, mul_add] --분배법칙 앞에서 곱, 뒤에서 곱
+rw [← add_assoc, add_assoc (a * a)] --
+rw [mul_comm b a, ← two_mul] -- 2ab 에서
+
+example : (a + b) * (a + b) = a * a + 2 * (a * b) + b * b :=
+  calc
+    (a + b) * (a + b) = a * a + b * a + (a * b + b * b) := by
+      rw [mul_add, add_mul, add_mul]
+    _ = a * a + (b * a + a * b) + b * b := by
+      rw [← add_assoc, add_assoc (a * a)]
+    _ = a * a + 2 * (a * b) + b * b := by
+      rw [mul_comm b a, ← two_mul]
+
+example : (a + b) * (a + b) = a * a + 2 * (a * b) + b * b :=
+  calc
+    (a + b) * (a + b) = a * a + b * a + (a * b + b * b) := by
+      sorry
+    _ = a * a + (b * a + a * b) + b * b := by
+      sorry
+    _ = a * a + 2 * (a * b) + b * b := by
+      sorry
