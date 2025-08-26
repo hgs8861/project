@@ -11,7 +11,8 @@ example {M N P : Type*} [AddMonoid M] [AddMonoid N] [AddMonoid P]
 example {G : Type*} [Group G] (x : G) : x * x⁻¹ = 1 := mul_inv_cancel x
 example {G : Type*} [Group G] (x y z : G) : x * (y * z) * (x * z)⁻¹ * (x * y * x⁻¹)⁻¹ = 1 := by group
 example {G : Type*} [AddCommGroup G] (x y z : G) : z + x + (y - z -x) = y := by
-  rw [add_sub_cancel]
+  rw [add_assoc z x y]
+  rw [add_comm z x]
 --lean 4에서는 abel 전략 없음. lean 3에만 존재 : lean4는 직접 계산이 필요
 example {G : Type*} [AddCommGroup G] (x y z : G) : z + x + (y - z - x) = y := by
   rw [sub_eq_add_neg, sub_eq_add_neg]
@@ -19,6 +20,7 @@ example {G : Type*} [AddCommGroup G] (x y z : G) : z + x + (y - z - x) = y := by
   rw [← add_assoc]
   rw [add_comm z x]
   rw [add_assoc]
+
   rw [add_assoc z y (-z)]
   rw [add_neg_cancel_left]
   rw [add_neg_cancel_right]
