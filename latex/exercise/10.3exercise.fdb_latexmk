@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1756105913.92848 "c:/Users/USER/Desktop/project/latex/exercise/10.1.tex" "10.1.pdf" "10.1" 1756105915.08926 0
-  "10.1.aux" 1756105914 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
-  "10.1.tex" 1756105913 6015 f25a580fd7491402f76c0fc8a3f2bacb ""
-  "c:/Users/USER/Desktop/project/latex/exercise/10.1.tex" 1756105913 6015 f25a580fd7491402f76c0fc8a3f2bacb ""
+["pdflatex"] 1756435515.8835 "c:/Users/USER/Desktop/project/latex/exercise/10.3exercise.tex" "10.3exercise.pdf" "10.3exercise" 1756435516.69777 0
+  "10.3exercise.aux" 1756435516 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
+  "10.3exercise.tex" 1756435515 4864 fcc6f4dda73691bafddca60bc3ce3dee ""
+  "c:/Users/USER/Desktop/project/latex/exercise/10.3exercise.tex" 1756435515 4864 fcc6f4dda73691bafddca60bc3ce3dee ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1755075921 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1755065650 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1755065650 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -33,7 +33,6 @@
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1755065654 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1755065654 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1755065654 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
-  "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1755065654 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1755065654 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1755065656 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1755065656 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
@@ -73,7 +72,7 @@
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1755098199 3605799 b16085c568bbf43ec0a1a32c164f2cc1 ""
   "c:/texlive/2025/texmf.cnf" 1755097321 713 e69b156964470283e0530f5060668171 ""
   (generated)
-  "10.1.aux"
-  "10.1.log"
-  "10.1.pdf"
+  "10.3exercise.aux"
+  "10.3exercise.log"
+  "10.3exercise.pdf"
   (rewritten before read)

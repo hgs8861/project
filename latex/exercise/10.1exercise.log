@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  25 AUG 2025 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  29 AUG 2025 11:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/USER/Desktop/project/latex/exercise/10.1.tex
-(c:/Users/USER/Desktop/project/latex/exercise/10.1.tex
+**c:/Users/USER/Desktop/project/latex/exercise/10.1exercise.tex
+(c:/Users/USER/Desktop/project/latex/exercise/10.1exercise.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -187,8 +187,8 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 ) (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count300
-) (./10.1.aux)
-\openout1 = `10.1.aux'.
+) (./10.1exercise.aux)
+\openout1 = `10.1exercise.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
@@ -260,7 +260,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 [2]
 
-[3] (./10.1.aux)
+[3] (./10.1exercise.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
@@ -268,14 +268,14 @@ L3 programming layer <2025-07-20>
  ) 
 Here is how much of TeX's memory you used:
  2743 strings out of 467801
- 40409 string characters out of 5436089
- 454503 words of memory out of 5000000
+ 40505 string characters out of 5436089
+ 454504 words of memory out of 5000000
  31370 multiletter control sequences out of 15000+600000
  636800 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,6n,65p,324b,237s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 59i,6n,65p,332b,237s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb3.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb>
-Output written on 10.1.pdf (3 pages, 206710 bytes).
+Output written on 10.1exercise.pdf (3 pages, 206021 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  53 compressed objects within 1 object stream
