@@ -94,13 +94,19 @@ example (a b c d : ℝ) (hyp : c = d * a + b) (hyp' : b = a * d) : c = 2 * a * d
   rw [← mul_assoc 2 a d] at hyp
   exact hyp --exact : 골과 ~이 같다 : 전술
 
-example : c * b * a = b * (a * c) := by ring
+example : c * b * a = b * (a * c) := by
+ring
 
-example : (a + b) * (a + b) = a * a + 2 * (a * b) + b * b := by ring
+example : (a + b) * (a + b) = a * a + 2 * (a * b) + b * b := by
+ring
 
-
-example : (a + b) * (a - b) = a ^ 2 - b ^ 2 := by ring
+example : (a + b) * (a - b) = a ^ 2 - b ^ 2 := by
+ring --환의 공리 이용해서 증명하는 방법
 
 example (hyp : c = d * a + b) (hyp' : b = a * d) : c = 2 * a * d := by
   rw [hyp, hyp']
   ring
+
+example (a b c : ℕ) (h : a + b = c) : (a + b) * (a + b) = a * c + b * c := by
+  nth_rw 2 [h] -- nth_rw : n번째 rewite 할껀지 표현 (h 사용해 2번째 골 rewite)
+  rw [add_mul]
