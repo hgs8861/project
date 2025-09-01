@@ -1,0 +1,99 @@
+\documentclass[12pt, a4paper]{article}
+
+% Required Packages
+\usepackage{amsmath, graphicx}
+\usepackage{amssymb}
+\usepackage{kotex} % For Korean text
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\graphicspath{{graph/}}
+% Title
+
+\title{Calculus - Chapter 9 review, problem plus (9.4 - 9.5)}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\hrulefill
+\vspace{1em}
+
+\subsection*{Concept Check}
+
+\begin{enumerate}
+    \item \textbf{(6)} What is a first-order linear differential equation? How do you solve it?
+
+    \item \textbf{(7)} (a) Write a differential equation that expresses the law of natural growth. What does it say in terms of relative growth rate?
+    (b) Under what circumstances is this an appropriate model for population growth?
+    (c) What are the solutions of this equation?
+
+    \item \textbf{(8)} (a) Write the logistic differential equation.
+    (b) Under what circumstances is this an appropriate model for population growth?
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+\subsection*{True-False Quiz}
+
+\begin{enumerate}
+    \item \textbf{(6)} The equation $e^x y' = y$ is linear.
+
+    \item \textbf{(7)} The equation $y' + xy = e^y$ is linear.
+
+    \item \textbf{(9)} If y is the solution of the initial-value problem
+    \[ \frac{dy}{dt} = 2y\left(1 - \frac{y}{5}\right) \quad y(0) = 1 \]
+    then $\lim_{t\to\infty} y = 5$.
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+\subsection*{Exercises}
+
+\begin{enumerate}
+    \item \textbf{(1)} (a) A direction field for the differential equation $y' = y(y-2)(y-4)$ is shown. Sketch the graphs of the solutions that satisfy the given initial conditions.
+    \begin{itemize}
+        \item[(i)] $y(0) = -0.3$
+        \item[(ii)] $y(0) = 1$
+        \item[(iii)] $y(0) = 3$
+        \item[(iv)] $y(0) = 4.3$
+    \end{itemize}
+    (b) If the initial condition is $y(0)=c$, for what values of c is $\lim_{t\to\infty} y(t)$ finite? What are the equilibrium solutions?
+
+    \item \textbf{(5)} Solve the differential equation: $y' = xe^{-\sin x} - y\cos x$.
+
+    \item \textbf{(9)} Solve the initial-value problem: $\frac{dr}{dt} + 2tr = r, \quad r(0) = 5$.
+    
+    \item \textbf{(11)} Solve the initial-value problem: $xy' - y = x\ln x, \quad y(1) = 2$.
+
+    \item \textbf{(15)} (a) Write the solution of the initial-value problem
+    \[ \frac{dP}{dt} = 0.1P\left(1 - \frac{P}{2000}\right) \quad P(0) = 100 \]
+    and use it to find the population P when $t=20$.
+    (b) When does the population reach 1200?
+
+    \item \textbf{(16)} (a) The population of the world was 6.08 billion in 2000 and 7.35 billion in 2015. Find an exponential model for these data and use the model to predict the world population in the year 2030.
+    (b) According to the model in part (a), in what year will the world population exceed 10 billion?
+    (c) Use the data in part (a) to find a logistic model for the population. Assume a carrying capacity of 20 billion. Then use the logistic model to predict the population in 2030.
+    (d) According to the logistic model, in what year will the world population exceed 10 billion?
+
+    \item \textbf{(17)} The von Bertalanffy growth model states that the rate of growth in length $L(t)$ of a fish is proportional to $L_{\infty} - L$.
+    (a) Formulate and solve a differential equation for $L(t)$.
+    (b) For the North Sea haddock, $L_{\infty} = 53$ cm, $L(0) = 10$ cm, and the proportionality constant is 0.2. Find the expression for $L(t)$.
+
+    \item \textbf{(18)} A tank contains 100 L of pure water. Brine with 0.1 kg of salt per liter enters at 10 L/min. The solution is mixed and drains at the same rate. How much salt is in the tank after 6 minutes?
+
+    \item \textbf{(19)} One model for the spread of an epidemic is that the rate of spread is jointly proportional to the number of infected and uninfected people. In a town of 5000, 160 people are sick at the start of a week and 1200 are sick at the end. How many days does it take for 80\% of the population to be infected?
+
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+\subsection*{Problems Plus}
+\begin{enumerate}
+    \item \textbf{(7)} A peach pie is taken out of the oven at 5:00 PM. At that time it is piping hot, $100^{\circ}\text{C}$. At 5:10 PM its temperature is $80^{\circ}\text{C}$; at 5:20 PM it is $65^{\circ}\text{C}$. What is the temperature of the room?
+\end{enumerate}
+
+\end{document}
+
