@@ -116,52 +116,54 @@ example (a b c : ℕ) (h : a + b = c) : (a + b) * (a + b) = a * c + b * c := by
 
 --------------------------------------------------------------
 --basic2.3
-#check (le_refl : ∀ a : ℝ, a ≤ a)
-#check (le_trans : a ≤ b → b ≤ c → a ≤ c)
+#check (le_refl : ∀ a : ℝ, a ≤ a) --le_refl(반사성) : 모든 실수 a에 대해서 a는 a보다 작거나 같다 확인하기
+#check (le_trans : a ≤ b → b ≤ c → a ≤ c) --le_trans(추이성) : a가 b보다 작거나 같고, b가 c보다 작거나 같으면 a는 c보다 작거나 같다 확인하기
 
 variable (h : a ≤ b) (h' : b ≤ c)
 
 #check (le_refl : ∀ a : Real, a ≤ a)
 #check (le_refl a : a ≤ a)
 #check (le_trans : a ≤ b → b ≤ c → a ≤ c)
-#check (le_trans h : b ≤ c → a ≤ c)
-#check (le_trans h h' : a ≤ c)
+#check (le_trans h : b ≤ c → a ≤ c) -- a≤b 대신에 h 사용
+#check (le_trans h h' : a ≤ c) -- a≤b 대신에 h, b≤c 대신에 h' 사용
 
 example (x y z : ℝ) (h₀ : x ≤ y) (h₁ : y ≤ z) : x ≤ z := by
-  apply le_trans
-  · apply h₀
+  apply le_trans --apply 는 일반적 명제 또는 증명 가져와 현재 목표와 일치키시려는 전술
+  · apply h₀ --들여써서 le_trans 가 구체적으로 어떤 가정으로 하위 목표를 도달하는지 설명
   · apply h₁
 
 example (x y z : ℝ) (h₀ : x ≤ y) (h₁ : y ≤ z) : x ≤ z := by
-  apply le_trans h₀
+  apply le_trans h₀ -- apply gkrh 바로 쓰기 가능
   apply h₁
 
 example (x y z : ℝ) (h₀ : x ≤ y) (h₁ : y ≤ z) : x ≤ z :=
-  le_trans h₀ h₁
+  le_trans h₀ h₁ --le_trans는 h0 와 h1을 활용해 새로운 증명 만들어냄 (apply 없어도 가능)
 
 example (x : ℝ) : x ≤ x := by
   apply le_refl
 
 example (x : ℝ) : x ≤ x :=
-  le_refl x
+  le_refl x --x의 문자에 대하여 le_refl 적용
 
-#check (le_refl : ∀ a, a ≤ a)
-#check (le_trans : a ≤ b → b ≤ c → a ≤ c)
-#check (lt_of_le_of_lt : a ≤ b → b < c → a < c)
-#check (lt_of_lt_of_le : a < b → b ≤ c → a < c)
-#check (lt_trans : a < b → b < c → a < c)
+#check (le_refl : ∀ a, a ≤ a) --반사성
+#check (le_trans : a ≤ b → b ≤ c → a ≤ c) --추이성
+#check (lt_of_le_of_lt : a ≤ b → b < c → a < c) --a가 b보다 작거나 같고, b가 c보다 작으면 a는 c보다 작다
+#check (lt_of_lt_of_le : a < b → b ≤ c → a < c) --a가 b보다 작고, b가 c보다 작거나 같으면 a는 c보다 작다
+#check (lt_trans : a < b → b < c → a < c) --a가 b보다 작고, b가 c보다 작으면 a는 c보다 작다
 
-example (h₀ : a ≤ b) (h₁ : b < c) (h₂ : c ≤ d) (h₃ : d < e) : a < e := by
+example (h₀ : a ≤ b) (h₁ : b < c) (h₂ : c ≤ d) (h₃ : d < e) : a < e := by --추이성 3번 쓰기
   sorry
 
 example (h₀ : a ≤ b) (h₁ : b < c) (h₂ : c ≤ d) (h₃ : d < e) : a < e := by
-  linarith
+  linarith -- linarith : 선형부등식 전술 : 덧셈 뺄셈 상수곱셈이루어진 등식, 부등식 자동 증명 : lean이 알아서 모든 가설 분석해 조합하여 증명함
+
 
 example (h : 2 * a ≤ 3 * b) (h' : 1 ≤ a) (h'' : d = 2) : d + a ≤ 5 * b := by
-  linarith
+  linarith -- linarith 은 등식도 이용 가능 : 선형 산술 규칙 종합적 처리 가능
 
-#check (exp_le_exp : exp a ≤ exp b ↔ a ≤ b)
-#check (exp_lt_exp : exp a < exp b ↔ a < b)
+--실수 부등식을 증명하는데 사용 할 수 있는 정리들
+#check (exp_le_exp : exp a ≤ exp b ↔ a ≤ b) --동치 \iff 로 나타낼 수 있음
+#check (exp_lt_exp : exp a < exp b ↔ a < b)--동치
 #check (log_le_log : 0 < a → a ≤ b → log a ≤ log b)
 #check (log_lt_log : 0 < a → a < b → log a < log b)
 #check (add_le_add : a ≤ b → c ≤ d → a + c ≤ b + d)
@@ -178,27 +180,27 @@ example (h : 2 * a ≤ 3 * b) (h' : 1 ≤ a) (h'' : d = 2) : d + a ≤ 5 * b := 
 #check add_le_add_left
 
 example (h : a ≤ b) : exp a ≤ exp b := by
-  rw [exp_le_exp]
-  exact h
+  rw [exp_le_exp] --목표가 a ≤ b 로 바뀜
+  exact h --h가 목표와 같으므로 exact h
 
 example (h₀ : a ≤ b) (h₁ : c < d) : a + exp c + e < b + exp d + e := by
   apply add_lt_add_of_lt_of_le
-  · apply add_lt_add_of_le_of_lt h₀
-    apply exp_lt_exp.mpr h₁
+  · apply add_lt_add_of_le_of_lt h₀ --h_0 적용 : 첫번째 골
+    apply exp_lt_exp.mpr h₁ --동치명제 적용할때 mpr : ↔ 의 오른쪽에서 왼쪽으로 증명 : 두번째 골
   apply le_refl
 
 example (h₀ : d ≤ e) : c + exp (a + d) ≤ c + exp (a + e) := by sorry
 
-example : (0 : ℝ) < 1 := by norm_num
+example : (0 : ℝ) < 1 := by norm_num --norm_num : 구체적 계산 전술
 
 example (h : a ≤ b) : log (1 + exp a) ≤ log (1 + exp b) := by
-  have h₀ : 0 < 1 + exp a := by sorry
+  have h₀ : 0 < 1 + exp a := by sorry --have는 중간에 필요한 새로운 보조정리 또는 사실을 도입하고 증명하는 역할 : have [이름] : [명제] : = by
   apply log_le_log h₀
   sorry
 
 example : 0 ≤ a ^ 2 := by
-  -- apply?
-  exact sq_nonneg a
+--apply ? : 어떤 전술을 써야할지 모를때 물음표 붙여서 힌트 얻기 (infoview에 나타남)
+exact sq_nonneg a
 
 example (h : a ≤ b) : c - exp b ≤ c - exp a := by
   sorry
