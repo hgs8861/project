@@ -113,7 +113,15 @@ example (a b c : ℕ) (h : a + b = c) : (a + b) * (a + b) = a * c + b * c := by
 
 --------------------------------------------------------------
 --basic2.2
+#check add_zero
 
+namespace myring
+theorem add_zero (a : ℝ) : a + 0 = a := by ring
+theorem add_comm (a b : ℝ) : a + b = b + a := by ring
+end myring
+
+#check myring.add_comm a b
+#check myring.add_zero a
 --------------------------------------------------------------
 --basic2.3
 #check (le_refl : ∀ a : ℝ, a ≤ a) --le_refl(반사성) : 모든 실수 a에 대해서 a는 a보다 작거나 같다 확인하기
@@ -143,7 +151,7 @@ example (x : ℝ) : x ≤ x := by
   apply le_refl
 
 example (x : ℝ) : x ≤ x :=
-  le_refl x --x의 문자에 대하여 le_refl 적용
+le_refl x --x의 문자에 대하여 le_refl 적용
 
 #check (le_refl : ∀ a, a ≤ a) --반사성
 #check (le_trans : a ≤ b → b ≤ c → a ≤ c) --추이성
@@ -152,7 +160,7 @@ example (x : ℝ) : x ≤ x :=
 #check (lt_trans : a < b → b < c → a < c) --a가 b보다 작고, b가 c보다 작으면 a는 c보다 작다
 
 example (h₀ : a ≤ b) (h₁ : b < c) (h₂ : c ≤ d) (h₃ : d < e) : a < e := by --추이성 3번 쓰기
-  sorry
+sorry
 
 example (h₀ : a ≤ b) (h₁ : b < c) (h₂ : c ≤ d) (h₃ : d < e) : a < e := by
   linarith -- linarith : 선형부등식 전술 : 덧셈 뺄셈 상수곱셈이루어진 등식, 부등식 자동 증명 : lean이 알아서 모든 가설 분석해 조합하여 증명함
@@ -181,7 +189,7 @@ example (h : 2 * a ≤ 3 * b) (h' : 1 ≤ a) (h'' : d = 2) : d + a ≤ 5 * b := 
 
 example (h : a ≤ b) : exp a ≤ exp b := by
   rw [exp_le_exp] --목표가 a ≤ b 로 바뀜
-  exact h --h가 목표와 같으므로 exact h
+  apply h
 
 example (h₀ : a ≤ b) (h₁ : c < d) : a + exp c + e < b + exp d + e := by
   apply add_lt_add_of_lt_of_le
