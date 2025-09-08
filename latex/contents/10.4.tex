@@ -33,6 +33,11 @@ Consider a region bounded by a polar curve $r = f(\theta)$ and by rays $\theta =
 \Delta A_i \approx \frac{1}{2} [f(\theta_i^*)]^2 \Delta\theta
 \]
 Summing these approximations gives a Riemann sum. As $n \to \infty$, this sum approaches the definite integral.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{graph44.png}
+    \includegraphics[width=0.3\textwidth]{graph45.png}
+\end{figure}
 
 \paragraph{Formula for Area in Polar Coordinates:}
 \[
@@ -51,6 +56,11 @@ Applying the half-angle identity $\cos^2(u) = \frac{1 + \cos(2u)}{2}$:
 A = \int_{0}^{\pi/4} \frac{1 + \cos(4\theta)}{2} \, d\theta = \frac{1}{2} \left[ \theta + \frac{1}{4}\sin(4\theta) \right]_{0}^{\pi/4} = \frac{1}{2} \left( \frac{\pi}{4} \right) = \frac{\pi}{8}
 \]
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.33\textwidth]{graph46.png}
+\end{figure}
+
 \subsubsection*{EXAMPLE 2}
 Find the area of the region inside the circle $r = 3\sin\theta$ and outside the cardioid $r = 1 + \sin\theta$.
 
@@ -66,13 +76,26 @@ Using $\sin^2\theta = \frac{1 - \cos(2\theta)}{2}$:
     &= \frac{1}{2} \int_{\pi/6}^{5\pi/6} (3 - 4\cos(2\theta) - 2\sin\theta) \, d\theta \\
     &= \frac{1}{2} \left[ 3\theta - 2\sin(2\theta) + 2\cos\theta \right]_{\pi/6}^{5\pi/6} = \pi
 \end{align*}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.32\textwidth]{graph47.png}
+\end{figure}
 
-\paragraph{CAUTION:} Graphing polar curves is crucial for finding all intersection points. It is especially convenient to use a graphing calculator or computer to help with this task.
+\paragraph{CAUTION:} The fact that a single point has many representations in polar coordinates sometimes makes it dificult to find all the points of intersection of two polar curves. 
+\\For instance, it is obvious from picture that the circle and the cardioid have three points of intersection. however, in Example 2 we solved the equations only two such points. The origin is also a point of intersection, but we can’t find it by solving the equations of the curves because the origin has no single representation in polar coordinates that satisfies both equations. 
+Notice that, when represented as $(0,0)$ or $(0,\pi)$, the origin satisfies $r = 3 sin\theta $ and so it lies on the circle; when represented as $(0,2/3 \pi)$, it satisfies $r=1+sin\theta$ and so it lies on the cardioid. 
+\\Think of two points moving along the curves as the parameter value increases from $0$ to $2\pi$. 
+On one curve the origin is reached at $\theta=0$ and $\theta=\pi$ on the other curve it is reached at $\theta=2/3 \pi$.The points don’t collide at the origin because they reach the origin at different times, but the curves intersect there nonetheless.
+\\Graphing polar curves is crucial for finding all intersection points. It is especially convenient to use a graphing calculator or computer to help with this task.
 
 \subsubsection*{EXAMPLE 3}
 Find all points of intersection of $r = \cos(2\theta)$ and $r = 1/2$.
 
 \paragraph{Solution:} Equating the equations, $\cos(2\theta) = 1/2$, yields $2\theta = \pi/3, 5\pi/3, 7\pi/3, 11\pi/3, \dots$. Thus, for $0 \le \theta < 2\pi$, intersection points are $(1/2, \pi/6)$, $(1/2, 5\pi/6)$, $(1/2, 7\pi/6)$, and $(1/2, 11\pi/6)$.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{graph48.png}
+\end{figure}
 
 \section*{Arc Length}
 To find the length L of a polar curve $r = f(\theta)$ from $\theta = a$ to $\theta = b$, we use its parametric form $x = r\cos\theta$ and $y = r\sin\theta$. Differentiating with respect to $\theta$:
@@ -98,7 +121,7 @@ Find the length of the cardioid $r = 1 + \sin\theta$.
 \end{align*}
 Using the identity $1+\sin\theta = 2\cos^2(\frac{\pi}{4}-\frac{\theta}{2})$ and careful evaluation of the absolute value, the length is 8.
 
-\subsection*{Tangents}
+\section*{Tangents}
 To find the slope of the tangent line $dy/dx$ to a polar curve $r = f(\theta)$, we use its parametric form.
 
 \paragraph{Formula for Slope of Tangent in Polar Coordinates:}
@@ -110,13 +133,20 @@ Horizontal tangents occur when $\frac{dy}{d\theta} = 0$ (and $\frac{dx}{d\theta}
 \paragraph{Tangents at the Pole:} If $r = 0$ at $\theta = \theta_0$ and $\frac{dr}{d\theta} \neq 0$, the tangent line at the pole is $\theta = \theta_0$.
 
 \subsubsection*{EXAMPLE 5}
-For the cardioid $r = 1 + \sin\theta$: (a) Find the tangent slope at $\theta = \pi/3$. (b) Find horizontal and vertical tangent points.
+For the cardioid $r = 1 + \sin\theta$: 
+\\(a) Find the tangent slope at $\theta = \pi/3$. 
+\\(b) Find horizontal and vertical tangent points.
 
 \paragraph{Solution:} Given $r = 1 + \sin\theta$, we have $\frac{dr}{d\theta} = \cos\theta$.
-(a) At $\theta = \pi/3$, substituting values into the slope formula yields $\frac{dy}{dx} = -1$.
+\\(a) At $\theta = \pi/3$, substituting values into the slope formula yields $\frac{dy}{dx} = -1$.\\
+(b) Horizontal tangents ($\frac{dy}{d\theta} = 0$): $\cos\theta(1 + 2\sin\theta) = 0$. 
+\\This gives $\theta = \pi/2, 3\pi/2, 7\pi/6, 11\pi/6$. The points are $(2, \pi/2)$, $(1/2, 7\pi/6)$, and $(1/2, 11\pi/6)$.
 
-(b) Horizontal tangents ($\frac{dy}{d\theta} = 0$): $\cos\theta(1 + 2\sin\theta) = 0$. This gives $\theta = \pi/2, 3\pi/2, 7\pi/6, 11\pi/6$. The points are $(2, \pi/2)$, $(1/2, 7\pi/6)$, and $(1/2, 11\pi/6)$.
-
-Vertical tangents ($\frac{dx}{d\theta} = 0$): $1 - \sin\theta - 2\sin^2\theta = 0 \implies (1+\sin\theta)(1-2\sin\theta)=0$. This gives $\theta = 3\pi/2, \pi/6, 5\pi/6$. The points are $(3/2, \pi/6)$ and $(3/2, 5\pi/6)$. At $\theta=3\pi/2$, both derivatives are zero, which corresponds to the cusp at the pole.
+Vertical tangents ($\frac{dx}{d\theta} = 0$): $1 - \sin\theta - 2\sin^2\theta = 0 \implies (1+\sin\theta)(1-2\sin\theta)=0$. 
+\\This gives $\theta = 3\pi/2, \pi/6, 5\pi/6$. The points are $(3/2, \pi/6)$ and $(3/2, 5\pi/6)$. At $\theta=3\pi/2$, both derivatives are zero, which corresponds to the cusp at the pole.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.35\textwidth]{graph49.png}
+\end{figure}
 
 \end{document}

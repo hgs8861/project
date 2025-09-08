@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  4 SEP 2025 15:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  8 SEP 2025 17:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -254,50 +254,112 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<graph/graph27.png, id=1, 158.84344pt x 194.22563pt>
-File: graph/graph27.png Graphic file (type png)
-<use graph/graph27.png>
-Package pdftex.def Info: graph/graph27.png  used on input line 27.
-(pdftex.def)             Requested size: 135.89174pt x 166.17429pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+ (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+ (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<graph/graph29.png, id=1, 233.37187pt x 178.41656pt>
+File: graph/graph29.png Graphic file (type png)
+<use graph/graph29.png>
+Package pdftex.def Info: graph/graph29.png  used on input line 32.
+(pdftex.def)             Requested size: 113.24197pt x 86.57547pt.
+<graph/graph30.png, id=3, 764.10469pt x 163.3603pt>
+File: graph/graph30.png Graphic file (type png)
+<use graph/graph30.png>
+Package pdftex.def Info: graph/graph30.png  used on input line 49.
+(pdftex.def)             Requested size: 407.66833pt x 87.15634pt.
+<graph/graph31.png, id=4, 775.39688pt x 99.37125pt>
+File: graph/graph31.png Graphic file (type png)
+<use graph/graph31.png>
+Package pdftex.def Info: graph/graph31.png  used on input line 57.
+(pdftex.def)             Requested size: 407.66833pt x 52.24498pt.
 
 
 [1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./graph/graph27.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
- (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./graph/graph29.png> <./graph/graph30.png>]
+<graph/graph32.png, id=18, 196.48407pt x 192.72pt>
+File: graph/graph32.png Graphic file (type png)
+<use graph/graph32.png>
+Package pdftex.def Info: graph/graph32.png  used on input line 71.
+(pdftex.def)             Requested size: 113.24197pt x 111.07484pt.
 
-[2{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
-[3]
+[2 <./graph/graph31.png> <./graph/graph32.png>]
+<graph/graph35.png, id=26, 452.4403pt x 223.58531pt>
+File: graph/graph35.png Graphic file (type png)
+<use graph/graph35.png>
+Package pdftex.def Info: graph/graph35.png  used on input line 118.
+(pdftex.def)             Requested size: 271.7835pt x 134.30914pt.
+<graph/graph37.png, id=27, 197.23688pt x 179.92218pt>
+File: graph/graph37.png Graphic file (type png)
+<use graph/graph37.png>
+Package pdftex.def Info: graph/graph37.png  used on input line 119.
+(pdftex.def)             Requested size: 122.30325pt x 111.56706pt.
 
-[4]
 
-[5] (./10.3.aux)
+[3 <./graph/graph35.png> <./graph/graph37.png>]
+<graph/graph38.png, id=33, 747.54282pt x 164.86594pt>
+File: graph/graph38.png Graphic file (type png)
+<use graph/graph38.png>
+Package pdftex.def Info: graph/graph38.png  used on input line 134.
+(pdftex.def)             Requested size: 452.9679pt x 99.8989pt.
+<graph/graph39.png, id=34, 731.73375pt x 194.22563pt>
+File: graph/graph39.png Graphic file (type png)
+<use graph/graph39.png>
+Package pdftex.def Info: graph/graph39.png  used on input line 143.
+(pdftex.def)             Requested size: 452.9679pt x 120.23192pt.
+<graph/graph40.png, id=35, 751.30687pt x 189.70876pt>
+File: graph/graph40.png Graphic file (type png)
+<use graph/graph40.png>
+Package pdftex.def Info: graph/graph40.png  used on input line 156.
+(pdftex.def)             Requested size: 407.66833pt x 102.93909pt.
+
+
+[4 <./graph/graph38.png> <./graph/graph39.png>]
+<graph/graph41.png, id=41, 213.04594pt x 257.46187pt>
+File: graph/graph41.png Graphic file (type png)
+<use graph/graph41.png>
+Package pdftex.def Info: graph/graph41.png  used on input line 174.
+(pdftex.def)             Requested size: 113.24197pt x 136.8509pt.
+<graph/graph42.png, id=42, 764.10469pt x 272.51813pt>
+File: graph/graph42.png Graphic file (type png)
+<use graph/graph42.png>
+Package pdftex.def Info: graph/graph42.png  used on input line 188.
+(pdftex.def)             Requested size: 452.9679pt x 161.54942pt.
+
+
+[5 <./graph/graph40.png> <./graph/graph41.png>]
+<graph/graph43.png, id=48, 577.40718pt x 480.29437pt>
+File: graph/graph43.png Graphic file (type png)
+<use graph/graph43.png>
+Package pdftex.def Info: graph/graph43.png  used on input line 193.
+(pdftex.def)             Requested size: 407.66833pt x 339.12057pt.
+
+
+[6 <./graph/graph42.png> <./graph/graph43.png>] (./10.3.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5315 strings out of 467801
- 82661 string characters out of 5436089
- 499393 words of memory out of 5000000
- 33919 multiletter control sequences out of 15000+600000
- 634418 words of font info for 70 fonts, out of 8000000 for 9000
+ 5408 strings out of 467801
+ 84762 string characters out of 5436089
+ 497393 words of memory out of 5000000
+ 34014 multiletter control sequences out of 15000+600000
+ 634083 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,65p,784b,252s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on 10.3.pdf (5 pages, 127755 bytes).
+ 57i,8n,65p,445b,303s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on 10.3.pdf (6 pages, 436605 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 88 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
