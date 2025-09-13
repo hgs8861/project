@@ -1,0 +1,114 @@
+\documentclass[12pt, a4paper]{article}
+
+% Required Packages
+\usepackage{amsmath, graphicx}
+\usepackage{amssymb}
+\usepackage{kotex} % For Korean text
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\graphicspath{{graph/}}
+% Title`'
+\title{Calculus - Chapter 10 Review Selected Exercises}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\hrulefill
+\vspace{1em}
+
+\subsection*{Concept Check}
+\begin{enumerate}
+    \item \textbf{(1)} (a) What is a parametric curve? 
+    (b) How do you sketch a parametric curve?
+
+    \item \textbf{(2)} (a) How do you find the slope of a tangent to a parametric curve? 
+    (b) How do you find the area under a parametric curve?
+
+    \item \textbf{(3)} Write an expression for each of the following:
+    (a) The length of a parametric curve
+    (b) The area of the surface obtained by rotating a parametric curve about the x-axis
+    (c) The speed of a particle traveling along a parametric curve
+
+    \item \textbf{(4)} (a) Use a diagram to explain the meaning of the polar coordinates $(r, \theta)$ of a point.
+    (b) Write equations that express the Cartesian coordinates $(x, y)$ of a point in terms of the polar coordinates.
+    (c) What equations would you use to find the polar coordinates of a point if you knew the Cartesian coordinates?
+
+    \item \textbf{(5)} (a) How do you find the area of a region bounded by a polar curve?
+    (b) How do you find the length of a polar curve?
+    (c) How do you find the slope of a tangent line to a polar curve?
+
+    \item \textbf{(6)} (a) Give a geometric definition of a parabola.
+    (b) Write an equation of a parabola with focus $(0, p)$ and directrix $y = -p$. What if the focus is $(p, 0)$ and the directrix is $x = -p$?
+
+    \item \textbf{(7)} (a) Give a definition of an ellipse in terms of foci.
+    (b) Write an equation for the ellipse with foci $(\pm c, 0)$ and vertices $(\pm a, 0)$.
+
+    \item \textbf{(8)} (a) Give a definition of a hyperbola in terms of foci.
+    (b) Write an equation for the hyperbola with foci $(\pm c, 0)$ and vertices $(\pm a, 0)$.
+    (c) Write equations for the asymptotes of the hyperbola in part (b).
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+\subsection*{True-False Quiz}
+\begin{enumerate}
+    \item \textbf{(1)} If the parametric curve $x = f(t), y = g(t)$ satisfies $g'(1) = 0$, then it has a horizontal tangent when $t = 1$.
+    \item \textbf{(2)} If $x = f(t)$ and $y = g(t)$ are twice differentiable, then $\frac{d^2y}{dx^2} = \frac{d^2y/dt^2}{d^2x/dt^2}$.
+    \item \textbf{(3)} The length of the curve $x = f(t), y = g(t), a \le t \le b$, is $\int_a^b \sqrt{[f'(t)]^2 + [g'(t)]^2} dt$.
+    \item \textbf{(5)} If a point is represented by $(x, y)$ in Cartesian coordinates (where $x \ne 0$) and $(r, \theta)$ in polar coordinates, then $\theta = \tan^{-1}(y/x)$.
+    \item \textbf{(7)} The equations $r=2$, $x^2+y^2=4$, and $x = 2\sin(3t), y=2\cos(3t)$ ($0 \le t \le 2\pi$) all have the same graph.
+    \item \textbf{(9)} The graph of $y^2 = 2y + 3x$ is a parabola.
+    \item \textbf{(10)} A tangent line to a parabola intersects the parabola only once.
+    \item \textbf{(11)} A hyperbola never intersects its directrix.
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+\subsection*{Exercises}
+\begin{enumerate}
+    \item \textbf{(1)} Sketch the parametric curve and eliminate the parameter to find a Cartesian equation of the curve.
+    \[ x = t^2 + 4t, \quad y = 2 - t, \quad -4 \le t \le 1 \]
+
+    \item \textbf{(4)} Sketch the parametric curve and eliminate the parameter.
+    \[ x = 2\cos\theta, \quad y = 1 + \sin\theta \]
+    
+    \item \textbf{(11)} Sketch the polar curve $r = 1 + \sin\theta$.
+
+    \item \textbf{(13)} Sketch the polar curve $r = \cos(3\theta)$.
+
+    \item \textbf{(19)} Find a polar equation for the curve represented by the Cartesian equation $x+y=2$.
+    
+    \item \textbf{(23)} Find the slope of the tangent line to the curve $x = \ln t, y = 1 + t^2$ at $t = 1$.
+
+    \item \textbf{(25)} Find the slope of the tangent line to the polar curve $r = e^{-2\theta}$ at $\theta = \pi$.
+    
+    \item \textbf{(27)} Find $dy/dx$ and $d^2y/dx^2$ for $x = t + \sin t, y = t - \cos t$.
+
+    \item \textbf{(31)} At what points does the curve $x = 2a\cos t - a\cos(2t), y = 2a\sin t - a\sin(2t)$ have vertical or horizontal tangents?
+
+    \item \textbf{(33)} Find the area enclosed by the curve $r^2 = 9\cos(5\theta)$.
+    
+    \item \textbf{(37)} Find the area of the region that lies inside both of the circles $r = 2\sin\theta$ and $r = \sin\theta + \cos\theta$.
+
+    \item \textbf{(39)} Find the length of the curve $x = 3t^2, y = 2t^3, 0 \le t \le 2$.
+
+    \item \textbf{(41)} Find the length of the curve $r = 1/\theta, \pi \le \theta \le 2\pi$.
+
+    \item \textbf{(45)} Find the area of the surface obtained by rotating the curve $x = 4\sqrt{t}, y = \frac{t^3}{3} + \frac{1}{2t^2}, 1 \le t \le 4$ about the x-axis.
+
+    \item \textbf{(49)} Find the foci and vertices and sketch the graph of $\frac{x^2}{9} + \frac{y^2}{8} = 1$.
+
+    \item \textbf{(50)} Find the foci and vertices and sketch the graph of $4x^2 - y^2 = 16$.
+    
+    \item \textbf{(53)} Find an equation of the ellipse with foci $(\pm 4, 0)$ and vertices $(\pm 5, 0)$.
+
+    \item \textbf{(54)} Find an equation of the parabola with focus $(2, 1)$ and directrix $x = -4$.
+    
+    \item \textbf{(55)} Find an equation of the hyperbola with foci $(0, \pm 4)$ and asymptotes $y = \pm 3x$.
+
+\end{enumerate}
+
+\end{document}
