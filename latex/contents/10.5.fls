@@ -105,6 +105,7 @@ INPUT ./graph/graph50.png
 OUTPUT 10.5.pdf
 INPUT ./graph/graph50.png
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ./graph/graph51.png
 INPUT ./graph/graph51.png
 INPUT ./graph/graph51.png
@@ -126,7 +127,6 @@ INPUT ./graph/graph53.png
 INPUT ./graph/graph53.png
 INPUT ./graph/graph53.png
 INPUT ./graph/graph53.png
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT ./graph/graph55.png
 INPUT ./graph/graph55.png
 INPUT ./graph/graph55.png

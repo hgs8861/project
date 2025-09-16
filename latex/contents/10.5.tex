@@ -31,15 +31,14 @@ In this section we give geometric definitions of parabolas, ellipses, and hyperb
 
 
 \section*{Parabolas}
-Galileo showed that the path of a projectile that is shot into the air at an angle to the ground is a parabola. Parabola shapes have been used in designing automobile headlights, reflection telescopes, and suspension bridges.
-
-A parabola is the set of points in a plane that are equidistant from a fixed point F (called the focus) and a fixed line (called the directrix). The point halfway between the focus and the directrix lies on the parabola; it is called the vertex. The line through the focus perpendicular to the directrix is called the axis of the parabola.
+A parabola is the set of points in a plane that are equidistant from a fixed point F called the \textbf{focus} and a fixed line called the \textbf{directrix}. The point halfway between the focus and the directrix lies on the parabola; it is called the \textbf{vertex}. 
+\\The line through the focus perpendicular to the directrix is called the axis of the parabola.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.3\textwidth]{graph51.png}
     \includegraphics[width=0.3\textwidth]{graph52.png}
 \end{figure}
-We obtain a particularly simple equation for a parabola if we place its vertex at the origin O and its directrix parallel to the x-axis. If the focus is the point $(0,p)$, then the directrix has the equation $y=-p$. If $P(x,y)$ is any point on the parabola, then the distance from P to the focus is $|PF| = \sqrt{x^2 + (y-p)^2}$ and the distance from P to the directrix is $|y+p|$.
+\\We obtain a particularly simple equation for a parabola if we place its vertex at the origin O and its directrix parallel to the x-axis. If the focus is the point $(0,p)$, then the directrix has the equation $y=-p$. If $P(x,y)$ is any point on the parabola, then the distance from P to the focus is $|PF| = \sqrt{x^2 + (y-p)^2}$ and the distance from P to the directrix is $|y+p|$.
 
 The defining property of a parabola is that these distances are equal:
 \[
@@ -71,14 +70,25 @@ Find the focus and directrix of the parabola $y^2 + 10x = 0$ and sketch the grap
     \centering
     \includegraphics[width=0.35\textwidth]{graph55.png}
 \end{figure}
-An ellipse is the set of points in a plane the sum of whose distances from two fixed points $F_1$ and $F_2$ is a constant. These two fixed points are called the foci.
+An ellipse is the set of points in a plane the sum of whose distances from two fixed points $F_1$ and $F_2$ is a constant. These two fixed points are called the \textbf{foci}.
 
-To obtain the simplest equation, we place the foci on the x-axis at $(\pm c, 0)$. Let the sum of the distances from a point on the ellipse to the foci be $2a > 0$. Then a point $P(x,y)$ is on the ellipse when $|PF_1| + |PF_2| = 2a$. This leads to the equation:
+To obtain the simplest equation, we place the foci on the x-axis at $(\pm c, 0)$. Let the sum of the distances from a point on the ellipse to the foci be $2a > 0$. Then a point $P(x,y)$ is on the ellipse when $|PF_1| + |PF_2| = 2a$. 
+\\This leads to the equation:
+    \begin{align*}
+    \sqrt{(x+c)^2 + y^2} + \sqrt{(x-c)^2 + y^2} &= 2a \\
+    \quad \sqrt{(x-c)^2 + y^2} &= 2a - \sqrt{(x+c)^2 + y^2} \\
+    x^2 - 2cx + c^2 + y^2 &= 4a^2 - 4a\sqrt{(x+c)^2 + y^2} + x^2 + 2cx + c^2 + y^2 \\
+    a\sqrt{(x+c)^2 + y^2} &= a^2 + cx \\
+    a^2(x^2 + 2cx + c^2 + y^2) &= a^4 + 2a^2cx + c^2x^2 \\
+    (a^2 - c^2)x^2 + a^2y^2 &= a^2(a^2 - c^2)
+    \end{align*}
 \[
 \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1
 \]
-where $b^2 = a^2 - c^2$. The points $(\pm a,0)$ are called the vertices.
-
+where $b^2 = a^2 - c^2$. The points $(\pm a,0)$ are called the \textbf{vertices}.
+Since $b^2 = a^2 - c^2 < a^2$, it follows that $b < a$. The corresponding points $(a,0)$ and $(-a,0)$ are called the \textbf{vertices} of the ellipse and the line segment joining the vertices is called the \textbf{major axis}. The line segment joining $(0,b)$ and $(0,-b)$ is the \textbf{minor axis}. 
+\\Elipse is unchanged if $x$ is replaced by $-x$ or $y$ is replaced by $-y$, so the ellipse is symmetric about both axes. 
+\\Notice that if the foci coincide, then $c=0$, so $a=b$ and the ellipse becomes a circle with radius $r=a=b$.
 \paragraph{The ellipse $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$} where $a > b > 0$ has foci $(\pm c, 0)$, where $c^2 = a^2 - b^2$, and vertices $(\pm a, 0)$.
 
 \paragraph{The ellipse $\frac{x^2}{b^2} + \frac{y^2}{a^2} = 1$} where $a > b > 0$ has foci $(0, \pm c)$, where $c^2 = a^2 - b^2$, and vertices $(0, \pm a)$.
@@ -107,11 +117,15 @@ Here $c=2$ and $a=3$. Then $b^2 = a^2 - c^2 = 9 - 4 = 5$. The equation is $\frac
     \centering
     \includegraphics[width=0.3\textwidth]{graph56.png}
 \end{figure}
-A hyperbola is the set of all points in a plane the difference of whose distances from two fixed points $F_1$ and $F_2$ (the foci) is a constant. With foci on the x-axis at $(\pm c, 0)$, the equation is:
+A hyperbola is the set of all points in a plane the difference of whose distances from two fixed points $F_1$ and $F_2$ (the \textbf{foci}) is a constant. 
+\\With foci on the x-axis at $(\pm c, 0)$, the equation is:
 \[
 \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1
 \]
-where $c^2 = a^2 + b^2$. The points $(\pm a,0)$ are the vertices. The asymptotes are $y = \pm(b/a)x$.
+where $c^2 = a^2 + b^2$. The points $(\pm a,0)$ are the \textbf{vertices}.  The hyperbola is symmetric with respect to both axes. 
+\\The \textbf{asymptotes} are $y = \pm(b/a)x$. Both branches of the 
+hyperbola approach the asymptotes; that is, they come arbitrarily close to the asymptotes.
+
 
 \paragraph{The hyperbola $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$} has foci $(\pm c, 0)$, vertices $(\pm a, 0)$, and asymptotes $y = \pm(b/a)x$.
 
@@ -168,6 +182,6 @@ Foci: $(4, 1 \pm \sqrt{13})$. Vertices: $(4, 1 \pm 3)$, which are $(4,4)$ and $(
 Asymptotes: $y-1 = \pm\frac{3}{2}(x-4)$.
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.3\textwidth]{graph59.png}
+    \includegraphics[width=0.25\textwidth]{graph59.png}
 \end{figure}
 \end{document}
