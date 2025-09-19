@@ -113,15 +113,104 @@ example (a b c : ℕ) (h : a + b = c) : (a + b) * (a + b) = a * c + b * c := by
 
 --------------------------------------------------------------
 --basic2.2
+variable (R : Type*) [Ring R]
+example : c * b * a = b * (a * c) := by ring
+
+example : (a + b) * (a + b) = a * a + 2 * (a * b) + b * b := by ring
+
+example : (a + b) * (a - b) = a ^ 2 - b ^ 2 := by ring
+
+example (hyp : c = d * a + b) (hyp' : b = a * d) : c = 2 * a * d := by
+  rw [hyp, hyp']
+  ring
+
+#check (add_assoc : ∀ a b c : R, a + b + c = a + (b + c))
+#check (add_comm : ∀ a b : R, a + b = b + a)
+#check (zero_add : ∀ a : R, 0 + a = a)
+#check (neg_add_cancel : ∀ a : R, -a + a = 0)
+#check (mul_assoc : ∀ a b c : R, a * b * c = a * (b * c))
+#check (mul_one : ∀ a : R, a * 1 = a)
+#check (one_mul : ∀ a : R, 1 * a = a)
+#check (mul_add : ∀ a b c : R, a * (b + c) = a * b + a * c)
+#check (add_mul : ∀ a b c : R, (a + b) * c = a * c + b * c)
 #check add_zero
 
 namespace myring
 theorem add_zero (a : ℝ) : a + 0 = a := by ring
 theorem add_comm (a b : ℝ) : a + b = b + a := by ring
+theorem neg_add_cancel_left (a b : R) : -a + (a + b) = b := by
+  rw [← add_assoc, neg_add_cancel, zero_add]
+theorem add_neg_cancel_right (a b : R) : a + b + -b = a := by
+  sorry
+theorem add_left_cancel {a b c : R} (h : a + b = a + c) : b = c := by
+  sorry
+theorem add_right_cancel {a b c : R} (h : a + b = c + b) : a = c := by
+  sorry
 end myring
 
 #check myring.add_comm a b
 #check myring.add_zero a
+
+theorem mul_zero (a : R) : a * 0 = 0 := by
+  have h : a * 0 + a * 0 = a * 0 + 0 := by
+    rw [← mul_add, add_zero, add_zero]
+  rw [add_left_cancel h]
+
+theorem zero_mul (a : R) : 0 * a = 0 := by
+  sorry
+
+theorem neg_eq_of_add_eq_zero {a b : R} (h : a + b = 0) : -a = b := by
+  sorry
+
+theorem eq_neg_of_add_eq_zero {a b : R} (h : a + b = 0) : a = -b := by
+  sorry
+
+theorem neg_zero : (-0 : R) = 0 := by
+  apply neg_eq_of_add_eq_zero
+  rw [add_zero]
+
+theorem neg_neg (a : R) : - -a = a := by
+  sorry
+
+example (a b : R) : a - b = a + -b :=
+  sub_eq_add_neg a b
+
+example (a b : ℝ) : a - b = a + -b :=
+  rfl
+
+example (a b : ℝ) : a - b = a + -b := by
+  rfl
+
+theorem self_sub (a : R) : a - a = 0 := by
+  sorry
+
+theorem one_add_one_eq_two : 1 + 1 = (2 : R) := by
+  norm_num
+
+theorem two_mul (a : R) : 2 * a = a + a := by
+  sorry
+
+variable (A : Type*) [AddGroup A]
+
+#check (add_assoc : ∀ a b c : A, a + b + c = a + (b + c))
+#check (zero_add : ∀ a : A, 0 + a = a)
+#check (neg_add_cancel : ∀ a : A, -a + a = 0)
+
+variable {G : Type*} [Group G]
+
+#check (mul_assoc : ∀ a b c : G, a * b * c = a * (b * c))
+#check (one_mul : ∀ a : G, 1 * a = a)
+#check (inv_mul_cancel : ∀ a : G, a⁻¹ * a = 1)
+
+theorem mul_inv_cancel (a : G) : a * a⁻¹ = 1 := by
+  sorry
+
+theorem mul_one (a : G) : a * 1 = a := by
+  sorry
+
+theorem mul_inv_rev (a b : G) : (a * b)⁻¹ = b⁻¹ * a⁻¹ := by
+  sorry
+
 --------------------------------------------------------------
 --basic2.3
 #check (le_refl : ∀ a : ℝ, a ≤ a) --le_refl(반사성) : 모든 실수 a에 대해서 a는 a보다 작거나 같다 확인하기
@@ -235,3 +324,102 @@ example : |a*b| ≤ (a^2 + b^2)/2 := by
   sorry
 
 #check abs_le'.mpr
+
+------------------------------------------------------------------------
+--bssic2.4
+
+-----------------------------------------------------------------------------
+--basic2.5
+variable {α : Type*} [PartialOrder α]
+variable (x y z : α)
+
+#check x ≤ y
+#check (le_refl x : x ≤ x)
+#check (le_trans : x ≤ y → y ≤ z → x ≤ z)
+#check (le_antisymm : x ≤ y → y ≤ x → x = y)
+
+#check x < y
+
+#check (lt_irrefl x : ¬ (x < x))
+#check (lt_trans : x < y → y < z → x < z)
+#check (lt_of_le_of_lt : x ≤ y → y < z → x < z)
+#check (lt_of_lt_of_le : x < y → y ≤ z → x < z)
+
+example : x < y ↔ x ≤ y ∧ x ≠ y :=
+  lt_iff_le_and_ne
+
+variable {α : Type*} [Lattice α]
+variable (x y z : α)
+
+#check x ⊓ y
+#check (inf_le_left : x ⊓ y ≤ x)
+#check (inf_le_right : x ⊓ y ≤ y)
+#check (le_inf : z ≤ x → z ≤ y → z ≤ x ⊓ y)
+#check x ⊔ y
+#check (le_sup_left : x ≤ x ⊔ y)
+#check (le_sup_right : y ≤ x ⊔ y)
+#check (sup_le : x ≤ z → y ≤ z → x ⊔ y ≤ z)
+
+example : x ⊓ y = y ⊓ x := by
+  sorry
+
+example : x ⊓ y ⊓ z = x ⊓ (y ⊓ z) := by
+  sorry
+
+example : x ⊔ y = y ⊔ x := by
+  sorry
+
+example : x ⊔ y ⊔ z = x ⊔ (y ⊔ z) := by
+  sorry
+
+theorem absorb1 : x ⊓ (x ⊔ y) = x := by
+  sorry
+
+theorem absorb2 : x ⊔ x ⊓ y = x := by
+  sorry
+
+variable {α : Type*} [DistribLattice α]
+variable (x y z : α)
+
+#check (inf_sup_left x y z : x ⊓ (y ⊔ z) = x ⊓ y ⊔ x ⊓ z)
+#check (inf_sup_right x y z : (x ⊔ y) ⊓ z = x ⊓ z ⊔ y ⊓ z)
+#check (sup_inf_left x y z : x ⊔ y ⊓ z = (x ⊔ y) ⊓ (x ⊔ z))
+#check (sup_inf_right x y z : x ⊓ y ⊔ z = (x ⊔ z) ⊓ (y ⊔ z))
+
+variable {α : Type*} [Lattice α]
+variable (a b c : α)
+
+example (h : ∀ x y z : α, x ⊓ (y ⊔ z) = x ⊓ y ⊔ x ⊓ z) : a ⊔ b ⊓ c = (a ⊔ b) ⊓ (a ⊔ c) := by
+  sorry
+
+example (h : ∀ x y z : α, x ⊔ y ⊓ z = (x ⊔ y) ⊓ (x ⊔ z)) : a ⊓ (b ⊔ c) = a ⊓ b ⊔ a ⊓ c := by
+  sorry
+variable {R : Type*} [Ring R] [PartialOrder R] [IsStrictOrderedRing R]
+variable (a b c : R)
+
+#check (add_le_add_left : a ≤ b → ∀ c, c + a ≤ c + b)
+#check (mul_pos : 0 < a → 0 < b → 0 < a * b)
+
+#check (mul_nonneg : 0 ≤ a → 0 ≤ b → 0 ≤ a * b)
+
+example (h : a ≤ b) : 0 ≤ b - a := by
+  sorry
+
+example (h: 0 ≤ b - a) : a ≤ b := by
+  sorry
+
+example (h : a ≤ b) (h' : 0 ≤ c) : a * c ≤ b * c := by
+  sorry
+
+example (h : a ≤ b) : 0 ≤ b - a := by
+  sorry
+
+example (h: 0 ≤ b - a) : a ≤ b := by
+  sorry
+
+example (h : a ≤ b) (h' : 0 ≤ c) : a * c ≤ b * c := by
+  sorry
+
+
+example (x y : X) : 0 ≤ dist x y := by
+  sorry
