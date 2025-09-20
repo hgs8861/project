@@ -350,9 +350,9 @@ example : x < y ↔ x ≤ y ∧ x ≠ y := -- 필충 조건 증명
   lt_iff_le_and_ne
 
 --inf, sup 설정 : \g l b (하한한) \l u b (상한)
-variable {α : Type*} [Lattice α]
+variable {α : Type*} [Lattice α] -- latice :격자 구조
 variable (x y z : α)
--- 상한과 하한의 활용
+-- 상한과 하한의 활용 (격자의 예시)
 -- 정수 같은 경우는 전 순서이기 때문에 inf, sup 이 항상 존재, min max 도 항상 존재
 -- 부분집합에서는 포함 관계 또는 교집 합 합집합으로 표현 가능
 -- x가 거짓이거나 y가 참인경우 순서관계를 설정하고 진리값에서의 논리곱, 논리합 이용 가능
@@ -452,10 +452,10 @@ variable {α : Type*} [Lattice α]
 variable (a b c : α)
 
 example (h : ∀ x y z : α, x ⊓ (y ⊔ z) = x ⊓ y ⊔ x ⊓ z) : a ⊔ b ⊓ c = (a ⊔ b) ⊓ (a ⊔ c) := by
-  sorry
+  sorry --복잡함
 
 example (h : ∀ x y z : α, x ⊔ y ⊓ z = (x ⊔ y) ⊓ (x ⊔ z)) : a ⊓ (b ⊔ c) = a ⊓ b ⊔ a ⊓ c := by
-  sorry
+  sorry --복잡함
 variable {R : Type*} [Ring R] [PartialOrder R] [IsStrictOrderedRing R] --엄격 순서 환
 variable (a b c : R)
 
@@ -464,15 +464,15 @@ variable (a b c : R)
 #check (mul_nonneg : 0 ≤ a → 0 ≤ b → 0 ≤ a * b)
 
 example (h : a ≤ b) : 0 ≤ b - a := by
-  -- add_le_add_left 정리의 특수한 형태를 사용합니다.
-  -- a ≤ b의 양변에 -a를 더하면, -a + a ≤ -a + b 가 됩니다.
+  -- add_le_add_left 정리의 특수한 형태
+  -- a ≤ b의 양변에 -a를 더하면, -a + a ≤ -a + b
   -- 0 ≤ b - a 와 같습니다.
   -- 이 과정은 linarith가 자동으로 처리해 줍니다.
   linarith
 
 example (h: 0 ≤ b - a) : a ≤ b := by
   -- 위와 반대 과정입니다.
-  -- 0 ≤ b - a의 양변에 a를 더하면, a + 0 ≤ a + (b - a)가 됩니다.
+  -- 0 ≤ b - a의 양변에 a를 더하면, a + 0 ≤ a + (b - a)
   -- a ≤ b 와 같습니다.
   linarith
 
@@ -486,14 +486,18 @@ example (h : a ≤ b) (h' : 0 ≤ c) : a * c ≤ b * c := by
   -- 4. 이제 목표는 0 ≤ b * c - a * c 이고, 이것은 a * c ≤ b * c 와 동치입니다.
   linarith
 
-example (h : a ≤ b) : 0 ≤ b - a := by
-  sorry
+variable {X : Type*} [MetricSpace X] --,etricspece : 거리 공간 성질 가짐
+variable (x y z : X)
 
-example (h: 0 ≤ b - a) : a ≤ b := by
-  sorry
-
-example (h : a ≤ b) (h' : 0 ≤ c) : a * c ≤ b * c := by
-  sorry
+#check (dist_self x : dist x x = 0)
+#check (dist_comm x y : dist x y = dist y x) --대칭성
+#check (dist_triangle x y z : dist x z ≤ dist x y + dist y z) --삼각부등식
 
 example (x y : X) : 0 ≤ dist x y := by
-  sorry
+  -- 1. 삼각 부등식 'dist x z ≤ dist x y + dist y z' 에서 z를 x로 특수화한 'dist x x ≤ dist x y + dist y x' 라는 사실을 'h'로 가져옴.
+  have h : dist x x ≤ dist x y + dist y x := dist_triangle x y x
+  -- 2. 'dist_self' (dist x x = 0) 와 'dist_comm' (dist y x = dist x y) 정리를 이용하여 'h'를 다시 씁니다(rewrite).
+  rw [dist_self, dist_comm y x] at h
+  -- 3. rw가 끝나면 'h'는 '0 ≤ dist x y + dist x y'가 됨. 어떤 값의 2배가 0보다 크거나 같다면, 원래 값도 0보다 크거나 같아야 합니다.
+-- linarith 전술이 이 마지막 단계를 자동으로 해결해 줍니다.
+  linarith
