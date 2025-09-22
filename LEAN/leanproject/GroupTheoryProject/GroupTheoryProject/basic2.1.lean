@@ -391,7 +391,6 @@ example : x ⊓ y ⊓ z = x ⊓ (y ⊓ z) := by -- inf 결합법칙
   apply inf_le_right -- x ⊓ y ≤ y
   apply inf_le_right --  x ⊓ y ⊓ z ≤ z
   apply le_inf
-
   -- 2. x ⊓ (y ⊓ z) ≤ x ⊓ y ⊓ z 증명 (위와 유사)
   --x ⊓ (y ⊓ z) ≤ x ⊓ y , x ⊓ (y ⊓ z) ≤ z
   apply le_inf --x ⊓ (y ⊓ z) ≤ x ⊓ y
@@ -417,17 +416,28 @@ example : x ⊔ y ⊔ z = x ⊔ (y ⊔ z) := by --sup 결합법칙
   apply le_antisymm
    -- 1. (x ⊔ y) ⊔ z ≤ x ⊔ (y ⊔ z) 증명
   apply sup_le --x ⊔ y ≤ x ⊔ (y ⊔ z), z ≤ x ⊔ (y ⊔ z)
-  apply sup_le -- x ≤ x ⊔ (y ⊔ z), y ≤ x ⊔ (y ⊔ z)
-  trans x ⊔ y
+
+  apply sup_le --x ⊔ y ≤ x ⊔ (y ⊔ z)
   apply le_sup_left --x ≤ x ⊔ (y ⊔ z)
-  apply le_sup_right --y ≤ y ⊔ z ≤ x ⊔ (y ⊔ z)
-  apply sup_le
-  trans y ⊔ z
-  apply le_sup_right
-  apply le_sup_left
-  trans y ⊔ z
-  apply le_sup_right
-  apply le_sup_right
+  trans y ⊔ z --y ≤ y ⊔ z ≤ x ⊔ (y ⊔ z)
+  apply le_sup_left -- y ≤ y ⊔ z
+  apply le_sup_right -- y ⊔ z ≤ x ⊔ (y ⊔ z)
+  trans y ⊔ z -- z ≤ y ⊔ z ≤ x ⊔ (y ⊔ z)
+  apply le_sup_right -- z ≤ y ⊔ z
+  apply le_sup_right --y ⊔ z ≤ x ⊔ (y ⊔ z)
+  -- 2.  x ⊔ (y ⊔ z) ≤ (x ⊔ y) ⊔ z 증명
+  apply sup_le --x ≤ (x ⊔ y) ⊔ z, y ⊔ z ≤ (x ⊔ y) ⊔ z
+
+  trans x ⊔ y --x ≤ (x ⊔ y) ≤ (x ⊔ y) ⊔ z
+  apply le_sup_left --(x ⊔ y) ≤ (x ⊔ y) ⊔ z
+  apply le_sup_left -- x ≤ (x ⊔ y)
+
+  apply sup_le -- y ⊔ z ≤ (x ⊔ y) ⊔ z
+  trans x ⊔ y --y ≤ x ⊔ y ≤ (x ⊔ y) ⊔ z
+  apply le_sup_right -- y ≤ x ⊔ y
+  apply le_sup_left -- x ⊔ y ≤ (x ⊔ y) ⊔ z
+  apply le_sup_right -- z ≤ (x ⊔ y) ⊔ z
+
 theorem absorb1 : x ⊓ (x ⊔ y) = x := by --흡수 법칙?
   apply le_antisymm
   -- 1. x ⊓ (x ⊔ y) ≤ x 증명: infimum의 정의(inf_le_left)에 의해 항상 참입니다.
