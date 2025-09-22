@@ -379,26 +379,29 @@ example : x ⊓ y = y ⊓ x := by --inf 교환법칙
   apply inf_le_left
 example : x ⊓ y ⊓ z = x ⊓ (y ⊓ z) := by -- inf 결합법칙
   apply le_antisymm
-  -- 1. (x ⊓ y) ⊓ z ≤ x ⊓ (y ⊓ z) 증명
-  apply le_inf
-  trans x ⊓ y -- trans는 추이적 증명을 도와줍니다. 중간 단계로 x ⊓ y를 사용합니다.
+  -- 1. x ⊓ y ⊓ z ≤ x ⊓ (y ⊓ z) 증명
+  -- x ⊓ y ⊓ z ≤ x, x ⊓ y ⊓ z ≤ (y ⊓ z)
+  apply le_inf --x ⊓ y ⊓ z ≤ x
+  trans x ⊓ y -- trans는 추이적 증명을 도와줍니다 : x ⊓ y ⊓ z  ≤ x ⊓ y ≤ x
   apply inf_le_left -- x ⊓ y ⊓ z  ≤ x ⊓ y
   apply inf_le_left -- x ⊓ y ≤ x
+  apply le_inf  --x ⊓ y ⊓ z ≤ (y ⊓ z)
+  trans x ⊓ y --: x ⊓ y ⊓ z  ≤ x ⊓ y ≤ y, x ⊓ y ⊓ z  ≤ z
+  apply inf_le_left -- x ⊓ y ⊓ z ≤ x ⊓ y
+  apply inf_le_right -- x ⊓ y ≤ y
+  apply inf_le_right --  x ⊓ y ⊓ z ≤ z
   apply le_inf
-  trans x ⊓ y
-  apply inf_le_left
-  apply inf_le_right
-  apply inf_le_right
-  -- 2. x ⊓ (y ⊓ z) ≤ (x ⊓ y) ⊓ z 증명 (위와 유사)
-  apply le_inf
-  apply le_inf
-  apply inf_le_left
-  trans y ⊓ z
-  apply inf_le_right
-  apply inf_le_left
-  trans y ⊓ z
-  apply inf_le_right
-  apply inf_le_right
+
+  -- 2. x ⊓ (y ⊓ z) ≤ x ⊓ y ⊓ z 증명 (위와 유사)
+  --x ⊓ (y ⊓ z) ≤ x ⊓ y , x ⊓ (y ⊓ z) ≤ z
+  apply le_inf --x ⊓ (y ⊓ z) ≤ x ⊓ y
+  apply inf_le_left -- x ⊓ (y ⊓ z) ≤ x
+  trans y ⊓ z --x ⊓ (y ⊓ z) ≤ y ⊓ z ≤ y
+  apply inf_le_right -- x ⊓ (y ⊓ z) ≤ y ⊓ z
+  apply inf_le_left -- y ⊓ z ≤ y
+  trans y ⊓ z --x ⊓ (y ⊓ z) ≤ y ⊓ z ≤ z
+  apply inf_le_right  -- x ⊓ (y ⊓ z) ≤ y ⊓ z
+  apply inf_le_right -- y ⊓ z ≤ z
 
 example : x ⊔ y = y ⊔ x := by -- sup 교환법칙
   apply le_antisymm
@@ -412,11 +415,12 @@ example : x ⊔ y = y ⊔ x := by -- sup 교환법칙
   apply le_sup_left
 example : x ⊔ y ⊔ z = x ⊔ (y ⊔ z) := by --sup 결합법칙
   apply le_antisymm
-  apply sup_le
-  apply sup_le
+   -- 1. (x ⊔ y) ⊔ z ≤ x ⊔ (y ⊔ z) 증명
+  apply sup_le --x ⊔ y ≤ x ⊔ (y ⊔ z), z ≤ x ⊔ (y ⊔ z)
+  apply sup_le -- x ≤ x ⊔ (y ⊔ z), y ≤ x ⊔ (y ⊔ z)
   trans x ⊔ y
-  apply le_sup_left
-  apply le_sup_left
+  apply le_sup_left --x ≤ x ⊔ (y ⊔ z)
+  apply le_sup_right --y ≤ y ⊔ z ≤ x ⊔ (y ⊔ z)
   apply sup_le
   trans y ⊔ z
   apply le_sup_right
@@ -433,10 +437,7 @@ theorem absorb1 : x ⊓ (x ⊔ y) = x := by --흡수 법칙?
   apply le_refl
   apply le_sup_left
 
-  #check  x ⊔ (x ⊓ y) = x ⊔ x ⊓ y
-  #check x ⊔ x ⊓ y = x
-
-theorem absorb2 : x ⊔ x ⊓ y = x := by
+theorem absorb2 : x ⊔ x ⊓ y = x := by --항상 \glb 부터 연산 한다
   apply le_antisymm
   -- 1. x ⊔ (x ⊓ y) ≤ x 증명: sup_le를 사용합니다.
   apply sup_le
