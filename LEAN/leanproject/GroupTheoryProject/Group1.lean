@@ -16,7 +16,7 @@ example : AddSubgroup ℚ where
   add_mem' := by
     rintro _ _ ⟨n, rfl⟩ ⟨m, rfl⟩
     use n + m
-    
+
     simp
   zero_mem' := by
     use 0
