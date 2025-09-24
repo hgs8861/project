@@ -430,6 +430,7 @@ example : x ⊔ y ⊔ z = x ⊔ (y ⊔ z) := by --sup 결합법칙
   apply sup_le --x ≤ (x ⊔ y) ⊔ z, y ⊔ z ≤ (x ⊔ y) ⊔ z
 
   trans x ⊔ y --x ≤ (x ⊔ y) ≤ (x ⊔ y) ⊔ z
+
   apply le_sup_left --(x ⊔ y) ≤ (x ⊔ y) ⊔ z
   apply le_sup_left -- x ≤ (x ⊔ y)
 
