@@ -1,6 +1,7 @@
 import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
+import Mathlib.Tactic.Linarith
 open Real
 
 example (a b c : ℝ) : a * b * c = b * (a * c) := by -- 실수 나타내고 싶다면 \R 로 써야 나타남
@@ -518,3 +519,7 @@ example (x y : X) : 0 ≤ dist x y := by
   -- 3. rw가 끝나면 'h'는 '0 ≤ dist x y + dist x y'가 됨. 어떤 값의 2배가 0보다 크거나 같다면, 원래 값도 0보다 크거나 같아야 합니다.
 -- linarith 전술이 이 마지막 단계를 자동으로 해결해 줍니다.
   linarith
+
+example {G : Type*} [Group G] (H : Subgroup G) {x y : G} (hx : x ∈ H) (hy : y ∈ H) :
+    x * y ∈ H :=
+  H.mul_mem hx hy
