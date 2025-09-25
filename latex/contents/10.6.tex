@@ -7,6 +7,8 @@
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
 \graphicspath{{graph/}}
 \title{10.6 Conic Sections in Polar Coordinates}
 \date{}
@@ -34,25 +36,37 @@ Let $F$ be a fixed point (the focus) and $l$ be a fixed line (the directrix) in 
 \[
 \frac{|PF|}{|Pl|} = e
 \]
-The conic is:
+\begin{tcolorbox}[
+    colback=white!,   % 배경색 (빨간색 5%)
+    colframe=orange!80!white, % 테두리색 (빨간색 75% + 검은색 25%)
+    title=Conics Defined by a Focus and a Directrix,   % 제목
+    boxrule=0.5mm,          % 테두리 두께
+    arc=3mm               % 모서리 둥글기
+    ]
+    The conic is:
 \begin{itemize}
     \item[(a)] an ellipse if $e < 1$
     \item[(b)] a parabola if $e = 1$
     \item[(c)] a hyperbola if $e > 1$
 \end{itemize}
+\end{tcolorbox}
 
-\subsection*{Proof Derivation}
+\begin{wrapfigure}{l}{0.3\textwidth} % 그림을 왼쪽에(왼쪽l, 오른쪽r, 안쪽 i, 바깥쪽 o), 전체 너비의 30% 크기로
+    \includegraphics[width=0.3\textwidth]{graph60.png}
+\end{wrapfigure}
 
-To derive a polar equation, we place the focus $F$ at the origin (the pole) and the directrix parallel to the y-axis and $d$ units to the right, so its equation is $x=d$. For any point $P$ with polar coordinates $(r, \theta)$:
+To derive a polar equation, we place the focus $F$ at the origin (the pole) and the directrix parallel to the y-axis and $d$ units to the right, so its equation is $x=d$. 
+\\For any point $P$ with polar coordinates $(r, \theta)$:
 
 The distance from the focus $F$ (origin) to $P$ is $|PF| = r$.
 
 The distance from $P$ to the directrix $l$ is $|Pl| = d - r \cos\theta$.
 
 The defining condition $|PF| = e|Pl|$ becomes:
-\begin{equation}
+\begin{equation*}
 r = e(d - r \cos\theta)
-\end{equation}
+\end{equation*}
+\\
 
 Squaring both sides of this polar equation and converting to rectangular coordinates, we get:
 \begin{align*}
@@ -90,16 +104,33 @@ This equation shows how the shape of the conic depends on the eccentricity $e$.
 \section*{Polar Equations of Conics}
 Depending on the location of the directrix relative to the focus at the origin, there are four standard forms for the polar equation of a conic.
 
-A polar equation of the form
-\[
-r = \frac{ed}{1 \pm e \cos\theta} \quad \text{or} \quad r = \frac{ed}{1 \pm e \sin\theta}
-\]
-represents a conic section with eccentricity $e$. The conic is an ellipse if $e < 1$, a parabola if $e = 1$, or a hyperbola if $e > 1$. The orientation of the conic is determined by the trigonometric function and the sign in the denominator:
+\begin{tcolorbox}[
+    colback=white!,   % 배경색 (빨간색 5%)
+    colframe=orange!80!white, % 테두리색 (빨간색 75% + 검은색 25%)
+    title=Conics Defined by polar coordinates,   % 제목
+    boxrule=0.5mm,          % 테두리 두께
+    arc=3mm               % 모서리 둥글기
+    ]
+    A polar equation of the form
+    \[
+    r = \frac{ed}{1 \pm e \cos\theta} \quad \text{or} \quad r = \frac{ed}{1 \pm e \sin\theta}
+    \]
+    represents a conic section with eccentricity $e$.\\ 
+    The conic is an ellipse if $e < 1$, a parabola if $e = 1$, or a hyperbola if $e > 1$.
+\end{tcolorbox}
+
+The orientation of the conic is determined by the trigonometric function and the sign in the denominator:
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{graph 61.png}
+\end{figure}
+
 \begin{itemize}
-    \item $1 + e \cos\theta$: Directrix $x = d$ (to the right of the focus)
-    \item $1 - e \cos\theta$: Directrix $x = -d$ (to the left of the focus)
-    \item $1 + e \sin\theta$: Directrix $y = d$ (above the focus)
-    \item $1 - e \sin\theta$: Directrix $y = -d$ (below the focus)
+    \item[(a)] $1 + e \cos\theta$: Directrix $x = d$ (to the right of the focus)
+    \item[(b)] $1 - e \cos\theta$: Directrix $x = -d$ (to the left of the focus)
+    \item[(c)] $1 + e \sin\theta$: Directrix $y = d$ (above the focus)
+    \item[(d)] $1 - e \sin\theta$: Directrix $y = -d$ (below the focus)
 \end{itemize}
 
 \subsection*{EXAMPLE 1}
@@ -119,19 +150,14 @@ First, we write the equation in the standard form by dividing the numerator and 
 \[
 r = \frac{10/3}{1 - \frac{2}{3} \cos\theta}
 \]
-Comparing this to the standard forms in Theorem 6, we can identify:
-\begin{itemize}
-    \item \textbf{Eccentricity:} $e = 2/3$
-    \item \textbf{Conic Identification:} Since $e < 1$, the conic is an ellipse.
-    \item \textbf{Directrix:} The equation is in the form with $1 - e \cos\theta$, which corresponds to a directrix $x = -d$. We have $ed = 10/3$, so $d = (10/3) / (2/3) = 5$. The directrix is the line $x = -5$.
-    \item \textbf{Sketching:}
-        \begin{itemize}
-            \item $\theta = 0, r = \frac{10}{3-2} = 10$
-            \item $\theta = \pi/2, r = \frac{10}{3} \approx 3.33$
-            \item $\theta = \pi, r = \frac{10}{3+2} = 2$
-            \item $\theta = 3\pi/2, r = \frac{10}{3} \approx 3.33$
-        \end{itemize}
-\end{itemize}
+Comparing this to the standard forms in Theorem 6, we can identify:\\
+Eccentricity $e = 2/3$
+Conic Identification: Since $e < 1$, the conic is an ellipse.
+Directrix: The equation is in the form with $1 - e \cos\theta$, which corresponds to a directrix $x = -d$. We have $ed = 10/3$, so $d = (10/3) / (2/3) = 5$. The directrix is the line $x = -5$.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{graph62.png}
+\end{figure}
 
 \subsection*{EXAMPLE 3}
 Sketch the conic $r = \frac{12}{2 + 4 \sin\theta}$.
@@ -141,17 +167,14 @@ First, write the equation in standard form by dividing by 2:
 \[
 r = \frac{6}{1 + 2 \sin\theta}
 \]
-\begin{itemize}
-    \item \textbf{Eccentricity:} $e = 2$
-    \item \textbf{Conic Identification:} Since $e > 1$, the conic is a hyperbola.
-    \item \textbf{Directrix:} The form is $1 + e \sin\theta$, so the directrix is $y = d$. We have $ed = 6$, so $d = 3$. The directrix is $y = 3$.
-    \item \textbf{Sketching:}
-        \begin{itemize}
-            \item $\theta = \pi/2, r = \frac{12}{2+4} = 2$
-            \item $\theta = 3\pi/2, r = \frac{12}{2-4} = -6$
-        \end{itemize}
-    Asymptotes occur when the denominator is zero: $1 + 2 \sin\theta = 0 \Rightarrow \sin\theta = -1/2$, which occurs at $\theta = 7\pi/6$ and $11\pi/6$.
-\end{itemize}
+Eccentricity:$e = 2$
+Conic Identification: Since $e > 1$, the conic is a hyperbola.
+Directrix:The form is $1 + e \sin\theta$, so the directrix is $y = d$. We have $ed = 6$, so $d = 3$. The directrix is $y = 3$.
+Asymptotes occur when the denominator is zero: $1 + 2 \sin\theta = 0 \Rightarrow \sin\theta = -1/2$, which occurs at $\theta = 7\pi/6$ and $11\pi/6$.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{graph63.png}
+\end{figure}
 
 \subsection*{EXAMPLE 4}
 If the ellipse of Example 2 is rotated through an angle $\pi/4$ about the origin, find a polar equation and graph the resulting ellipse.
@@ -162,44 +185,66 @@ To rotate a curve through an angle $\alpha$, we replace $\theta$ with $(\theta -
 r = \frac{10}{3 - 2 \cos(\theta - \pi/4)}
 \]
 The graph is the ellipse from Example 2, rotated counterclockwise by $\pi/4$ about its left focus (the origin).
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{graph64.png}
+\end{figure}
 
 \section*{Kepler's Laws and Planetary Motion}
 In 1609, Johannes Kepler formulated three laws of planetary motion based on astronomical data.
-\begin{enumerate}
-    \item A planet revolves around the sun in an elliptical orbit with the sun at one focus.
-    \item The line joining the sun to a planet sweeps out equal areas in equal times.
-    \item The square of the period of revolution of a planet is proportional to the cube of the length of the major axis of its orbit.
-\end{enumerate}
-For astronomical calculations, the polar equation of an ellipse can be expressed in terms of its semimajor axis $a$ and eccentricity $e$.
+\begin{tcolorbox}[
+    colback=white!,   % 배경색 (빨간색 5%)
+    colframe=orange!80!white, % 테두리색 (빨간색 75% + 검은색 25%)
+    title=Kepler's Laws,   % 제목
+    boxrule=0.5mm,          % 테두리 두께
+    arc=3mm               % 모서리 둥글기
+    ]
+    \begin{enumerate}
+        \item A planet revolves around the sun in an elliptical orbit with the sun at one focus.
+        \item The line joining the sun to a planet sweeps out equal areas in equal times.
+        \item The square of the period of revolution of a planet is proportional to the cube of the length of the major axis of its orbit.
+    \end{enumerate}
+\end{tcolorbox}
 
-\textbf{Polar Equation of an Elliptical Orbit:}
-\[
-r = \frac{a(1 - e^2)}{1 + e \cos\theta}
-\]
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.3\textwidth]{graph65.png}
+\end{figure}
+For astronomical calculations, the polar equation of an ellipse can be expressed in terms of its semimajor axis $a$ and eccentricity $e$.\\
+Polar Equation of an Elliptical Orbit :  \[
+    r = \frac{a(1 - e^2)}{1 + e \cos\theta}
+    \]
 This equation describes an ellipse with the sun at the focus (origin), semimajor axis $a$, and eccentricity $e$.
 The points in the orbit closest to and farthest from the sun are the perihelion and aphelion, respectively.
-\begin{itemize}
-    \item Perihelion distance ($\theta = 0$): $r = a(1 - e)$
-    \item Aphelion distance ($\theta = \pi$): $r = a(1 + e)$
-\end{itemize}
+
+\begin{tcolorbox}[
+    colback=white!,   % 배경색 (빨간색 5%)
+    colframe=orange!80!white, % 테두리색 (빨간색 75% + 검은색 25%)
+    title=,   % 제목
+    boxrule=0.5mm,      % 테두리 두께
+    arc=3mm          % 모서리 둥글기
+    ]
+    \begin{itemize}
+        \item[-] Perihelion distance ($\theta = 0$): $r = a(1 - e)$
+        \item[-] Aphelion distance ($\theta = \pi$): $r = a(1 + e)$
+    \end{itemize}
+\end{tcolorbox}
+
 
 \subsection*{EXAMPLE 5}
 (a) Find an approximate polar equation for the elliptical orbit of the Earth around the Sun (at one focus) given that the eccentricity is about $0.017$ and the length of the major axis is about $2.99 \times 10^8$ km.
 
 (b) Find the distance from the Earth to the Sun at perihelion and at aphelion.
 
-\textbf{SOLUTION:}
+\textbf{SOLUTION:}\\
 (a) The length of the major axis is $2a = 2.99 \times 10^8$ km, so the semimajor axis is $a = 1.495 \times 10^8$ km. The eccentricity is $e = 0.017$.
 
 Using the polar equation:
 \[
 r = \frac{a(1 - e^2)}{1 + e \cos\theta} = \frac{1.495 \times 10^8 (1 - 0.017^2)}{1 + 0.017 \cos\theta} \approx \frac{1.49 \times 10^8}{1 + 0.017 \cos\theta}
 \]
-(b)
-\begin{itemize}
-    \item Perihelion distance: $a(1 - e) \approx (1.495 \times 10^8)(1 - 0.017) \approx 1.47 \times 10^8$ km
-    \item Aphelion distance: $a(1 + e) \approx (1.495 \times 10^8)(1 + 0.017) \approx 1.52 \times 10^8$ km
-\end{itemize}
+(b) Perihelion distance: $a(1 - e) \approx (1.495 \times 10^8)(1 - 0.017) \approx 1.47 \times 10^8$ km \\
+ Aphelion distance: $a(1 + e) \approx (1.495 \times 10^8)(1 + 0.017) \approx 1.52 \times 10^8$ km
 
 \end{document}
 

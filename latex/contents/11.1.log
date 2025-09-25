@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  25 SEP 2025 15:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  25 SEP 2025 15:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/USER/Desktop/project/latex/contents/10.6.tex
-(c:/Users/USER/Desktop/project/latex/contents/10.6.tex
+**c:/Users/USER/Desktop/project/latex/contents/11.1.tex
+(c:/Users/USER/Desktop/project/latex/contents/11.1.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -393,23 +393,23 @@ Package: wrapfig 2003/01/31  v 3.6
 ) (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count326
-) (./10.6.aux)
-\openout1 = `10.6.aux'.
+) (./11.1.aux)
+\openout1 = `11.1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -467,83 +467,40 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 33.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 33.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<graph/graph60.png, id=4, 176.91093pt x 187.45032pt>
-File: graph/graph60.png Graphic file (type png)
-<use graph/graph60.png>
-Package pdftex.def Info: graph/graph60.png  used on input line 55.
-(pdftex.def)             Requested size: 135.89174pt x 143.98822pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--70
-
- []
-
-
 
 [1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./graph/graph60.png>]
-<graph/graph 61.png, id=18, 603.0028pt x 163.3603pt>
-File: graph/graph 61.png Graphic file (type png)
-<use graph/graph 61.png>
-Package pdftex.def Info: graph/graph 61.png  used on input line 126.
-(pdftex.def)             Requested size: 452.9679pt x 122.71434pt.
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
+[2{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
-[2 <./graph/graph 61.png>]
-<graph/graph62.png, id=24, 223.58531pt x 127.97812pt>
-File: graph/graph62.png Graphic file (type png)
-<use graph/graph62.png>
-Package pdftex.def Info: graph/graph62.png  used on input line 159.
-(pdftex.def)             Requested size: 226.48395pt x 129.63962pt.
-<graph/graph63.png, id=25, 206.27063pt x 134.00063pt>
-File: graph/graph63.png Graphic file (type png)
-<use graph/graph63.png>
-Package pdftex.def Info: graph/graph63.png  used on input line 176.
-(pdftex.def)             Requested size: 181.18439pt x 117.70619pt.
-
-
-[3 <./graph/graph62.png>]
-<graph/graph64.png, id=33, 157.33781pt x 109.91063pt>
-File: graph/graph64.png Graphic file (type png)
-<use graph/graph64.png>
-Package pdftex.def Info: graph/graph64.png  used on input line 190.
-(pdftex.def)             Requested size: 135.89174pt x 94.93384pt.
-<graph/graph65.png, id=34, 157.33781pt x 120.45pt>
-File: graph/graph65.png Graphic file (type png)
-<use graph/graph65.png>
-Package pdftex.def Info: graph/graph65.png  used on input line 211.
-(pdftex.def)             Requested size: 135.89174pt x 104.0371pt.
-
-
-[4 <./graph/graph63.png> <./graph/graph64.png>]
-
-[5 <./graph/graph65.png>] (./10.6.aux)
+[3] (./11.1.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17786 strings out of 467801
- 361261 string characters out of 5436089
- 741908 words of memory out of 5000000
- 46166 multiletter control sequences out of 15000+600000
- 634083 words of font info for 69 fonts, out of 8000000 for 9000
+ 17729 strings out of 467801
+ 359894 string characters out of 5436089
+ 747904 words of memory out of 5000000
+ 46107 multiletter control sequences out of 15000+600000
+ 634418 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,8n,101p,484b,595s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on 10.6.pdf (5 pages, 192773 bytes).
+ 98i,5n,101p,484b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on 11.1.pdf (3 pages, 153347 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage[a4paper,left=3cm, right=3cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+
+\graphicspath{{graph/}}
+\title{Section 11.1 Infinite Sequences}
+\date{}
+\author{}
+\setstretch{1.2} 
+
+% \section* 및 \subsection* 형식 지정 (번호 없음)
+\titleformat{name=\section, numberless}
+  {\normalfont\large\bfseries\color{blue}}
+  {}
+  {0pt}
+  {}
+\titleformat{name=\subsection, numberless}
+  {\normalfont\bfseries}
+  {}
+  {0pt}
+  {}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+\maketitle
+
+\section*{Infinite Sequences}
+A sequence is a list of numbers written in a definite order:
+\[ a_1, a_2, a_3, a_4, \dots, a_n, \dots \]
+The number \(a_1\) is the first term, \(a_2\) is the second term, and in general, \(a_n\) is the nth term. A sequence can be defined as a function \(f\) whose domain is the set of positive integers, where we write \(a_n\) instead of \(f(n)\).
+
+\noindent
+\textbf{Notation:} The sequence $\{a_1, a_2, a_3, \dots\}$ is denoted by $\{a_n\}$ or $\{a_n\}_{n=1}^{\infty}$.
+
+\subsection*{EXAMPLE 1: Defining Sequences with a Formula}
+\begin{itemize}
+    \item[(a)] \( a_n = \frac{1}{2^n} \rightarrow \{\frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16}, \frac{1}{32}, \dots, \frac{1}{2^n}, \dots\} \)
+    \item[(b)] \( \left\{ \frac{n+1}{n} \right\}_{n=2}^{\infty} \rightarrow \{\frac{3}{2}, \frac{4}{3}, \frac{5}{4}, \frac{6}{5}, \dots\} \)
+    \item[(c)] \( \{3, 4, 5, 6, \dots\} = \{n+2\}_{n=1}^{\infty} = \{n\}_{n=3}^{\infty} \)
+    \item[(d)] \( \left\{ \frac{(-1)^n \cdot 3^n}{n+1} \right\}_{n=0}^{\infty} \rightarrow \{1, -\frac{3}{2}, 3, -\frac{27}{4}, \frac{81}{5}, \dots\} \) \\
+    \textbf{Note:} The \((-1)^n\) factor creates terms that alternate in sign.
+\end{itemize}
+
+\subsection*{EXAMPLE 2: Finding a Formula for a Sequence}
+\textbf{Given sequence:} \( \{\frac{5}{3}, -\frac{25}{4}, \frac{125}{5}, -\frac{625}{6}, \frac{3125}{7}, \dots\} \) \\
+\textbf{General term:} \( a_n = (-1)^{n-1} \cdot \frac{5^n}{n+2} \)
+
+\subsection*{EXAMPLE 3: Sequences without a Simple Defining Equation}
+\begin{itemize}
+    \item[(a)] \(\{p_n\}\), where \(p_n\) is the world population on January 1 of year \(n\).
+    \item[(b)] \(\{a_n\}\), where \(a_n\) is the nth decimal digit of \(e\): \(\{7,1,8,2,8,1,8,2,8,4,5,\dots\}\)
+    \item[(c)] Fibonacci sequence \(\{f_n\}\) defined by: \(f_1 = 1, f_2 = 1, f_n = f_{n-1} + f_{n-2}\) for \(n \geq 3\). \\
+    First terms: \(\{1, 1, 2, 3, 5, 8, 13, 21, \dots\}\)
+\end{itemize}
+
+\section*{The Limit of a Sequence}
+\textbf{Intuitive Definition:} \( \lim_{n\to\infty} a_n = L \) if \(a_n\) gets arbitrarily close to \(L\) as \(n\) increases. If this limit exists, the sequence converges; otherwise, it diverges.
+
+\begin{tcolorbox}[colback=white, colframe=orange!80!white, title=Precise Definition of a Limit, boxrule=0.5mm, arc=3mm]
+For every \( \varepsilon > 0 \), there exists \(N\) such that \( n > N \Rightarrow |a_n - L| < \varepsilon \).
+\end{tcolorbox}
+
+\section*{Properties of Convergent Sequences}
+\begin{tcolorbox}[colback=white, colframe=orange!80!white, title=Theorem, boxrule=0.5mm, arc=3mm]
+If \( \lim_{x\to\infty} f(x) = L \) and \(f(n) = a_n\) for integers \(n\), then \( \lim_{n\to\infty} a_n = L \).
+\begin{itemize}
+    \item \textbf{Corollary:} If \(r > 0\), then \( \lim_{n\to\infty} \frac{1}{n^r} = 0 \).
+\end{itemize}
+\end{tcolorbox}
+
+\section*{Limit Laws for Sequences}
+If \(\{a_n\}\) and \(\{b_n\}\) converge:
+\begin{itemize}
+    \item \( \lim_{n\to\infty} (a_n \pm b_n) = \lim_{n\to\infty} a_n \pm \lim_{n\to\infty} b_n \)
+    \item \( \lim_{n\to\infty} (c \cdot a_n) = c \cdot \lim_{n\to\infty} a_n \)
+    \item \( \lim_{n\to\infty} (a_n \cdot b_n) = (\lim_{n\to\infty} a_n) \cdot (\lim_{n\to\infty} b_n) \)
+    \item \( \lim_{n\to\infty} \frac{b_n}{a_n} = \frac{\lim_{n\to\infty} b_n}{\lim_{n\to\infty} a_n} \), provided denominator \( \neq 0 \)
+    \item \textbf{Power Law:} \( \lim_{n\to\infty} (a_n)^p = \left[\lim_{n\to\infty} a_n\right]^p \), if \(p > 0\) and \(a_n > 0\).
+\end{itemize}
+
+\section*{Squeeze Theorem for Sequences}
+\begin{tcolorbox}[colback=white, colframe=orange!80!white, title=Theorems, boxrule=0.5mm, arc=3mm]
+If \(a_n \leq b_n \leq c_n\) for \(n \geq n_0\), and \( \lim_{n\to\infty} a_n = \lim_{n\to\infty} c_n = L \), then \( \lim_{n\to\infty} b_n = L \).
+\begin{center} --- \end{center}
+If \( \lim_{n\to\infty} |a_n| = 0 \), then \( \lim_{n\to\infty} a_n = 0 \).
+\end{tcolorbox}
+
+\subsection*{EXAMPLES 4-11: Finding Limits}
+\begin{itemize}
+    \item \textbf{Ex 4:} \( \lim_{n\to\infty} \frac{n+1}{n} = 1 \)
+    \item \textbf{Ex 6:} \( \lim_{n\to\infty} \frac{n}{\ln(n)} = \infty \) using \(f(x) = \frac{x}{\ln(x)}\)
+    \item \textbf{Ex 7:} \(a_n = (-1)^n\) diverges (oscillates between 1 and -1)
+    \item \textbf{Ex 8:} For \(a_n = \frac{(-1)^n}{n}\), since \(|a_n| = \frac{1}{n} \to 0\), we have \(a_n \to 0\).
+    \item \textbf{Ex 11:} \(\{r^n\}\) converges if \(-1 < r \leq 1\). The limit is 0 if \(-1 < r < 1\), and 1 if \(r = 1\).
+\end{itemize}
+
+\section*{Monotonic and Bounded Sequences}
+\textbf{Definition:}
+\begin{itemize}
+    \item \textbf{Increasing:} \( a_n < a_{n+1} \)
+    \item \textbf{Decreasing:} \( a_n > a_{n+1} \)
+    \item \textbf{Monotonic:} either increasing or decreasing
+    \item \textbf{Bounded Above:} \( \exists M \) such that \( a_n \leq M \)
+    \item \textbf{Bounded Below:} \( \exists m \) such that \( m \leq a_n \)
+    \item \textbf{Bounded:} both above and below
+\end{itemize}
+
+\begin{tcolorbox}[colback=white, colframe=orange!80!white, title=Monotonic Sequence Theorem, boxrule=0.5mm, arc=3mm]
+Every bounded, monotonic sequence converges.
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 14: Using the Monotonic Sequence Theorem}
+\textbf{Given:} \( a_1 = 2, a_{n+1} = \frac{1}{2}(a_n + 6) \)
+\begin{itemize}
+    \item \textbf{Show increasing:} by induction, show \( a_{n+1} > a_n \).
+    \item \textbf{Show bounded:} by induction, show \( a_n < 6 \).
+\end{itemize}
+\textbf{Conclusion:} The sequence is increasing and bounded, therefore it converges. \\
+\textbf{Limit:} Let \(\lim_{n\to\infty} a_n = L\). Then \( L = \frac{1}{2}(L + 6) \Rightarrow 2L = L+6 \Rightarrow L = 6 \).
+
+\end{document}
