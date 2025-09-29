@@ -1,11 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1758853282.14953 "c:/Users/USER/Desktop/project/latex/contents/11.1.tex" "11.1.pdf" "11.1" 1758853283.31197 0
-  "11.1.aux" 1758853283 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
-  "11.1.tex" 1758853281 11727 0fd298bed57e779facc5b6c298094174 ""
-  "c:/Users/USER/Desktop/project/latex/contents/11.1.tex" 1758853281 11727 0fd298bed57e779facc5b6c298094174 ""
-  "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1755071004 2900 1537cc8184ad1792082cd229ecc269f4 ""
+["pdflatex"] 1759108896.51705 "c:/Users/USER/Desktop/project/latex/contents/11.1.tex" "11.1.pdf" "11.1" 1759108898.04976 0
+  "11.1.aux" 1759108897 32 77e0dffd05b653a64f0caf3eb9bb454a "pdflatex"
+  "11.1.tex" 1759108895 14859 13fbd8660f90840bb8093a849cef98cd ""
+  "c:/Users/USER/Desktop/project/latex/contents/11.1.tex" 1759108895 14859 13fbd8660f90840bb8093a849cef98cd ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1755075921 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1755073690 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1755065650 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1755065650 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1755065652 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -39,7 +37,6 @@
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1755065656 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1755065656 32716 08e384dc442464e7285e891af9f45947 ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1755065656 37944 359e864bd06cde3b1cf57bb20757fb06 ""
-  "c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1755071008 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1755084571 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty" 1755077994 7984 7dbb9280f03c0a315425f1b4f35d43ee ""
   "c:/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty" 1755077994 1057 525c2192b5febbd8c1f662c9468335bb ""
@@ -144,6 +141,11 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1755097355 5574045 c1864b6d576eca8ff04839113c3d8c41 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1755098199 3605799 b16085c568bbf43ec0a1a32c164f2cc1 ""
   "c:/texlive/2025/texmf.cnf" 1755097321 713 e69b156964470283e0530f5060668171 ""
+  "graph/graph67.png" 1759103571 5046 967e863979c653ef733538418921cc52 ""
+  "graph/graph68.png" 1759103595 6977 81d3079df748b7c4489d2cc09960d051 ""
+  "graph/graph69.png" 1759103958 8092 bab7cbf06a6349a78f2e29c642a2f070 ""
+  "graph/graph70.png" 1759104047 7076 61fe239ea460e416334147a50e79273c ""
+  "graph/graph71.png" 1759105216 5309 63512fee800e10a254c5b4a874fc5c0e ""
   (generated)
   "11.1.aux"
   "11.1.log"
