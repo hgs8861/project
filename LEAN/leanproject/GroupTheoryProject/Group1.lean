@@ -101,7 +101,7 @@ example {G H : Type*} [Group G] [Group H] (f : G →* H) (g : G) : --kernel
 example {G H : Type*} [Group G] [Group H] (f : G →* H) (h : H) : --f의 치역
     h ∈ MonoidHom.range f ↔ ∃ g : G, f g = h := --f(g)=h인 g가 존재하는 h
   f.mem_range
-
+--------------------excercise
 section exercises
 variable {G H : Type*} [Group G] [Group H]
 
