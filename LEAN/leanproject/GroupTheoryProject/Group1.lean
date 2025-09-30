@@ -65,24 +65,26 @@ example : AddSubgroup ℚ where
     ((H ⊔ H' : Subgroup G) : Set G) = Subgroup.closure ((H : Set G) ∪ (H' : Set G)) := by --subgroup.closure부분집합의 상합은 일반적으로 부분군이 아님 : 따라서 합집합에 의해 생성되는 부분군 설정
   rw [Subgroup.sup_eq_closure]
 
+--G자체가 subgroup G의 타입을 갖지 않음 : Subgroup G 의 타입을 갖기 위해서는 G의 모든 원소가 Subgroup G 속해야 가능능 : 격자 구조 제공 : ⊤ 모든원소소
   example {G : Type*} [Group G] (x : G) : x ∈ (⊤ : Subgroup G) :=
   trivial
-
+--G에서 격자구조의 최하위 부분군에 속한다 : 그 원소가 항등원 뿐이다. :⊥최하위 원소
   example {G : Type*} [Group G] (x : G) : x ∈ (⊥ : Subgroup G) ↔ x = 1 :=
   Subgroup.mem_bot
 
-  def conjugate {G : Type*} [Group G] (x : G) (H : Subgroup G) : Subgroup G where
-  carrier := {a : G | ∃ h, h ∈ H ∧ a = x * h * x⁻¹}
-  one_mem' := by
+  def conjugate {G : Type*} [Group G] (x : G) (H : Subgroup G) : Subgroup G where --켤례부분군
+  carrier := {a : G | ∃ h, h ∈ H ∧ a = x * h * x⁻¹} -- ∧  (~이고) : xHx⁻¹ 정의
+  one_mem' := by --항등원
+    dsimp --simp와 다르게 정의만 이용하는 수행
+    sorry
+  inv_mem' := by --역원
     dsimp
     sorry
-  inv_mem' := by
+  mul_mem' := by --곱셈 닫혀 있다.
     dsimp
     sorry
-  mul_mem' := by
-    dsimp
-    sorry
-
+--map : (push forward/ 순상) ={f(h)|h∈ H }
+--comap (pull back/durtkd)={g:G|f(g)∈ L}
 example {G H : Type*} [Group G] [Group H] (G' : Subgroup G) (f : G →* H) : Subgroup H :=
   Subgroup.map f G'
 
@@ -92,12 +94,12 @@ example {G H : Type*} [Group G] [Group H] (H' : Subgroup H) (f : G →* H) : Sub
 #check Subgroup.mem_map
 #check Subgroup.mem_comap
 
-example {G H : Type*} [Group G] [Group H] (f : G →* H) (g : G) :
-    g ∈ MonoidHom.ker f ↔ f g = 1 :=
+example {G H : Type*} [Group G] [Group H] (f : G →* H) (g : G) : --kernel
+    g ∈ MonoidHom.ker f ↔ f g = 1 := --f(g)=1 인 g의 집합
   f.mem_ker
 
-example {G H : Type*} [Group G] [Group H] (f : G →* H) (h : H) :
-    h ∈ MonoidHom.range f ↔ ∃ g : G, f g = h :=
+example {G H : Type*} [Group G] [Group H] (f : G →* H) (h : H) : --f의 치역
+    h ∈ MonoidHom.range f ↔ ∃ g : G, f g = h := --f(g)=h인 g가 존재하는 h
   f.mem_range
 
 section exercises
