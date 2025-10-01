@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Group.Defs
 import Mathlib.Tactic.Group
 import Mathlib.Tactic
+import Mathlib.GroupTheory.Sylow
 --------------------------------------------------------------------------------------------
 --group9.1.3 subgroup
 --------------------------------------------------------------------------------------------
@@ -101,34 +102,52 @@ example {G H : Type*} [Group G] [Group H] (f : G →* H) (g : G) : --kernel
 example {G H : Type*} [Group G] [Group H] (f : G →* H) (h : H) : --f의 치역
     h ∈ MonoidHom.range f ↔ ∃ g : G, f g = h := --f(g)=h인 g가 존재하는 h
   f.mem_range
---------------------excercise
+-----------------------------------------------------------------excercise
 section exercises
 variable {G H : Type*} [Group G] [Group H]
 
 open Subgroup
+--intro : 가정을 언급
+--rintro : 가정을 분해해서 언급
+--h : P ∧ Q 일때:  intro h: 가정 h 박스채로 사용 / rintro <hP, hQ> : 가정에서 P와 Q 분해 해서 고려하기 가능
 
 example (φ : G →* H) (S T : Subgroup H) (hST : S ≤ T) : comap φ S ≤ comap φ T := by
-  sorry
+  rintro g hg --간단한 가정일때 <> 안씀 : g가 존재해서 g=φ(x)인 g 존재 : 가정 만족하는 g 존재
+  exact hST hg --hST에 의해 hg가 T의 원소
 
 example (φ : G →* H) (S T : Subgroup G) (hST : S ≤ T) : map φ S ≤ map φ T := by
-  sorry
+  rintro y ⟨x, hxS, rfl⟩ -- y가 존재해서 x는 S에 속하고 φ(x)=y를 만족함함
+  let hxT := hST hxS -- x는 S에 속하고 hST에 의해 x는 T에 속한다.
+  use x
+  exact ⟨hxT, rfl⟩ --x ∈ T 이므로, y는 map φ T의 원소
 
 variable {K : Type*} [Group K]
 
 -- Remember you can use the `ext` tactic to prove an equality of subgroups.
-example (φ : G →* H) (ψ : H →* K) (U : Subgroup K) :
-    comap (ψ.comp φ) U = comap φ (comap ψ U) := by
-  sorry
+example (φ : G →* H) (ψ : H →* K) (U : Subgroup K) : comap (ψ.comp φ) U = comap φ (comap ψ U) := by
+  -- 두 부분군이 같음을 보이려면, 두 부분군에 속한 원소가 같음을 보이면 된다.
+  -- `ext` tactic은 이 목표를 `∀ x, x ∈ 좌변 ↔ x ∈ 우변` 으로 바꿔준다.
+  ext x
+  -- simp tactic은 comap과 comp의 정의를 자동으로 펼쳐서 증명한다.
+  -- 좌변: x ∈ comap (ψ.comp φ) U  ↔ (ψ ∘ φ) x ∈ U ↔ ψ (φ x) ∈ U
+  -- 우변: x ∈ comap φ (comap ψ U) ↔ φ x ∈ (comap ψ U) ↔ ψ (φ x) ∈ U
+  -- 양변이 정의상 동일하므로 simp가 증명을 완료한다.
+  simp [Subgroup.comap]
 
 -- Pushing a subgroup along one homomorphism and then another is equal to
 -- pushing it forward along the composite of the homomorphisms.
-example (φ : G →* H) (ψ : H →* K) (S : Subgroup G) :
-    map (ψ.comp φ) S = map ψ (S.map φ) := by
-  sorry
+example (φ : G →* H) (ψ : H →* K) (S : Subgroup G) : map (ψ.comp φ) S = map ψ (S.map φ) := by
+  -- 3번 예제와 마찬가지로 `ext` tactic으로 시작한다.
+  ext y
+  -- simp tactic이 map과 comp의 정의를 펼쳐서 증명한다.
+  -- 좌변: y ∈ map (ψ.comp φ) S ↔ ∃ x ∈ S, (ψ ∘ φ) x = y ↔ ∃ x ∈ S, ψ (φ x) = y
+  -- 우변: y ∈ map ψ (S.map φ)   ↔ ∃ z ∈ S.map φ, ψ z = y
+  -- z ∈ S.map φ는 다시 ∃ x ∈ S, φ x = z 를 의미하므로,
+  -- 정리하면 ∃ x ∈ S, ψ (φ x) = y 가 되어 좌변과 동일하다.
+  simp [Subgroup.map, MonoidHom.comp_apply]
 
 end exercises
 open scoped Classical
-
 
 example {G : Type*} [Group G] (G' : Subgroup G) : Nat.card G' ∣ Nat.card G :=
   ⟨G'.index, mul_comm G'.index _ ▸ G'.index_mul_card.symm⟩
@@ -137,7 +156,7 @@ open Subgroup
 
 example {G : Type*} [Group G] [Finite G] (p : ℕ) {n : ℕ} [Fact p.Prime]
     (hdvd : p ^ n ∣ Nat.card G) : ∃ K : Subgroup G, Nat.card K = p ^ n :=
-  Sylow.exists_subgroup_card_pow_prime p hdvd
+  Sylow.exists_subgroup_card_pow_prime p hdvd --import Mathlib.GroupTheory.Sylow 필요
 
 lemma eq_bot_iff_card {G : Type*} [Group G] {H : Subgroup G} :
     H = ⊥ ↔ Nat.card H = 1 := by
