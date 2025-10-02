@@ -147,6 +147,7 @@ example (φ : G →* H) (ψ : H →* K) (S : Subgroup G) : map (ψ.comp φ) S = 
   simp [Subgroup.map, MonoidHom.comp_apply]
 
 end exercises
+
 open scoped Classical
 
 example {G : Type*} [Group G] (G' : Subgroup G) : Nat.card G' ∣ Nat.card G :=
