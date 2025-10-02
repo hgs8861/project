@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  29 SEP 2025 12:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  2 OCT 2025 10:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -475,32 +475,58 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+<graph/graph72.png, id=4, 212.29312pt x 156.585pt>
+File: graph/graph72.png Graphic file (type png)
+<use graph/graph72.png>
+Package pdftex.def Info: graph/graph72.png  used on input line 32.
+(pdftex.def)             Requested size: 158.54152pt x 116.94386pt.
+
 
 [1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./graph/graph72.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
+
+ []
+
+
 
 [2]
 
-[3] (./11.3.aux)
+[3]
+<graph/graph74.png, id=29, 174.6525pt x 117.43875pt>
+File: graph/graph74.png Graphic file (type png)
+<use graph/graph74.png>
+Package pdftex.def Info: graph/graph74.png  used on input line 173.
+(pdftex.def)             Requested size: 158.54152pt x 106.61136pt.
+<graph/graph75.png, id=30, 176.91093pt x 105.39375pt>
+File: graph/graph75.png Graphic file (type png)
+<use graph/graph75.png>
+Package pdftex.def Info: graph/graph75.png  used on input line 177.
+(pdftex.def)             Requested size: 158.54152pt x 94.45143pt.
+
+
+[4]
+
+[5 <./graph/graph74.png> <./graph/graph75.png>] (./11.3.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17721 strings out of 467801
- 359773 string characters out of 5436089
- 745912 words of memory out of 5000000
- 46101 multiletter control sequences out of 15000+600000
+ 17757 strings out of 467801
+ 360558 string characters out of 5436089
+ 745960 words of memory out of 5000000
+ 46137 multiletter control sequences out of 15000+600000
  634083 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,9n,101p,484b,595s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on 11.3.pdf (3 pages, 124311 bytes).
+ 98i,9n,101p,546b,595s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on 11.3.pdf (5 pages, 154914 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 85 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

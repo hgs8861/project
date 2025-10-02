@@ -219,6 +219,10 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 OUTPUT 11.2.pdf
 INPUT c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT ./graph/graph73.png
+INPUT ./graph/graph73.png
+INPUT ./graph/graph73.png
+INPUT ./graph/graph73.png
 INPUT ./graph/graph72.png
 INPUT ./graph/graph72.png
 INPUT ./graph/graph72.png
