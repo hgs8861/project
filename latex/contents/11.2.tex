@@ -67,6 +67,10 @@ The nth partial sum is:
 Thus, the sum of the series is:
 \[ \lim_{n\to\infty} s_n = \lim_{n\to\infty} \left(1 - \dfrac{1}{n+1}\right) = 1 \]
 The series converges to 1.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.35\textwidth]{graph73.png}
+\end{figure}
 
 \section*{Geometric Series}
 A \textbf{geometric series} is a series of the form:
@@ -93,7 +97,7 @@ The first term is \(a = 5\) and the common ratio is \(r = -\dfrac{2}{3}\). Since
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.35\textwidth]{graph72.png}
-  \end{figure}
+\end{figure}
 
 \subsection*{EXAMPLE 4}
 Is the series \( \sum_{n=1}^{\infty} 2^{2n} 3^{1-n} \) convergent or divergent?\\
@@ -168,6 +172,15 @@ Find the sum of the series \( \sum_{n=1}^{\infty} \left( \dfrac{3}{n(n+1)} + \df
 The series \( \sum 1/2^n \) is a geometric series with \(a=1/2\) and \(r=1/2\), so its sum is \( S = \dfrac{1/2}{1-1/2} = 1 \).
 From Example 2, we know \( \sum \dfrac{1}{n(n+1)} = 1 \).
 Therefore, the given series converges and its sum is:
-\[ \sum_{n=1}^{\infty} \left( \dfrac{3}{n(n+1)} + \dfrac{1}{2^n} \right) = 3 \sum_{n=1}^{\infty} \dfrac{1}{n(n+1)} + \sum_{n=1}^{\infty} \dfrac{1}{2^n} = 3(1) + 1 = 4 \]
+\[ \sum_{n=1}^{\infty} \left( \dfrac{3}{n(n+1)} + \dfrac{1}{2^n} \right) = 3 \sum_{n=1}^{\infty} \dfrac{1}{n(n+1)} + \sum_{n=1}^{\infty} \dfrac{1}{2^n} = 3(1) + 1 = 4 \]\\\\
 
+\textbf{Note:}
+A finite number of terms does not affect the convergence or divergence of a series. For instance, suppose that we were able to show that the series
+$\sum_{n=4}^{\infty} \dfrac{n}{n^3 + 1} $
+is convergent. \\
+Since $\sum_{n=1}^{\infty} \dfrac{n}{n^3 + 1} = \dfrac{1}{2} + \dfrac{2}{9} + \dfrac{3}{28} + \sum_{n=4}^{\infty} \dfrac{n}{n^3 + 1}$
+it follows that the entire series \( \sum_{n=1}^{\infty} \dfrac{n}{n^3 + 1} \) is convergent.\\
+Similarly, if it is known that the series \( \sum_{n=N+1}^{\infty} a_n \) converges, then the full series
+$\sum_{n=1}^{\infty} a_n = \sum_{n=1}^{N} a_n + \sum_{n=N+1}^{\infty} a_n $
+is also convergent.
 \end{document}
