@@ -9,6 +9,7 @@
 \usepackage{amssymb}
 \usepackage{tcolorbox}
 \usepackage{wrapfig}
+\usepackage{amsthm} % For proofs
 
 \graphicspath{{graph/}}
 \title{11.4 The Comparison Tests}
@@ -23,6 +24,18 @@
   {0pt}
   {}
 \geometry{a4paper, margin=1in}
+
+% 증명 환경 스타일
+\newtheoremstyle{mystyle}% name
+  {}% Space above
+  {}% Space below
+  {\itshape}% Body font
+  {}% Indent amount
+  {\bfseries}% Theorem head font
+  {.}% Punctuation after theorem head
+  {.5em}% Space after theorem head
+  {}% Theorem head spec (can be left empty, meaning `normal')
+\theoremstyle{mystyle}
 
 \begin{document}
 \maketitle

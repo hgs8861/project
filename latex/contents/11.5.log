@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  10 OCT 2025 20:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  10 OCT 2025 20:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/hyeon/OneDrive/바탕 화면/project/latex/contents/11.3.tex"
-(c:/Users/hyeon/OneDrive/바탕 화면/project/latex/contents/11.3.tex
+**"c:/Users/hyeon/OneDrive/바탕 화면/project/latex/contents/11.5.tex"
+(c:/Users/hyeon/OneDrive/바탕 화면/project/latex/contents/11.5.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -404,8 +404,8 @@ Package: amsthm 2020/05/29 v2.20.6
 ) (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count326
-) (./11.3.aux)
-\openout1 = `11.3.aux'.
+) (./11.5.aux)
+\openout1 = `11.5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
 LaTeX Font Info:    ... okay on input line 40.
@@ -490,46 +490,32 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 94--96
-
- []
-
-
 
 [2]
-<graph/graph74.png, id=22, 174.6525pt x 117.43875pt>
-File: graph/graph74.png Graphic file (type png)
-<use graph/graph74.png>
-Package pdftex.def Info: graph/graph74.png  used on input line 159.
-(pdftex.def)             Requested size: 158.54152pt x 106.61136pt.
-<graph/graph75.png, id=24, 176.91093pt x 105.39375pt>
-File: graph/graph75.png Graphic file (type png)
-<use graph/graph75.png>
-Package pdftex.def Info: graph/graph75.png  used on input line 160.
-(pdftex.def)             Requested size: 158.54152pt x 94.45143pt.
-
 
 [3]
 
-[4 <./graph/graph74.png> <./graph/graph75.png>] (./11.3.aux)
+[4]
+
+[5] (./11.5.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17828 strings out of 467801
- 361505 string characters out of 5436089
- 747350 words of memory out of 5000000
- 46204 multiletter control sequences out of 15000+600000
- 634083 words of font info for 69 fonts, out of 8000000 for 9000
+ 17805 strings out of 467801
+ 361000 string characters out of 5436089
+ 748303 words of memory out of 5000000
+ 46180 multiletter control sequences out of 15000+600000
+ 634429 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,9n,101p,502b,595s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on 11.3.pdf (4 pages, 151111 bytes).
+ 98i,8n,101p,502b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on 11.5.pdf (5 pages, 148908 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

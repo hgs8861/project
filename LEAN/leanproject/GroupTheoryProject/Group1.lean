@@ -102,7 +102,8 @@ example {G H : Type*} [Group G] [Group H] (f : G →* H) (g : G) : --kernel
 example {G H : Type*} [Group G] [Group H] (f : G →* H) (h : H) : --f의 치역
     h ∈ MonoidHom.range f ↔ ∃ g : G, f g = h := --f(g)=h인 g가 존재하는 h
   f.mem_range
------------------------------------------------------------------excercise
+
+--excercise
 section exercises
 variable {G H : Type*} [Group G] [Group H]
 
@@ -139,7 +140,6 @@ example (φ : G →* H) (ψ : H →* K) (U : Subgroup K) : comap (ψ.comp φ) U 
 example (φ : G →* H) (ψ : H →* K) (S : Subgroup G) : map (ψ.comp φ) S = map ψ (S.map φ) := by
   -- 3번 예제와 마찬가지로 `ext` tactic으로 시작한다.
   ext y
-  -- simp tactic이 map과 comp의 정의를 펼쳐서 증명한다.
   -- 좌변: y ∈ map (ψ.comp φ) S ↔ ∃ x ∈ S, (ψ ∘ φ) x = y ↔ ∃ x ∈ S, ψ (φ x) = y
   -- 우변: y ∈ map ψ (S.map φ)   ↔ ∃ z ∈ S.map φ, ψ z = y
   -- z ∈ S.map φ는 다시 ∃ x ∈ S, φ x = z 를 의미하므로,
@@ -149,12 +149,10 @@ example (φ : G →* H) (ψ : H →* K) (S : Subgroup G) : map (ψ.comp φ) S = 
 end exercises
 
 open scoped Classical
-
 example {G : Type*} [Group G] (G' : Subgroup G) : Nat.card G' ∣ Nat.card G :=
   ⟨G'.index, mul_comm G'.index _ ▸ G'.index_mul_card.symm⟩
 
 open Subgroup
-
 example {G : Type*} [Group G] [Finite G] (p : ℕ) {n : ℕ} [Fact p.Prime]
     (hdvd : p ^ n ∣ Nat.card G) : ∃ K : Subgroup G, Nat.card K = p ^ n :=
   Sylow.exists_subgroup_card_pow_prime p hdvd --import Mathlib.GroupTheory.Sylow 필요
@@ -170,3 +168,29 @@ lemma eq_bot_iff_card {G : Type*} [Group G] {H : Subgroup G} :
 lemma inf_bot_of_coprime {G : Type*} [Group G] (H K : Subgroup G)
     (h : (Nat.card H).Coprime (Nat.card K)) : H ⊓ K = ⊥ := by
   sorry
+------------------------------------------------------------------------------------------------
+---group 9.1.4 Concrete groups
+------------------------------------------------------------------------------------------------
+
+open Equiv
+example {X : Type*} [Finite X] : Subgroup.closure {σ : Perm X | Perm.IsCycle σ} = ⊤ :=
+  Perm.closure_isCycle
+#simp (mul_assoc) c [1, 2, 3] * c [2, 3, 4]  -- Removed invalid syntax
+section FreeGroup
+inductive S | a | b | c
+open S
+def myElement : FreeGroup S := (.of a) * (.of b)⁻¹
+def myMorphism : FreeGroup S →* Perm (Fin 5) :=
+FreeGroup.lift fun | .a => c[1, 2, 3]
+                   | .b => c[2, 3, 1]
+                   | .c => c[2, 3]
+def myGroup := PresentedGroup {.of () ^ 3} deriving Group
+def myMap : Unit → Perm (Fin 5)
+| () => c[1, 2, 3]
+lemma compat_myMap :
+    ∀ r ∈ ({.of () ^ 3} : Set (FreeGroup Unit)), FreeGroup.lift myMap r = 1 := by
+  rintro _ rfl
+  simp
+  decide
+def myNewMorphism : myGroup →* Perm (Fin 5) := PresentedGroup.toGroup compat_myMap
+end FreeGroup

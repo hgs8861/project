@@ -9,6 +9,7 @@
 \usepackage{amssymb}
 \usepackage{tcolorbox}
 \usepackage{wrapfig}
+\usepackage{amsthm} % For proofs
 
 \graphicspath{{graph/}}
 \title{11.3 The Integral Test and Estimates of Sums}
@@ -24,13 +25,20 @@
   {}
 \geometry{a4paper, margin=1in}
 
+% 증명 환경 스타일
+\newtheoremstyle{mystyle}% name
+  {}% Space above
+  {}% Space below
+  {\itshape}% Body font
+  {}% Indent amount
+  {\bfseries}% Theorem head font
+  {.}% Punctuation after theorem head
+  {.5em}% Space after theorem head
+  {}% Theorem head spec (can be left empty, meaning `normal')
+\theoremstyle{mystyle}
+
 \begin{document}
 \maketitle
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.35\textwidth]{graph72.png}
-\end{figure} 
 
 In general, it is difficult to find the exact sum of a series. In this section, we develop a test that enables us to determine whether a series is convergent or divergent without explicitly finding its sum.
 
@@ -145,14 +153,17 @@ If we approximate \( s \) by the midpoint of this interval, then the error is at
 If we compare Example 6 with Example 5, we see that the improved estimate in (3) can be much better than the estimate \( s \approx s_n \). To make the error smaller than 0.0005 we had to use 32 terms in Example 5 but only 10 terms in Example 6.
 
 \section*{Proof of the Integral Test}
-We have already seen the basic idea behind the proof of the Integral Test in Figures 1 and 2 for the series \( \sum 1/n^2 \) and \( \sum 1/\sqrt{n} \). For the general series \( \sum a_n \), look at Figures 5 and 6. The area of the first shaded rectangle in Figure 5 is the value of \( f \) at the right endpoint of \( [1, 2] \), that is, \( f(2) = a_2 \). So, comparing the areas of the shaded rectangles with the area under \( y = f(x) \) from 1 to \( n \), we see that
-\begin{equation}
-    a_2 + a_3 + \cdots + a_n \le \int_1^n f(x) \,dx \label{eq:4}
-\end{equation}
-(Notice that this inequality depends on the fact that \( f \) is decreasing.) Likewise, Figure 6 shows that
-\begin{equation}
-    \int_1^n f(x) \,dx \le a_1 + a_2 + \cdots + a_{n-1} \label{eq:5}
-\end{equation}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.35\textwidth]{graph74.png}
+    \includegraphics[width=0.35\textwidth]{graph75.png}
+\end{figure}
+The area of the first shaded rectangle is the value of \( f \) at the right endpoint of \( [1, 2] \), that is, \( f(2) = a_2 \). So, comparing the areas of the shaded rectangles with the area under \( y = f(x) \) from 1 to \( n \), we see that
+$a_2 + a_3 + \cdots + a_n \le \int_1^n f(x) \,dx \label{eq:4}$
+(Notice that this inequality depends on the fact that \( f \) is decreasing.) \\
+Likewise, right picture shows that
+$\int_1^n f(x) \,dx \le a_1 + a_2 + \cdots + a_{n-1} \label{eq:5}$
 
 \begin{itemize}
     \item[(i)] If \( \int_1^\infty f(x) \,dx \) is convergent, then (\ref{eq:4}) gives
@@ -167,14 +178,4 @@ We have already seen the basic idea behind the proof of the Integral Test in Fig
     \[ \int_1^n f(x) \,dx \le \sum_{i=1}^{n-1} a_i = s_{n-1} \]
     and so \( s_{n-1} \to \infty \). This implies that \( s_n \to \infty \) and so \( \sum a_n \) diverges.
 \end{itemize}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.35\textwidth]{graph74.png}
-\end{figure}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.35\textwidth]{graph75.png}
-\end{figure}
-
 \end{document}
