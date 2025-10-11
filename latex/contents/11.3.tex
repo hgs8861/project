@@ -83,12 +83,13 @@ The series \( \sum_{n=1}^{\infty} \dfrac{1}{n^p} \) is called the \textbf{p-seri
     The p-series \( \sum_{n=1}^{\infty} \dfrac{1}{n^p} \) is \textbf{convergent} if \(p > 1\) and \textbf{divergent} if \(p \le 1\).
 \end{tcolorbox}
 
+\begin{proof}
 If \(p < 0\), then \( \lim_{n\to\infty} \dfrac{1}{n^p} = \lim_{n\to\infty} n^{-p} = \infty \) since \(-p > 0\).\\
 If \(p = 0\), then \( \lim_{n\to\infty} \dfrac{1}{n^0} = \lim_{n\to\infty} 1 = 1 \). In either case, \( \lim_{n\to\infty} a_n \neq 0 \), so the given series diverges by the Test for Divergence.\\
 If \(p > 0\), then the function \( f(x) = \dfrac{1}{x^p} \) is continuous, positive, and decreasing on \([1, \infty]\). We found in Section 7.8 that
 $ \int_1^\infty \dfrac{1}{x^p} \,dx \quad \text{converges if } p > 1 \text{ and diverges if } p \le 1.$\\
 It follows from the Integral Test that the series \( \sum 1/n^p \) converges if \(p > 1\) and diverges if \(0 < p \le 1\). (For \(p=1\), this series is the harmonic series, which we have already seen is divergent).
-
+\end{proof}
 
 \subsection*{EXAMPLE 3}
 (a) The series \( \sum_{n=1}^{\infty} \dfrac{1}{n^3} \) is convergent because it is a p-series with \(p = 3 > 1\). \\

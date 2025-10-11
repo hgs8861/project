@@ -63,9 +63,14 @@ In the comparison tests, the idea is to compare a given series with a series tha
     \end{itemize}
 \end{tcolorbox}
 
-\subsection*{EXAMPLE 1}
-Determine whether the series \( \sum_{n=1}^{\infty} \frac{5}{2n^2 + 4n + 3} \) converges or diverges.
+\begin{proof}
+  Let \(s_n = \sum_{i=1}^n a_i\), \(t_n = \sum_{i=1}^n b_i\), and \(t = \sum_{n=1}^\infty b_n\). Since both series have positive terms, the sequences \(\{s_n\}\) and \(\{t_n\}\) are increasing.\\
+  \textbf{(i)} Since \( \sum b_n \) is convergent, the sequence \(\{t_n\}\) is convergent and thus bounded. So there is a number \(M\) such that \(t_n \le M\) for all \(n\). Since \(a_i \le b_i\) for all \(i\), we have \(s_n \le t_n\). Therefore \(s_n \le M\) for all \(n\). This means that \(\{s_n\}\) is increasing and bounded above and so converges by the Monotonic Sequence Theorem. Thus \( \sum a_n \) converges.\\
+  \textbf{(ii)} If \( \sum b_n \) is divergent, then \(t_n \to \infty\) (since \(\{t_n\}\) is increasing). But \(a_i \ge b_i\), so \(s_n \ge t_n\). Thus \(s_n \to \infty\). Therefore \( \sum a_n \) diverges.
+  \end{proof}
 
+\subsection*{EXAMPLE 1}
+Determine whether the series \( \sum_{n=1}^{\infty} \frac{5}{2n^2 + 4n + 3} \) converges or diverges.\\
 \textbf{SOLUTION:}
 For large $n$ the dominant term in the denominator is $2n^2$, so we compare the given series with the series $\sum 5/(2n^2)$. Observe that
 \[ \frac{5}{2n^2 + 4n + 3} < \frac{5}{2n^2} \]
@@ -74,8 +79,7 @@ because the left side has a bigger denominator. We know that
 is convergent because it's a constant times a p-series with $p = 2 > 1$. Therefore the given series is \textbf{convergent} by the Direct Comparison Test.
 
 \subsection*{EXAMPLE 2}
-Test the series \( \sum_{k=1}^{\infty} \frac{\ln k}{k} \) for convergence or divergence.
-
+Test the series \( \sum_{k=1}^{\infty} \frac{\ln k}{k} \) for convergence or divergence.\\
 \textbf{SOLUTION:}
 We compare it with the harmonic series. Observe that $\ln k > 1$ for $k \ge 3$ and so
 \[ \frac{\ln k}{k} > \frac{1}{k} \quad \text{for } k \ge 3 \]
@@ -94,17 +98,25 @@ We know that $\sum 1/k$ is divergent (p-series with $p=1$). Thus the given serie
     where \( c \) is a finite number and \( c > 0 \), then either both series converge or both diverge.
 \end{tcolorbox}
 
-\subsection*{EXAMPLE 3}
-Test the series \( \sum_{n=1}^{\infty} \frac{1}{2^n - 1} \) for convergence or divergence.
+\begin{proof}
+  Let \(m\) and \(M\) be positive numbers such that \(m < c < M\). Because \(a_n/b_n\) is close to \(c\) for large \(n\), there is an integer \(N\) such that
+  \[ m < \dfrac{a_n}{b_n} < M \quad \text{for } n > N \]
+  This can be rewritten as
+  \[ mb_n < a_n < Mb_n \quad \text{for } n > N \]
+  If \( \sum b_n \) converges, then \( \sum Mb_n \) also converges. From the right side of the inequality, we see that \( \sum a_n \) converges by the Comparison Test.
+  
+  If \( \sum b_n \) diverges, then \( \sum mb_n \) also diverges. From the left side of the inequality, we see that \( \sum a_n \) diverges by the Comparison Test.
+  \end{proof}
 
+\subsection*{EXAMPLE 3}
+Test the series \( \sum_{n=1}^{\infty} \frac{1}{2^n - 1} \) for convergence or divergence.\\
 \textbf{SOLUTION:}
 We use the Limit Comparison Test with $a_n = \frac{1}{2^n - 1}$ and $b_n = \frac{1}{2^n}$.
 \[ \lim_{n \to \infty} \frac{a_n}{b_n} = \lim_{n \to \infty} \frac{1/(2^n - 1)}{1/2^n} = \lim_{n \to \infty} \frac{2^n}{2^n - 1} = \lim_{n \to \infty} \frac{1}{1 - 1/2^n} = 1 > 0 \]
 Since this limit exists and $\sum 1/2^n$ is a convergent geometric series, the given series \textbf{converges} by the Limit Comparison Test.
 
 \subsection*{EXAMPLE 4}
-Determine whether the series \( \sum_{n=1}^{\infty} \frac{2n^2 + 3n}{\sqrt{5 + n^5}} \) converges or diverges.
-
+Determine whether the series \( \sum_{n=1}^{\infty} \dfrac{2n^2 + 3n}{\sqrt{5 + n^5}} \) converges or diverges.\\
 \textbf{SOLUTION:}
 The dominant part of the numerator is $2n^2$ and the dominant part of the denominator is $\sqrt{n^5} = n^{5/2}$. This suggests taking
 \[ a_n = \frac{2n^2 + 3n}{\sqrt{5 + n^5}} \quad b_n = \frac{2n^2}{n^{5/2}} = \frac{2}{n^{1/2}} \]
@@ -115,10 +127,9 @@ Since $\sum b_n = 2\sum 1/n^{1/2}$ is divergent (p-series with $p = 1/2 < 1$), t
 If we have used the Direct Comparison Test to show that a series \( \sum a_n \) converges by comparison with a series \( \sum b_n \), then we may be able to estimate the sum \( \sum a_n \) by comparing remainders. Let \(R_n = s - s_n\) and \(T_n = t - t_n\). Since \(a_n \le b_n\) for all \(n\), we have \(R_n \le T_n\).
 
 \subsection*{EXAMPLE 5}
-Use the sum of the first 100 terms to approximate the sum of the series \( \sum \frac{1}{n^3 + 1} \). Estimate the error involved in this approximation.
-
+Use the sum of the first 100 terms to approximate the sum of the series \( \sum \frac{1}{n^3 + 1} \). Estimate the error involved in this approximation.\\
 \textbf{SOLUTION:}
-Since $\frac{1}{n^3 + 1} < \frac{1}{n^3}$, the given series is convergent by the Direct Comparison Test. The remainder $T_n$ for the comparison series $\sum 1/n^3$ was estimated using the Remainder Estimate for the Integral Test. We found that
+Since $\dfrac{1}{n^3 + 1} < \dfrac{1}{n^3}$, the given series is convergent by the Direct Comparison Test. The remainder $T_n$ for the comparison series $\sum 1/n^3$ was estimated using the Remainder Estimate for the Integral Test. We found that
 \[ T_n \le \int_n^\infty \frac{1}{x^3} dx = \frac{1}{2n^2} \]
 Therefore the remainder $R_n$ for the given series satisfies
 \[ R_n \le T_n \le \frac{1}{2n^2} \]
