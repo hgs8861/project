@@ -2,6 +2,8 @@ import Mathlib.Algebra.Group.Defs
 import Mathlib.Tactic.Group
 import Mathlib.Tactic
 import Mathlib.GroupTheory.Sylow
+import Mathlib.GroupTheory.Perm.Cycle.Notation
+import Mathlib.GroupTheory.Perm.Fin
 --------------------------------------------------------------------------------------------
 --group9.1.3 subgroup
 --------------------------------------------------------------------------------------------
@@ -169,15 +171,24 @@ lemma inf_bot_of_coprime {G : Type*} [Group G] (H K : Subgroup G)
     (h : (Nat.card H).Coprime (Nat.card K)) : H ⊓ K = ⊥ := by
   sorry
 ------------------------------------------------------------------------------------------------
----group 9.1.4 Concrete groups
+---group 9.1.4 Concrete groups : 구체적인 군들 (순열, 대칭, 순환등등)
 ------------------------------------------------------------------------------------------------
-
+--어떤 타입 X가 주어졌을 때, X의 순열(permutations)들의 군은 Equiv.Perm X
+--대칭군(symmetric group) Sₙ은 Equiv.Perm (Fin n)
+open Equiv.Perm Cycle
 open Equiv
 example {X : Type*} [Finite X] : Subgroup.closure {σ : Perm X | Perm.IsCycle σ} = ⊤ :=
   Perm.closure_isCycle
-#simp (mul_assoc) c [1, 2, 3] * c [2, 3, 4]  -- Removed invalid syntax
+-- X는 유한한 타입(집합)입니다.
+-- Subgroup.closure { ... } : { ... } 집합에 의해 생성되는 가장 작은 부분군
+-- {σ : Perm X | Perm.IsCycle σ} : 순환(cycle)인 모든 순열 σ들의 집합
+-- = ⊤ : 위에서 생성된 부분군이 전체 군(Perm X)과 같다는 의미
+-- 유한 집합의 대칭군은 순환군으로 생성된다.
+
+#simp [mul_assoc] c[1, 2, 3] * c[2, 3, 4]
 section FreeGroup
 inductive S | a | b | c
+
 open S
 def myElement : FreeGroup S := (.of a) * (.of b)⁻¹
 def myMorphism : FreeGroup S →* Perm (Fin 5) :=
