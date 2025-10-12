@@ -36,3 +36,106 @@
   {.5em}% Space after theorem head
   {}% Theorem head spec (can be left empty, meaning `normal')
 \theoremstyle{mystyle}
+
+\begin{document}
+\maketitle
+
+In this section we present two tests, the Ratio Test and the Root Test, that are particularly useful in determining whether a series is absolutely convergent.
+
+\section*{The Ratio Test}
+
+\begin{tcolorbox}[
+    colback=white,
+    colframe=orange!80!white,
+    title=The Ratio Test,
+    boxrule=0.5mm,
+    arc=3mm
+    ]
+    Let \( \sum a_n \) be a series and suppose that the following limit exists:
+    \[ \lim_{n\to\infty} \left| \dfrac{a_{n+1}}{a_n} \right| = L \]
+    \begin{itemize}
+        \item[(i)] If \(L < 1\), then the series \( \sum a_n \) is absolutely convergent (and therefore convergent).
+        \item[(ii)] If \(L > 1\) or \(L = \infty\), then the series \( \sum a_n \) is divergent.
+        \item[(iii)] If \(L = 1\), the Ratio Test is inconclusive; that is, no conclusion can be drawn about the convergence or divergence of \( \sum a_n \).
+    \end{itemize}
+\end{tcolorbox}
+
+\begin{proof}
+\textbf{(i)} The idea is to compare the given series with a convergent geometric series. Since \(L < 1\), we can choose a number \(r\) such that \(L < r < 1\). Since
+\[ \lim_{n\to\infty} \left| \dfrac{a_{n+1}}{a_n} \right| = L < r \]
+the ratio \( |a_{n+1}/a_n| \) will eventually be less than \(r\). That is, there exists an integer \(N\) such that
+\[ \left| \dfrac{a_{n+1}}{a_n} \right| < r \quad \text{whenever } n \ge N \]
+or, equivalently, \( |a_{n+1}| < |a_n|r \) for \(n \ge N\). In general,
+\[ |a_{N+k}| < |a_{N+k-1}|r < |a_{N+k-2}|r^2 < \cdots < |a_N|r^k \]
+Now the series \( \sum_{k=1}^{\infty} |a_N|r^k = |a_N| \sum_{k=1}^{\infty} r^k \) is a convergent geometric series since \(0 < r < 1\). By the Comparison Test, the series \( \sum_{n=N+1}^{\infty} |a_n| = \sum_{k=1}^{\infty} |a_{N+k}| \) is convergent. It follows that the series \( \sum_{n=1}^{\infty} |a_n| \) is convergent. Therefore \( \sum a_n \) is absolutely convergent.
+
+\textbf{(ii)} If \( |a_{n+1}/a_n| \to L > 1 \), then the ratio will eventually be greater than 1. So there exists an integer \(N\) such that \( |a_{n+1}/a_n| > 1 \) for all \(n \ge N\). This means that \(|a_{n+1}| > |a_n|\) for \(n \ge N\). Thus \( \lim_{n\to\infty} a_n \neq 0 \). Therefore \( \sum a_n \) diverges by the Test for Divergence.
+\end{proof}
+
+\subsection*{EXAMPLE 1}
+Test the series \( \sum_{n=1}^{\infty} (-1)^n \dfrac{n^3}{3^n} \) for absolute convergence.\\
+\textbf{SOLUTION:}
+We use the Ratio Test with \(a_n = (-1)^n \dfrac{n^3}{3^n}\).
+\begin{align*}
+    \lim_{n\to\infty} \left| \dfrac{a_{n+1}}{a_n} \right| &= \lim_{n\to\infty} \left| \dfrac{(-1)^{n+1} \frac{(n+1)^3}{3^{n+1}}}{(-1)^n \frac{n^3}{3^n}} \right| = \lim_{n\to\infty} \dfrac{(n+1)^3}{3^{n+1}} \cdot \dfrac{3^n}{n^3} \\
+    &= \lim_{n\to\infty} \dfrac{1}{3} \left( \dfrac{n+1}{n} \right)^3 = \dfrac{1}{3} \lim_{n\to\infty} \left( 1 + \dfrac{1}{n} \right)^3 = \dfrac{1}{3}(1)^3 = \dfrac{1}{3}
+\end{align*}
+Since the limit \(L = 1/3 < 1\), the series is \textbf{absolutely convergent} by the Ratio Test.
+
+\subsection*{EXAMPLE 2}
+Test the convergence of the series \( \sum_{n=1}^{\infty} \dfrac{n^n}{n!} \).\\
+\textbf{SOLUTION:}
+Since the terms \(a_n = n^n/n!\) are positive, we don't need the absolute value signs.
+\begin{align*}
+    \lim_{n\to\infty} \dfrac{a_{n+1}}{a_n} &= \lim_{n\to\infty} \dfrac{(n+1)^{n+1}}{(n+1)!} \cdot \dfrac{n!}{n^n} = \lim_{n\to\infty} \dfrac{(n+1)(n+1)^n}{(n+1)n!} \cdot \dfrac{n!}{n^n} \\
+    &= \lim_{n\to\infty} \dfrac{(n+1)^n}{n^n} = \lim_{n\to\infty} \left( \dfrac{n+1}{n} \right)^n = \lim_{n\to\infty} \left( 1 + \dfrac{1}{n} \right)^n = e
+\end{align*}
+Since \(e > 1\), the given series is \textbf{divergent}.
+
+\subsection*{EXAMPLE 3}
+Part (iii) of the Ratio Test says that if \( \lim_{n\to\infty} \left| \dfrac{a_{n+1}}{a_n} \right| = 1 \), then the test gives no information. For instance, let's apply the Ratio Test to each of the following series:
+\[ \sum_{n=1}^{\infty} \dfrac{1}{n} \qquad \sum_{n=1}^{\infty} \dfrac{1}{n^2} \]
+In the first series, \(a_n = 1/n\) and
+\[ \left| \dfrac{a_{n+1}}{a_n} \right| = \dfrac{1/(n+1)}{1/n} = \dfrac{n}{n+1} \to 1 \quad \text{as } n \to \infty \]
+In the second series, \(a_n = 1/n^2\) and
+\[ \left| \dfrac{a_{n+1}}{a_n} \right| = \dfrac{1/(n+1)^2}{1/n^2} = \left( \dfrac{n}{n+1} \right)^2 \to 1 \quad \text{as } n \to \infty \]
+In both cases the Ratio Test fails to determine whether the series converges or diverges, so we must try another test. Here the first series is the harmonic series, which we know diverges; the second series is a p-series with \(p > 1\), so it converges.
+
+\section*{The Root Test}
+
+\begin{tcolorbox}[
+    colback=white,
+    colframe=orange!80!white,
+    title=The Root Test,
+    boxrule=0.5mm,
+    arc=3mm
+    ]
+    Let \( \sum a_n \) be a series and suppose that the following limit exists:
+    \[ \lim_{n\to\infty} \sqrt[n]{|a_n|} = L \]
+    \begin{itemize}
+        \item[(i)] If \(L < 1\), then the series \( \sum a_n \) is absolutely convergent (and therefore convergent).
+        \item[(ii)] If \(L > 1\) or \(L = \infty\), then the series \( \sum a_n \) is divergent.
+        \item[(iii)] If \(L = 1\), the Root Test is inconclusive.
+    \end{itemize}
+\end{tcolorbox}
+\begin{proof}[Sketch of Proof]
+\textbf{(i)} If \(L < 1\), choose \(r\) with \(L < r < 1\). Then there is an integer \(N\) such that \(\sqrt[n]{|a_n|} < r\) for \(n \ge N\). This gives \(|a_n| < r^n\) for \(n \ge N\), so \( \sum a_n \) is absolutely convergent by comparison with the geometric series \( \sum r^n \).
+
+\textbf{(ii)} If \(L > 1\), then there is an integer \(N\) such that \(\sqrt[n]{|a_n|} > 1\) for \(n \ge N\). This gives \(|a_n| > 1\) for \(n \ge N\), so \( \lim_{n\to\infty} a_n \neq 0 \). Thus \( \sum a_n \) diverges by the Test for Divergence.
+\end{proof}
+
+\subsection*{EXAMPLE 4}
+Test the convergence of the series \( \sum_{n=1}^{\infty} \left( \dfrac{2n+3}{3n+2} \right)^n \).\\
+\textbf{SOLUTION:}
+We use the Root Test with \(a_n = \left( \dfrac{2n+3}{3n+2} \right)^n\).
+\[ \lim_{n\to\infty} \sqrt[n]{|a_n|} = \lim_{n\to\infty} \sqrt[n]{\left| \left( \dfrac{2n+3}{3n+2} \right)^n \right|} = \lim_{n\to\infty} \dfrac{2n+3}{3n+2} = \lim_{n\to\infty} \dfrac{2+3/n}{3+2/n} = \dfrac{2}{3} \]
+Since \(L = 2/3 < 1\), the series is \textbf{absolutely convergent} by the Root Test.
+
+\subsection*{EXAMPLE 5}
+Test the convergence of the series \( \sum_{n=1}^{\infty} \left( 1 + \dfrac{1}{n} \right)^{n^2} \).\\
+\textbf{SOLUTION:}
+Let \( a_n = (1+1/n)^{n^2} \). Then
+\[ \lim_{n\to\infty} \sqrt[n]{a_n} = \lim_{n\to\infty} \left[ \left( 1 + \dfrac{1}{n} \right)^{n^2} \right]^{1/n} = \lim_{n\to\infty} \left( 1 + \dfrac{1}{n} \right)^n = e \]
+Since \(e > 1\), the series is \textbf{divergent} by the Root Test.
+
+\end{document}
