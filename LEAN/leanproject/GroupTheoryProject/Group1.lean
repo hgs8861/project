@@ -2,8 +2,9 @@ import Mathlib.Algebra.Group.Defs
 import Mathlib.Tactic.Group
 import Mathlib.Tactic
 import Mathlib.GroupTheory.Sylow
-import Mathlib.GroupTheory.Perm.Cycle.Notation
+-- import Mathlib.GroupTheory.Perm.Cycle.Notation -- Removed due to missing file
 import Mathlib.GroupTheory.Perm.Fin
+import Mathlib.GroupTheory.PresentedGroup
 --------------------------------------------------------------------------------------------
 --group9.1.3 subgroup
 --------------------------------------------------------------------------------------------
