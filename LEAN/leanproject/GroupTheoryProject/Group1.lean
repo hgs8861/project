@@ -5,6 +5,7 @@ import Mathlib.GroupTheory.Sylow
 -- import Mathlib.GroupTheory.Perm.Cycle.Notation -- Removed due to missing file
 import Mathlib.GroupTheory.Perm.Fin
 import Mathlib.GroupTheory.PresentedGroup
+import Mathlib.GroupTheory.Perm.Cycle.Notation
 --------------------------------------------------------------------------------------------
 --group9.1.3 subgroup
 --------------------------------------------------------------------------------------------
@@ -108,9 +109,11 @@ example {G H : Type*} [Group G] [Group H] (f : G →* H) (h : H) : --f의 치역
 
 --excercise
 section exercises
+--section ... end : 반복적인 작업을 줄일 때 : vairiable 지정 하면 end 전까지 그 변수의 설정이 유지됨 .
 variable {G H : Type*} [Group G] [Group H]
-
+variable {K : Type*} [Group K]
 open Subgroup
+--open : 코드를 간결하게 쓸 때 사용 : 특정 namespace의 이름(접두사)을 생략 가능
 --intro : 가정을 언급
 --rintro : 가정을 분해해서 언급
 --h : P ∧ Q 일때:  intro h: 가정 h 박스채로 사용 / rintro <hP, hQ> : 가정에서 P와 Q 분해 해서 고려하기 가능
@@ -125,9 +128,6 @@ example (φ : G →* H) (S T : Subgroup G) (hST : S ≤ T) : map φ S ≤ map φ
   use x
   exact ⟨hxT, rfl⟩ --x ∈ T 이므로, y는 map φ T의 원소
 
-variable {K : Type*} [Group K]
-
--- Remember you can use the `ext` tactic to prove an equality of subgroups.
 example (φ : G →* H) (ψ : H →* K) (U : Subgroup K) : comap (ψ.comp φ) U = comap φ (comap ψ U) := by
   -- 두 부분군이 같음을 보이려면, 두 부분군에 속한 원소가 같음을 보이면 된다.
   -- `ext` tactic은 이 목표를 `∀ x, x ∈ 좌변 ↔ x ∈ 우변` 으로 바꿔준다.
@@ -138,10 +138,8 @@ example (φ : G →* H) (ψ : H →* K) (U : Subgroup K) : comap (ψ.comp φ) U 
   -- 양변이 정의상 동일하므로 simp가 증명을 완료한다.
   simp [Subgroup.comap]
 
--- Pushing a subgroup along one homomorphism and then another is equal to
--- pushing it forward along the composite of the homomorphisms.
 example (φ : G →* H) (ψ : H →* K) (S : Subgroup G) : map (ψ.comp φ) S = map ψ (S.map φ) := by
-  -- 3번 예제와 마찬가지로 `ext` tactic으로 시작한다.
+  -- 앞의의 예제와 마찬가지로 `ext` tactic으로 시작한다.
   ext y
   -- 좌변: y ∈ map (ψ.comp φ) S ↔ ∃ x ∈ S, (ψ ∘ φ) x = y ↔ ∃ x ∈ S, ψ (φ x) = y
   -- 우변: y ∈ map ψ (S.map φ)   ↔ ∃ z ∈ S.map φ, ψ z = y
@@ -171,38 +169,67 @@ lemma eq_bot_iff_card {G : Type*} [Group G] {H : Subgroup G} :
 lemma inf_bot_of_coprime {G : Type*} [Group G] (H K : Subgroup G)
     (h : (Nat.card H).Coprime (Nat.card K)) : H ⊓ K = ⊥ := by
   sorry
+
 ------------------------------------------------------------------------------------------------
 ---group 9.1.4 Concrete groups : 구체적인 군들 (순열, 대칭, 순환등등)
 ------------------------------------------------------------------------------------------------
 --어떤 타입 X가 주어졌을 때, X의 순열(permutations)들의 군은 Equiv.Perm X
 --대칭군(symmetric group) Sₙ은 Equiv.Perm (Fin n)
+
 open Equiv.Perm Cycle
 open Equiv
+
 example {X : Type*} [Finite X] : Subgroup.closure {σ : Perm X | Perm.IsCycle σ} = ⊤ :=
   Perm.closure_isCycle
 -- X는 유한한 타입(집합)입니다.
 -- Subgroup.closure { ... } : { ... } 집합에 의해 생성되는 가장 작은 부분군
 -- {σ : Perm X | Perm.IsCycle σ} : 순환(cycle)인 모든 순열 σ들의 집합
 -- = ⊤ : 위에서 생성된 부분군이 전체 군(Perm X)과 같다는 의미
--- 유한 집합의 대칭군은 순환군으로 생성된다.
+-- 유한 집합의 대칭군은 순환군으로 생성된다. (정리 존재)
 
 #simp [mul_assoc] c[1, 2, 3] * c[2, 3, 4]
+--순환군에서 교환법칙 성립 확인
+
 section FreeGroup
 inductive S | a | b | c
-
+-- 'S'라는 새로운 타입을 귀납적으로(inductively) 정의합니다.
+-- 이 타입은 오직 'a', 'b', 'c'라는 세 개의 원소만 가집니다.
+-- 이 S가 바로 자유군을 생성할 생성자(generator)들의 집합 {a, b, c} 역할을 합니다.
 open S
+-- S 네임스페이스를 열어줍니다.
+-- 이제부터 'S.a', 'S.b' 대신 그냥 'a', 'b'라고 짧게 쓸 수 있습니다.
 def myElement : FreeGroup S := (.of a) * (.of b)⁻¹
+-- .of는 FreeGroup.of 의미
+
 def myMorphism : FreeGroup S →* Perm (Fin 5) :=
 FreeGroup.lift fun | .a => c[1, 2, 3]
                    | .b => c[2, 3, 1]
                    | .c => c[2, 3]
-def myGroup := PresentedGroup {.of () ^ 3} deriving Group
+--freegroup의 보편적인 성질은 FreeGroup.lift 동치로 구체화 됨.
+--a, b, c 만 정해주면 이것을 바탕으로 자유군(ab^-1)전체가 어디로 가는 지 자동으로 결정
+
+def myGroup := PresentedGroup {.of () ^ 3} deriving Group --Lean 3의 문법으로 lean 4에서 오류
+def myGroup := PresentedGroup ({.of () ^ 3} : Set (FreeGroup Unit))
+-- 생성자가 원소 하나 인 집합 = unit : 여기에서 하나의 생성자가 .of() 에 해당함
+-- .of()^3 은 ()^3=1 을 만족하는 원소를 이야기 하므로 순환군 C_3을 이야기 함. (1, g, g^2을 원소로 갖는)
+-- deriving Group은 myGroup이 군의 공리 만족하므로 모든 인스턴스 자동으로 만들어 라는 명령어
+
 def myMap : Unit → Perm (Fin 5)
 | () => c[1, 2, 3]
+
 lemma compat_myMap :
     ∀ r ∈ ({.of () ^ 3} : Set (FreeGroup Unit)), FreeGroup.lift myMap r = 1 := by
   rintro _ rfl
+  -- lift의 정의 풀기 : 목표가 (myMap ()) ^ 3 = 1 로,
+  -- 다시 c[1, 2, 3] ^ 3 = 1 로 바뀝니다.
   simp
+  -- c[1, 2, 3] ^ 3 = 1 은 계산 가능한 사실이므로 decide가 증명을 완료합니다.
   decide
-def myNewMorphism : myGroup →* Perm (Fin 5) := PresentedGroup.toGroup compat_myMap
+  --계산 가능한 명제 자동으로 증명하는 전술 : 증명 목표가 결정 가능 할때만 작동 : 즉 정의를 펼치고 산술 계산 수행하는것
+  --simp와 차이점
+  --- simp: 식의 단순화 및 재작성 :강력함  / decide :  참 거짓의 계산 : 그냥 연산 만 해서 참 거짓 판별이 가능한 정도
+
+def myNewMorphism : myGroup →* Perm (Fin 5) := PresentedGroup.toGroup myMap compat_myMap
+-- 1단계의 맵(myMap)과 2단계의 증명(compat_myMap)을 재료로 사용하여
+-- PresentedGroup.toGroup 함수가 최종 준동형사상
 end FreeGroup
