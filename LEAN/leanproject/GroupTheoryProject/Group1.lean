@@ -2,8 +2,10 @@ import Mathlib.Algebra.Group.Defs
 import Mathlib.Tactic.Group
 import Mathlib.Tactic
 import Mathlib.GroupTheory.Sylow
-import Mathlib.GroupTheory.Perm.Cycle.Notation
+-- import Mathlib.GroupTheory.Perm.Cycle.Notation -- Removed due to missing file
 import Mathlib.GroupTheory.Perm.Fin
+import Mathlib.GroupTheory.PresentedGroup
+import Mathlib.GroupTheory.Perm.Cycle.Notation
 --------------------------------------------------------------------------------------------
 --group9.1.3 subgroup
 --------------------------------------------------------------------------------------------
@@ -107,9 +109,11 @@ example {G H : Type*} [Group G] [Group H] (f : G →* H) (h : H) : --f의 치역
 
 --excercise
 section exercises
+--section ... end : 반복적인 작업을 줄일 때 : vairiable 지정 하면 end 전까지 그 변수의 설정이 유지됨 .
 variable {G H : Type*} [Group G] [Group H]
-
+variable {K : Type*} [Group K]
 open Subgroup
+--open : 코드를 간결하게 쓸 때 사용 : 특정 namespace의 이름(접두사)을 생략 가능
 --intro : 가정을 언급
 --rintro : 가정을 분해해서 언급
 --h : P ∧ Q 일때:  intro h: 가정 h 박스채로 사용 / rintro <hP, hQ> : 가정에서 P와 Q 분해 해서 고려하기 가능
@@ -124,9 +128,6 @@ example (φ : G →* H) (S T : Subgroup G) (hST : S ≤ T) : map φ S ≤ map φ
   use x
   exact ⟨hxT, rfl⟩ --x ∈ T 이므로, y는 map φ T의 원소
 
-variable {K : Type*} [Group K]
-
--- Remember you can use the `ext` tactic to prove an equality of subgroups.
 example (φ : G →* H) (ψ : H →* K) (U : Subgroup K) : comap (ψ.comp φ) U = comap φ (comap ψ U) := by
   -- 두 부분군이 같음을 보이려면, 두 부분군에 속한 원소가 같음을 보이면 된다.
   -- `ext` tactic은 이 목표를 `∀ x, x ∈ 좌변 ↔ x ∈ 우변` 으로 바꿔준다.
@@ -137,10 +138,8 @@ example (φ : G →* H) (ψ : H →* K) (U : Subgroup K) : comap (ψ.comp φ) U 
   -- 양변이 정의상 동일하므로 simp가 증명을 완료한다.
   simp [Subgroup.comap]
 
--- Pushing a subgroup along one homomorphism and then another is equal to
--- pushing it forward along the composite of the homomorphisms.
 example (φ : G →* H) (ψ : H →* K) (S : Subgroup G) : map (ψ.comp φ) S = map ψ (S.map φ) := by
-  -- 3번 예제와 마찬가지로 `ext` tactic으로 시작한다.
+  -- 앞의의 예제와 마찬가지로 `ext` tactic으로 시작한다.
   ext y
   -- 좌변: y ∈ map (ψ.comp φ) S ↔ ∃ x ∈ S, (ψ ∘ φ) x = y ↔ ∃ x ∈ S, ψ (φ x) = y
   -- 우변: y ∈ map ψ (S.map φ)   ↔ ∃ z ∈ S.map φ, ψ z = y
@@ -170,6 +169,7 @@ lemma eq_bot_iff_card {G : Type*} [Group G] {H : Subgroup G} :
 lemma inf_bot_of_coprime {G : Type*} [Group G] (H K : Subgroup G)
     (h : (Nat.card H).Coprime (Nat.card K)) : H ⊓ K = ⊥ := by
   sorry
+
 ------------------------------------------------------------------------------------------------
 ---group 9.1.4 Concrete groups : 구체적인 군들 (순열, 대칭, 순환등등)
 ------------------------------------------------------------------------------------------------
