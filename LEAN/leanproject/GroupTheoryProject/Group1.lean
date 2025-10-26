@@ -175,33 +175,61 @@ lemma inf_bot_of_coprime {G : Type*} [Group G] (H K : Subgroup G)
 ------------------------------------------------------------------------------------------------
 --어떤 타입 X가 주어졌을 때, X의 순열(permutations)들의 군은 Equiv.Perm X
 --대칭군(symmetric group) Sₙ은 Equiv.Perm (Fin n)
+
 open Equiv.Perm Cycle
 open Equiv
+
 example {X : Type*} [Finite X] : Subgroup.closure {σ : Perm X | Perm.IsCycle σ} = ⊤ :=
   Perm.closure_isCycle
 -- X는 유한한 타입(집합)입니다.
 -- Subgroup.closure { ... } : { ... } 집합에 의해 생성되는 가장 작은 부분군
 -- {σ : Perm X | Perm.IsCycle σ} : 순환(cycle)인 모든 순열 σ들의 집합
 -- = ⊤ : 위에서 생성된 부분군이 전체 군(Perm X)과 같다는 의미
--- 유한 집합의 대칭군은 순환군으로 생성된다.
+-- 유한 집합의 대칭군은 순환군으로 생성된다. (정리 존재)
 
 #simp [mul_assoc] c[1, 2, 3] * c[2, 3, 4]
+--순환군에서 교환법칙 성립 확인
+
 section FreeGroup
 inductive S | a | b | c
-
+-- 'S'라는 새로운 타입을 귀납적으로(inductively) 정의합니다.
+-- 이 타입은 오직 'a', 'b', 'c'라는 세 개의 원소만 가집니다.
+-- 이 S가 바로 자유군을 생성할 생성자(generator)들의 집합 {a, b, c} 역할을 합니다.
 open S
+-- S 네임스페이스를 열어줍니다.
+-- 이제부터 'S.a', 'S.b' 대신 그냥 'a', 'b'라고 짧게 쓸 수 있습니다.
 def myElement : FreeGroup S := (.of a) * (.of b)⁻¹
+-- .of는 FreeGroup.of 의미
+
 def myMorphism : FreeGroup S →* Perm (Fin 5) :=
 FreeGroup.lift fun | .a => c[1, 2, 3]
                    | .b => c[2, 3, 1]
                    | .c => c[2, 3]
-def myGroup := PresentedGroup {.of () ^ 3} deriving Group
+--freegroup의 보편적인 성질은 FreeGroup.lift 동치로 구체화 됨.
+--a, b, c 만 정해주면 이것을 바탕으로 자유군(ab^-1)전체가 어디로 가는 지 자동으로 결정
+
+def myGroup := PresentedGroup {.of () ^ 3} deriving Group --Lean 3의 문법으로 lean 4에서 오류
+def myGroup := PresentedGroup ({.of () ^ 3} : Set (FreeGroup Unit))
+-- 생성자가 원소 하나 인 집합 = unit : 여기에서 하나의 생성자가 .of() 에 해당함
+-- .of()^3 은 ()^3=1 을 만족하는 원소를 이야기 하므로 순환군 C_3을 이야기 함. (1, g, g^2을 원소로 갖는)
+-- deriving Group은 myGroup이 군의 공리 만족하므로 모든 인스턴스 자동으로 만들어 라는 명령어
+
 def myMap : Unit → Perm (Fin 5)
 | () => c[1, 2, 3]
+
 lemma compat_myMap :
     ∀ r ∈ ({.of () ^ 3} : Set (FreeGroup Unit)), FreeGroup.lift myMap r = 1 := by
   rintro _ rfl
+  -- lift의 정의 풀기 : 목표가 (myMap ()) ^ 3 = 1 로,
+  -- 다시 c[1, 2, 3] ^ 3 = 1 로 바뀝니다.
   simp
+  -- c[1, 2, 3] ^ 3 = 1 은 계산 가능한 사실이므로 decide가 증명을 완료합니다.
   decide
-def myNewMorphism : myGroup →* Perm (Fin 5) := PresentedGroup.toGroup compat_myMap
+  --계산 가능한 명제 자동으로 증명하는 전술 : 증명 목표가 결정 가능 할때만 작동 : 즉 정의를 펼치고 산술 계산 수행하는것
+  --simp와 차이점
+  --- simp: 식의 단순화 및 재작성 :강력함  / decide :  참 거짓의 계산 : 그냥 연산 만 해서 참 거짓 판별이 가능한 정도
+
+def myNewMorphism : myGroup →* Perm (Fin 5) := PresentedGroup.toGroup myMap compat_myMap
+-- 1단계의 맵(myMap)과 2단계의 증명(compat_myMap)을 재료로 사용하여
+-- PresentedGroup.toGroup 함수가 최종 준동형사상
 end FreeGroup
