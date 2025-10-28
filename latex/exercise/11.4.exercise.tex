@@ -1,11 +1,11 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass{article}
 
 % Required Packages
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{kotex}
+\usepackage{kotex} % 한국어 사용을 위한 패키지
 \usepackage{geometry}
-\geometry{a4paper, margin=1in}
+\geometry{a4paper, margin=1in} % 페이지 여백 설정
 
 % Title
 \title{Chapter 11.4 Exercises: The Comparison Tests}
@@ -14,94 +14,101 @@
 
 \begin{document}
 \maketitle
+\hrulefill % 제목 아래 수평선
+\vspace{1em} % 제목과 내용 사이 간격
+
+% --- 난이도 하 (Easy) ---
+\subsection*{Difficulty: Easy (6 Problems)}
+\begin{enumerate}
+    \item \textbf{Exercise 7:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{1}{n^3 + 8} \]
+    \item \textbf{Exercise 8:} Determine whether the series converges or diverges.
+    \[ \sum_{n=2}^{\infty} \frac{1}{\sqrt{n}-1} \]
+    \item \textbf{Exercise 9:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{n+1}{n\sqrt{n}} \]
+    \item \textbf{Exercise 11:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{9^n}{3+10^n} \]
+    \item \textbf{Exercise 12:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{6^n}{5^n-1} \]
+    \item \textbf{Exercise 18:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{1}{\sqrt[3]{3n^4+1}} \]
+\end{enumerate}
+
 \hrulefill
 \vspace{1em}
 
-\subsection*{Difficulty: Easy}
+% --- 난이도 중 (Medium) ---
+\subsection*{Difficulty: Medium (13 Problems)}
 \begin{enumerate}
-    \item \textbf{Exercise 3:} Use the Comparison Test to determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{1}{n^2 + n + 1} \]
-
-    \item \textbf{Exercise 5:} Use the Comparison Test to determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{5}{2 + 3^n} \]
-
-    \item \textbf{Exercise 7:} Use the Comparison Test to determine whether the series converges or diverges.
-    \[ \sum_{n=2}^{\infty} \dfrac{n^3}{n^4 - 1} \]
-    
-    \item \textbf{Exercise 9:} Use the Comparison Test to determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{n}{n^3 + 1} \]
-
-    \item \textbf{Exercise 11:} Use the Limit Comparison Test to determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{n+1}{n\sqrt{n}} \]
-
-    \item \textbf{Exercise 13:} Use the Limit Comparison Test to determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{n-1}{n^2\sqrt{n}} \]
-    
+    \setcounter{enumi}{6} % 이전 목록 번호 이어서 시작
+    \item \textbf{Exercise 10:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{n-1}{n^3+1} \]
     \item \textbf{Exercise 15:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{n+2}{(n+1)^3} \]
-    
-    \item \textbf{Exercise 17:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{3 + \cos n}{3^n} \]
-\end{enumerate}
-
-\hrulefill
-\vspace{1em}
-
-\subsection*{Difficulty: Medium}
-\begin{enumerate}
-    \setcounter{enumi}{8}
+    \[ \sum_{k=1}^{\infty} \frac{\sqrt[3]{k}}{\sqrt{k^3+4k+3}} \]
+    \item \textbf{Exercise 16:} Determine whether the series converges or diverges.
+    \[ \sum_{k=1}^{\infty} \frac{(2k-1)(k^2-1)}{(k+1)(k^2+4)^2} \]
     \item \textbf{Exercise 19:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{2n^2 + 7n}{3^n (n^2 + 5n - 1)} \]
-
-    \item \textbf{Exercise 20:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \left( 1 + \dfrac{1}{n} \right)^2 e^{-n} \]
-    
+    \[ \sum_{n=1}^{\infty} \frac{4^{n+1}}{3^n-2} \]
     \item \textbf{Exercise 21:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{1}{\sqrt{n^2 + 1}} \]
-
+    \[ \sum_{n=1}^{\infty} \frac{1}{\sqrt{n^2+1}} \]
+    \item \textbf{Exercise 22:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{2}{\sqrt{n}+2} \]
     \item \textbf{Exercise 23:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{n!}{(n+2)!} \]
-    
-    \item \textbf{Exercise 25:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{n^2 + n + 1}{n^4 + n^2} \]
-    
-    \item \textbf{Exercise 26:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{\sqrt{n^4 + 1}}{n^3 + n^2} \]
-
-    \item \textbf{Exercise 27:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{1+2^n}{1+3^n} \]
-    
+    \[ \sum_{n=1}^{\infty} \frac{n+1}{n^3+n} \]
+    \item \textbf{Exercise 24:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{n^2+n+1}{n^4+n^2} \]
+    \item \textbf{Exercise 28:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{n+3^n}{n+2^n} \]
     \item \textbf{Exercise 29:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{n+1}{n 2^n} \]
-    
+    \[ \sum_{n=1}^{\infty} \frac{e^n+1}{ne^n+1} \]
     \item \textbf{Exercise 31:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \sin\left(\dfrac{1}{n}\right) \]
-    
-    \item \textbf{Exercise 32:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{1}{n^{1+1/n}} \]
+    \[ \sum_{n=1}^{\infty} \frac{2+\sin n}{n^2} \]
+    \item \textbf{Exercise 33:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} (1+\frac{1}{n})^2 e^{-n} \]
+    \item \textbf{Exercise 41:} Use the sum of the first 10 terms to approximate the sum of the series $\sum_{n=1}^{\infty} \frac{1}{5+n^5}$. Estimate the error.
 \end{enumerate}
 
 \hrulefill
 \vspace{1em}
 
-\subsection*{Difficulty: Hard}
+% --- 난이도 상 (Hard) ---
+\subsection*{Difficulty: Hard (6 Problems)}
 \begin{enumerate}
-    \setcounter{enumi}{18}
+    \setcounter{enumi}{19} % 이전 목록 번호 이어서 시작
+    \item \textbf{Exercise 17:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{1+\cos n}{e^n} \]
+    \item \textbf{Exercise 34:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{e^{1/n}}{n} \]
     \item \textbf{Exercise 35:} Determine whether the series converges or diverges.
-    \[ \sum_{n=1}^{\infty} \dfrac{1}{n!} \]
-    
-    \item \textbf{Exercise 37:} Use the sum of the first 10 terms to approximate the sum of the series. Estimate the error.
-    \[ \sum_{n=1}^{\infty} \dfrac{1}{1 + 2^n} \]
+    \[ \sum_{n=1}^{\infty} \frac{1}{n!} \]
+    \item \textbf{Exercise 36:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{n!}{n^n} \]
+    \item \textbf{Exercise 37:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \sin(\frac{1}{n}) \]
+    \item \textbf{Exercise 40:} Determine whether the series converges or diverges.
+    \[ \sum_{n=1}^{\infty} \frac{1}{n^{1+1/n}} \]
+    \item \textbf{Exercise 48:}
+    (a) Suppose that $\sum a_n$ and $\sum b_n$ are series with positive terms and $\sum b_n$ is convergent. Prove that if
+    \[ \lim_{n \to \infty} \frac{a_n}{b_n} = 0 \]
+    then $\sum a_n$ is also convergent.\\
+    (b) Use part (a) to show that the series converges.
+    \[ \text{(i) } \sum_{n=1}^{\infty} \frac{\ln n}{n^3} \qquad \text{(ii) } \sum_{n=1}^{\infty} \left(1 - \cos \frac{1}{n^2}\right) \]
 
-    \item \textbf{Exercise 39:} For which values of $p$ does the series $\sum_{n=2}^{\infty} \dfrac{1}{n^p \ln n}$ converge?
-    
-    \item \textbf{Exercise 40:} If $a_n > 0$ and $\sum a_n$ converges, show that $\sum \ln(1+a_n)$ also converges.
+    \item \textbf{Exercise 49:}
+    (a) Suppose that $\sum a_n$ and $\sum b_n$ are series with positive terms and $\sum b_n$ is divergent. Prove that if
+    \[ \lim_{n \to \infty} \frac{a_n}{b_n} = \infty \]
+    then $\sum a_n$ is also divergent.\\
+    (b) Use part (a) to show that the series diverges.
+    \[ \text{(i) } \sum_{n=2}^{\infty} \frac{1}{\ln n} \qquad \text{(ii) } \sum_{n=1}^{\infty} \frac{\ln n}{n} \]
 
-    \item \textbf{Exercise 41:} If $a_n > 0$ and $\sum a_n$ converges, show that $\sum (a_n / n)$ also converges.
+    \item \textbf{Exercise 50:} Give an example of a pair of series $\sum a_n$ and $\sum b_n$ with positive terms where $\lim_{n \to \infty} (a_n / b_n) = 0$ and $\sum b_n$ diverges, but $\sum a_n$ converges. (Compare with Exercise 48.)
 
-    \item \textbf{Exercise 43:} (a) Suppose that $\sum a_n$ and $\sum b_n$ are series with positive terms and $\sum b_n$ is convergent. Prove that if $\lim_{n \to \infty} \dfrac{a_n}{b_n} = 0$, then $\sum a_n$ is also convergent.
-    
-    \item \textbf{Exercise 44:} (a) Suppose that $\sum a_n$ and $\sum b_n$ are series with positive terms and $\sum b_n$ is divergent. Prove that if $\lim_{n \to \infty} \dfrac{a_n}{b_n} = \infty$, then $\sum a_n$ is also divergent.
+    \item \textbf{Exercise 55:} Let $\sum a_n$ and $\sum b_n$ be series with positive terms. Is each of the following statements true or false? If the statement is false, give an example that disproves the statement.
+    \begin{enumerate}
+        \item[(a)] If $\sum a_n$ and $\sum b_n$ are divergent, then $\sum a_n b_n$ is divergent.
+        \item[(b)] If $\sum a_n$ converges and $\sum b_n$ diverges, then $\sum a_n b_n$ diverges.
+        \item[(c)] If $\sum a_n$ and $\sum b_n$ are convergent, then $\sum a_n b_n$ is convergent.
+    \end{enumerate}
 \end{enumerate}
 
 \end{document}

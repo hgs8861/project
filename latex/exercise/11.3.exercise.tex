@@ -1,11 +1,11 @@
-\documentclass[12pt, a4paper]{article}
+\documentclass{article}
 
 % Required Packages
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{kotex}
+\usepackage{kotex} % 한국어 사용을 위한 패키지
 \usepackage{geometry}
-\geometry{a4paper, margin=1in}
+\geometry{a4paper, margin=1in} % 페이지 여백 설정
 
 % Title
 \title{Chapter 11.3 Exercises: The Integral Test and Estimation of Sums}
@@ -14,79 +14,65 @@
 
 \begin{document}
 \maketitle
-\hrulefill
-\vspace{1em}
+\hrulefill % 제목 아래 수평선
+\vspace{1em} % 제목과 내용 사이 간격
 
-\subsection*{Difficulty: Easy}
+% --- 난이도 하 (Easy) ---
+\subsection*{Difficulty: Easy (6 Problems)}
 \begin{enumerate}
+    \item \textbf{Exercise 1:} Draw a picture to show that $\sum_{n=2}^{\infty} \dfrac{1}{n^{1.5}} < \int_{1}^{\infty} \dfrac{1}{x^{1.5}} dx$. What can you conclude about the series?
     \item \textbf{Exercise 3:} Use the Integral Test to determine whether the series is convergent or divergent.
-    \[ \sum_{n=1}^{\infty} \dfrac{1}{n^4} \]
-
+    \[ \sum_{n=1}^{\infty} n^{-3} \]
     \item \textbf{Exercise 5:} Use the Integral Test to determine whether the series is convergent or divergent.
-    \[ \sum_{n=1}^{\infty} \dfrac{1}{(n+3)^{5/2}} \]
-
-    \item \textbf{Exercise 7:} Use the Integral Test to determine whether the series is convergent or divergent.
-    \[ \sum_{n=1}^{\infty} \dfrac{n}{n^2 + 1} \]
-
-    \item \textbf{Exercise 9:} Use the Integral Test to determine whether the series is convergent or divergent.
-    \[ \sum_{n=1}^{\infty} n^2 e^{-n^3} \]
-    
+    \[ \sum_{n=1}^{\infty} \dfrac{2}{5n-1} \]
+    \item \textbf{Exercise 11:} Determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \dfrac{1}{n^{\sqrt{2}}} \]
     \item \textbf{Exercise 13:} Determine whether the series is convergent or divergent.
-    \[ \sum_{n=1}^{\infty} \dfrac{1}{2n+3} \]
-    
-    \item \textbf{Exercise 15:} Determine whether the series is convergent or divergent.
-    \[ \sum_{n=1}^{\infty} \dfrac{n^2}{n^3 + 1} \]
-    
-    \item \textbf{Exercise 16:} Determine whether the series is convergent or divergent.
-    \[ \sum_{n=1}^{\infty} \dfrac{n}{n^4 + 1} \]
+    \[ 1 + \dfrac{1}{8} + \dfrac{1}{27} + \dfrac{1}{64} + \dfrac{1}{125} + \dots \]
+    \item \textbf{Exercise 21:} Determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \dfrac{1}{n^2 + 4} \]
 \end{enumerate}
 
 \hrulefill
 \vspace{1em}
 
-\subsection*{Difficulty: Medium}
+% --- 난이도 중 (Medium) ---
+\subsection*{Difficulty: Medium (11 Problems)}
 \begin{enumerate}
-    \setcounter{enumi}{7}
-    \item \textbf{Exercise 4:} Explain why the Integral Test can't be used to determine whether the series is convergent.
-    \[ \sum_{n=1}^{\infty} \dfrac{n \sin n}{1 + n^2} \]
-    
-    \item \textbf{Exercise 10:} Use the Integral Test to determine whether the series is convergent or divergent.
-    \[ \sum_{n=2}^{\infty} \dfrac{1}{n \ln n} \]
-
-    \item \textbf{Exercise 11:} Use the Integral Test to determine whether the series is convergent or divergent.
-    \[ \sum_{n=1}^{\infty} n e^{-n} \]
-    
+    \setcounter{enumi}{6} % 이전 목록 번호 이어서 시작
+    \item \textbf{Exercise 7:} Use the Integral Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=2}^{\infty} \dfrac{n^2}{n^3+1} \]
+    \item \textbf{Exercise 8:} Use the Integral Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} n^2 e^{-n^3} \]
+    \item \textbf{Exercise 9:} Use the Integral Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=2}^{\infty} \dfrac{1}{n(\ln n)^3} \]
     \item \textbf{Exercise 17:} Determine whether the series is convergent or divergent.
-    \[ \sum_{n=2}^{\infty} \dfrac{1}{n \sqrt{\ln n}} \]
-    
-    \item \textbf{Exercise 21:} Find the values of $p$ for which the series $\sum_{n=2}^{\infty} \dfrac{1}{n (\ln n)^p}$ is convergent.
-
-    \item \textbf{Exercise 23(a):} Find the partial sum $s_{10}$ of the series $\sum_{n=1}^{\infty} 1/n^2$. Estimate the error in using $s_{10}$ as an approximation to the sum of the series.
-    
-    \item \textbf{Exercise 23(b):} Use (2) with $n=10$ to give an improved estimate of the sum.
-    
-    \item \textbf{Exercise 23(c):} Find a value of $n$ so that $s_n$ is within 0.0001 of the sum.
-    
-    \item \textbf{Exercise 27(a):} Use the sum of the first 10 terms to estimate the sum of the series $\sum_{n=2}^{\infty} \dfrac{1}{n(\ln n)^2}$. Estimate the error.
+    \[ \sum_{n=1}^{\infty} \dfrac{\sqrt{n}+4}{n^2} \]
+    \item \textbf{Exercise 23:} Determine whether the series is convergent or divergent.
+    \[ \sum_{n=2}^{\infty} \dfrac{1}{n \ln n} \]
+    \item \textbf{Exercise 24:} Determine whether the series is convergent or divergent.
+    \[ \sum_{n=2}^{\infty} \dfrac{\ln n}{n^2} \]
+    \item \textbf{Exercise 25:} Determine whether the series is convergent or divergent.
+    \[ \sum_{k=1}^{\infty} k e^{-k} \]
+    \item \textbf{Exercise 27:} Determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \dfrac{1}{n^2 + n^3} \]
+    \item \textbf{Exercise 38(a):} Find the partial sum $s_{10}$ of the series $\sum_{n=1}^{\infty} 1/n^4$. Estimate the error in using $s_{10}$ as an approximation to the sum of the series.
+    \item \textbf{Exercise 39(a):} Use the sum of the first 10 terms to estimate the sum of the series $\sum_{n=1}^{\infty} 1/n^2$. How good is this estimate?
+    \item \textbf{Exercise 40:} Find the sum of the series $\sum_{n=1}^{\infty} n e^{-2n}$ correct to four decimal places.
 \end{enumerate}
 
 \hrulefill
 \vspace{1em}
 
-\subsection*{Difficulty: Hard}
+% --- 난이도 상 (Hard) ---
+\subsection*{Difficulty: Hard (5 Problems)}
 \begin{enumerate}
-    \setcounter{enumi}{16}
-    \item \textbf{Exercise 31:} How many terms of the series $\sum_{n=2}^{\infty} \dfrac{1}{n(\ln n)^2}$ would you need to add to find its sum to within 0.01?
-    
-    \item \textbf{Exercise 33:} If $\sum a_n$ is a convergent series with positive terms, is it true that $\sum \sin(a_n)$ is also convergent?
-
-    \item \textbf{Exercise 35(a):} Show that $\sum_{n=2}^{\infty} \dfrac{1}{n (\ln n)^p}$ converges if $p > 1$ and diverges if $p \le 1$. (This is the $p$-series test for integrals.)
-    
-    \item \textbf{Exercise 37(a):} Find the partial sum $s_{10}$ of the series $\sum_{n=1}^{\infty} 1/n^4$. Estimate the error in using $s_{10}$ as an approximation to the sum of the series.
-    
-    \item \textbf{Exercise 37(b):} Use (2) with $n=10$ to give an improved estimate of the sum.
-    
-    \item \textbf{Exercise 40:} Find all positive values of $b$ for which the series $\sum_{n=1}^{\infty} b^{\ln n}$ converges.
+    \setcounter{enumi}{17} % 이전 목록 번호 이어서 시작
+    \item \textbf{Exercise 31:} Find the values of $p$ for which the series $\sum_{n=2}^{\infty} \dfrac{1}{n(\ln n)^p}$ is convergent.
+    \item \textbf{Exercise 32:} Find the values of $p$ for which the series $\sum_{n=3}^{\infty} \dfrac{1}{n \ln n [\ln(\ln n)]^p}$ is convergent.
+    \item \textbf{Exercise 33:} Find the values of $p$ for which the series $\sum_{n=1}^{\infty} n (1+n^2)^p$ is convergent.
+    \item \textbf{Exercise 47:} Find all positive values of $b$ for which the series $\sum_{n=1}^{\infty} b^{\ln n}$ converges.
+    \item \textbf{Exercise 48:} Find all values of $c$ for which the following series converges: $\sum_{n=1}^{\infty} (\dfrac{c}{n} - \dfrac{1}{n+1})$.
 \end{enumerate}
 
 \end{document}
