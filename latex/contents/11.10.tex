@@ -1,0 +1,356 @@
+\documentclass{article}
+\usepackage[a4paper,left=3cm, right=3cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+\usepackage{amsthm} % For proofs
+\usepackage{amsfonts} % For \mathbb{R}
+
+\graphicspath{{graph/}}
+\title{11.10 Taylor and Maclaurin Series}
+\date{}
+\author{}
+\setstretch{1.3}
+
+% \subsection* format (no number)
+\titleformat{name=\section, numberless}
+  {\normalfont\large\bfseries\color{blue}}
+  {}
+  {0pt}
+  {}
+\geometry{a4paper, margin=1in}
+
+% Proof environment style
+\newtheoremstyle{mystyle}% name
+  {}% Space above
+  {}% Space below
+  {\itshape}% Body font
+  {}% Indent amount
+  {\bfseries}% Theorem head font
+  {.}% Punctuation after theorem head
+  {.5em}% Space after theorem head
+  {}% Theorem head spec (can be left empty, meaning `normal')
+\theoremstyle{mystyle}
+\newtheorem*{theorem}{Theorem} % Use unnumbered theorem environment
+
+\begin{document}
+\maketitle
+
+This section investigates which functions have power series representations and how to find such representations. It focuses on Taylor series and Maclaurin series.
+
+\section*{Definitions of Taylor Series and Maclaurin Series}
+Suppose a function \(f\) can be represented by a power series centered at \(a\):
+\begin{equation}
+ f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots = \sum_{n=0}^{\infty} c_n (x-a)^n \quad |x-a| < R \label{eq:power_series_def}
+\end{equation}
+By evaluating \(f(a)\) and its successive derivatives \(f'(a), f''(a), f'''(a), \ldots\), we can determine the coefficients \(c_n\).
+\begin{align*}
+    f(a) &= c_0 \\
+    f'(a) &= c_1 \\
+    f''(a) &= 2c_2 \\
+    f'''(a) &= 2 \cdot 3 c_3 = 3! c_3 \\
+    &\vdots \\
+    f^{(n)}(a) &= n! c_n
+\end{align*}
+Solving for \(c_n\) gives the following theorem:
+
+\begin{tcolorbox}[
+    colback=white,
+    colframe=orange!80!white,
+    title=Theorem 5,
+    boxrule=0.5mm,
+    arc=3mm
+    ]
+    If \(f\) has a power series representation (expansion) at \(a\), that is, if
+    \[ f(x) = \sum_{n=0}^{\infty} c_n (x-a)^n \quad |x-a| < R \]
+    then its coefficients are given by the formula
+    \[ c_n = \dfrac{f^{(n)}(a)}{n!} \]
+\end{tcolorbox}
+
+Substituting this formula back into the series gives the \textbf{Taylor series} of the function \(f\) at \(a\):
+\begin{equation}
+ f(x) = \sum_{n=0}^{\infty} \dfrac{f^{(n)}(a)}{n!} (x-a)^n = f(a) + \dfrac{f'(a)}{1!}(x-a) + \dfrac{f''(a)}{2!}(x-a)^2 + \dfrac{f'''(a)}{3!}(x-a)^3 + \cdots \label{eq:taylor_series}
+\end{equation}
+
+For the special case \(a=0\), the Taylor series becomes the \textbf{Maclaurin series}:
+\begin{equation}
+ f(x) = \sum_{n=0}^{\infty} \dfrac{f^{(n)}(0)}{n!} x^n = f(0) + \dfrac{f'(0)}{1!}x + \dfrac{f''(0)}{2!}x^2 + \cdots \label{eq:maclaurin_series}
+\end{equation}
+
+\textbf{Note 1:} Having a Taylor series doesn't guarantee the series sums to \(f(x)\).
+\textbf{Note 2:} A power series representation at \(a\) is unique; it must be the Taylor series. Representations found in Section 11.9 are Taylor series.
+
+\subsection*{EXAMPLE 1}
+Confirm the Maclaurin series for \(f(x) = \dfrac{1}{1-x}\).\\
+\textbf{SOLUTION:}
+We found \(f^{(n)}(0) = n!\). Therefore,
+\[ c_n = \dfrac{f^{(n)}(0)}{n!} = \dfrac{n!}{n!} = 1 \]
+The Maclaurin series is \( \sum_{n=0}^{\infty} x^n = 1 + x + x^2 + \cdots \), which matches the geometric series representation, valid for \(|x|<1\).
+
+\subsection*{EXAMPLE 2}
+Find the Maclaurin series for \(f(x) = e^x\) and its radius of convergence.\\
+\textbf{SOLUTION:}
+Since \(f^{(n)}(x) = e^x\) for all \(n\), we have \(f^{(n)}(0) = e^0 = 1\) for all \(n\). The Maclaurin series is:
+\[ \sum_{n=0}^{\infty} \dfrac{f^{(n)}(0)}{n!} x^n = \sum_{n=0}^{\infty} \dfrac{x^n}{n!} = 1 + \dfrac{x}{1!} + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \]
+Using the Ratio Test:
+\[ \left| \dfrac{a_{n+1}}{a_n} \right| = \left| \dfrac{x^{n+1}}{(n+1)!} \cdot \dfrac{n!}{x^n} \right| = \dfrac{|x|}{n+1} \to 0 \text{ as } n \to \infty \]
+The series converges for all \(x\), so the radius of convergence is \(R = \infty\).
+
+\section*{When Is a Function Represented by Its Taylor Series?}
+Let \(T_n(x)\) be the \(n\)-th degree Taylor polynomial of \(f\) at \(a\):
+\[ T_n(x) = \sum_{i=0}^{n} \dfrac{f^{(i)}(a)}{i!} (x-a)^i \]
+The remainder is defined as \(R_n(x) = f(x) - T_n(x)\). A function \(f\) is equal to the sum of its Taylor series if \(f(x) = \lim_{n\to\infty} T_n(x)\).
+
+\begin{tcolorbox}[
+    colback=white,
+    colframe=orange!80!white,
+    title=Theorem 5,
+    boxrule=0.5mm,
+    arc=3mm
+    ]
+    If \(f(x) = T_n(x) + R_n(x)\), where \(T_n\) is the \(n\)-th degree Taylor polynomial of \(f\) at \(a\), and if
+    \[ \lim_{n\to\infty} R_n(x) = 0 \]
+    for \(|x-a| < R\), then \(f\) is equal to the sum of its Taylor series on the interval \(|x-a| < R\).
+\end{tcolorbox}
+
+To show \(\lim_{n\to\infty} R_n(x) = 0\), we often use Taylor's Inequality.
+
+\begin{tcolorbox}[
+    colback=white,
+    colframe=orange!80!white,
+    title=Theorem 5,
+    boxrule=0.5mm,
+    arc=3mm
+    ]
+    If \(|f^{(n+1)}(x)| \le M\) for \(|x-a| \le d\), then the remainder \(R_n(x)\) of the Taylor series satisfies the inequality
+    \[ |R_n(x)| \le \dfrac{M}{(n+1)!} |x-a|^{n+1} \quad \text{for } |x-a| \le d \]
+\end{tcolorbox}
+
+A useful limit for applying Taylor's Inequality:
+\begin{equation}
+ \lim_{n\to\infty} \dfrac{x^n}{n!} = 0 \quad \text{for every real number } x \label{eq:limit_factorial}
+\end{equation}
+
+\subsection*{EXAMPLE 3}
+Prove that \(e^x\) is equal to the sum of its Maclaurin series.\\
+\textbf{SOLUTION:}
+Let \(f(x) = e^x\). Then \(f^{(n+1)}(x) = e^x\). For \(|x| \le d\), \(|f^{(n+1)}(x)| = e^x \le e^d\). Take \(M=e^d\). Taylor's Inequality gives:
+\[ |R_n(x)| \le \dfrac{e^d}{(n+1)!} |x|^{n+1} \quad \text{for } |x| \le d \]
+Using Equation (\ref{eq:limit_factorial}),
+\[ \lim_{n\to\infty} \dfrac{e^d}{(n+1)!} |x|^{n+1} = e^d \lim_{n\to\infty} \dfrac{|x|^{n+1}}{(n+1)!} = 0 \]
+By the Squeeze Theorem, \(\lim_{n\to\infty} |R_n(x)| = 0\), so \(\lim_{n\to\infty} R_n(x) = 0\) for all \(x\). By Theorem 8, \(e^x\) equals the sum of its Maclaurin series.
+\begin{equation}
+ e^x = \sum_{n=0}^{\infty} \dfrac{x^n}{n!} \quad \text{for all } x \label{eq:ex_maclaurin}
+\end{equation}
+Setting \(x=1\), we get
+\begin{equation}
+ e = \sum_{n=0}^{\infty} \dfrac{1}{n!} = 1 + \dfrac{1}{1!} + \dfrac{1}{2!} + \dfrac{1}{3!} + \cdots \label{eq:e_series}
+\end{equation}
+
+\subsection*{EXAMPLE 4}
+Find the Taylor series for \(f(x) = e^x\) at \(a=2\).\\
+\textbf{SOLUTION:}
+We have \(f^{(n)}(2) = e^2\) for all \(n\). The Taylor series is:
+\[ \sum_{n=0}^{\infty} \dfrac{f^{(n)}(2)}{n!} (x-2)^n = \sum_{n=0}^{\infty} \dfrac{e^2}{n!} (x-2)^n \]
+It can be shown that \(\lim_{n\to\infty} R_n(x) = 0\), so
+\begin{equation}
+ e^x = \sum_{n=0}^{\infty} \dfrac{e^2}{n!} (x-2)^n \quad \text{for all } x \label{eq:ex_taylor_a2}
+\end{equation}
+
+\section*{Taylor Series of Important Functions}
+
+\subsection*{EXAMPLE 5}
+Find the Maclaurin series for \(\sin x\) and prove that it represents \(\sin x\) for all \(x\).\\
+\textbf{SOLUTION:}
+Let \(f(x) = \sin x\). The derivatives at 0 follow a pattern: \(0, 1, 0, -1, 0, 1, 0, -1, \ldots\).
+The Maclaurin series is:
+\[ x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!} + \cdots = \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n+1}}{(2n+1)!} \]
+Since \(|f^{(n+1)}(x)| = |\pm \sin x|\) or \(|\pm \cos x|\), we have \(|f^{(n+1)}(x)| \le 1\) for all \(x\). Take \(M=1\) in Taylor's Inequality:
+\[ |R_n(x)| \le \dfrac{1}{(n+1)!} |x|^{n+1} \]
+Using Equation (\ref{eq:limit_factorial}), \(\lim_{n\to\infty} \dfrac{|x|^{n+1}}{(n+1)!} = 0\). Thus \(\lim_{n\to\infty} R_n(x) = 0\) for all \(x\).
+\begin{equation}
+ \sin x = x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!} + \cdots = \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n+1}}{(2n+1)!} \quad \text{for all } x \label{eq:sinx_maclaurin}
+\end{equation}
+
+\subsection*{EXAMPLE 6}
+Find the Maclaurin series for \(\cos x\).\\
+\textbf{SOLUTION:}
+Differentiate the Maclaurin series for \(\sin x\) (Equation \ref{eq:sinx_maclaurin}) term by term:
+\begin{align*}
+ \cos x = \dfrac{d}{dx}(\sin x) &= \dfrac{d}{dx} \left( x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!} + \cdots \right) \\
+ &= 1 - \dfrac{3x^2}{3!} + \dfrac{5x^4}{5!} - \dfrac{7x^6}{7!} + \cdots \\
+ &= 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \dfrac{x^6}{6!} + \cdots = \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n}}{(2n)!}
+\end{align*}
+The radius of convergence is \(R = \infty\).
+\begin{equation}
+ \cos x = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \dfrac{x^6}{6!} + \cdots = \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n}}{(2n)!} \quad \text{for all } x \label{eq:cosx_maclaurin}
+\end{equation}
+
+\subsection*{EXAMPLE 7}
+Represent \(f(x) = \sin x\) as the sum of its Taylor series centered at \(\pi/3\).\\
+\textbf{SOLUTION:}
+Calculate derivatives at \(a=\pi/3\): \(f(\pi/3)=\sqrt{3}/2\), \(f'(\pi/3)=1/2\), \(f''(\pi/3)=-\sqrt{3}/2\), \(f'''(\pi/3)=-1/2\), etc. The Taylor series is:
+\[ \dfrac{\sqrt{3}}{2} + \dfrac{1}{2 \cdot 1!}\left(x-\dfrac{\pi}{3}\right) - \dfrac{\sqrt{3}}{2 \cdot 2!}\left(x-\dfrac{\pi}{3}\right)^2 - \dfrac{1}{2 \cdot 3!}\left(x-\dfrac{\pi}{3}\right)^3 + \cdots \]
+This can be written as:
+\[ \sin x = \sum_{n=0}^{\infty} \dfrac{(-1)^n \sqrt{3}}{2(2n)!} \left(x-\dfrac{\pi}{3}\right)^{2n} + \sum_{n=0}^{\infty} \dfrac{(-1)^n}{2(2n+1)!} \left(x-\dfrac{\pi}{3}\right)^{2n+1} \]
+This representation is valid for all \(x\).
+
+\begin{tcolorbox}[
+    colback=white,
+    colframe=orange!80!white,
+    title=Theorem 5,
+    boxrule=0.5mm,
+    arc=3mm
+    ]
+\begin{align*}
+    \dfrac{1}{1-x} &= \sum_{n=0}^{\infty} x^n = 1 + x + x^2 + x^3 + \cdots & R &= 1 \\[.5em] % Add some vertical space
+    e^x &= \sum_{n=0}^{\infty} \dfrac{x^n}{n!} = 1 + \dfrac{x}{1!} + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots & R &= \infty \\[.5em]
+    \sin x &= \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n+1}}{(2n+1)!} = x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \dfrac{x^7}{7!} + \cdots & R &= \infty \\[.5em]
+    \cos x &= \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n}}{(2n)!} = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \dfrac{x^6}{6!} + \cdots & R &= \infty \\[.5em]
+    \tan^{-1} x &= \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n+1}}{2n+1} = x - \dfrac{x^3}{3} + \dfrac{x^5}{5} - \dfrac{x^7}{7} + \cdots & R &= 1 \\[.5em]
+    \ln(1+x) &= \sum_{n=1}^{\infty} (-1)^{n-1} \dfrac{x^n}{n} = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - \dfrac{x^4}{4} + \cdots & R &= 1 \\[.5em]
+    (1+x)^k &= \sum_{n=0}^{\infty} \binom{k}{n} x^n = 1 + kx + \dfrac{k(k-1)}{2!}x^2 + \dfrac{k(k-1)(k-2)}{3!}x^3 + \cdots & R &= 1
+\end{align*}
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 8}
+Find the Maclaurin series for \(f(x) = (1+x)^k\), where \(k\) is any real number.\\
+\textbf{SOLUTION:}
+Calculate derivatives: \(f(0)=1\), \(f'(0)=k\), \(f''(0)=k(k-1)\), \(f'''(0)=k(k-1)(k-2)\), ..., \(f^{(n)}(0)=k(k-1)\cdots(k-n+1)\).
+The Maclaurin series is:
+\[ \sum_{n=0}^{\infty} \dfrac{k(k-1)\cdots(k-n+1)}{n!} x^n \]
+Using binomial coefficient notation \( \binom{k}{n} = \dfrac{k(k-1)\cdots(k-n+1)}{n!} \) for \(n \ge 1\) and \( \binom{k}{0}=1 \), the series is \( \sum_{n=0}^{\infty} \binom{k}{n} x^n \).
+The Ratio Test gives:
+\[ \left| \dfrac{a_{n+1}}{a_n} \right| = \left| \dfrac{\binom{k}{n+1} x^{n+1}}{\binom{k}{n} x^n} \right| = \left| \dfrac{k-n}{n+1} x \right| \to |x| \text{ as } n \to \infty \]
+The series converges if \(|x|<1\) and diverges if \(|x|>1\). Radius of convergence is \(R=1\).
+
+\begin{tcolorbox}[
+    colback=white,
+    colframe=orange!80!white,
+    title=Theorem 5,
+    boxrule=0.5mm,
+    arc=3mm
+    ]
+    If \(k\) is any real number and \(|x| < 1\), then
+    \[ (1+x)^k = \sum_{n=0}^{\infty} \binom{k}{n} x^n = 1 + kx + \dfrac{k(k-1)}{2!}x^2 + \dfrac{k(k-1)(k-2)}{3!}x^3 + \cdots \]
+\end{tcolorbox}
+Convergence at endpoints \(x=\pm 1\) depends on \(k\).
+
+\subsection*{EXAMPLE 9}
+Find the Maclaurin series for \(f(x) = \dfrac{1}{\sqrt{4-x}}\) and its radius of convergence.\\
+\textbf{SOLUTION:}
+Rewrite \(f(x)\):
+\[ \dfrac{1}{\sqrt{4-x}} = \dfrac{1}{\sqrt{4(1-x/4)}} = \dfrac{1}{2\sqrt{1-x/4}} = \dfrac{1}{2} \left(1 + \left(-\dfrac{x}{4}\right)\right)^{-1/2} \]
+Use the binomial series with \(k=-1/2\) and \(x\) replaced by \(-x/4\):
+\begin{align*}
+ \dfrac{1}{\sqrt{4-x}} &= \dfrac{1}{2} \sum_{n=0}^{\infty} \binom{-1/2}{n} \left(-\dfrac{x}{4}\right)^n \\
+ &= \dfrac{1}{2} \left[ 1 + \left(-\dfrac{1}{2}\right)\left(-\dfrac{x}{4}\right) + \dfrac{(-\frac{1}{2})(-\frac{3}{2})}{2!}\left(-\dfrac{x}{4}\right)^2 + \cdots \right] \\
+ &= \dfrac{1}{2} \left[ 1 + \dfrac{1}{8}x + \dfrac{1 \cdot 3}{2! 8^2} x^2 + \dfrac{1 \cdot 3 \cdot 5}{3! 8^3} x^3 + \cdots + \dfrac{1 \cdot 3 \cdot 5 \cdots (2n-1)}{n! 8^n} x^n + \cdots \right]
+\end{align*}
+The series converges for \(|-x/4| < 1\), which means \(|x|<4\). The radius of convergence is \(R=4\).
+
+\begin{center}
+\textbf{Table 1: Important Maclaurin Series and Their Radii of Convergence}
+\begin{tabular}{|l|l|}
+\hline
+\( \dfrac{1}{1-x} = \sum_{n=0}^{\infty} x^n = 1 + x + x^2 + \cdots \) & \( R=1 \) \\
+\( e^x = \sum_{n=0}^{\infty} \dfrac{x^n}{n!} = 1 + \dfrac{x}{1!} + \dfrac{x^2}{2!} + \cdots \) & \( R=\infty \) \\
+\( \sin x = \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n+1}}{(2n+1)!} = x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \cdots \) & \( R=\infty \) \\
+\( \cos x = \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n}}{(2n)!} = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \cdots \) & \( R=\infty \) \\
+\( \tan^{-1} x = \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n+1}}{2n+1} = x - \dfrac{x^3}{3} + \dfrac{x^5}{5} - \cdots \) & \( R=1 \) \\
+\( \ln(1+x) = \sum_{n=1}^{\infty} (-1)^{n-1} \dfrac{x^n}{n} = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - \cdots \) & \( R=1 \) \\
+\( (1+x)^k = \sum_{n=0}^{\infty} \binom{k}{n} x^n = 1 + kx + \dfrac{k(k-1)}{2!}x^2 + \cdots \) & \( R=1 \) \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{New Taylor Series from Old}
+We can find Taylor series for new functions by manipulating known series (from Table 1) via substitution, multiplication, division, addition, subtraction, differentiation, and integration.
+
+\subsection*{EXAMPLE 10}
+Find the Maclaurin series for (a) \(f(x) = x \cos x\) and (b) \(f(x) = \ln(1+3x^2)\).\\
+\textbf{SOLUTION:}
+(a) Multiply the series for \(\cos x\) by \(x\):
+\[ x \cos x = x \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n}}{(2n)!} = \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n+1}}{(2n)!} \quad (R=\infty) \]
+(b) Replace \(x\) by \(3x^2\) in the series for \(\ln(1+x)\):
+\[ \ln(1+3x^2) = \sum_{n=1}^{\infty} (-1)^{n-1} \dfrac{(3x^2)^n}{n} = \sum_{n=1}^{\infty} (-1)^{n-1} \dfrac{3^n x^{2n}}{n} \]
+Converges for \(|3x^2| < 1\), i.e., \(|x| < 1/\sqrt{3}\). \(R=1/\sqrt{3}\).
+
+\subsection*{EXAMPLE 11}
+Find the function represented by the power series \( \sum_{n=0}^{\infty} \dfrac{(-1)^n 2^n x^n}{n!} \).\\
+\textbf{SOLUTION:}
+Rewrite the series as \( \sum_{n=0}^{\infty} \dfrac{(-2x)^n}{n!} \). This is the Maclaurin series for \(e^u\) with \(u=-2x\). So the function is \(e^{-2x}\).
+
+\subsection*{EXAMPLE 12}
+Find the sum of the series \( \dfrac{1}{1 \cdot 2} - \dfrac{1}{2 \cdot 2^2} + \dfrac{1}{3 \cdot 2^3} - \dfrac{1}{4 \cdot 2^4} + \cdots \).\\
+\textbf{SOLUTION:}
+The series is \( \sum_{n=1}^{\infty} (-1)^{n-1} \dfrac{1}{n 2^n} = \sum_{n=1}^{\infty} (-1)^{n-1} \dfrac{(1/2)^n}{n} \).
+This matches the series for \(\ln(1+x)\) with \(x=1/2\).
+The sum is \(\ln(1 + 1/2) = \ln(3/2)\).
+
+\subsection*{EXAMPLE 13}
+(a) Evaluate \( \int e^{-x^2} \,dx \) as an infinite series. \\
+(b) Evaluate \( \int_0^1 e^{-x^2} \,dx \) correct to within an error of 0.001.\\
+\textbf{SOLUTION:}
+(a) Replace \(x\) with \(-x^2\) in the series for \(e^x\):
+\[ e^{-x^2} = \sum_{n=0}^{\infty} \dfrac{(-x^2)^n}{n!} = \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n}}{n!} = 1 - \dfrac{x^2}{1!} + \dfrac{x^4}{2!} - \dfrac{x^6}{3!} + \cdots \]
+Integrate term by term:
+\[ \int e^{-x^2} \,dx = C + \sum_{n=0}^{\infty} (-1)^n \dfrac{x^{2n+1}}{(2n+1)n!} = C + x - \dfrac{x^3}{3 \cdot 1!} + \dfrac{x^5}{5 \cdot 2!} - \dfrac{x^7}{7 \cdot 3!} + \cdots \]
+(b) Evaluate the definite integral using the series from part (a) with C=0:
+\[ \int_0^1 e^{-x^2} \,dx = \left[ x - \dfrac{x^3}{3} + \dfrac{x^5}{10} - \dfrac{x^7}{42} + \dfrac{x^9}{216} - \cdots \right]_0^1 \]
+\[ = 1 - \dfrac{1}{3} + \dfrac{1}{10} - \dfrac{1}{42} + \dfrac{1}{216} - \cdots \approx 1 - 0.33333 + 0.10000 - 0.02381 + 0.00463 - \cdots \]
+This is an alternating series. The first few terms are \(1, -0.33333, 0.10000, -0.02381, 0.00463, -0.00059, \ldots\).
+The term \(b_5 = 1/(11 \cdot 5!) = 1/1320 \approx 0.00076\).
+The term \(b_6 = 1/(13 \cdot 6!) = 1/9360 \approx 0.00011\).
+The error using \(s_5\) is less than \(b_6 \approx 0.00011 < 0.001\).
+\[ \int_0^1 e^{-x^2} \,dx \approx 1 - \dfrac{1}{3} + \dfrac{1}{10} - \dfrac{1}{42} + \dfrac{1}{216} - \dfrac{1}{1320} \approx 0.7467 \]
+(Using \(s_4\) gives error less than \(b_5 \approx 0.00076 < 0.001\).)
+\[ \int_0^1 e^{-x^2} \,dx \approx 1 - \dfrac{1}{3} + \dfrac{1}{10} - \dfrac{1}{42} + \dfrac{1}{216} \approx 0.7475 \]
+
+\subsection*{EXAMPLE 14}
+Evaluate \( \lim_{x\to 0} \dfrac{e^x - 1 - x}{x^2} \).\\
+\textbf{SOLUTION:}
+Use the Maclaurin series for \(e^x\):
+\begin{align*}
+ \dfrac{e^x - 1 - x}{x^2} &= \dfrac{(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots) - 1 - x}{x^2} \\
+ &= \dfrac{\frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots}{x^2} \\
+ &= \dfrac{1}{2!} + \dfrac{x}{3!} + \dfrac{x^2}{4!} + \cdots
+\end{align*}
+Therefore,
+\[ \lim_{x\to 0} \dfrac{e^x - 1 - x}{x^2} = \lim_{x\to 0} \left( \dfrac{1}{2!} + \dfrac{x}{3!} + \dfrac{x^2}{4!} + \cdots \right) = \dfrac{1}{2!} = \dfrac{1}{2} \]
+
+\section*{Multiplication and Division of Power Series}
+Power series can be multiplied and divided like polynomials.
+
+\subsection*{EXAMPLE 15}
+Find the first three nonzero terms in the Maclaurin series for (a) \(e^x \sin x\) and (b) \(\tan x\).\\
+\textbf{SOLUTION:}
+(a) Multiply the series for \(e^x\) and \(\sin x\):
+\[ e^x \sin x = \left( 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots \right) \left( x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \cdots \right) \]
+\[ = (1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\cdots)(x-\frac{1}{6}x^3+\cdots) \]
+\[ = 1(x-\frac{1}{6}x^3+\cdots) + x(x-\frac{1}{6}x^3+\cdots) + \frac{1}{2}x^2(x-\frac{1}{6}x^3+\cdots) + \frac{1}{6}x^3(x-\cdots) + \cdots \]
+\[ = x - \frac{1}{6}x^3 + x^2 - \frac{1}{6}x^4 + \frac{1}{2}x^3 - \frac{1}{12}x^5 + \frac{1}{6}x^4 + \cdots \]
+\[ = x + x^2 + \left(-\frac{1}{6} + \frac{1}{2}\right)x^3 + \left(-\frac{1}{6} + \frac{1}{6}\right)x^4 + \cdots \]
+\[ = x + x^2 + \dfrac{1}{3}x^3 + \cdots \]
+(b) Divide the series for \(\sin x\) by the series for \(\cos x\) using long division:
+\[ \tan x = \dfrac{\sin x}{\cos x} = \dfrac{x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots}{1 - \frac{x^2}{2} + \frac{x^4}{24} - \cdots} \]
+Performing the long division:
+\[\begin{array}{r} % <- 여기에 {r} 추가 (오른쪽 정렬)
+    x + \frac{1}{3}x^3 + \frac{2}{15}x^5 + \cdots \\
+    1 - \frac{1}{2}x^2 + \frac{1}{24}x^4 - \cdots \overline{) x - \frac{1}{6}x^3 + \frac{1}{120}x^5 - \cdots} \\ % 긴 나눗셈 기호 \overline 사용
+    -(x - \frac{1}{2}x^3 + \frac{1}{24}x^5 - \cdots) \\
+    \hline % 가로줄 \hline 사용
+    \frac{1}{3}x^3 - \frac{1}{30}x^5 + \cdots \\
+    -(\frac{1}{3}x^3 - \frac{1}{6}x^5 + \cdots) \\
+    \hline % 가로줄 \hline 사용
+    \frac{2}{15}x^5 + \cdots
+\end{array}\]
+    \[ \tan x = x + \dfrac{1}{3}x^3 + \dfrac{2}{15}x^5 + \cdots \]
+
+\end{document}
