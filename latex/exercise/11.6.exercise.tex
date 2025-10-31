@@ -1,0 +1,107 @@
+\documentclass{article}
+
+% Required Packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{kotex} % 한국어 사용을 위한 패키지
+\usepackage{geometry}
+\geometry{a4paper, margin=1in} % 페이지 여백 설정
+
+% Title
+\title{Chapter 11.6 Exercises: The Ratio and Root Tests}
+\author{James Stewart, Calculus, Metric Edition}
+\date{}
+
+\begin{document}
+\maketitle
+\hrulefill % 제목 아래 수평선
+\vspace{1em} % 제목과 내용 사이 간격
+
+% --- 난이도 하 (Easy) ---
+\subsection*{Difficulty: Easy (5 Problems)}
+\begin{enumerate}
+    \item \textbf{Exercise 3:} Use the Ratio Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \frac{n}{5^n} \]
+    
+    \item \textbf{Exercise 4:} Use the Ratio Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \frac{(-2)^n}{n^2} \]
+    
+    \item \textbf{Exercise 7:} Use the Ratio Test to determine whether the series is convergent or divergent.
+    \[ \sum_{k=1}^{\infty} \frac{1}{k!} \]
+    
+    \item \textbf{Exercise 8:} Use the Ratio Test to determine whether the series is convergent or divergent.
+    \[ \sum_{k=1}^{\infty} k e^{-k} \]
+    
+    \item \textbf{Exercise 21:} Use the Root Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \left(\frac{n^2+1}{2n^2+1}\right)^n \]
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+% --- 난이도 중 (Medium) ---
+\subsection*{Difficulty: Medium (10 Problems)}
+\begin{enumerate}
+    \setcounter{enumi}{5} % 이전 목록 번호 이어서 시작
+    \item \textbf{Exercise 9:} Use the Ratio Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \frac{10^n}{(n+1) 4^{2n+1}} \]
+    
+    \item \textbf{Exercise 10:} Use the Ratio Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \frac{n!}{100^n} \]
+    
+    \item \textbf{Exercise 12:} Use the Ratio Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \frac{n^{10}}{(-10)^{n+1}} \]
+    
+    \item \textbf{Exercise 13:} Use the Ratio Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \frac{\cos(n\pi/3)}{n!} \]
+    
+    \item \textbf{Exercise 22:} Use the Root Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \frac{(-2)^n}{n^n} \]
+    
+    \item \textbf{Exercise 24:} Use the Root Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \left(\frac{-2n}{n+1}\right)^{5n} \]
+    
+    \item \textbf{Exercise 25:} Use the Root Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \left(1 + \frac{1}{n}\right)^{n^2} \]
+    
+    \item \textbf{Exercise 27:} Use any test to determine whether the series is absolutely convergent, conditionally convergent, or divergent.
+    \[ \sum_{n=2}^{\infty} \frac{(-1)^n \ln n}{n} \]
+    
+    \item \textbf{Exercise 31:} Use any test to determine whether the series is absolutely convergent, conditionally convergent, or divergent.
+    \[ \sum_{n=1}^{\infty} (\frac{n}{\ln{n}})^n \]
+    
+    \item \textbf{Exercise 33:} Use any test to determine whether the series is absolutely convergent, conditionally convergent, or divergent.
+    \[ \sum_{n=1}^{\infty} \frac{(-1)^n \arctan n}{n^2} \]
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+% --- 난이도 상 (Hard) ---
+\subsection*{Difficulty: Hard (5 Problems)}
+\begin{enumerate}
+    \setcounter{enumi}{15} % 이전 목록 번호 이어서 시작
+    \item \textbf{Exercise 14:} Use the Ratio Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \frac{n!}{n^n} \]
+    
+    \item \textbf{Exercise 16:} Use the Ratio Test to determine whether the series is convergent or divergent.
+    \[ \sum_{n=1}^{\infty} \frac{(2n)!}{(n!)^2} \]
+    
+    \item \textbf{Exercise 35:} The terms of a series are defined recursively by the equations
+    \[ a_1 = 2 \qquad a_{n+1} = \frac{5n+1}{4n+3} a_n \]
+    Determine whether $\sum a_n$ converges or diverges.
+    
+    \item \textbf{Exercise 40:} For which positive integers $k$ is the following series convergent?
+    \[ \sum_{n=1}^{\infty} \frac{(n!)^2}{(kn)!} \]
+    
+    \item \textbf{Exercise 42:} Let $\sum a_n$ be a series with positive terms and let $r_n = a_{n+1}/a_n$. Suppose that $\lim_{n \to \infty} r_n = L < 1$, so $\sum a_n$ converges by the Ratio Test. As usual, we let $R_n$ be the remainder after $n$ terms, that is,
+    \[ R_n = a_{n+1} + a_{n+2} + a_{n+3} + \dots \]
+    \begin{enumerate}
+        \item[(a)] If $\{r_n\}$ is a decreasing sequence and $r_{n+1} < 1$, show, by summing a geometric series, that
+        \[ R_n \le \frac{a_{n+1}}{1-r_{n+1}} \]
+        \item[(b)] If $\{r_n\}$ is an increasing sequence, show that
+        \[ R_n \le \frac{a_{n+1}}{1-L} \]
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
