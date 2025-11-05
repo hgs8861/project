@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+
+% Required Packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{kotex} % 한국어 사용을 위한 패키지
+\usepackage{geometry}
+\geometry{a4paper, margin=1in} % 페이지 여백 설정
+
+% Title
+\title{Chapter 11.8 Exercises: Power Series}
+\author{James Stewart, Calculus, Metric Edition}
+\date{}
+
+\begin{document}
+\maketitle
+\hrulefill % 제목 아래 수평선
+\vspace{1em} % 제목과 내용 사이 간격
+
+% --- 난이도 하 (Easy) ---
+\subsection*{Difficulty: Easy (5 Problems)}
+\begin{enumerate}
+    \item \textbf{Exercise 3:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \frac{x^n}{n} \]
+    
+    \item \textbf{Exercise 5:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \sqrt{n}x^n \]
+    
+    \item \textbf{Exercise 7:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \frac{n}{5^n} x^n \]
+    
+    \item \textbf{Exercise 13:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=0}^{\infty} \frac{x^n}{n!} \]
+    
+    \item \textbf{Exercise 15:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \frac{x^n}{n^4 4^n} \]
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+% --- 난이도 중 (Medium) ---
+\subsection*{Difficulty: Medium (11 Problems)}
+\begin{enumerate}
+    \setcounter{enumi}{5} % 이전 목록 번호 이어서 시작
+    \item \textbf{Exercise 9:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \frac{x^n}{n 3^n} \]
+    
+    \item \textbf{Exercise 11:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \frac{x^n}{2n-1} \]
+    
+    \item \textbf{Exercise 17:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \frac{(-1)^n 4^n}{\sqrt{n}} x^n \]
+    
+    \item \textbf{Exercise 20:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \frac{x^{2n}}{n!} \]
+    
+    \item \textbf{Exercise 21:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=0}^{\infty} \frac{(x-2)^n}{n^2+1} \]
+    
+    \item \textbf{Exercise 23:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=2}^{\infty} \frac{(x+2)^n}{2^n \ln n} \]
+    
+    \item \textbf{Exercise 26:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \frac{(2x-1)^n}{5^n \sqrt{n}} \]
+    
+    \item \textbf{Exercise 37:} If $\sum_{n=0}^{\infty} c_n 4^n$ is convergent, can we conclude that each of the following series is convergent?
+    \[ (a) \sum_{n=0}^{\infty} c_n (-2)^n \qquad (b) \sum_{n=0}^{\infty} c_n (-4)^n \]
+    
+    \item \textbf{Exercise 38:} Suppose that $\sum_{n=0}^{\infty} c_n x^n$ converges when $x = -4$ and diverges when $x = 6$. What can be said about the convergence or divergence of the following series?
+    \[ (a) \sum_{n=0}^{\infty} c_n \qquad (b) \sum_{n=0}^{\infty} c_n 8^n \qquad (c) \sum_{n=0}^{\infty} c_n (-3)^n \qquad (d) \sum_{n=0}^{\infty} (-1)^n c_n 9^n \]
+
+    \item \textbf{Exercise 44:} Suppose that the power series $\sum c_n (x-a)^n$ satisfies $c_n \neq 0$ for all $n$. Show that if $\lim_{n \to \infty} \left| \frac{c_n}{c_{n+1}} \right| = R$, then $R$ is the radius of convergence.
+    
+    \item \textbf{Exercise 45:} Suppose the series $\sum c_n x^n$ has radius of convergence 2 and the series $\sum d_n x^n$ has radius of convergence 3. What is the radius of convergence of the series $\sum (c_n + d_n) x^n$?
+\end{enumerate}
+
+\hrulefill
+\vspace{1em}
+
+% --- 난이도 상 (Hard) ---
+\subsection*{Difficulty: Hard (5 Problems)}
+\begin{enumerate}
+    \setcounter{enumi}{16} % 이전 목록 번호 이어서 시작
+    \item \textbf{Exercise 29:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \frac{n}{b^n} (x-a)^n, \quad b > 0 \]
+    
+    \item \textbf{Exercise 31:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} n! (2x-1)^n \]
+    
+    \item \textbf{Exercise 32:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=1}^{\infty} \frac{n^2 x^n}{2 \cdot 4 \cdot 6 \cdot \dots \cdot (2n)} \]
+    
+    \item \textbf{Exercise 34:} Find the radius of convergence and interval of convergence of the power series.
+    \[ \sum_{n=2}^{\infty} \frac{x^{2n}}{n(\ln n)^2} \]
+    
+    \item \textbf{Exercise 43:} Show that if $\lim_{n \to \infty} \sqrt[n]{|c_n|} = c$, where $c \neq 0$, then the radius of convergence of the power series $\sum c_n x^n$ is $R = 1/c$.
+\end{enumerate}
+
+\end{document}
