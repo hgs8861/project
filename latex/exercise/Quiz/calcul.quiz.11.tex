@@ -1,0 +1,98 @@
+\documentclass{exam}
+\addpoints % Enable the grade table
+
+% --- 한글 사용을 위한 패키지 설정 ---
+\usepackage[utf8]{inputenc}
+\usepackage{kotex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+
+\begin{document} % (10점)
+\begin{center}
+    \bfseries\Large 퀴즈 2차 (현경서t) 
+
+    \bigskip
+    \large 미적분학1  
+    
+    \bigskip
+    % 이름과 학번을 적는 란을 만듭니다.
+    \makebox[0.2\textwidth]{반: \hrulefill} \hspace{1cm}
+    \makebox[0.2\textwidth]{번호: \hrulefill} \hspace{1cm}
+    \makebox[0.4\textwidth]{이름: \hrulefill}
+\end{center}
+
+\bigskip % 간격 띄우기
+\begin{questions}
+
+% \item 대신 \question 명령어를 사용합니다.
+% \question[배점] 형식으로 배점을 자동으로 관리할 수 있습니다.
+\question[10]
+Prove the next theorem.
+\begin{tcolorbox}
+    Suppose \(f\) is a continuous, positive, decreasing function on \([1, \infty]\) and let \(a_n = f(n)\). 
+    \begin{itemize}
+        \item[(i)] If \( \int_1^\infty f(x) \,dx \) is \textbf{convergent}, then \( \sum_{n=1}^{\infty} a_n \) is \textbf{convergent}.
+        \item[(ii)] If \( \int_1^\infty f(x) \,dx \) is \textbf{divergent}, then \( \sum_{n=1}^{\infty} a_n \) is \textbf{divergent}.
+    \end{itemize}
+\end{tcolorbox}
+
+\vspace{7cm}
+
+\question[10]
+Prove the next theorem.
+\begin{tcolorbox}
+    Suppose that \( \sum a_n \) and \( \sum b_n \) are series with positive terms.
+    \begin{itemize}
+        \item[(i)] If \( \sum b_n \) is \textbf{convergent} and \( a_n \le b_n \) for all \( n \), then \( \sum a_n \) is also \textbf{convergent}.
+        \item[(ii)] If \( \sum b_n \) is \textbf{divergent} and \( a_n \ge b_n \) for all \( n \), then \( \sum a_n \) is also \textbf{divergent}.
+    \end{itemize}
+\end{tcolorbox}
+    
+\vspace{6cm}
+
+\question[10]
+Prove the next theorem.
+\begin{tcolorbox}
+    If the alternating series
+    $\sum_{n=1}^{\infty} (-1)^{n-1}b_n (b_n > 0)$ satisfies
+    \begin{itemize}
+        \item[(i)] \( b_{n+1} \le b_n \) for all \(n\)
+        \item[(ii)] \( \lim_{n\to\infty} b_n = 0 \)
+    \end{itemize}
+    then the series is convergent.
+\end{tcolorbox}
+
+\vspace{7cm}
+
+\question[10]
+Prove the next theorem.
+\begin{tcolorbox}
+    Let \( \sum a_n \) be a series and suppose that the following limit exists:
+    \[ \lim_{n\to\infty} \left| \dfrac{a_{n+1}}{a_n} \right| = L \]
+    \begin{itemize}
+        \item[(i)] If \(L < 1\), then the series \( \sum a_n \) is absolutely convergent.
+        \item[(ii)] If \(L > 1\) or \(L = \infty\), then the series \( \sum a_n \) is divergent.
+    \end{itemize}
+\end{tcolorbox}
+    
+\vspace{7cm}
+
+\question[10]
+Find the Macalurin seires for next function.
+\begin{parts}
+    \part[2] $\dfrac{1}{1-x}=$ \\
+    \part[2] $e^x=$ \\
+    \part[2] $\sin x=$ \\
+    \part[2] $\cos x=$ \\
+    \part[2] $(1+x)^k=$ \\
+\end{parts}
+    
+% \end{questions}로 문제 환경을 종료합니다.
+\end{questions}
+
+\vfill % 페이지 하단으로 내용을 밀어냄
+
+\centerline{\bfseries --- 수고하셨습니다 ---}
+
+\end{document}
