@@ -106,13 +106,7 @@ Let \(T_n(x)\) be the \(n\)-th degree Taylor polynomial of \(f\) at \(a\):
 \[ T_n(x) = \sum_{i=0}^{n} \dfrac{f^{(i)}(a)}{i!} (x-a)^i \]
 The remainder is defined as \(R_n(x) = f(x) - T_n(x)\). A function \(f\) is equal to the sum of its Taylor series if \(f(x) = \lim_{n\to\infty} T_n(x)\).
 
-\begin{tcolorbox}[
-    colback=white,
-    colframe=orange!80!white,
-    title=Theorem 5,
-    boxrule=0.5mm,
-    arc=3mm
-    ]
+\begin{tcolorbox}[ colback=white,colframe=orange!80!white, title=Theorem 5,boxrule=0.5mm, arc=3mm]
     If \(f(x) = T_n(x) + R_n(x)\), where \(T_n\) is the \(n\)-th degree Taylor polynomial of \(f\) at \(a\), and if
     \[ \lim_{n\to\infty} R_n(x) = 0 \]
     for \(|x-a| < R\), then \(f\) is equal to the sum of its Taylor series on the interval \(|x-a| < R\).
