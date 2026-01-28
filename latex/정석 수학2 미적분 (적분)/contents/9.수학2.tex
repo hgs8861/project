@@ -1,0 +1,220 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{kotex} % 한글 지원
+\usepackage{amsmath, amssymb, amsthm} % 수식 패키지
+\usepackage{geometry}
+\usepackage{tcolorbox} % 박스 디자인 패키지
+\usepackage{enumitem} % 리스트 간격 조절
+\tcbuselibrary{skins, breakable}
+
+% --- 여백 및 간격 설정 ---
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\linespread{1.3} % 줄 간격 1.3배
+\setlength{\parskip}{1em} % 문단 간격
+\setlist[enumerate]{itemsep=5pt, topsep=0pt} % 리스트 항목 간격
+
+% --- 사용자 정의 박스 스타일 (파랑/주황/회색) ---
+
+% 1. 기본정석 (개념): 파랑 계열
+\newtcolorbox{conceptbox}[1][]{
+  colback=blue!5,
+  colframe=blue!60,
+  coltitle=white,
+  fonttitle=\bfseries,
+  title={#1},
+  arc=1mm,
+  boxrule=0.5mm,
+  breakable,
+  parskip=1em
+}
+
+% 2. Advice (조언): 주황 계열
+\newtcolorbox{advicebox}{
+  colback=orange!5,
+  colframe=orange!60,
+  title={Advice},
+  fonttitle=\bfseries,
+  coltitle=white,
+  arc=1mm,
+  boxrule=0.5mm,
+  breakable,
+  parskip=1em
+}
+
+% 3. 정석연구 (풀이/심화): 회색 계열
+\newtcolorbox{studybox}{
+  colback=gray!10,
+  colframe=gray!60,
+  title={정석연구},
+  fonttitle=\bfseries,
+  coltitle=white,
+  arc=1mm,
+  boxrule=0.5mm,
+  breakable,
+  parskip=1em
+}
+% ---------------------------------------------
+
+\title{\textbf{수학 II - 제9장 부정적분}}
+\author{학습자료}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{부정적분의 정의와 계산}
+
+\subsection{부정적분의 정의}
+
+\begin{conceptbox}[기본정석: 부정적분(원시함수)의 정의]
+함수 $f(x)$가 주어져 있을 때, $F'(x)=f(x)$인 함수 $F(x)$를 $f(x)$의 \textbf{부정적분} 또는 \textbf{원시함수}라고 한다.
+
+$F(x)$가 함수 $f(x)$의 부정적분의 하나일 때, $f(x)$의 모든 부정적분은 $F(x)+C$의 꼴로 나타내어지며, 이것을 다음과 같이 나타낸다.
+\[ \int f(x)dx = F(x) + C \quad (\text{단, } C\text{는 상수}) \]
+여기에서 $C$를 \textbf{적분상수}, 함수 $f(x)$를 \textbf{피적분함수}, $x$를 \textbf{적분변수}라 하고, $f(x)$의 부정적분을 구하는 것을 $f(x)$를 \textbf{적분한다}라고 한다.
+\end{conceptbox}
+
+\subsubsection*{부정적분과 도함수}
+부정적분과 미분은 서로 역연산의 관계에 있다.
+\begin{enumerate}
+    \item $\dfrac{d}{dx}\left(\int f(x)dx\right) = f(x)$
+    \item $\int \left(\dfrac{d}{dx}f(x)\right)dx = f(x) + C$
+\end{enumerate}
+
+\begin{advicebox}
+\textbf{Advice 1$^\circ$: 부정적분의 의미}
+
+이를테면 $x^2$의 도함수를 구하면 $2x$이다. 이것을 '$x^2$의 도함수는 $2x$이다'라 하고, $(x^2)'=2x$와 같이 나타내었다.
+
+역으로 $x^2$은 도함수가 $2x$인 함수이다. 이때 $x^2$을 $2x$의 부정적분이라고 한다.
+그러나 도함수가 $2x$인 함수는 $x^2$뿐만 아니라 $x^2+1, x^2-5$ 등 무수히 많다.
+따라서 $2x$의 부정적분은 일반적으로 $x^2+C$ ($C$는 상수)로 나타낸다.
+\end{advicebox}
+
+\subsection{부정적분의 계산}
+
+\begin{conceptbox}[기본정석: 부정적분의 기본 공식]
+\begin{enumerate}
+    \item $\int k \, dx = kx + C$ (단, $k$는 상수)
+    \item $\int x^n \, dx = \dfrac{1}{n+1}x^{n+1} + C$ (단, $n$은 자연수)
+    \item $\int k f(x) \, dx = k \int f(x) \, dx$ (단, $k \ne 0$인 상수)
+    \item $\int \{f(x) \pm g(x)\} \, dx = \int f(x) \, dx \pm \int g(x) \, dx$
+    \item $\int (ax+b)^n \, dx = \dfrac{1}{a(n+1)}(ax+b)^{n+1} + C$ (단, $a \ne 0, n$은 자연수)
+\end{enumerate}
+\end{conceptbox}
+
+\newpage
+
+\section{필수 예제 및 유제}
+
+\subsection*{[필수 예제 9-1] 부정적분의 계산}
+다음 부정적분을 구하여라.
+\begin{enumerate}
+    \item $\int (x+1)^3 dx - \int (x-1)^3 dx$
+    \item $\int \dfrac{x^3}{x-1} dx - \int \dfrac{1}{x-1} dx$
+\end{enumerate}
+
+\begin{studybox}
+각 항을 전개하거나 나누어 적분할 수도 있지만, 부정적분의 성질
+\[ \int f(x)dx \pm \int g(x)dx = \int \{f(x) \pm g(x)\}dx \]
+를 이용하여 피적분함수를 간단히 한 후 적분하는 것이 편리하다.
+\end{studybox}
+
+\textbf{모범답안}
+\begin{enumerate}
+    \item $\int \{(x+1)^3 - (x-1)^3\} dx = \int \{(x^3+3x^2+3x+1) - (x^3-3x^2+3x-1)\} dx$
+    \[ = \int (6x^2+2) dx = 2x^3 + 2x + C \]
+    \item $\int \left( \dfrac{x^3}{x-1} - \dfrac{1}{x-1} \right) dx = \int \dfrac{x^3-1}{x-1} dx$
+    \[ = \int \dfrac{(x-1)(x^2+x+1)}{x-1} dx = \int (x^2+x+1) dx = \dfrac{1}{3}x^3 + \dfrac{1}{2}x^2 + x + C \]
+\end{enumerate}
+
+\textbf{유제 9-1} 다음 부정적분을 구하여라.
+\begin{enumerate}
+    \item $\int (3x+1)^2 dx$
+    \item $\int \dfrac{x^2+4}{x+2} dx + \int \dfrac{4x}{x+2} dx$
+\end{enumerate}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{[필수 예제 9-2] 함숫값과 부정적분}
+함수 $f(x)$의 도함수가 $f'(x) = 3x^2 - 4x + a$이고 $f(1)=2, f(2)=8$일 때, 상수 $a$의 값과 $f(x)$를 구하여라.
+
+\begin{studybox}
+$f'(x)$가 주어졌으므로 적분하여 $f(x)$를 구한다. 이때 적분상수 $C$와 미정계수 $a$는 주어진 두 함숫값 조건($f(1)=2, f(2)=8$)을 연립하여 구한다.
+\end{studybox}
+
+\textbf{모범답안}
+
+$f(x) = \int f'(x) dx = \int (3x^2 - 4x + a) dx = x^3 - 2x^2 + ax + C$
+
+$f(1) = 1 - 2 + a + C = 2 \implies a + C = 3 \quad \cdots$ \textcircled{1}
+
+$f(2) = 8 - 8 + 2a + C = 8 \implies 2a + C = 8 \quad \cdots$ \textcircled{2}
+
+\textcircled{1}, \textcircled{2}를 연립하여 풀면 $a=5, C=-2$
+
+따라서 $a=5$이고 $f(x) = x^3 - 2x^2 + 5x - 2$이다.
+
+\textbf{유제 9-2} 곡선 $y=f(x)$ 위의 임의의 점 $(x, y)$에서의 접선의 기울기가 $2x+1$이고, 이 곡선이 점 $(1, 3)$을 지날 때, $f(x)$를 구하여라.
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{[필수 예제 9-3] 연속함수의 부정적분}
+모든 실수 $x$에서 연속인 함수 $f(x)$의 도함수 $f'(x)$가 다음과 같다.
+\[ f'(x) = \begin{cases} 2x & (x \ge 1) \\ 3x^2 - 1 & (x < 1) \end{cases} \]
+$f(0)=2$일 때, $f(2)$의 값을 구하여라.
+
+\begin{studybox}
+범위에 따라 함수가 다를 때는 각 범위에서 적분하되, 각각의 적분상수 $C_1, C_2$를 둔다. 그 후 $f(x)$가 $x=1$에서 연속이라는 조건($\lim_{x \to 1-}f(x) = \lim_{x \to 1+}f(x) = f(1)$)을 이용하여 적분상수 간의 관계를 구한다.
+\end{studybox}
+
+\textbf{모범답안}
+
+$x \ge 1$일 때, $f(x) = \int 2x dx = x^2 + C_1$
+
+$x < 1$일 때, $f(x) = \int (3x^2-1) dx = x^3 - x + C_2$
+
+$f(0)=2$이므로 $x<1$의 식에 대입하면 $0 - 0 + C_2 = 2 \implies C_2 = 2$
+
+따라서 $x < 1$일 때 $f(x) = x^3 - x + 2$이다.
+
+$f(x)$는 $x=1$에서 연속이어야 하므로 $\lim_{x \to 1+} (x^2 + C_1) = \lim_{x \to 1-} (x^3 - x + 2)$
+
+$1 + C_1 = 1 - 1 + 2 \implies C_1 = 1$
+
+그러므로 $f(x) = \begin{cases} x^2+1 & (x \ge 1) \\ x^3-x+2 & (x < 1) \end{cases}$
+
+구하는 값은 $f(2) = 2^2 + 1 = 5$
+
+\textbf{유제 9-3} $x > 0$에서 정의된 연속함수 $f(x)$의 도함수가 $f'(x) = \begin{cases} \dfrac{1}{\sqrt{x}} & (0<x<1) \\ 2x & (x \ge 1) \end{cases}$ 이고 $f(4)=18$일 때, $f\left(\dfrac{1}{4}\right)$의 값을 구하여라.
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{[필수 예제 9-4] 도함수가 주어진 경우}
+두 다항함수 $f(x), g(x)$가
+\[ \dfrac{d}{dx}\{f(x)+g(x)\} = 2x+1, \quad \dfrac{d}{dx}\{f(x)g(x)\} = 3x^2-2x+2 \]
+를 만족시킨다. $f(0)=2, g(0)=-1$일 때, $f(x), g(x)$를 구하여라.
+
+\begin{studybox}
+$\dfrac{d}{dx}F(x)=f(x) \iff F(x) = \int f(x)dx$를 이용하여 먼저 $f(x)+g(x)$와 $f(x)g(x)$를 구한다.
+\end{studybox}
+
+\textbf{모범답안}
+
+$f(x)+g(x) = \int (2x+1)dx = x^2+x+C_1$.
+$x=0$을 대입하면 $C_1 = 2+(-1)=1$.
+$\therefore f(x)+g(x) = x^2+x+1$
+
+$f(x)g(x) = \int (3x^2-2x+2)dx = x^3-x^2+2x+C_2$.
+$x=0$을 대입하면 $C_2 = 2 \times (-1) = -2$.
+$\therefore f(x)g(x) = x^3-x^2+2x-2 = (x-1)(x^2+2)$
+
+$f(x)+g(x) = (x-1) + (x^2+2)$이고 $f(0)=2, g(0)=-1$이므로
+$f(x) = x^2+2, \quad g(x) = x-1$
+
+\end{document}
