@@ -1,0 +1,196 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{kotex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\tcbuselibrary{skins, breakable}
+
+% --- 여백 및 간격 설정 ---
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\linespread{1.4}
+\setlength{\parskip}{1em}
+\setlist[enumerate]{itemsep=5pt, topsep=0pt}
+
+% --- 사용자 정의 박스 스타일 ---
+\newtcolorbox{conceptbox}[1][]{
+  colback=blue!5, colframe=blue!60, coltitle=white, fonttitle=\bfseries,
+  title={#1}, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+\newtcolorbox{advicebox}{
+  colback=orange!5, colframe=orange!60, title={Advice}, fonttitle=\bfseries,
+  coltitle=white, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+\newtcolorbox{studybox}{
+  colback=gray!10, colframe=gray!60, title={정석연구}, fonttitle=\bfseries,
+  coltitle=white, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+
+\title{\textbf{수학 II - 제11장 정적분으로 정의된 함수}}
+\author{현경서T}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{§1. 정적분으로 정의된 함수}
+
+\begin{conceptbox}[기본 정석]
+\begin{enumerate}
+    \item \textbf{정적분과 미분의 관계} \\
+    함수 $f(x)$가 연속함수일 때, 상수 $a$와 임의의 실수 $x$에 대하여
+    \[ \frac{d}{dx} \int_{a}^{x} f(t) dt = f(x) \]
+    \item \textbf{정적분으로 정의된 함수의 미분} \\
+    $f(x)$가 연속함수일 때 (단, $a$는 상수)
+    \begin{enumerate}
+        \item $\displaystyle \frac{d}{dx} \int_{a}^{x} f(t) dt = f(x)$
+        \item $\displaystyle \frac{d}{dx} \int_{x}^{x+a} f(t) dt = f(x+a) - f(x)$
+    \end{enumerate}
+\end{enumerate}
+\end{conceptbox}
+
+\begin{advicebox}
+\textbf{정적분과 미분의 관계} \\
+위끝이 변수 $x$이고 아래끝이 상수 $a$인 정적분 $\int_{a}^{x} f(t) dt$를 계산하면, $f(x)$의 한 부정적분을 $F(x)$라 할 때
+\[ \int_{a}^{x} f(t) dt = [F(t)]_{a}^{x} = F(x) - F(a) \]
+이므로 이는 $x$의 함수이다. 이를 $x$에 관하여 미분하면
+\[ \frac{d}{dx} \int_{a}^{x} f(t) dt = \frac{d}{dx} \{ F(x) - F(a) \} = F'(x) = f(x) \]
+가 된다. [cite: 213, 214]
+\end{advicebox}
+
+\begin{advicebox}
+\textbf{피적분함수에 변수 $x$가 포함된 경우}\\
+피적분함수에 변수 $x$가 포함된 경우에는 위의 관계가 성립하지 않음에 주의해야 한다.
+예를 들어, $\frac{d}{dx} \int_{a}^{x} xf(t) dt \ne xf(x)$ 이다. 이때는 $x$가 적분변수 $t$에 대해서는 상수이므로 $x \int_{a}^{x} f(t) dt$로 변형한 후 곱의 미분법을 적용해야 한다. [cite: 215]
+\end{advicebox}
+
+\begin{advicebox}
+\textbf{정적분으로 정의된 함수의 미분(일반화)} \\
+위끝과 아래끝에 모두 변수 $x$가 있는 경우:
+\[ \frac{d}{dx} \int_{x}^{x+a} f(t) dt = f(x+a) - f(x) \]
+또한, 위끝이나 아래끝이 $x+a$ 꼴이 아닌 경우에는 먼저 정적분을 계산한 후 미분해야 한다. [cite: 219, 220]
+\end{advicebox}
+
+\begin{advicebox}
+\textbf{정적분으로 정의된 함수의 극한 공식} \\
+$f(t)$의 한 부정적분을 $F(t)$라 하면 다음이 성립한다.
+\begin{enumerate}
+    \item $\displaystyle \lim_{x \to a} \frac{1}{x-a} \int_{a}^{x} f(t) dt = f(a)$
+    \item $\displaystyle \lim_{h \to 0} \frac{1}{h} \int_{a}^{a+h} f(t) dt = f(a)$
+\end{enumerate}
+\end{advicebox}
+
+\newpage
+
+\section*{필수 예제}
+
+\subsection*{필수 예제 11-1}
+다음 극한값을 구하여라. 
+\[ \lim_{x \to 1} \frac{1}{x-1} \int_{1}^{x^{2}} (t^{3} + 2t^{2} - 3t + 1) dt \]
+
+\begin{studybox} 
+정적분을 직접 계산한 후 극한값을 생각하거나, $\int (t^{3} + 2t^{2} - 3t + 1) dt = F(t) + C$라 하고 미분계수의 정의 $\lim_{x \to a} \frac{F(x)-F(a)}{x-a} = F'(a)$를 이용한다.
+\end{studybox}
+
+\textbf{모범답안} \\
+$f(t) = t^{3} + 2t^{2} - 3t + 1$이라 하고 그 한 부정적분을 $F(t)$라 하면,
+\[ \text{준식} = \lim_{x \to 1} \frac{F(x^{2}) - F(1)}{x-1} = \lim_{x \to 1} \left\{ \frac{F(x^{2}) - F(1)}{x^{2}-1} \times (x+1) \right\} = 2 F'(1) \]
+$F'(1) = f(1) = 1^{3} + 2(1)^{2} - 3(1) + 1 = 1$이므로, 구하는 값은 $2 \times 1 = 2$이다.
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 11-2}
+다음 극한값을 구하여라. 
+\begin{enumerate}
+    \item $\displaystyle \lim_{h \to 0} \frac{1}{h} \int_{2-h}^{2+h} (x^{4} - x^{2} + 1) dx$ 
+    \item $\displaystyle \lim_{t \to \infty} t \int_{0}^{\frac{2}{t}} (x^{2} + 3)|x-2| dx$ 
+\end{enumerate}
+
+\begin{studybox}
+(1) $\int (x^{4}-x^{2}+1) dx = F(x) + C$로 놓고 미분계수의 정의를 이용한다.
+(2) $\frac{1}{t} = h$로 치환하여 (1)과 같은 방법으로 해결한다.
+\end{studybox}
+
+\textbf{모범답안} \\
+(1) $F'(x) = x^{4} - x^{2} + 1$이라 하면,
+\[ \text{준식} = \lim_{h \to 0} \frac{F(2+h) - F(2-h)}{h} = 2F'(2) = 2(2^4 - 2^2 + 1) = 26 \]
+(2) $\frac{1}{t}=h$로 치환하면 $t \to \infty$일 때 $h \to 0+$이다. $F'(x) = (x^2+3)|x-2|$라 하면,
+\[ \text{준식} = \lim_{h \to 0+} \frac{F(2h) - F(0)}{h} = 2F'(0) = 2(3 \times |-2|) = 12 \]
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 11-3}
+다항함수 $f(x)$가 모든 실수 $x$에 대하여 다음 등식을 만족시킬 때, 상수 $a$의 값과 $f(x)$를 구하여라. 
+\begin{enumerate}
+    \item $\displaystyle \int_{1}^{x} (t^{2}-2)f(t) dt = \frac{1}{5}x^{5} - ax + \frac{19}{5}$ 
+    \item $\displaystyle \int_{a}^{2x-1} f(t) dt = x^{2} - 2x$ 
+\end{enumerate}
+
+\begin{studybox} 
+$\int_{k}^{k} f(x) dx = 0$과 $\frac{d}{dx} \int_{a}^{x} f(t) dt = f(x)$를 이용한다.
+\end{studybox}
+
+\textbf{모범답안} \\
+(1) $x=1$ 대입: $0 = \frac{1}{5} - a + \frac{19}{5} \Rightarrow a = 4$. 양변 미분: $(x^{2}-2)f(x) = x^{4}-4 = (x^{2}-2)(x^{2}+2)$. $\therefore f(x) = x^{2}+2$.
+(2) $2x-1=z$라 하면 $x = \frac{z+1}{2}$. $\int_{a}^{z} f(t) dt = \frac{1}{4}(z^2-2z-3)$. $z=a$ 대입하면 $a^2-2a-3=0 \Rightarrow a=-1, 3$. 양변 미분: $f(z) = \frac{1}{2}z - \frac{1}{2}$. $\therefore f(x) = \frac{1}{2}x - \frac{1}{2}$.
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 11-4}
+다항함수 $f(x)$가 모든 실수 $x$에 대하여 다음 등식을 만족시킬 때, $f(x)$를 구하여라.
+\[ x^{2} f(x) = 2x^{6} - 3x^{4} + 2 \int_{1}^{x} tf(t) dt \]
+
+\begin{studybox}
+양변을 미분하여 $f(x)$에 관한 조건을 찾고, $x=1$을 대입하여 초기 조건을 구한다.
+\end{studybox}
+
+\textbf{모범답안}\\
+양변 미분: $2xf(x) + x^{2}f'(x) = 12x^{5} - 12x^{3} + 2xf(x) \Rightarrow x^{2}f'(x) = 12x^{5} - 12x^{3}$.
+$\therefore f'(x) = 12x^{3} - 12x \Rightarrow f(x) = 3x^{4} - 6x^{2} + C$.
+$x=1$ 대입: $f(1) = 2 - 3 + 0 = -1$. $f(1) = 3 - 6 + C = -1$에서 $C = 2$.
+따라서 $f(x) = 3x^{4} - 6x^{2} + 2$이다.
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 11-5}
+다항함수 $f(x)$에 대하여 $F(x) = \int_{a}^{x} (x-t)f(t) dt$라 할 때, 다음 물음에 답하여라. 
+\begin{enumerate}
+    \item $f(x) = x^{2}$일 때, $F(x)$의 극값을 구하여라. 
+    \item $F(x) = 2x^{3} - 3x^{2} - 12x + 20$이 되도록 $f(x)$를 정하여라. 
+\end{enumerate}
+
+\begin{studybox}
+피적분함수에 $x$가 포함된 경우 $F(x) = x \int_{a}^{x} f(t) dt - \int_{a}^{x} tf(t) dt$로 변형하여 미분한다. 이 경우 $F'(x) = \int_{a}^{x} f(t) dt$가 된다. 
+\end{studybox}
+
+\textbf{모범답안} \\
+(1) $F'(x) = \int_{a}^{x} t^{2} dt = \frac{1}{3}(x^{3}-a^{3})$. $x=a$에서 극솟값 $F(a)=0$을 갖고 극댓값은 없다.
+(2) $F'(x) = \int_{a}^{x} f(t) dt = 6x^{2} - 6x - 12$. 양변을 다시 미분하면 $f(x) = 12x - 6$이다.
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 11-6}
+다음 $F(x)$를 계산하고, $y=F(x)$의 그래프를 그려라. 
+\[ F(x) = \int_{-1}^{x} (1-|t|) dt \]
+
+\begin{studybox} 
+$f(t) = 1-|t|$의 그래프는 $t=0$을 기준으로 식이 달라지므로, $x \le 0$일 때와 $x > 0$일 때로 나누어 계산한다.
+\end{studybox}
+
+\textbf{모범답안} \\
+(i) $x \le 0$일 때: $F(x) = \int_{-1}^{x} (1+t) dt = [t + \frac{1}{2}t^{2}]_{-1}^{x} = \frac{1}{2}(x+1)^{2}$.
+(ii) $x > 0$일 때: $F(x) = \int_{-1}^{0} (1+t) dt + \int_{0}^{x} (1-t) dt = \frac{1}{2} + (x - \frac{1}{2}x^{2}) = -\frac{1}{2}(x-1)^{2} + 1$.
+그래프는 $x=-1$에서 시작하여 $x=0$까지 아래로 볼록한 포물선, $x>0$에서 위로 볼록한 포물선 형태가 연결된다. 
+
+\end{document}

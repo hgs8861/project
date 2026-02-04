@@ -8,158 +8,321 @@
 
 % --- 여백 및 간격 설정 ---
 \geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
-\linespread{1.3} % 줄 간격 1.3배
+\linespread{1.4} % 줄 간격 1.3배
 \setlength{\parskip}{1em} % 문단 간격
 \setlist[enumerate]{itemsep=5pt, topsep=0pt}
 
 % --- 사용자 정의 박스 스타일 ---
-% 1. 기본정석 (개념): 파랑 계열
 \newtcolorbox{conceptbox}[1][]{
   colback=blue!5, colframe=blue!60, coltitle=white, fonttitle=\bfseries,
   title={#1}, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
 }
-% 2. Advice (조언): 주황 계열
 \newtcolorbox{advicebox}{
   colback=orange!5, colframe=orange!60, title={Advice}, fonttitle=\bfseries,
   coltitle=white, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
 }
-% 3. 정석연구 (풀이/심화): 회색 계열
 \newtcolorbox{studybox}{
   colback=gray!10, colframe=gray!60, title={정석연구}, fonttitle=\bfseries,
   coltitle=white, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
 }
 
 \title{\textbf{수학 II - 제10장 정적분}}
-\author{학습자료}
+\author{현경서T}
 \date{}
 
 \begin{document}
+
 \maketitle
 
-\section{정적분의 정의와 성질}
+\section*{§1. 정적분의 정의}
 
-\subsection{정적분의 정의}
-
-\begin{conceptbox}[기본정석: 정적분의 정의]
-함수 $f(x)$가 두 실수 $a, b$를 포함하는 구간에서 연속일 때, $f(x)$의 부정적분 중 하나를 $F(x)$라고 하면
-\[ \int_{a}^{b} f(x) dx = \left[ F(x) \right]_{a}^{b} = F(b) - F(a) \]
-이 값을 $f(x)$의 $a$에서 $b$까지의 \textbf{정적분}이라고 한다.
-이때 $a$를 \textbf{아래끝}, $b$를 \textbf{위끝}이라 한다.
+\begin{conceptbox}[기본 정석]
+\begin{enumerate}
+    \item \textbf{정적분의 정의}\\
+    함수 $f(x)$가 닫힌구간 $[a, b]$에서 연속일 때, $f(x)$의 한 부정적분을 $F(x)$라고 하면
+    \[ \int_{a}^{b} f(x) dx = \Big[ F(x) \Big]_{a}^{b} = F(b) - F(a) \]
+    이때 $a$를 아래끝, $b$를 위끝이라 한다.
+    \item $\displaystyle\int_{a}^{a} f(x) dx = 0$
+    \item $\displaystyle\int_{a}^{b} f(x) dx = -\displaystyle\int_{b}^{a} f(x) dx$ ($a > b$)
+    \item \textbf{정적분과 넓이}\\
+    구간 $[a, b]$에서 $f(x) \ge 0$일 때, $\displaystyle\int_{a}^{b} f(x) dx$는 곡선 $y=f(x)$와 $x$축, 두 직선 $x=a, x=b$로 둘러싸인 도형의 넓이 $S$와 같다.
+\end{enumerate}
 \end{conceptbox}
 
 \begin{advicebox}
-\textbf{Advice 1$^\circ$: 정적분과 부정적분}
-부정적분 $\int f(x)dx$는 $x$의 **함수**이고, 정적분 $\int_{a}^{b} f(x)dx$는 **실수값(상수)**이다.
-또한, 정적분의 값은 적분변수에 무관하게 결정되므로 다음이 성립한다.
-\[ \int_{a}^{b} f(x)dx = \int_{a}^{b} f(t)dt = \int_{a}^{b} f(u)du \]
+\begin{enumerate}
+    \item \textbf{정적분의 값은 변수와 무관하다.}\\
+    부정적분 $\int f(x) dx$는 $x$의 함수이지만, 정적분 $\int_{a}^{b} f(x) dx$는 상수이다. 따라서 적분변수를 $x$ 대신 다른 문자 $t, u$ 등을 사용하여도 그 값은 변하지 않는다.
+    \[ \int_{a}^{b} f(x) dx = \int_{a}^{b} f(t) dt = \int_{a}^{b} f(u) du \]
+    \item \textbf{적분상수 $C$}\\
+    정적분을 계산할 때 부정적분 $F(x)+C$를 사용하여도
+    \[ [F(x)+C]_{a}^{b} = \{F(b)+C\} - \{F(a)+C\} = F(b) - F(a) \]
+    이므로 적분상수 $C$는 생략한다.
+\end{enumerate}
 \end{advicebox}
 
-\subsection{정적분의 기본 성질}
+\begin{advicebox}
+\textbf{정적분과 넓이 사이의 관계}\\
+함수 $f(x)$가 닫힌구간 $[a, b]$에서 연속일 때, 곡선 $y=f(x)$와 $x$축 및 두 직선 $x=a, x=b$로 둘러싸인 도형의 넓이를 $S$라고 하면
+\begin{enumerate}[label=(\arabic*)]
+    \item 구간 $[a, b]$에서 $f(x) \ge 0$일 때, $S = \int_{a}^{b} f(x) dx$
+    \item 구간 $[a, b]$에서 $f(x) \le 0$일 때, $S = \int_{a}^{b} \{-f(x)\} dx = -\int_{a}^{b} f(x) dx$
+\end{enumerate}
+일반적으로 $S = \int_{a}^{b} |f(x)| dx$이다. 즉, 정적분의 값은 $x$축 위쪽의 넓이에서 $x$축 아래쪽의 넓이를 뺀 값과 같다.
+\end{advicebox}
 
-\begin{conceptbox}[기본정석: 정적분의 성질]
+\begin{advicebox}
+\textbf{구분구적법을 이용한 정적분의 정의}\\
+함수 $f(x)$가 닫힌구간 $[a, b]$에서 연속일 때, 이 구간을 $n$등분하여 양 끝점과 각 분점의 $x$좌표를 차례로
+\[ a=x_0, x_1, x_2, \dots, x_n=b \]
+라 하고, 각 소구간의 길이를 $\Delta x = \dfrac{b-a}{n}$라고 하면
+\[ \int_{a}^{b} f(x) dx = \lim_{n \to \infty} \sum_{k=1}^{n} f(x_k) \Delta x = \lim_{n \to \infty} \sum_{k=1}^{n} f\left(a + \dfrac{b-a}{n}k\right) \dfrac{b-a}{n} \]
+가 성립한다. 이것은 정적분을 급수의 합의 극한으로 정의한 것으로, 현대 해석학의 기초가 된다.
+\end{advicebox}
+
+\section*{§2. 정적분의 계산}
+
+\begin{conceptbox}[기본 정석]
 \begin{enumerate}
-    \item $\int_{a}^{a} f(x) dx = 0$
-    \item $\int_{a}^{b} f(x) dx = - \int_{b}^{a} f(x) dx$
-    \item $\int_{a}^{b} k f(x) dx = k \int_{a}^{b} f(x) dx$ (단, $k$는 상수)
-    \item $\int_{a}^{b} \{f(x) \pm g(x)\} dx = \int_{a}^{b} f(x) dx \pm \int_{a}^{b} g(x) dx$
-    \item $\int_{a}^{c} f(x) dx + \int_{c}^{b} f(x) dx = \int_{a}^{b} f(x) dx$ (구간의 연결)
+    \item $\displaystyle\int_{a}^{b} k f(x) dx = k \int_{a}^{b} f(x) dx$ (단, $k$는 상수)
+    \item $\displaystyle\int_{a}^{b} \{f(x) \pm g(x)\} dx = \int_{a}^{b} f(x) dx \pm \int_{a}^{b} g(x) dx$ (복부호 동순)
+    \item $\displaystyle\int_{a}^{b} f(x) dx = \int_{a}^{c} f(x) dx + \int_{c}^{b} f(x) dx$ (임의의 실수 $a, b, c$)
 \end{enumerate}
 \end{conceptbox}
 
+\begin{advicebox}
+\textbf{ 정적분의 기본 공식의 증명}\\
+정적분의 기본 공식은 부정적분의 성질로부터 유도된다. $f(x), g(x)$의 한 부정적분을 각각 $F(x), G(x)$라고 하면
+\begin{enumerate}[label=(\arabic*)]
+    \item $\int \{kf(x)\}dx = kF(x) + C$ 이므로
+    \[ \left[ kF(x) \right]_a^b = kF(b) - kF(a) = k\{F(b)-F(a)\} = k \int_{a}^{b} f(x) dx \]
+    \item $\int \{f(x) \pm g(x)\}dx = F(x) \pm G(x) + C$ 이므로
+    \[ \left[ F(x) \pm G(x) \right]_a^b = \{F(b) \pm G(b)\} - \{F(a) \pm G(a)\} = \{F(b)-F(a)\} \pm \{G(b)-G(a)\} \]
+    \[ = \int_{a}^{b} f(x) dx \pm \int_{a}^{b} g(x) dx \]
+\end{enumerate}
+위와 같이 부정적분의 선형성을 이용하여 정적분의 공식이 성립함을 증명할 수 있다.
+\end{advicebox}
+
+\begin{advicebox}
+\textbf{정적분의 성질 (3)에 대하여}\\
+위의 성질 3은 $a, b, c$의 대소 관계에 상관없이 성립한다. 구간을 나누거나 합칠 때 유용하게 사용된다. 예를 들어 $\int_{1}^{2} f(x) dx + \int_{2}^{3} f(x) dx = \int_{1}^{3} f(x) dx$와 같이 연결할 수 있다.
+\end{advicebox}
+
 \newpage
 
-\section{필수 예제 및 유제}
+\section*{필수 예제}
 
-\subsection*{[필수 예제 10-1] 정적분의 계산}
+\subsection*{필수 예제 10-1}
 다음 정적분의 값을 구하여라.
-\begin{enumerate}
-    \item $\int_{1}^{2} (x+1)(x^2-x+1) dx$
-    \item $\int_{0}^{1} \dfrac{x^2}{x+1} dx - \int_{0}^{1} \dfrac{1}{x+1} dx$
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_{1}^{2} (x^2 - 3x + 2) dx$
+    \item $\displaystyle\int_{2}^{3} (t-2)(t^2 + 2t + 4) dt$
 \end{enumerate}
 
 \begin{studybox}
-(1) 피적분함수가 곱의 꼴로 되어 있으면 전개하여 적분한다.
-(2) 적분 구간이 같으므로 $\int f(x)dx - \int g(x)dx = \int \{f(x)-g(x)\}dx$를 이용하여 식을 간단히 한다.
+(1)은 $\int (x^2-3x+2)dx$, (2)는 $\int (t-2)(t^2+2t+4)dt$를 구하고 다음 정적분의 정의를 이용한다.\\
+\textbf{정의}: $f(x)$가 구간 $[a, b]$에서 연속이고 $\int f(x)dx = F(x) + C$이면
+\[ \int_{a}^{b} f(x) dx = [F(x)]_{a}^{b} = F(b) - F(a) \]
 \end{studybox}
 
 \textbf{모범답안}
-\begin{enumerate}
-    \item $\int_{1}^{2} (x^3+1) dx = \left[ \dfrac{1}{4}x^4 + x \right]_{1}^{2} = \left( \dfrac{16}{4} + 2 \right) - \left( \dfrac{1}{4} + 1 \right) = 6 - \dfrac{5}{4} = \dfrac{19}{4}$
-    \item $\int_{0}^{1} \left( \dfrac{x^2}{x+1} - \dfrac{1}{x+1} \right) dx = \int_{0}^{1} \dfrac{x^2-1}{x+1} dx = \int_{0}^{1} (x-1) dx$
-    \[ = \left[ \dfrac{1}{2}x^2 - x \right]_{0}^{1} = \left( \dfrac{1}{2} - 1 \right) - 0 = -\dfrac{1}{2} \]
-\end{enumerate}
-
-\textbf{유제 10-1} 다음 정적분의 값을 구하여라.
-\begin{enumerate}
-    \item $\int_{-1}^{1} (2x+1)^2 dx$
-    \item $\int_{1}^{2} \dfrac{x^3}{x-1} dx - \int_{2}^{1} \dfrac{1}{1-x} dx$
+\begin{enumerate}[label=(\arabic*)]
+    \item $\int (x^2 - 3x + 2) dx = \dfrac{1}{3}x^3 - \dfrac{3}{2}x^2 + 2x + C$이므로\\
+    $\text{준식} = \left[ \dfrac{1}{3}x^3 - \dfrac{3}{2}x^2 + 2x \right]_{1}^{2} = \left(\dfrac{8}{3} - 6 + 4\right) - \left(\dfrac{1}{3} - \dfrac{3}{2} + 2\right) = \dfrac{2}{3} - \dfrac{5}{6} = -\dfrac{1}{6}$
+    \item $\text{준식} = \int_{2}^{3} (t^3 - 8) dt = \left[ \dfrac{1}{4}t^4 - 8t \right]_{2}^{3} = \left(\dfrac{81}{4} - 24\right) - (4 - 16) = -\dfrac{15}{4} + 12 = \dfrac{33}{4}$
 \end{enumerate}
 
 \vspace{0.5cm}
 \hrule
 \vspace{0.5cm}
 
-\subsection*{[필수 예제 10-2] 절댓값 기호를 포함한 함수의 적분}
-다음 정적분의 값을 구하여라.
-\[ \int_{0}^{3} |x^2 - 2x| dx \]
+\subsection*{필수 예제 10-2}
+다음 물음에 답하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_{\alpha}^{\beta} a(x-\alpha)(x-\beta) dx = -\dfrac{a}{6}(\beta-\alpha)^3$ (단, $a$는 상수)임을 증명하여라.
+    \item $\displaystyle\int_{0}^{1} \dfrac{x^3}{x+1} dx - \int_{1}^{0} \dfrac{1}{t+1} dt$의 값을 구하여라.
+\end{enumerate}
 
 \begin{studybox}
-피적분함수에 절댓값 기호가 있으면 절댓값 안의 식의 부호가 바뀌는 점을 경계로 적분 구간을 나눈다.
-$x^2-2x = x(x-2)$이므로 $0 \le x \le 2$에서는 음수, $2 \le x \le 3$에서는 양수이다.
+(1) 피적분함수를 전개하여 적분한다.\\
+(2) 정적분의 성질 $\displaystyle\int_{a}^{b} f(t) dt = \int_{a}^{b} f(x) dx, \int_{b}^{a} f(x) dx = -\int_{a}^{b} f(x) dx$와 $\displaystyle\int_{a}^{b} f(x) dx + \int_{a}^{b} g(x) dx = \int_{a}^{b} \{f(x)+g(x)\} dx$를 이용한다.
 \end{studybox}
 
 \textbf{모범답안}
-\[ \int_{0}^{3} |x^2 - 2x| dx = \int_{0}^{2} -(x^2-2x) dx + \int_{2}^{3} (x^2-2x) dx \]
-\[ = \left[ -\dfrac{1}{3}x^3 + x^2 \right]_{0}^{2} + \left[ \dfrac{1}{3}x^3 - x^2 \right]_{2}^{3} \]
-\[ = \left( -\dfrac{8}{3} + 4 \right) + \left\{ (9-9) - \left( \dfrac{8}{3} - 4 \right) \right\} = \dfrac{4}{3} + \dfrac{4}{3} = \dfrac{8}{3} \]
-
-\textbf{유제 10-2} 정적분 $\int_{0}^{2} |x(x-1)| dx$ 의 값을 구하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item $\text{좌변} = a \int_{\alpha}^{\beta} \{x^2 - (\alpha+\beta)x + \alpha\beta\} dx = a \left[ \dfrac{1}{3}x^3 - \dfrac{1}{2}(\alpha+\beta)x^2 + \alpha\beta x \right]_{\alpha}^{\beta}$
+    $= a \left\{ \dfrac{1}{3}(\beta^3-\alpha^3) - \dfrac{1}{2}(\alpha+\beta)(\beta^2-\alpha^2) + \alpha\beta(\beta-\alpha) \right\}$
+    $= a(\beta-\alpha) \left\{ \dfrac{1}{3}(\beta^2+\beta\alpha+\alpha^2) - \dfrac{1}{2}(\beta+\alpha)^2 + \alpha\beta \right\}$
+    $= \dfrac{a}{6}(\beta-\alpha) \{ 2(\beta^2+\beta\alpha+\alpha^2) - 3(\beta^2+2\beta\alpha+\alpha^2) + 6\alpha\beta \}$
+    $= \dfrac{a}{6}(\beta-\alpha)(-\beta^2+2\alpha\beta-\alpha^2) = -\dfrac{a}{6}(\beta-\alpha)(\beta-\alpha)^2 = -\dfrac{a}{6}(\beta-\alpha)^3$
+    \item $\text{준식} = \int_{0}^{1} \dfrac{x^3}{x+1} dx + \int_{0}^{1} \dfrac{1}{x+1} dx = \int_{0}^{1} \dfrac{x^3+1}{x+1} dx = \int_{0}^{1} (x^2-x+1) dx = \left[ \dfrac{1}{3}x^3 - \dfrac{1}{2}x^2 + x \right]_{0}^{1} = \dfrac{5}{6}$
+\end{enumerate}
 
 \vspace{0.5cm}
 \hrule
 \vspace{0.5cm}
 
-\subsection*{[필수 예제 10-3] 우함수와 기함수의 정적분}
+\subsection*{필수 예제 10-3}
 다음 정적분의 값을 구하여라.
-\[ \int_{-2}^{2} (x^7 + 5x^5 - 4x^3 + 3x^2 + 2x - 1) dx \]
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_{-2}^{2} (6x^7 + 5x^5 - 4x^3 + 3x^2 - 7x + 2) dx$
+    \item $\displaystyle\int_{-1}^{0} (x^5 + 4x^3 + 6x^2 - 1) dx - \int_{1}^{0} (x^5 + 4x^3 + 6x^2 - 1) dx$
+\end{enumerate}
 
 \begin{studybox}
-적분 구간이 $[-a, a]$ 꼴이고 피적분함수가 다항함수일 때:
-\begin{itemize}
-    \item $f(-x)=-f(x)$ (기함수, 홀수 차수): $\int_{-a}^{a} f(x) dx = 0$
-    \item $f(-x)=f(x)$ (우함수, 짝수 차수): $\int_{-a}^{a} f(x) dx = 2 \int_{0}^{a} f(x) dx$
-\end{itemize}
+적분 구간의 위끝과 아래끝의 절댓값이 같고 부호가 반대인 경우($[-a, a]$), 우함수와 기함수의 성질을 이용한다.\\
+(1) $n$이 홀수이면 $\int_{-a}^{a} x^n dx = 0$, $n$이 짝수이면 $\int_{-a}^{a} x^n dx = 2 \int_{0}^{a} x^n dx$이다.\\
+(2) 정적분의 성질 $\int_{a}^{b} f(x) dx - \int_{c}^{b} f(x) dx = \int_{a}^{b} f(x) dx + \int_{b}^{c} f(x) dx = \int_{a}^{c} f(x) dx$를 이용한다.
 \end{studybox}
 
 \textbf{모범답안}
-홀수 차수 항($x^7, 5x^5, -4x^3, 2x$)은 기함수이므로 정적분 값이 0이다.
-따라서 짝수 차수 항과 상수항만 남겨서 계산한다.
-\[ \int_{-2}^{2} (3x^2 - 1) dx = 2 \int_{0}^{2} (3x^2 - 1) dx \]
-\[ = 2 \left[ x^3 - x \right]_{0}^{2} = 2 (8 - 2) = 12 \]
-
-\textbf{유제 10-3} 함수 $f(x)=x^3-3x$와 $g(x)=x^2+1$에 대하여 $\int_{-1}^{1} \{f(x)+g(x)\} dx$ 의 값을 구하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item $\text{준식} = \int_{-2}^{2} 3x^2 dx + \int_{-2}^{2} 2 dx = 2 \int_{0}^{2} (3x^2+2) dx = 2 [x^3+2x]_0^2 = 2(8+4) = 24$
+    \item $\text{준식} = \int_{-1}^{0} (x^5 + 4x^3 + 6x^2 - 1) dx + \int_{0}^{1} (x^5 + 4x^3 + 6x^2 - 1) dx$
+    $= \int_{-1}^{1} (x^5 + 4x^3 + 6x^2 - 1) dx = 2 \int_{0}^{1} (6x^2 - 1) dx = 2 [2x^3 - x]_0^1 = 2(2-1) = 2$
+\end{enumerate}
 
 \vspace{0.5cm}
 \hrule
 \vspace{0.5cm}
 
-\subsection*{[필수 예제 10-4] 정적분으로 정의된 함수}
-다음 등식을 만족시키는 다항함수 $f(x)$와 상수 $a$의 값을 구하여라.
-\[ \int_{a}^{x} f(t) dt = x^3 - 2x^2 + x \]
+\subsection*{필수 예제 10-4}
+함수 $f(x) = \begin{cases} x^2 & ( x \le 1) \\ 2x-x^2 & ( x > 1) \end{cases} $ 에 대하여 다음 정적분의 값을 구하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_{0}^{1} f(x) dx $
+    \item $\displaystyle\int_{0}^{3} f(x) dx $
+    \item $\displaystyle\int_{0}^{3} xf(x) dx $
+\end{enumerate}
 
 \begin{studybox}
-정적분으로 표시된 함수의 미분: $\dfrac{d}{dx} \int_{a}^{x} f(t) dt = f(x)$
-1. 양변을 $x$에 대하여 미분한다.
-2. 아래끝과 위끝이 같아지는 $x$값(여기서는 $a$)을 대입한다.
+적분구간 안에서 함수가 다를 때에는 정적분의 성질 $\int_{a}^{b} f(x) dx = \int_{a}^{c} f(x) dx + \int_{c}^{b} f(x) dx$를 이용하여 적분구간을 나누어 적분한다.
 \end{studybox}
 
 \textbf{모범답안}
-양변을 $x$에 대하여 미분하면
-\[ f(x) = 3x^2 - 4x + 1 \]
-양변에 $x=a$를 대입하면 좌변은 $\int_{a}^{a} f(t)dt = 0$이므로
-\[ 0 = a^3 - 2a^2 + a \implies a(a-1)^2 = 0 \]
-$\therefore a=0$ 또는 $a=1$
+\begin{enumerate}[label=(\arabic*)]
+    \item $\int_{0}^{1} f(x) dx = \int_{0}^{1} x^2 dx = \left[ \dfrac{1}{3}x^3 \right]_{0}^{1} = \dfrac{1}{3}$
+    \item $\int_{0}^{3} f(x) dx = \int_{0}^{1} x^2 dx + \int_{1}^{3} (2x-x^2) dx = \dfrac{1}{3} + \left[ x^2 - \dfrac{1}{3}x^3 \right]_{1}^{3} = \dfrac{1}{3} + \left\{ (9-9) - (1-\dfrac{1}{3}) \right\} = \dfrac{1}{3} - \dfrac{2}{3} = -\dfrac{1}{3}$
+    \item $\int_{0}^{3} xf(x) dx = \int_{0}^{1} x \cdot x^2 dx + \int_{1}^{3} x(2x-x^2) dx = \int_{0}^{1} x^3 dx + \int_{1}^{3} (2x^2-x^3) dx$
+    $= \left[ \dfrac{1}{4}x^4 \right]_{0}^{1} + \left[ \dfrac{2}{3}x^3 - \dfrac{1}{4}x^4 \right]_{1}^{3} = \dfrac{1}{4} + \left\{ (18-\dfrac{81}{4}) - (\dfrac{2}{3}-\dfrac{1}{4}) \right\} = \dfrac{1}{4} - \dfrac{9}{4} - \dfrac{5}{12} = -\dfrac{29}{12}$
+\end{enumerate}
 
-\textbf{유제 10-4} $\int_{1}^{x} f(t) dt = x^2 - ax + 3$ 을 만족시키는 함수 $f(x)$와 상수 $a$의 값을 구하여라.
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 10-5}
+다음 정적분의 값을 구하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\int_{0}^{2} (|x-1|+3x) dx$
+    \item $\displaystyle\int_{-1}^{1} |x(x-2)| dx$
+\end{enumerate}
+
+\begin{studybox}
+절댓값 기호를 포함한 함수의 정적분은 절댓값 기호 안의 식의 값이 $0$이 되는 $x$의 값을 경계로 구간을 나누어 절댓값 기호를 없앤 다음 적분한다.
+\end{studybox}
+
+\textbf{모범답안}
+\begin{enumerate}[label=(\arabic*)]
+    \item $|x-1| = \begin{cases} -(x-1) & (0 \le x \le 1) \\ x-1 & (1 \le x \le 2) \end{cases}$ 이므로\\
+    $\text{준식} = \int_{0}^{1} (-x+1+3x) dx + \int_{1}^{2} (x-1+3x) dx = \int_{0}^{1} (2x+1) dx + \int_{1}^{2} (4x-1) dx$
+    $= [x^2+x]_0^1 + [2x^2-x]_1^2 = 2 + (6-1) = 7$
+    \item 구간 $[-1, 1]$에서 $x(x-2)$의 부호를 조사하면 $x \le 0$일 때 $x(x-2) \ge 0$, $x \ge 0$일 때 $x(x-2) \le 0$이다.\\
+    $\text{준식} = \int_{-1}^{0} x(x-2) dx + \int_{0}^{1} \{-x(x-2)\} dx = \int_{-1}^{0} (x^2-2x) dx + \int_{0}^{1} (-x^2+2x) dx$
+    $= \left[ \dfrac{1}{3}x^3-x^2 \right]_{-1}^0 + \left[ -\dfrac{1}{3}x^3+x^2 \right]_0^1 = \{0-(-\dfrac{1}{3}-1)\} + (-\dfrac{1}{3}+1-0) = \dfrac{4}{3} + \dfrac{2}{3} = 2$
+\end{enumerate}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 10-6}
+$a \ge 0$ 일 때, 다음 물음에 답하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item 정적분 $I = \displaystyle\int_{-1}^{1} |x^2-a^2| dx$ 의 값을 $a$에 관한 식으로 나타내어라.
+    \item $I$의 값이 최소가 되는 실수 $a$의 값을 구하여라.
+\end{enumerate}
+
+\begin{studybox}
+$|x^2-a^2|$의 정적분에서 적분구간이 $[-1, 1]$이므로 $a$의 값의 범위에 따라 구간을 나누어야 한다. 즉, $a$가 적분구간 안에 있을 때($0 \le a < 1$)와 밖에 있을 때($a \ge 1$)로 나눈다.
+\end{studybox}
+
+\textbf{모범답안}
+\begin{enumerate}[label=(\arabic*)]
+    \item (i) $0 \le a < 1$ 일 때, $x^2-a^2$은 구간 $[0, a]$에서 $0$ 이하, $[a, 1]$에서 $0$ 이상이다.\\
+    $I = 2 \int_{0}^{1} |x^2-a^2| dx = 2 \int_{0}^{a} (a^2-x^2) dx + 2 \int_{a}^{1} (x^2-a^2) dx$
+    $= 2 [a^2x - \dfrac{1}{3}x^3]_0^a + 2 [\dfrac{1}{3}x^3 - a^2x]_a^1 = 2(a^3-\dfrac{1}{3}a^3) + 2 \{(\dfrac{1}{3}-a^2) - (\dfrac{1}{3}a^3-a^3)\} = \dfrac{4}{3}a^3 + \dfrac{2}{3} - 2a^2 + \dfrac{4}{3}a^3 = \dfrac{8}{3}a^3 - 2a^2 + \dfrac{2}{3}$\\
+    (ii) $a \ge 1$ 일 때, 구간 $[0, 1]$에서 $x^2-a^2 \le 0$이다.\\
+    $I = 2 \int_{0}^{1} (a^2-x^2) dx = 2 [a^2x - \dfrac{1}{3}x^3]_0^1 = 2a^2 - \dfrac{2}{3}$
+    \item (i) $0 \le a < 1$ 에서 $f(a) = \dfrac{8}{3}a^3 - 2a^2 + \dfrac{2}{3}$라 하면 $f'(a) = 8a^2 - 4a = 4a(2a-1)$.\\
+    $a=\dfrac{1}{2}$에서 극소이자 최소이다. $f(\dfrac{1}{2}) = \dfrac{8}{3} \cdot \dfrac{1}{8} - 2 \cdot \dfrac{1}{4} + \dfrac{2}{3} = \dfrac{1}{3} - \dfrac{1}{2} + \dfrac{2}{3} = \dfrac{1}{2}$.\\
+    (ii) $a \ge 1$ 에서 $I = 2a^2 - \dfrac{2}{3}$는 $a=1$일 때 최소값 $\dfrac{4}{3}$를 가진다.\\
+    따라서 $I$가 최소가 되는 $a$의 값은 $\dfrac{1}{2}$이다.
+\end{enumerate}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 10-7}
+다음 등식을 만족시키는 함수 $f(x)$를 구하여라.
+\[ f(x) = 4x^3 + 3x^2 + 2x \int_{0}^{1} f(t) dt + \int_{0}^{2} f(t) dt \]
+
+\begin{studybox}
+정적분 $\int_{a}^{b} f(t) dt$에서 위끝과 아래끝이 모두 상수이면 이 정적분의 값은 상수이다. 따라서 정적분 부분을 상수로 치환하여 문제를 해결한다.
+\end{studybox}
+
+\textbf{모범답안}\\
+$\int_{0}^{1} f(t) dt = p, \int_{0}^{2} f(t) dt = q$ ($p, q$는 상수)라고 놓으면\\
+$f(x) = 4x^3 + 3x^2 + 2px + q$ 이다. 이를 치환한 식에 대입하면\\
+$p = \int_{0}^{1} (4t^3 + 3t^2 + 2pt + q) dt = [t^4 + t^3 + pt^2 + qt]_0^1 = 1+1+p+q = p+q+2 \quad \therefore q = -2$\\
+$q = \int_{0}^{2} (4t^3 + 3t^2 + 2pt + q) dt = [t^4 + t^3 + pt^2 + qt]_0^2 = 16+8+4p+2q = 4p+2q+24$\\
+$q=-2$를 대입하면 $-2 = 4p - 4 + 24 \Rightarrow 4p = -22 \Rightarrow p = -\dfrac{11}{2}$\\
+따라서 $f(x) = 4x^3 + 3x^2 - 11x - 2$
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 10-8}
+다음 등식을 만족시키는 함수 $f(x)$를 구하여라.
+\[ f(x) = x^2 + \int_{-1}^{1} (x^2-t)f(t) dt \]
+
+\begin{studybox}
+적분 기호 안의 변수가 무엇인지 확인한다. 여기서는 $t$에 관해 적분하므로 $x$는 상수 취급한다. 따라서 $x^2$을 적분 기호 밖으로 꺼내어 상수로 치환할 수 있는 형태로 변형한다.
+\end{studybox}
+
+\textbf{모범답안} \\
+준식의 우변을 전개하면 $f(x) = x^2 + x^2 \int_{-1}^{1} f(t) dt - \int_{-1}^{1} tf(t) dt = (1 + \int_{-1}^{1} f(t) dt)x^2 - \int_{-1}^{1} tf(t) dt$이다.\\
+$\int_{-1}^{1} f(t) dt = p, \int_{-1}^{1} tf(t) dt = q$ ($p, q$는 상수)라고 놓으면 $f(x) = (1+p)x^2 - q$이다.\\
+$p = \int_{-1}^{1} \{(1+p)t^2 - q\} dt = 2 \int_{0}^{1} \{(1+p)t^2 - q\} dt = 2 [\dfrac{1+p}{3}t^3 - qt]_0^1 = \dfrac{2(1+p)}{3} - 2q \quad \dots \text{①}$\\
+$q = \int_{-1}^{1} t\{(1+p)t^2 - q\} dt = \int_{-1}^{1} \{(1+p)t^3 - qt\} dt = 0$ (기함수의 적분) $\quad \therefore q = 0$\\
+$q=0$을 ①에 대입하면 $p = \dfrac{2}{3} + \dfrac{2}{3}p \Rightarrow \dfrac{1}{3}p = \dfrac{2}{3} \Rightarrow p = 2$\\
+따라서 $f(x) = (1+2)x^2 - 0 = 3x^2$
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 10-9}
+다항함수 $f(x)$가 다음 두 조건을 만족시킬 때, $f(x)$를 구하여라.
+\begin{enumerate}[label=(\roman*)]
+    \item $f(x) = -f(-x)$
+    \item $\{f'(x)\}^2 = \displaystyle\int_{0}^{x} f(t) dt$
+\end{enumerate}
+
+\begin{studybox}
+다항함수를 구하는 문제에서는 먼저 차수를 결정하는 것이 일반적이다. $f(x)$의 최고차항을 $ax^n (a \ne 0, n \ge 1)$이라 하고 양변의 최고차항의 차수와 계수를 비교한다. 또한 조건 (i)을 통해 $f(x)$가 기함수임을 알 수 있으므로 홀수 차수항만 존재함을 이용한다.
+\end{studybox}
+
+\textbf{모범답안} \\
+$f(x)$가 $n$차 다항함수이면 $f'(x)$는 $n-1$차이고, $\{f'(x)\}^2$은 $2(n-1)$차이다.\\
+우변 $\int_{0}^{x} f(t) dt$는 $n+1$차이므로 $2(n-1) = n+1$에서 $n=3$이다.\\
+조건 (i)에서 $f(x)$는 기함수이므로 $f(x) = ax^3 + bx$ ($a \ne 0$)로 놓을 수 있다.\\
+이를 (ii)에 대입하면 $(3ax^2+b)^2 = \int_{0}^{x} (at^3+bt) dt = [\dfrac{1}{4}at^4 + \dfrac{1}{2}bt^2]_0^x$\\
+$9a^2x^4 + 6abx^2 + b^2 = \dfrac{1}{4}ax^4 + \dfrac{1}{2}bx^2$\\
+계수를 비교하면 $9a^2 = \dfrac{1}{4}a$, $6ab = \dfrac{1}{2}b$, $b^2 = 0$이다.\\
+$b^2=0$에서 $b=0$이고, 이를 $6ab = \dfrac{1}{2}b$에 대입하면 성립한다.\\
+$9a^2 = \dfrac{1}{4}a$에서 $a \ne 0$이므로 $9a = \dfrac{1}{4} \Rightarrow a = \dfrac{1}{36}$\\
+따라서 $f(x) = \dfrac{1}{36}x^3$
 
 \end{document}

@@ -2,6 +2,9 @@
 \usepackage{kotex}
 \usepackage{amsmath, amssymb}
 \usepackage{geometry}
+\usepackage{enumitem}
+
+% --- 여백 및 간격 설정 ---
 \geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
 \linespread{1.3} % 줄 간격 1.3배
 \setlength{\parskip}{1em} % 문단 간격
@@ -16,42 +19,54 @@
 
 \begin{enumerate}
     \item \textbf{Exercise 10-1} \\
-    다음 정적분의 값을 구하여라.
-    \[ \int_{1}^{2} \left( 3x^2 - \dfrac{4}{x^2} + 1 \right) dx \]
-
-    \item \textbf{Exercise 10-2} \\
-    함수 $f(x) = \begin{cases} x^2 - x & (x \ge 1) \\ x - 1 & (x < 1) \end{cases}$ 일 때, $\int_{0}^{2} f(x) dx$의 값을 구하여라.
+    $F(t)=\int_{0}^{t}(1+x+x^{2}+\cdot\cdot\cdot+x^{n})dx$ 일 때, $\int_{0}^{1}F(t)dt=\frac{11}{12}$ 을 만족시키는 자연수 $n$의 값을 구하여라.
 
     \item \textbf{Exercise 10-3} \\
-    $\int_{0}^{2} |x^2 - x| dx$의 값을 구하여라.
-
-    \item \textbf{Exercise 10-4} \\
-    다항함수 $f(x)$가 임의의 실수 $x$에 대하여 $\int_{1}^{x} f(t) dt = x^3 - 2x^2 + ax$를 만족시킬 때, 상수 $a$의 값과 $f(2)$의 값을 구하여라.
+    함수 $f(x)=x^{3}-(a+1)x^{2}+ax$ 가 $f(x)=\int_{0}^{1}\{f(x)-f(t)\}dt$ 를 만족시킬 때, 상수 $a$의 값을 구하여라.
 
     \item \textbf{Exercise 10-5} \\
-    다음 정적분의 값을 구하여라.
-    \[ \int_{-2}^{2} (5x^7 - 3x^5 + 4x^3 - x + 3) dx \]
+    $\text{Max}(a, b)$는 $a, b$ 중에서 작지 않은 것을 나타낼 때, $f^{+}(x)=\text{Max}(x, 0)$, $f^{-}(x)=\text{Max}(-x, 0)$ 으로 정의하자. 이때, $\int_{-1}^{2}f^{+}(x)dx+\int_{-1}^{2}f^{-}(x)dx$ 의 값을 구하여라.
+
+    \item \textbf{Exercise 10-7} \\
+    함수 $f(x)$가 모든 실수 $x$에 대하여 $f(x+2)=f(x)$ 를 만족시키고, $-1 \le x \le 1$ 에서
+    \[ f(x)=\begin{cases} x+1 & (-1 \le x \le 0) \\ -x+1 & (0 \le x \le 1) \end{cases} \]
+    일 때, $\int_{-5}^{5}f(x+1)dx$ 의 값을 구하여라.
+
+    \item \textbf{Exercise 10-9} \\
+    연속함수 $f(x)$가 다음 세 조건을 만족시킨다.
+    \begin{enumerate}[label=(\text{가})]
+        \item 모든 실수 $x$에 대하여 $f(2+x)=f(2-x)$
+        \item $\int_{-2}^{2}f(x)dx=2k+4$
+        \item $\int_{0}^{6}f(x)dx=k^{2}$
+    \end{enumerate}
+    $\int_{0}^{4}f(x)dx$ 의 값이 최소가 되는 상수 $k$의 값을 구하여라.
+
+    \item \textbf{Exercise 10-11} \\
+    함수 $f(x)=x^{3}-6x^{2}+8$ 에 대하여 $0 \le x \le r$ 에서 $|f(x)|$ 의 최댓값을 $M(r)$ 라고 할 때, $\int_{0}^{5}M(r)dr$ 의 값을 구하여라.
 \end{enumerate}
 
 \section*{실력 문제}
 
 \begin{enumerate}
-    \item \textbf{Exercise 10-6} \\
-    다항함수 $f(x)$가 모든 실수 $x$에 대하여 다음 등식을 만족시킬 때, $f(1)$의 값을 구하여라.
-    \[ f(x) = x^2 - 3x + \int_{0}^{2} f(t) dt \]
+    \item \textbf{Exercise 10-15} \\
+    $f(x)=\begin{cases} 2x-1 & (x \le 1) \\ x^{2} & (x \ge 1) \end{cases}$ 으로 정의된 함수 $f(x)$ 에 대하여 $\int_{1}^{3}xf(x-1)dx$ 의 값을 구하여라.
 
-    \item \textbf{Exercise 10-7} \\
-    함수 $f(x) = \int_{0}^{x} (t^2 - 2t - 3) dt$가 $x=a$에서 극댓값, $x=b$에서 극솟값을 가질 때, $b-a$의 값을 구하여라.
+    \item \textbf{Exercise 10-18} \\
+    $f(x)=\int_{0}^{1}|t^{2}-xt|dt$ 로 정의된 함수 $f(x)$ 의 최솟값을 구하여라.
 
-    \item \textbf{Exercise 10-8} \\
-    임의의 실수 $x$에 대하여 $\int_{1}^{x} (x-t)f(t) dt = x^3 + ax^2 + bx + 1$이 성립할 때, 상수 $a, b$의 값과 $f(x)$를 구하여라.
+    \item \textbf{Exercise 10-21} \\
+    다음과 같이 정의된 다항함수 $f_{n}(x)$ 를 구하여라.
+    \[ f_{1}(x)=2x, \quad f_{n+1}(x)=x^{3}+\frac{1}{2}\int_{0}^{1}f_{n}(x)dx \quad (\text{단, } n=1, 2, 3, \dots) \]
 
-    \item \textbf{Exercise 10-9} \\
-    다음 극한값을 구하여라.
-    \[ \lim_{x \to 2} \dfrac{1}{x-2} \int_{2}^{x} (t^3 - 3t^2 + 4) dt \]
+    \item \textbf{Exercise 10-23} \\
+    모든 일차함수 $g(x)$ 에 대하여 $\int_{0}^{1}g(x)f(x)dx=0$ 을 만족시키고, $f(0)=1$인 이차함수 $f(x)$ 를 구하여라.
 
-    \item \textbf{Exercise 10-10} \\
-    연속함수 $f(x)$가 모든 실수 $x$에 대하여 $f(x+2) = f(x)$이고, $\int_{-1}^{1} f(x) dx = 4$를 만족시킬 때, $\int_{-1}^{5} f(x) dx$의 값을 구하여라.
+    \item \textbf{Exercise 10-25} \\
+    함수 $y=f(x)$ 의 그래프의 개형이 아래로 볼록할 때, 실수 $a, b$에 대하여 다음 두 식의 대소를 비교하여라. (단, $f(x)>0$ 이다.)
+    \[ \frac{1}{b-a}\int_{a}^{b}f(x)dx, \quad \frac{f(a)+f(b)}{2} \]
+
+    \item \textbf{Exercise 10-27} \\
+    함수 $f(x)$ 가 구간 $[a, b]$ 에서 연속일 때, $\int_{a}^{b}f(x)dx=(b-a)f(c)$ 를 만족시키는 $c$가 구간 $[a, b]$ 에 적어도 하나 존재함을 증명하여라.
 \end{enumerate}
 
 \end{document}
