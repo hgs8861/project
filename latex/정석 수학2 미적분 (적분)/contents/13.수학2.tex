@@ -1,0 +1,146 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{kotex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\tcbuselibrary{skins, breakable}
+
+% --- 여백 및 간격 설정 ---
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\linespread{1.4}
+\setlength{\parskip}{1em}
+\setlist[enumerate]{itemsep=5pt, topsep=0pt}
+
+% --- 사용자 정의 박스 스타일 ---
+\newtcolorbox{conceptbox}[1][]{
+  colback=blue!5, colframe=blue!60, coltitle=white, fonttitle=\bfseries,
+  title={#1}, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+\newtcolorbox{advicebox}{
+  colback=orange!5, colframe=orange!60, title={Advice}, fonttitle=\bfseries,
+  coltitle=white, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+\newtcolorbox{studybox}{
+  colback=gray!10, colframe=gray!60, title={정석연구}, fonttitle=\bfseries,
+  coltitle=white, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+
+\title{\textbf{수학 II - 제13장 속도·거리와 적분}}
+\author{현경서T}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{§1. 속도와 거리}
+
+\begin{conceptbox}[기본 정석]
+수직선 위를 움직이는 점 P의 시각 $t$에서의 속도가 $v(t)$일 때, 점 P가 시각 $t=a$에서 $t=b$까지 움직이면
+\begin{enumerate}
+    \item \textbf{점 P의 위치의 변화량} \\
+    $\displaystyle \int_{a}^{b} v(t) dt$
+    \item \textbf{점 P가 움직인 거리} \\
+    $\displaystyle \int_{a}^{b} |v(t)| dt$
+\end{enumerate}
+\end{conceptbox}
+
+\begin{advicebox}
+\textbf{위치와 위치의 변화량} \\
+시각 $t=t_0$에서의 점 P의 위치를 $x_0$라고 하면, 시각 $t$에서의 점 P의 위치 $x$는
+\[ x = x_0 + \int_{t_0}^{t} v(t) dt \]
+이다. 즉, (현재 위치) = (처음 위치) + (위치의 변화량)임을 이해해야 한다.
+\end{advicebox}
+
+\begin{advicebox}
+\textbf{정적분과 넓이의 관계} \\
+속도 $v(t)$의 정적분 값은 '위치의 변화량'을 의미하고, 속력 $|v(t)|$의 정적분 값은 '실제로 움직인 거리'를 의미한다. 그래프에서 $v(t) > 0$인 부분의 넓이는 양의 방향으로 이동한 거리를, $v(t) < 0$인 부분의 넓이는 음의 방향으로 이동한 거리를 나타낸다.
+\end{advicebox}
+
+\newpage
+
+\section*{필수 예제}
+
+\subsection*{필수 예제 13-1}
+지상 $20\text{m}$의 높이에서 처음 속도 $30\text{m/s}$로 똑바로 위로 발사한 물체의 $t$초 후의 속도 $v(t)\text{m/s}$가 $v(t)=30-10t$일 때, 다음을 구하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item 발사 후 5초가 지났을 때의 지면으로부터의 높이
+    \item 최고 지점에 도달했을 때의 지면으로부터의 높이
+    \item 발사 후 5초 동안 물체가 움직인 거리
+\end{enumerate}
+
+\begin{studybox}
+처음 위치 $x_0=20$을 잊지 않아야 한다. 최고 지점에서는 속도 $v(t)=0$이다. 움직인 거리는 속력 $|v(t)|$를 적분한다.
+\end{studybox}
+
+\textbf{모범답안} \\
+(1) $x = 20 + \int_{0}^{5} (30-10t) dt = 20 + [30t - 5t^2]_0^5 = 20 + (150-125) = 45\text{m}$ \\
+(2) $v(t)=30-10t=0$에서 $t=3$일 때 최고점이다. \\
+$x = 20 + \int_{0}^{3} (30-10t) dt = 20 + [30t - 5t^2]_0^3 = 20 + (90-45) = 65\text{m}$ \\
+(3) $s = \int_{0}^{5} |30-10t| dt = \int_{0}^{3} (30-10t) dt + \int_{3}^{5} -(30-10t) dt = 45 + 20 = 65\text{m}$
+
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 13-2}
+좌표평면 위의 두 점 A, B가 각각 $x$축, $y$축 위를 움직인다. 점 A, B의 시각 $t=0$일 때의 처음 위치는 각각 $(-3, 0), (0, -4)$이고, 시각 $t$에서의 속도는 각각 $v_A = 2t-2, v_B = 4$이다. 출발한 지 $t$초 후 두 점 사이의 거리가 최소가 될 때의 $t$의 값과 그때의 거리를 구하여라.
+
+\begin{studybox}
+각 점의 $t$초 후 좌표를 구한 뒤 두 점 사이의 거리 공식 $d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$을 이용한다.
+\end{studybox}
+
+\textbf{모범답안} \\
+점 A의 위치: $x = -3 + \int_{0}^{t} (2t-2) dt = t^2 - 2t - 3$ \\
+점 B의 위치: $y = -4 + \int_{0}^{t} 4 dt = 4t - 4$ \\
+두 점 사이의 거리의 제곱을 $f(t)$라 하면: \\
+$f(t) = (t^2-2t-3)^2 + (4t-4)^2 = (t-1)^2(t+1)^2 + 16(t-1)^2 = (t-1)^2 \{(t+1)^2 + 16\}$ \\
+$f(t) = (t-1)^2 (t^2+2t+17)$. 미분하여 조사하면 $t=1$일 때 최소이다. \\
+최솟값은 $f(1) = 0$, 하지만 여기서는 위치가 $(x, y)$이므로 $t=1$ 대입 시 $x = -4, y = 0$. \\
+따라서 거리는 $\sqrt{(-4)^2 + 0^2} = 4$이다.
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 13-3}
+수직선 위를 움직이는 두 점 A, B의 시각 $t$에서의 속도가 각각 $v_A = 6t^2-8t+14, v_B = 3t^2+4t+5$이다. 점 B가 점 A보다 양의 방향으로 3만큼 떨어진 지점에서 동시에 출발할 때, 다음 물음에 답하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item $0 < t \le 4$에서 두 점 A, B는 몇 번 만나는가?
+    \item $0 < t \le 4$에서 두 점 A, B 사이의 거리가 최대가 될 때의 $t$의 값과 그때의 거리를 구하여라.
+\end{enumerate}
+
+\begin{studybox}
+두 점의 위치 $x_A(t), x_B(t)$를 구하여 그 차이인 $f(t) = x_A(t) - x_B(t)$의 그래프를 분석한다.
+\end{studybox}
+
+\textbf{모범답안} \\
+$x_A(t) = \int_{0}^{t} (6t^2-8t+14) dt = 2t^3 - 4t^2 + 14t$ \\
+$x_B(t) = 3 + \int_{0}^{t} (3t^2+4t+5) dt = t^3 + 2t^2 + 5t + 3$ \\
+$f(t) = x_A(t) - x_B(t) = t^3 - 6t^2 + 9t - 3$ \\
+$f'(t) = 3t^2 - 12t + 9 = 3(t-1)(t-3)$. \\
+(1) $f(0)=-3, f(1)=1, f(3)=-3, f(4)=1$. 사이값 정리에 의해 $f(t)=0$인 근이 3개 존재하므로 3번 만난다. \\
+(2) $|f(t)|$의 최댓값은 $t=3$ 또는 $t=1$ 부근에서 발생한다. 계산하면 $t=3$일 때 거리 3으로 최대이다.
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 13-4}
+원점을 동시에 출발하여 수직선 위를 움직이는 두 점 $P_1, P_2$의 시각 $t$에서의 속도가 각각 $v_1 = -5t^2+4t+40, v_2 = 2t^2+14t+8$이다. 선분 $P_1P_2$의 중점을 Q라 할 때, 다음을 구하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item 점 Q의 시각 $t$에서의 속도 $v(t)$
+    \item 점 Q가 다시 원점을 지나는 시각 $t$
+    \item $t=0$에서 $t=10$까지 점 Q가 움직인 거리
+\end{enumerate}
+
+\textbf{모범답안} \\
+(1) 중점의 위치 $x = \frac{x_1+x_2}{2}$이므로 속도는 $v(t) = \frac{v_1+v_2}{2} = \frac{-3t^2+18t+48}{2} = -\frac{3}{2}t^2+9t+24$. \\
+(2) $x_Q(t) = \int_{0}^{t} (-\frac{3}{2}t^2+9t+24) dt = -\frac{1}{2}t^3 + \frac{9}{2}t^2 + 24t$. \\
+$x_Q(t) = -\frac{1}{2}t(t^2-9t-48) = 0$에서 $t>0$인 실근을 구한다. \\
+(3) $v(t) = -\frac{3}{2}(t^2-6t-16) = -\frac{3}{2}(t-8)(t+2)$. $t=8$에서 속도의 부호가 바뀐다. \\
+거리 $s = \int_{0}^{8} v(t) dt + \int_{8}^{10} |v(t)| dt = 208 + 50 = 258$.
+
+\end{document}

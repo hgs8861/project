@@ -1,0 +1,212 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{kotex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\tcbuselibrary{skins, breakable}
+
+% --- 여백 및 간격 설정 ---
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\linespread{1.4}
+\setlength{\parskip}{1em}
+\setlist[enumerate]{itemsep=5pt, topsep=0pt}
+
+% --- 사용자 정의 박스 스타일 ---
+\newtcolorbox{conceptbox}[1][]{
+  colback=blue!5, colframe=blue!60, coltitle=white, fonttitle=\bfseries,
+  title={#1}, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+\newtcolorbox{advicebox}{
+  colback=orange!5, colframe=orange!60, title={Advice}, fonttitle=\bfseries,
+  coltitle=white, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+\newtcolorbox{studybox}{
+  colback=gray!10, colframe=gray!60, title={정석연구}, fonttitle=\bfseries,
+  coltitle=white, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+
+\title{\textbf{미적분 - 제13장 부정적분}}
+\author{현경서T}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{§1. 부정적분의 정의와 계산}
+
+\begin{conceptbox}[기본 정석]
+\begin{enumerate}
+    \item \textbf{부정적분(원시함수)의 정의}\\
+    함수 $f(x)$ 가 주어져 있을 때, $F'(x)=f(x)$ 인 함수 $F(x)$ 를 $f(x)$ 의 \textbf{부정적분} 또는 \textbf{원시함수}라고 한다. $F(x)$ 가 함수 $f(x)$ 의 부정적분의 하나일 때, $f(x)$ 의 모든 부정적분은 $F(x)+C$ 의 꼴로 나타내어지며, 이것을
+    \[ \int f(x)dx=F(x)+C \quad (\text{단, } C \text{는 상수}) \]
+    로 나타낸다. 여기에서 $C$를 적분상수, 함수 $f(x)$ 를 피적분함수, $x$를 적분변수라 하고, $f(x)$ 의 부정적분을 구하는 것을 $f(x)$ 를 적분한다라고 한다.
+    \item \textbf{부정적분과 도함수}\\
+    $\displaystyle \frac{d}{dx} \left( \int f(x)dx \right) = f(x), \quad \int \left( \frac{d}{dx}f(x) \right) dx = f(x)+C$
+    \item \textbf{부정적분의 기본 공식}\\
+    (1) $\displaystyle \int k~dx=kx+C$ (단, $k$는 상수, $C$는 적분상수)\\
+    (2) $\displaystyle \int x^{r}dx=\frac{1}{r+1}x^{r+1}+C$ (단, $r \ne -1$, $C$는 적분상수)\\
+    \hspace{1.5em} $\displaystyle \int\frac{1}{x}dx=\ln|x|+C$ (단, $C$는 적분상수)\\
+    (3) $\displaystyle \int kf(x)dx=k\int f(x)dx$ (단, $k$는 0이 아닌 상수)\\
+    (4) $\displaystyle \int \{f(x) \pm g(x)\}dx = \int f(x)dx \pm \int g(x)dx$ (복부호동순)
+\end{enumerate}
+\end{conceptbox}
+
+\begin{advicebox}
+\textbf{1° 부정적분의 정의}\\
+이를테면 $x^{2}$ 의 도함수를 구하면 $2x$이다. 역으로 $x^{2}$ 은 도함수가 $2x$인 함수라는 것을 $x^2$은 $2x$의 부정적분(원시함수)이라고 한다. 그런데 $2x$의 부정적분은 $x^2$ 하나만 있는 것이 아니다. $x^2-1, x^2+1, x^2+2$ 등의 도함수도 모두 $2x$이므로, $C$가 상수일 때 $(x^2+C)'=2x$ 이므로 $2x$의 부정적분은 $x^2+C$이다.
+\end{advicebox}
+
+\begin{advicebox}
+\textbf{2° 부정적분과 도함수}\\
+(i) $f(x)$ 의 부정적분의 하나를 $F(x)$ 라고 하면 $\int f(x)dx=F(x)+C$ 이고, $F'(x)=f(x)$ 이므로 양변을 $x$에 관하여 미분하면 $\frac{d}{dx}(\int f(x)dx)=f(x)$ 가 되어 적분상수 $C$가 없다.\\
+(ii) $\int(\frac{d}{dx}f(x))dx=f(x)+C$ 로 적분상수 $C$가 붙는다.
+\end{advicebox}
+
+\begin{advicebox}
+\textbf{3° 부정적분의 기본 공식}\\
+적분은 미분의 역연산이므로 미분법의 역을 생각하면 기본정석의 공식을 얻을 수 있다. 특히 $x^r$의 적분에서 $r=-1$ 인 경우는 분모가 $0$ 이 되므로 공식을 쓸 수 없고, 대신 $\ln|x|+C$ 를 이용한다.
+\end{advicebox}
+
+\section*{§2. 여러 가지 함수의 부정적분}
+
+\begin{conceptbox}[기본 정석]
+\begin{enumerate}
+    \item \textbf{삼각함수의 부정적분}\\
+    (1) $\displaystyle \int \sin x~dx = -\cos x+C$ \qquad (2) $\displaystyle \int \cos x~dx = \sin x+C$\\
+    (3) $\displaystyle \int \sec^{2}x~dx = \tan x+C$ \qquad (4) $\displaystyle \int \csc^{2}x~dx = -\cot x+C$\\
+    (5) $\displaystyle \int \sec x \tan x~dx = \sec x+C$ \quad (6) $\displaystyle \int \csc x \cot x~dx = -\csc x+C$
+    \item \textbf{지수함수의 부정적분}\\
+    (1) $\displaystyle \int e^{x}dx = e^{x}+C$ \qquad (2) $\displaystyle \int a^{x}dx = \frac{a^{x}}{\ln a}+C$
+\end{enumerate}
+\end{conceptbox}
+
+\begin{advicebox}
+이 공식들은 모두 우변을 미분하면 좌변의 피적분함수가 된다는 것을 보임으로써 증명할 수 있다. 삼각함수와 지수함수의 미분법과 연관지어 기억해 두는 것이 좋다.
+\end{advicebox}
+
+\newpage
+
+\section*{필수 예제}
+
+\subsection*{필수 예제 13-1}
+다음 부정적분을 구하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle \int (x^{2}+\sqrt{2}x+1)(x^{2}-\sqrt{2}x+1)dx$
+    \item $\displaystyle \int \frac{x^{4}+x^{2}+1}{x^{2}-x+1}dx$
+    \item $\displaystyle \int \left( \frac{1}{1+\tan^{2}\theta} + \frac{1}{1+\cot^{2}\theta} \right) d\theta$
+    \item $\displaystyle \int \frac{x^{3}}{x+1}dx + \int \frac{1}{x+1}dx$
+    \item $\displaystyle \int (\sin\theta+\cos\theta)^{2}d\theta + \int (\sin\theta-\cos\theta)^{2}d\theta$
+\end{enumerate}
+
+\begin{studybox}
+(1), (2), (3) 피적분함수를 간단히 한 다음 구한다.\\
+(4), (5) 아래 정석을 이용하여 피적분함수를 하나로 묶어 간단히 한 다음 구한다.\\
+\textbf{정석}: $\displaystyle \int f(x)dx \pm \int g(x)dx = \int \{f(x) \pm g(x)\}dx$ (복부호동순)
+\end{studybox}
+
+\textbf{모범답안}
+\begin{enumerate}[label=(\arabic*)]
+    \item (준식) = $\displaystyle \int (x^4+1)dx = \mathbf{\frac{1}{5}x^5+x+C}$
+    \item (준식) = $\displaystyle \int \frac{(x^2+x+1)(x^2-x+1)}{x^2-x+1}dx = \int (x^2+x+1)dx = \mathbf{\frac{1}{3}x^3+\frac{1}{2}x^2+x+C}$
+    \item (준식) = $\displaystyle \int (\frac{1}{\sec^2 \theta} + \frac{1}{\csc^2 \theta})d\theta = \int (\cos^2 \theta + \sin^2 \theta)d\theta = \int 1 d\theta = \mathbf{\theta+C}$
+    \item (준식) = $\displaystyle \int \frac{x^3+1}{x+1}dx = \int \frac{(x+1)(x^2-x+1)}{x+1}dx = \int (x^2-x+1)dx = \mathbf{\frac{1}{3}x^3-\frac{1}{2}x^2+x+C}$
+    \item (준식) = $\displaystyle \int \{(\sin\theta+\cos\theta)^2 + (\sin\theta-\cos\theta)^2\}d\theta = \int 2 d\theta = \mathbf{2\theta+C}$
+\end{enumerate}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 13-2}
+다음 부정적분을 구하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle \int \frac{\sqrt{x}+\sqrt[3]{x}-1}{x}dx$
+    \item $\displaystyle \int \left( x + \frac{1}{x^2} \right)^2 dx$
+    \item $\displaystyle \int \frac{(\sqrt{x}+1)^3}{\sqrt{x}}dx$
+\end{enumerate}
+
+\begin{studybox}
+$x^r$ 의 꼴로 변형한 다음 $\displaystyle \int x^r dx = \frac{1}{r+1}x^{r+1}+C (r \ne -1)$, $\displaystyle \int \frac{1}{x}dx = \ln|x|+C$ 를 이용한다.
+\end{studybox}
+
+\textbf{모범답안}
+\begin{enumerate}[label=(\arabic*)]
+    \item (준식) = $\displaystyle \int (x^{-1/2} + x^{-2/3} - \frac{1}{x})dx = 2x^{1/2} + 3x^{1/3} - \ln|x| + C = \mathbf{2\sqrt{x} + 3\sqrt[3]{x} - \ln|x| + C}$
+    \item (준식) = $\displaystyle \int (x^2 + \frac{2}{x} + x^{-4})dx = \mathbf{\frac{1}{3}x^3 + 2\ln|x| - \frac{1}{3x^3} + C}$
+    \item (준식) = $\displaystyle \int \frac{x\sqrt{x}+3x+3\sqrt{x}+1}{\sqrt{x}}dx = \int (x+3x^{1/2}+3+x^{-1/2})dx = \mathbf{\frac{1}{2}x^2+2x\sqrt{x}+3x+2\sqrt{x}+C}$
+\end{enumerate}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 13-3}
+두 다항함수 $f(x), g(x)$ 가
+\[ f'(x)+g'(x)=2x+1, \quad f'(x)g(x)+f(x)g'(x)=3x^{2}-2x+2 \]
+를 만족시킨다. $f(0)=2, g(0)=-1$ 일 때, $f(x), g(x)$ 를 구하여라.
+
+\begin{studybox}
+두 조건식의 좌변은 각각 $\{f(x)+g(x)\}'$ 과 $\{f(x)g(x)\}'$ 이다. 따라서 부정적분을 통해 $f(x)+g(x)$ 와 $f(x)g(x)$ 를 구할 수 있다.\\
+\textbf{정석}: $\displaystyle \frac{d}{dx}F(x)=f(x) \iff F(x)=\int f(x)dx$
+\end{studybox}
+
+\textbf{모범답안}\\
+첫 번째 조건에서 $f(x)+g(x) = \int (2x+1)dx = x^2+x+C_1$\\
+$x=0$ 대입 시 $f(0)+g(0)=2-1=1$ 이므로 $C_1=1$. 즉, $f(x)+g(x)=x^2+x+1 \cdots$ ①\\
+두 번째 조건에서 $f(x)g(x) = \int (3x^2-2x+2)dx = x^3-x^2+2x+C_2$\\
+$x=0$ 대입 시 $f(0)g(0)=2 \times (-1)=-2$ 이므로 $C_2=-2$. 즉, $f(x)g(x)=x^3-x^2+2x-2 = (x-1)(x^2+2) \cdots$ ②\\
+①, ②를 만족시키고 $f(0)=2, g(0)=-1$ 인 다항함수는 \\
+$\mathbf{f(x)=x^2+2, \quad g(x)=x-1}$
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 13-4}
+다음 부정적분을 구하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle \int \sin^2 \frac{x}{2} dx$
+    \item $\displaystyle \int \frac{x-\cos^2 x}{x \cos^2 x} dx$
+    \item $\displaystyle \int \frac{8^x - 2^x}{2^x + 1} dx$
+\end{enumerate}
+
+\begin{studybox}
+피적분함수를 공식을 적용할 수 있는 꼴로 변형한다. 삼각함수의 경우 $\sin x, \cos x, \sec^2 x, \csc^2 x$ 등을 포함한 식으로, 지수함수의 경우 $e^x, a^x$ 꼴로 변형한다.
+\end{studybox}
+
+\textbf{모범답안}
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle \sin^2 \frac{x}{2} = \frac{1-\cos x}{2}$ 이므로 (준식) = $\displaystyle \int \frac{1}{2}(1-\cos x)dx = \mathbf{\frac{1}{2}x - \frac{1}{2}\sin x + C}$
+    \item (준식) = $\displaystyle \int (\frac{1}{\cos^2 x} - \frac{1}{x})dx = \int (\sec^2 x - \frac{1}{x})dx = \mathbf{\tan x - \ln|x| + C}$
+    \item $\displaystyle \frac{8^x-2^x}{2^x+1} = \frac{2^x(2^{2x}-1)}{2^x+1} = \frac{2^x(2^x+1)(2^x-1)}{2^x+1} = 2^x(2^x-1) = 4^x-2^x$ 이므로\\
+    (준식) = $\displaystyle \int (4^x-2^x)dx = \frac{4^x}{\ln 4} - \frac{2^x}{\ln 2} + C = \mathbf{\frac{2^{2x-1}}{\ln 2} - \frac{2^x}{\ln 2} + C}$
+\end{enumerate}
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
+\subsection*{필수 예제 13-5}
+다음 물음에 답하여라.
+\begin{enumerate}[label=(\arabic*)]
+    \item 함수 $y=(\tan x + \cot x)^2$ 의 부정적분 중에서 $x=\frac{\pi}{4}$ 일 때 함숫값이 2인 것을 구하여라.
+    \item 곡선 $y=f(x)$ 위의 점 $(x,y)$ 에서의 접선의 기울기는 $e^x+6x+2$ 에 정비례하고, 이 곡선 위의 $x$좌표가 0인 점에서의 접선의 방정식은 $y=3x+4$ 이다. 이때, $f(x)$ 를 구하여라.
+\end{enumerate}
+
+\begin{studybox}
+$f'(x)$ 를 알고 $f(x)$ 를 구하는 문제이다. $\mathbf{f(x)=\int f'(x)dx}$ 를 이용한다.
+\end{studybox}
+
+\textbf{모범답안}
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle (\tan x + \cot x)^2 = \tan^2 x + 2 + \cot^2 x = (\sec^2 x - 1) + 2 + (\csc^2 x - 1) = \sec^2 x + \csc^2 x$\\
+    $f(x) = \int (\sec^2 x + \csc^2 x)dx = \tan x - \cot x + C$. \\
+    $f(\frac{\pi}{4}) = 1-1+C=2$ 이므로 $C=2$. $\therefore \mathbf{f(x) = \tan x - \cot x + 2}$
+    \item $f'(x)=k(e^x+6x+2)$ 라 놓자. $x=0$ 에서 접선의 기울기가 3이므로 $f'(0)=k(1+2)=3k=3 \therefore k=1$\\
+    $f(x) = \int (e^x+6x+2)dx = e^x+3x^2+2x+C$. \\
+    점 $(0,4)$ 를 지나므로 $f(0)=1+C=4 \therefore C=3$. $\therefore \mathbf{f(x) = e^x+3x^2+2x+3}$
+\end{enumerate}
+
+\end{document}
