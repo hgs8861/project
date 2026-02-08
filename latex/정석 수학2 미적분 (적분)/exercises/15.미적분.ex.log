@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  9 FEB 2026 06:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.14)  9 FEB 2026 07:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/hyeon/OneDrive/바탕 화면/project/latex/정석 수학2 미적분 (적분)/exercises/14.미적분.ex.tex"
-(c:/Users/hyeon/OneDrive/바탕 화면/project/latex/정석 수학2 미적분 (적분)/exercises/14.미적분.ex.tex
+**"c:/Users/hyeon/OneDrive/바탕 화면/project/latex/정석 수학2 미적분 (적분)/exercises/15.미적분.ex.tex"
+(c:/Users/hyeon/OneDrive/바탕 화면/project/latex/정석 수학2 미적분 (적분)/exercises/15.미적분.ex.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -252,29 +252,29 @@ Package: kolabels-utf 2015/03/20 v1.5 UTF-8 Hangul item labels
  (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count308
-) (./14.미적분.ex.aux)
-\openout1 = `14.미적분.ex.aux'.
+) (./15.미적분.ex.aux)
+\openout1 = `15.미적분.ex.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 35.
-LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 31.
+LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 31.
  (c:/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 31.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -310,18 +310,18 @@ LaTeX Font Info:    ... okay on input line 35.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 42.
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 
-[2] (./14.미적분.ex.aux)
+[2] (./15.미적분.ex.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
@@ -329,17 +329,17 @@ L3 programming layer <2025-07-20>
  ) 
 Here is how much of TeX's memory you used:
  3725 strings out of 467801
- 56945 string characters out of 5436089
- 475340 words of memory out of 5000000
- 32309 multiletter control sequences out of 15000+600000
- 640589 words of font info for 89 fonts, out of 8000000 for 9000
+ 56981 string characters out of 5436089
+ 472364 words of memory out of 5000000
+ 32310 multiletter control sequences out of 15000+600000
+ 640310 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,14n,65p,330b,543s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbb.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbd.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb>
-Output written on 14.미적분.ex.pdf (2 pages, 1302966 bytes).
+ 59i,14n,65p,362b,546s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbac.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbb.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbd.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb>
+Output written on 15.미적분.ex.pdf (2 pages, 1252021 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 120 compressed objects within 2 object streams
+ 197 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

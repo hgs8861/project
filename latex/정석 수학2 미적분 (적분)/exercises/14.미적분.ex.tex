@@ -1,71 +1,91 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage{kotex}
-\usepackage{amsmath, amssymb}
-\usepackage{geometry}
+\documentclass[10pt, a4paper]{article} % 글자 크기를 10pt로 축소
+
+% --- 1. 필수 패키지 설정 ---
+\usepackage[a4paper, top=18mm, bottom=15mm, left=12mm, right=12mm, headheight=25pt, headsep=8mm]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{fancyhdr}
 \usepackage{enumitem}
+\usepackage{array}
+\usepackage{longtable}
 
-% --- 여백 및 간격 설정 ---
-\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
-\linespread{1.3}
-\setlength{\parskip}{1em}
+% --- 2. 한글 설정 (가장 표준적인 kotex 사용) ---
+% 별도의 폰트 파일 없이 시스템 기본 한글 폰트를 사용합니다.
+\usepackage{kotex}
 
-\title{\textbf{미적분 - Chapter 14 연습문제}}
-\date{}
+% --- 3. 헤더 설정 ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\large \textbf{미적분학 1 : 연습문제}}
+\rhead{\small 학번: \underline{\hspace{3.5cm}} 이름: \underline{\hspace{3cm}}}
+\cfoot{\small \thepage}
+\renewcommand{\headrulewidth}{0.6pt} % 선 두께 0.6pt 유지
+
+% --- 4. 문제 박스 명령어 정의 ---
+% 글자 크기를 \small로 지정하여 더 작게 출력
+\newcounter{probcount}
+\newcommand{\exercise}[1]{%
+    \stepcounter{probcount}%
+    \begin{minipage}[t][110mm][t]{0.44\textwidth}
+        \small % 문제 내부 글자 크기 축소
+        \vspace{1mm}
+        \noindent \textbf{문제 \arabic{probcount}.} #1
+    \end{minipage}%
+}
 
 \begin{document}
-\maketitle
 
-\section*{기본 문제}
+% --- 5. 문제 입력 섹션 ---
+% {p|p} 구조로 중앙 세로줄만 생성
+\noindent
+\begin{longtable}{p{0.47\textwidth} | p{0.47\textwidth}}
+    
+    % [1페이지 상단] 문제 1 & 2
+    \exercise{다음 부정적분을 구하여라.
+    \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
+        \item $\displaystyle \int\dfrac{x}{(2x+1)^{3}}dx$
+        \item $\displaystyle \int\dfrac{x}{\sqrt{1-x^{2}}}dx$
+        \item $\displaystyle \int x\sin x^{2}dx$
+        \item $\displaystyle \int\dfrac{e^{x}-1}{e^{x}+1}dx$
+        \item $\displaystyle \int\dfrac{\ln x}{x}dx$
+    \end{enumerate}} 
+    & 
+    \exercise{함수 $f(x), g(x)$ 가 다음 세 조건을 만족시킬 때, $f(x)+g(x)$ 를 구하여라.
+    \begin{enumerate}[label=(\text{\roman*}), leftmargin=10mm, nosep]
+        \item $f^{\prime}(x)=2g(x), \ g^{\prime}(x)=2f(x)$
+        \item $f(0)=1, \ g(0)=e-1$
+        \item $f(x)>0, \ g(x)>0$
+    \end{enumerate}} \\
+    \hline % 페이지 중앙 가로선 (십자 모양 완성)
+    
+    % [1페이지 하단] 문제 3 & 4
+    \exercise{다음 부정적분을 구하여라.
+    \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
+        \item $\displaystyle \int\dfrac{x^{4}}{(x-1)^{3}}dx$
+        \item $\displaystyle \int\sqrt{1+\sqrt{x}}dx$
+    \end{enumerate}} 
+    & 
+    \exercise{다음 부정적분을 구하여라.
+    \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
+        \item $\displaystyle \int\dfrac{1}{\sin x}dx$
+        \item $\displaystyle \int\dfrac{\sin x}{1+\sin x}dx$
+    \end{enumerate}} \\
+    % 페이지 하단 테두리 방지를 위해 \hline 생략
 
-\begin{enumerate}
-    \item \textbf{Exercise 14-1} \\
-    다음 부정적분을 구하여라.
-    \begin{enumerate}[label=(\arabic*)]
-        \item $\int\dfrac{x}{(2x+1)^{3}}dx$
-        \item $\int\dfrac{x}{\sqrt{1-x^{2}}}dx$
-        \item $\int x\sin x^{2}dx$
-        \item $\int\dfrac{e^{x}-1}{e^{x}+1}dx$
-        \item $\int\dfrac{\ln x}{x}dx$
-    \end{enumerate}
+    % --- 2페이지로 자동 전환 ---
+    
+    \exercise{부정적분 $\displaystyle \int x\cot^{2}x~dx$ 를 구하여라.} 
+    & 
+    \exercise{다음 등식이 성립함을 증명하여라. (단, $n$ 은 2 이상의 자연수)
+    \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
+        \item $\displaystyle \int \tan^{n}x~dx=\dfrac{\tan^{n-1}x}{n-1}-\int \tan^{n-2}x~dx$
+        \item $\displaystyle \int \sin^{n}x~dx=-\dfrac{\sin^{n-1}x\cos x}{n}+\dfrac{n-1}{n}\int \sin^{n-2}x~dx$
+    \end{enumerate}} \\
+    \hline 
+    
+    \exercise{미분방정식 $y' + y = e^x$의 일반해를 구하시오.} 
+    & 
+    \exercise{함수 $f(x,y) = x^2 + y^2$의 점 $(1,2)$에서의 기울기 벡터를 구하시오.} \\
 
-    \item \textbf{Exercise 14-3} \\
-    함수 $f(x), g(x)$ 가 다음 세 조건을 만족시킬 때, $f(x)+g(x)$ 를 구하여라.
-    \begin{enumerate}[label=(\text{\roman*})]
-        \item $f^{\prime}(x)=2g(x), g^{\prime}(x)=2f(x)$
-        \item $f(0)=1, g(0)=e-1$
-        \item $f(x)>0, g(x)>0$
-    \end{enumerate}
-
-    \item \textbf{Exercise 14-5} \\
-    미분가능한 함수 $f(x)$ 가 모든 실수 $x$ 에 대하여 $xf^{\prime}(x)-f(x)=(x^{4}+2x^{2})e^{x-1}$ 을 만족시킨다. $f(1)=3$ 일 때, $f(3)$ 의 값을 구하여라.
-\end{enumerate}
-
-\section*{실력 문제}
-
-\begin{enumerate}
-    \item \textbf{Exercise 14-6} \\
-    다음 부정적분을 구하여라.
-    \begin{enumerate}[label=(\arabic*)]
-        \item $\int\dfrac{x^{4}}{(x-1)^{3}}dx$
-        \item $\int\sqrt{1+\sqrt{x}}dx$
-    \end{enumerate}
-
-    \item \textbf{Exercise 14-7} \\
-    다음 부정적분을 구하여라.
-    \begin{enumerate}[label=(\arabic*)]
-        \item $\int\dfrac{1}{\sin x}dx$
-        \item $\int\dfrac{\sin x}{1+\sin x}dx$
-    \end{enumerate}
-
-    \item \textbf{Exercise 14-11} \\
-    부정적분 $\int x\cot^{2}x~dx$ 를 구하여라.
-
-    \item \textbf{Exercise 14-14} \\
-    다음 등식이 성립함을 증명하여라. (단, $n$ 은 2 이상의 자연수)
-    \begin{enumerate}[label=(\arabic*)]
-        \item $\int \tan^{n}x~dx=\dfrac{\tan^{n-1}x}{n-1}-\int \tan^{n-2}x~dx$
-        \item $\int \sin^{n}x~dx=-\dfrac{\sin^{n-1}x\cos x}{n}+\dfrac{n-1}{n}\int \sin^{n-2}x~dx$
-    \end{enumerate}
-\end{enumerate}
+\end{longtable}
 
 \end{document}
