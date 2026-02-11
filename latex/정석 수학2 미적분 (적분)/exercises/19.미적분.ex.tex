@@ -1,0 +1,55 @@
+\documentclass[10pt, a4paper]{article}
+
+% --- 1. 필수 패키지 설정 ---
+\usepackage[a4paper, top=18mm, bottom=15mm, left=12mm, right=12mm, headheight=25pt, headsep=8mm]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{kotex}
+
+% --- 2. 헤더 설정 ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\large \textbf{미적분 : 제19장 속도·거리와 적분 연습문제}}
+\rhead{\small 학번: \underline{\hspace{3.5cm}} 이름: \underline{\hspace{3cm}}}
+\cfoot{\small \thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+
+% --- 3. 문제 박스 명령어 정의 ---
+\newcounter{probcount}
+\newcommand{\exercise}[1]{%
+    \stepcounter{probcount}%
+    \begin{minipage}[t][120mm][t]{0.44\textwidth}
+        \small 
+        \vspace{1mm}
+        \noindent \textbf{문제 \arabic{probcount}.} #1
+    \end{minipage}%
+}
+
+\begin{document}
+
+\noindent
+\begin{longtable}{p{0.47\textwidth} | p{0.47\textwidth}}
+    
+    % [기본 문제 섹션]
+    \exercise{수직선 위를 움직이는 점 P의 시각 $t$에서의 속도가 $v(t) = 4t - t^2$일 때, 시각 $t=0$에서 $t=5$까지 점 P가 움직인 거리를 구하여라.} 
+    & 
+    \exercise{지면으로부터 $20m$의 높이에서 $40m/s$의 속도로 똑바로 위로 던진 물체의 $t$초 후의 속도가 $v(t) = 40 - 10t$일 때, 던진 후 6초 동안 물체가 움직인 거리를 구하여라.} \\
+    \hline 
+    
+    \exercise{매개변수 $t$로 나타내어진 곡선 $x = t - \sin t, y = 1 - \cos t (0 \le t \le 2\pi)$의 길이를 구하여라.} 
+    & 
+    \exercise{곡선 $y = \frac{1}{2}(e^x + e^{-x})$의 $x=0$에서 $x=1$까지의 길이를 구하여라.} \\
+    \hline
+
+    % [실력 문제 섹션]
+    \exercise{$t=0$일 때 동시에 원점을 출발하여 수직선 위를 움직이는 점 P, Q의 시각 $t$에서의 속도가 각각 $\sin \pi t, 2\sin 2\pi t$라고 한다. 원점을 출발한 후 처음으로 두 점이 만날 때까지 점 P, Q가 움직인 거리를 각각 구하여라.} 
+    & 
+    \exercise{곡선 $y = \int_{0}^{x} \sqrt{\cos t} dt (0 \le x \le \pi)$의 길이를 구하여라.} \\
+    \hline
+
+\end{longtable}
+
+\end{document}

@@ -1,0 +1,124 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{kotex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\tcbuselibrary{skins, breakable}
+
+% --- 여백 및 간격 설정 ---
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\linespread{1.4}
+\setlength{\parskip}{1em}
+\setlist[enumerate]{itemsep=5pt, topsep=0pt}
+
+% --- 사용자 정의 박스 스타일 ---
+\newtcolorbox{conceptbox}[1][]{
+  colback=blue!5, colframe=blue!60, coltitle=white, fonttitle=\bfseries,
+  title={#1}, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+\newtcolorbox{advicebox}{
+  colback=orange!5, colframe=orange!60, title={Advice}, fonttitle=\bfseries,
+  coltitle=white, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+\newtcolorbox{studybox}{
+  colback=gray!10, colframe=gray!60, title={정석연구}, fonttitle=\bfseries,
+  coltitle=white, arc=1mm, boxrule=0.5mm, breakable, parskip=1em
+}
+
+\title{\textbf{미적분 - 제19장 속도·거리와 적분}}
+\author{수학의 정석}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{§1. 속도와 거리}
+
+\begin{conceptbox}[기본 정석]
+\textbf{속도와 거리} \\
+수직선 위를 움직이는 점 P의 시각 $t$에서의 속도가 $v(t)$일 때, 점 P가 $t=a$일 때부터 $t=b$일 때까지 움직이면
+\begin{enumerate}
+    \item 점 P의 위치의 변화량 $\Rightarrow \int_{a}^{b} v(t) dt$
+    \item 점 P가 움직인 거리 $\Rightarrow \int_{a}^{b} |v(t)| dt$
+\end{enumerate}
+\end{conceptbox}
+
+\begin{advicebox}
+\textbf{속도와 거리} \\
+수직선 위를 움직이는 점 P의 시각 $t$에서의 위치 $x$가 $x=f(t)$일 때, 속도 $v(t)$는 $v(t)=\frac{dx}{dt}=f'(t)$ 이므로 $\int_{t_0}^{t} v(t) dt = f(t) - f(t_0)$ 이다. \\
+이때, 시각 $t_0$에서의 점 P의 위치를 $x_0$이라고 하면 시각 $t$에서의 점 P의 위치 $f(t)$는
+\[ f(t) = f(t_0) + \int_{t_0}^{t} v(t) dt = x_0 + \int_{t_0}^{t} v(t) dt \]
+따라서 $t=a$일 때부터 $t=b$일 때까지 점 P의 위치의 변화량은 $f(b)-f(a) = \int_{a}^{b} v(t) dt$ 이다. \\
+한편, 점 P가 움직인 거리는 시각 $t$에 대한 위치 $x=f(t)$의 그래프의 길이와는 다르며, 속도 $v(t)$의 절댓값을 적분한 것, 즉 속력 $|v(t)|$를 적분한 것이다.
+\end{advicebox}
+
+
+
+\section*{§2. 평면 위를 움직인 거리}
+
+\begin{conceptbox}[기본 정석]
+\textbf{평면 위를 움직인 거리} \\
+좌표평면 위를 움직이는 점 P의 시각 $t$에서의 위치 $(x, y)$가 $x=f(t), y=g(t)$일 때, 시각 $t=a$에서 $t=b$까지 점 P가 움직인 거리 $s$는
+\[ s = \int_{a}^{b} \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} dt = \int_{a}^{b} \sqrt{\{f'(t)\}^2 + \{g'(t)\}^2} dt \]
+\end{conceptbox}
+
+\begin{advicebox}
+\textbf{평면 위를 움직인 거리} \\
+시각 $t$에서 $t+\Delta t$까지 점 P가 움직인 거리의 변화량을 $\Delta s$라고 하면 $(\Delta s)^2 \approx (\Delta x)^2 + (\Delta y)^2$ 이므로 $\left(\frac{\Delta s}{\Delta t}\right)^2 \approx \left(\frac{\Delta x}{\Delta t}\right)^2 + \left(\frac{\Delta y}{\Delta t}\right)^2$ 이다. \\
+$\Delta t \to 0$ 일 때, $\left(\frac{ds}{dt}\right)^2 = \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2$ 이므로 $s = \int_{a}^{b} \sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2} dt$ 이다.
+\end{advicebox}
+
+\section*{§3. 곡선의 길이}
+
+\begin{conceptbox}[기본 정석]
+\textbf{곡선의 길이}
+\begin{enumerate}
+    \item 매개변수 $t$로 나타내어진 곡선 $x=f(t), y=g(t) (a \le t \le b)$의 길이 $L$은
+    \[ L = \int_{a}^{b} \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} dt = \int_{a}^{b} \sqrt{\{f'(t)\}^2 + \{g'(t)\}^2} dt \]
+    \item 곡선 $y=f(x) (a \le x \le b)$의 길이 $L$은
+    \[ L = \int_{a}^{b} \sqrt{1 + \{f'(x)\}^2} dx \]
+\end{enumerate}
+\end{conceptbox}
+
+\newpage
+
+\section*{필수 예제}
+
+\subsection*{필수 예제 19-1}
+좌표가 2인 점을 출발하여 수직선 위를 움직이는 점 P의 시각 $t$에서의 속도 $v(t)$가 $v(t) = 6t^2 - 18t + 12$일 때, 다음을 구하여라. \\
+(1) 시각 $t=3$에서의 점 P의 위치 \\
+(2) 시각 $t=1$에서 $t=3$까지 점 P의 위치의 변화량 \\
+(3) 시각 $t=1$에서 $t=3$까지 점 P가 움직인 거리
+
+\begin{studybox}
+시각 $t$에서의 점 P의 위치를 $x$라고 하면 $x = x_0 + \int_{0}^{t} v(t) dt$ (단, $x_0$은 $t=0$일 때의 위치)
+\end{studybox}
+
+\textbf{모범답안} \\
+(1) $x = 2 + \int_{0}^{3} (6t^2 - 18t + 12) dt = 2 + [2t^3 - 9t^2 + 12t]_0^3 = \mathbf{11}$ \\
+(2) $\int_{1}^{3} (6t^2 - 18t + 12) dt = [2t^3 - 9t^2 + 12t]_1^3 = 9 - 5 = \mathbf{4}$ \\
+(3) $v(t) = 6(t-1)(t-2)$ 이므로 1에서 3까지의 움직인 거리는 
+$\int_{1}^{2} |v(t)| dt + \int_{2}^{3} |v(t)| dt = |[2t^3 - 9t^2 + 12t]_1^2| + |[2t^3 - 9t^2 + 12t]_2^3| = 1 + 5 = \mathbf{6}$
+
+\subsection*{필수 예제 19-2}
+지상 10m의 높이에서 $30m/s$의 속도로 지면과 수직하게 위로 던져 올린 물체의 $t$초 후의 속도 $v(t)$가 $v(t) = 30 - 10t$일 때, 다음을 구하여라. \\
+(1) 던져 올린 후 2초가 지났을 때, 지면으로부터의 높이 \\
+(2) 이 물체가 최고 높이에 도달했을 때, 지면으로부터의 높이 \\
+(3) 던져 올린 후 4초 동안 물체가 움직인 거리
+
+\textbf{모범답안} \\
+(1) $h = 10 + \int_{0}^{2} (30 - 10t) dt = 10 + [30t - 5t^2]_0^2 = \mathbf{50(m)}$ \\
+(2) $v(t) = 30 - 10t = 0$ 에서 $t=3$이므로 $h = 10 + \int_{0}^{3} (30 - 10t) dt = \mathbf{55(m)}$ \\
+(3) $\int_{0}^{4} |30 - 10t| dt = \int_{0}^{3} (30 - 10t) dt + \int_{3}^{4} -(30 - 10t) dt = 45 + 5 = \mathbf{50(m)}$
+
+\subsection*{필수 예제 19-5}
+좌표평면 위를 움직이는 점 P의 시각 $t$에서의 위치 $(x, y)$가 $x = e^t \cos t, y = e^t \sin t$일 때, 시각 $t=0$에서 $t=1$까지 점 P가 움직인 거리 $s$를 구하여라.
+
+\textbf{모범답안} \\
+$\frac{dx}{dt} = e^t(\cos t - \sin t), \frac{dy}{dt} = e^t(\sin t + \cos t)$ \\
+$\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 = e^{2t}(\cos^2 t - 2\sin t \cos t + \sin^2 t + \sin^2 t + 2\sin t \cos t + \cos^2 t) = 2e^{2t}$ \\
+$s = \int_{0}^{1} \sqrt{2e^{2t}} dt = \sqrt{2} \int_{0}^{1} e^t dt = \sqrt{2}[e^t]_0^1 = \mathbf{\sqrt{2}(e-1)}$
+
+\end{document}
