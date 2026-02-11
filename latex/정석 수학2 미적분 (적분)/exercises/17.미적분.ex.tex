@@ -1,0 +1,78 @@
+\documentclass[10pt, a4paper]{article}
+
+% --- 1. 필수 패키지 설정 ---
+\usepackage[a4paper, top=18mm, bottom=15mm, left=12mm, right=12mm, headheight=25pt, headsep=8mm]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{kotex}
+
+% --- 2. 헤더 설정 ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\large \textbf{미적분 : 제17장 넓이와 적분 연습문제}}
+\rhead{\small 학번: \underline{\hspace{3.5cm}} 이름: \underline{\hspace{3cm}}}
+\cfoot{\small \thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+
+% --- 3. 문제 박스 명령어 정의 ---
+\newcounter{probcount}
+\newcommand{\exercise}[1]{%
+    \stepcounter{probcount}%
+    \begin{minipage}[t][120mm][t]{0.44\textwidth}
+        \small 
+        \vspace{1mm}
+        \noindent \textbf{문제 \arabic{probcount}.} #1
+    \end{minipage}%
+}
+
+\begin{document}
+
+\noindent
+\begin{longtable}{p{0.47\textwidth} | p{0.47\textwidth}}
+    
+    % [기본 문제 섹션]
+    \exercise{다음 곡선과 $x$ 축으로 둘러싸인 도형의 넓이를 구하여라.
+    \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
+        \item $y = -x^2 - 2x + 3$
+        \item $y = (x-1)^2(x+2)$
+    \end{enumerate}} 
+    & 
+    \exercise{곡선 $y = (x^2-a) \sin x$ ($0 \le x \le \pi$)와 $x$ 축으로 둘러싸인 두 부분의 넓이가 같도록 상수 $a$ 의 값을 정하여라. (단, $0 < a < \pi^2$)} \\
+    \hline 
+    
+    \exercise{곡선 $y = x \sin x$ ($0 \le x \le \pi/2$)와 $x$ 축 및 두 직선 $x=k, y=\pi/2$ 로 둘러싸인 두 부분의 넓이가 같을 때, 상수 $k$ 의 값을 구하여라. (단, $0 < k < \pi/2$)} 
+    & 
+    \exercise{자연수 $n$ 에 대하여 구간 $[n\pi, (n+2)\pi]$ 에서 곡선 $y = 3^n \cos \dfrac{1}{2}x$ 와 $x$ 축으로 둘러싸인 도형의 넓이를 $S_n$ 이라고 할 때, $\sum_{n=1}^{\infty} \dfrac{16}{S_n}$ 의 값을 구하여라.} \\
+    
+
+    \exercise{함수 $y = \ln \dfrac{x}{a}$ 의 그래프와 $x$ 축, $y$ 축 및 직선 $y=1$ 로 둘러싸인 도형의 넓이 $S$ 가 직선 $x=3$ 에 의하여 이등분될 때, 양수 $a$ 의 값을 구하여라.} 
+    & 
+    % [실력 문제 섹션]
+    \exercise{다음 곡선 또는 직선으로 둘러싸인 도형의 넓이를 구하여라.
+    \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
+        \item $y = x^2, y = 4\sqrt{x}-3$
+        \item $y^2 = 2x, x^2 = 2y$
+    \end{enumerate}} \\
+    \hline 
+    
+    \exercise{곡선 $y = e^x \cos x$ ($0 \le x \le \pi$)와 $y = e^x \sin x$ ($0 \le x \le \pi$) 및 두 직선 $x=0, x=\pi$ 로 둘러싸인 도형의 넓이를 구하여라.} 
+    & 
+    \exercise{방정식 $|\ln x| + |\ln y| = 1$ 이 나타내는 곡선으로 둘러싸인 도형의 넓이를 구하여라.} \\
+   
+
+    \exercise{곡선 $y = \cos x$ ($0 \le x \le \pi/2$)와 이 곡선 위의 점 $(\alpha, \cos \alpha)$ 에서의 접선 및 $x$ 축으로 둘러싸인 도형의 넓이가 1일 때, $\sin \alpha$ 의 값을 구하여라.} 
+    & 
+    \exercise{점 $(1/2, 0)$ 에서 곡선 $y = xe^x$ 에 그은 두 접선과 이 곡선으로 둘러싸인 도형의 넓이를 구하여라.} \\
+    \hline
+
+    \exercise{두 곡선 $y = \ln x, y = 2 \ln x$ 와 이 두 곡선에 동시에 접하는 직선으로 둘러싸인 도형의 넓이를 구하여라.} 
+    & 
+    \exercise{곡선 $y = x \cos x$ ($x \ge 0$)가 직선 $y=x$ 에 접하는 점을 원점에 가까운 순서로 $P_0, P_1, \dots$ 라 하자. 점 $P_{n-1}$ 과 $P_n$ 사이에서 곡선과 직선으로 둘러싸인 도형의 넓이를 $S_n$ 이라 할 때, $\sum_{n=1}^{\infty} \dfrac{1}{S_n}$ 의 값을 구하여라.} \\
+    
+
+\end{longtable}
+
+\end{document}
