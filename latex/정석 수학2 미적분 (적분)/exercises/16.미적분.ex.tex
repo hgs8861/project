@@ -21,7 +21,7 @@
 \newcounter{probcount}
 \newcommand{\exercise}[1]{%
     \stepcounter{probcount}%
-    \begin{minipage}[t][115mm][t]{0.44\textwidth}
+    \begin{minipage}[t][120mm][t]{0.44\textwidth}
         \small 
         \vspace{1mm}
         \noindent \textbf{문제 \arabic{probcount}.} #1
@@ -33,59 +33,51 @@
 \noindent
 \begin{longtable}{p{0.47\textwidth} | p{0.47\textwidth}}
     
-    % [기본 문제 섹션 - 7문항 선정]
+    % [기본 문제 섹션]
     \exercise{정적분을 이용하여 다음 급수의 합을 구하여라.
     \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
         \item $\displaystyle \lim_{n \to \infty} \sum_{k=1}^n \dfrac{1}{n+k}$
-        \item $\displaystyle \lim_{n \to \infty} \sum_{k=1}^{2n} \dfrac{1}{2n+k}$
         \item $\displaystyle \lim_{n \to \infty} \sum_{k=n+1}^{2n} \dfrac{1}{2n+k}$
     \end{enumerate}} 
     & 
     \exercise{$f(x) = \displaystyle \int_{-x}^{x} \dfrac{\cos t}{1+e^t} dt$ 라고 할 때, $f^{\prime}(x)$ 와 $f(x)$ 를 구하여라.} \\
-    \hline
+    \hline 
+    
     \exercise{모든 실수 $x$ 에 대하여 다음 등식을 만족시키고 $f(0)=3$ 인 연속함수 $f(x)$ 를 구하여라.
     \[ (1-x) \int_0^x f(t) dt = x \int_x^1 f(t) dt \]} 
     & 
-    \exercise{모든 실수 $x$ 에 대하여 다음 등식을 만족시키는 연속함수 $f(x)$ 와 상수 $a$ 의 값을 구하여라.
-    \[ \int_0^x f(t) dt = e^x - ae^{2x} \int_0^1 f(t) e^{-t} dt \]} \\
+    \exercise{연속함수 $f(x)$ 가 모든 실수 $t$ 에 대하여 $\displaystyle \int_0^2 xf(tx) dx = 4t^2$ 을 만족시킬 때, $f(2)$ 의 값을 구하여라.} \\
 
 
-    \exercise{다음 방정식을 풀어라.
-    \[ \sin \left\{ \dfrac{1}{2} \pi \log_x \left( \dfrac{d}{dx} \int_1^x t^2 dt \right) \right\} = x^2 - 2x \]} 
+    \exercise{다음 세 조건을 만족시키는 모든 미분가능한 함수 $f(x)$ 에 대하여 $\displaystyle \int_0^2 f(x) dx$ 의 최솟원을 구하여라.
+    \begin{enumerate}[label=(\roman*), nosep]
+        \item $f(0)=1, f^{\prime}(0)=1$
+        \item $0 < a < b < 2$ 이면 $f^{\prime}(a) \le f^{\prime}(b)$ 이다.
+        \item 구간 $(0, 1)$ 에서 $f^{\prime\prime}(x) = e^x$ 이다.
+    \end{enumerate}} 
     & 
-    \exercise{함수 $f(x) = \displaystyle \int_0^x e^t (t-1)(t-2) dt$ 가 극댓값을 갖는 $x$ 와 극솟값을 갖는 $x$ 를 구하여라.} \\
-    \hline
-    \exercise{함수 $f(x)$ 가 모든 실수 $x$ 에 대하여 $f(x+2)=f(x)$ 이고, $\displaystyle \int_{-1}^1 f(x)dx=4$ 일 때, $\displaystyle \int_0^{10} f(x)dx$ 의 값을 구하여라.} 
-    & 
-    % [실력 문제 섹션 - 6문항 선정]
+    % [실력 문제 섹션]
+    \exercise{반지름의 길이가 $r$ 인 구의 부피를 구분구적법으로 구하여라.} \\
+    \hline 
+    
     \exercise{정적분을 이용하여 다음 극한값을 구하여라.
     \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
-        \item $\displaystyle \lim_{n \to \infty} \dfrac{1}{n} \left( \sum_{k=n+1}^{2n} \ln k - n \ln n \right)$
-        \item $\displaystyle \lim_{n \to \infty} \left\{ \dfrac{(2n)!}{n! n^n} \right\}^{1/n}$
-    \end{enumerate}} \\
-
-    
-    \exercise{연속함수 $f(x)$ 에 대하여 $\displaystyle \int_0^x f(t) dt = \sin^2 x$ 일 때, $\displaystyle \int_0^{\pi/2} t^2 f(t) dt$ 의 값을 구하여라.} 
+        \item $\displaystyle \lim_{n \to \infty} \dfrac{1}{n} (\sum_{k=n+1}^{2n} \ln k - n \ln n)$
+        \item $\displaystyle \lim_{n \to \infty} \{ \dfrac{(2n)!}{n!n^n} \}^{1/n}$
+    \end{enumerate}} 
     & 
-    \exercise{연속함수 $f(x)$ 에 대하여 $\displaystyle \int_0^{\pi} f(\sin x) dx = K$ 일 때, 정적분 
-    \[ \int_0^{\pi} x f(\sin x) dx \]
-    의 값을 $K$ 로 나타내어라.} \\
+    \exercise{반지름의 길이가 $r$ 인 원 위에 한 점 $P$ 와 이 점에서 원에 접하는 직선 $l$ 이 있다. 점 $P$ 를 지나는 현이 직선 $l$ 과 이루는 각의 크기가 $\frac{\pi k}{2n} (k=1, 2, \dots, 2n-1)$ 일 때, 현의 길이를 $r_k$ 라고 하자. $\displaystyle \lim_{n \to \infty} \dfrac{1}{2n-1} \sum_{k=1}^{2n-1} r_k^2$ 의 값을 구하여라.} \\
+   
+
+    \exercise{$0 \le x \le \frac{\pi}{2}$ 에서 연속인 함수 $f(x)$ 가 다음 두 조건을 만족시킬 때, $f(\frac{\pi}{4})$ 의 값을 구하여라.
+    \begin{enumerate}[label=(\roman*), nosep]
+        \item $\displaystyle \int_0^{\frac{\pi}{2}} f(t) dt = 1$
+        \item $\cos x \displaystyle \int_0^x f(t) dt = \sin x \int_x^{\frac{\pi}{2}} f(t) dt$
+    \end{enumerate}} 
+    & 
+    \exercise{$a>0, b>0$ 일 때, 다음 부등식을 증명하여라.
+    \[ \int_0^a \ln(x+1) dx + \int_0^b (e^x-1) dx \ge ab \]} \\
     \hline
-    \exercise{정적분 
-    \[ \int_0^{\pi/2} \dfrac{\sin^n x}{\sin^n x + \cos^n x} dx \]
-    의 값을 구하여라. (단, $n$ 은 자연수)} 
-    & 
-    % [문제 12 & 13]
-    \exercise{$I_n = \displaystyle \int_0^1 \dfrac{x^n}{1+x} dx$ ($n=1, 2, 3, \dots$) 일 때, 다음 물음에 답하여라.
-    \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
-        \item $I_n + I_{n-1} = \dfrac{1}{n}$ 임을 증명하여라.
-        \item $\displaystyle \lim_{n \to \infty} I_n = 0$ 임을 보여라.
-    \end{enumerate}}  \\
-
-    
-    \exercise{함수 $f(x) = \displaystyle \int_1^x \dfrac{\ln t}{1+t} dt$ 일 때, 모든 양수 $x$ 에 대하여 
-    \[ f(x) + f\left(\dfrac{1}{x}\right) = \dfrac{1}{2}(\ln x)^2 \]
-    이 성립함을 증명하여라.} \\
 
 \end{longtable}
 
