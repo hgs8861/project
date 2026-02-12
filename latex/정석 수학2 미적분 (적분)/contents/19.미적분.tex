@@ -36,89 +36,139 @@
 
 \section*{§1. 속도와 거리}
 
-\begin{conceptbox}[기본 정석]
-\textbf{속도와 거리} \\
-수직선 위를 움직이는 점 P의 시각 $t$에서의 속도가 $v(t)$일 때, 점 P가 $t=a$일 때부터 $t=b$일 때까지 움직이면
-\begin{enumerate}
+\begin{conceptbox}[기본 정석 - 속도와 거리]
+수직선 위를 움직이는 점 P의 시각 $t$ 에서의 속도가 $v(t)$ 일 때, 점 P가 $t=a$ 일 때부터 $t=b$ 일 때까지 움직이면
+\begin{itemize}
     \item 점 P의 위치의 변화량 $\Rightarrow \int_{a}^{b} v(t) dt$
-    \item 점 P가 움직인 거리 $\Rightarrow \int_{a}^{b} |v(t)| dt$
-\end{enumerate}
+    \item 점 P가 움직인 거리 $\Rightarrow \int_{a}^{b} |v(t)| dt$ (점 찍은 부분의 넓이의 합)
+\end{itemize}
 \end{conceptbox}
 
 \begin{advicebox}
-\textbf{속도와 거리} \\
-수직선 위를 움직이는 점 P의 시각 $t$에서의 위치 $x$가 $x=f(t)$일 때, 속도 $v(t)$는 $v(t)=\frac{dx}{dt}=f'(t)$ 이므로 $\int_{t_0}^{t} v(t) dt = f(t) - f(t_0)$ 이다. \\
-이때, 시각 $t_0$에서의 점 P의 위치를 $x_0$이라고 하면 시각 $t$에서의 점 P의 위치 $f(t)$는
-\[ f(t) = f(t_0) + \int_{t_0}^{t} v(t) dt = x_0 + \int_{t_0}^{t} v(t) dt \]
-따라서 $t=a$일 때부터 $t=b$일 때까지 점 P의 위치의 변화량은 $f(b)-f(a) = \int_{a}^{b} v(t) dt$ 이다. \\
-한편, 점 P가 움직인 거리는 시각 $t$에 대한 위치 $x=f(t)$의 그래프의 길이와는 다르며, 속도 $v(t)$의 절댓값을 적분한 것, 즉 속력 $|v(t)|$를 적분한 것이다.
+\textbf{1. 속도와 거리} \\
+수직선 위를 움직이는 점 P의 시각 $t$ 에서의 위치 $x$ 가 $x=f(t)$ 일 때, 속도 $v(t)$ 는
+\[ v(t) = \dfrac{dx}{dt} = f^{\prime}(t) \]
+이므로
+\[ \int_{t_{0}}^{t} v(t) dt = f(t) - f(t_{0}) \]
+이다. 이때, 시각 $t_{0}$ 에서의 점 P의 위치를 $x_{0}$ 이라고 하면 시각 $t$ 에서의 점 P의 위치 $f(t)$ 는
+\[ f(t) = f(t_{0}) + \int_{t_{0}}^{t} v(t) dt = x_{0} + \int_{t_{0}}^{t} v(t) dt \]
+이다. 따라서 $t=a$ 일 때부터 $t=b$ 일 때까지 점 P의 위치의 변화량은
+\[ f(b) - f(a) = \{x_{0} + \int_{t_{0}}^{b} v(t) dt\} - \{x_{0} + \int_{t_{0}}^{a} v(t) dt\} = \int_{a}^{b} v(t) dt \]
+이다.
 \end{advicebox}
 
+\begin{advicebox}
+\textbf{2. 구분구적법을 이용한 속도와 거리의 관계} \\
+속도와 거리의 관계를 앞에서 공부한 구분구적법을 이용하여 다음과 같이 생각할 수도 있다. 속도가 일정할 때
+\[ (\text{속도}) \times (\text{시간}) = (\text{거리}) \]
+이다. 따라서 수직선 위를 움직이는 점 P의 시각 $t$ 에서의 속도가 $v(t)$ 일 때, $v(t)$ 가 연속이고 $v(t) \ge 0$ 이면 점 P가 움직인 거리는 다음과 같이 나타낼 수 있다.
+\[ v(t_k) \Delta t \Rightarrow \sum_{k=1}^{n} v(t_k) \Delta t \Rightarrow \lim_{n \to \infty} \sum_{k=1}^{n} v(t_k) \Delta t \Rightarrow \int_{a}^{b} v(t) dt \]
+(거리 요소 $\Rightarrow$ 거리 요소의 합 $\Rightarrow$ 한없이 세분한 극한 = 거리)
+\end{advicebox}
 
+\section*{§2. 평면 위의 운동}
 
-\section*{§2. 평면 위를 움직인 거리}
+\begin{conceptbox}[기본 정석 - 곡선의 길이]
+함수 $f(x)$ 가 구간 $[a, b]$ 에서 미분가능하고 도함수 $f^{\prime}(x)$ 가 연속이면 구간 $[a, b]$ 에서 곡선 $y=f(x)$ 의 길이 $l$ 은 다음과 같다.
+\[ l = \int_{a}^{b} \sqrt{1 + \{f^{\prime}(x)\}^2} dx \]
+*Note: $f(x)$ 가 구간 $[a, b]$ 를 포함하는 어떤 열린구간에서 미분가능하면 구간 $[a, b]$ 에서 미분가능하다고 한다.
+\end{conceptbox}
 
-\begin{conceptbox}[기본 정석]
-\textbf{평면 위를 움직인 거리} \\
-좌표평면 위를 움직이는 점 P의 시각 $t$에서의 위치 $(x, y)$가 $x=f(t), y=g(t)$일 때, 시각 $t=a$에서 $t=b$까지 점 P가 움직인 거리 $s$는
-\[ s = \int_{a}^{b} \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} dt = \int_{a}^{b} \sqrt{\{f'(t)\}^2 + \{g'(t)\}^2} dt \]
+\begin{conceptbox}[기본 정석 - 평면 위의 운동]
+좌표평면 위를 움직이는 점 P의 시각 $t$ 에서의 위치 $(x, y)$ 가 $x=f(t)$, $y=g(t)$ 이고 구간 $[a, b]$ 에서 $f(t), g(t)$ 가 연속인 도함수를 가지면 이 구간에서 점 P가 움직인 거리 $l$ 은 다음과 같다.
+\[ l = \int_{a}^{b} \sqrt{(\dfrac{dx}{dt})^2 + (\dfrac{dy}{dt})^2} dt = \int_{a}^{b} \sqrt{\{f^{\prime}(t)\}^2 + \{g^{\prime}(t)\}^2} dt \]
 \end{conceptbox}
 
 \begin{advicebox}
-\textbf{평면 위를 움직인 거리} \\
-시각 $t$에서 $t+\Delta t$까지 점 P가 움직인 거리의 변화량을 $\Delta s$라고 하면 $(\Delta s)^2 \approx (\Delta x)^2 + (\Delta y)^2$ 이므로 $\left(\frac{\Delta s}{\Delta t}\right)^2 \approx \left(\frac{\Delta x}{\Delta t}\right)^2 + \left(\frac{\Delta y}{\Delta t}\right)^2$ 이다. \\
-$\Delta t \to 0$ 일 때, $\left(\frac{ds}{dt}\right)^2 = \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2$ 이므로 $s = \int_{a}^{b} \sqrt{(\frac{dx}{dt})^2 + (\frac{dy}{dt})^2} dt$ 이다.
+\textbf{1$^{\circ}$ 곡선의 길이} \\
+구간 $[a, b]$ 를 $n$ 등분한 점과 양 끝 점을 $x_0(=a), x_1, x_2, \dots, x_n(=b)$ 이라 하고, 이에 대응하는 곡선 위의 점을 각각 $P_0, P_1, P_2, \dots, P_n$ 이라고 하자. 이때,
+\[ \overline{P_0P_1} + \overline{P_1P_2} + \overline{P_2P_3} + \dots + \overline{P_{n-1}P_n} \]
+은 $n \to \infty$ 일 때 곡선의 길이에 수렴한다. 평균값 정리에 의하여
+\[ \dfrac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}} = f^{\prime}(t_k) \text{ 곧, } f(x_k) - f(x_{k-1}) = f^{\prime}(t_k)(x_k - x_{k-1}) \]
+을 만족시키는 $t_k$ 가 구간 $(x_{k-1}, x_k)$ 에 존재한다.
+\[ \overline{P_kP_{k-1}}^2 = (x_k - x_{k-1})^2 + \{f(x_k) - f(x_{k-1})\}^2 = [1 + \{f^{\prime}(t_k)\}^2](x_k - x_{k-1})^2 \]
+\[ \therefore \overline{P_kP_{k-1}} = \sqrt{1 + \{f^{\prime}(t_k)\}^2}(x_k - x_{k-1}) \]
+$n \to \infty$ 일 때 이 합의 극한값은 $\int_{a}^{b} \sqrt{1 + \{f^{\prime}(x)\}^2} dx$ 이고, 이 값이 곡선의 길이이다.
 \end{advicebox}
 
-\section*{§3. 곡선의 길이}
-
-\begin{conceptbox}[기본 정석]
-\textbf{곡선의 길이}
-\begin{enumerate}
-    \item 매개변수 $t$로 나타내어진 곡선 $x=f(t), y=g(t) (a \le t \le b)$의 길이 $L$은
-    \[ L = \int_{a}^{b} \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} dt = \int_{a}^{b} \sqrt{\{f'(t)\}^2 + \{g'(t)\}^2} dt \]
-    \item 곡선 $y=f(x) (a \le x \le b)$의 길이 $L$은
-    \[ L = \int_{a}^{b} \sqrt{1 + \{f'(x)\}^2} dx \]
-\end{enumerate}
-\end{conceptbox}
+\begin{advicebox}
+\textbf{2$^{\circ}$ 평면 위의 운동} \\
+$x=f(t), y=g(t)$ 와 같이 매개변수로 나타낸 곡선의 길이 $l$ 은
+\[ l = \int_{f(a)}^{f(b)} \sqrt{1 + (\dfrac{dy}{dx})^2} dx = \int_{a}^{b} \sqrt{1 + (\dfrac{dy}{dt} \times \dfrac{dt}{dx})^2} \dfrac{dx}{dt} dt = \int_{a}^{b} \sqrt{(\dfrac{dx}{dt})^2 + (\dfrac{dy}{dt})^2} dt \]
+이고, 이것은 좌표평면 위를 움직이는 점 P가 $t=a$ 일 때부터 $t=b$ 일 때까지 움직인 거리와 같다.
+\end{advicebox}
 
 \newpage
 
 \section*{필수 예제}
 
 \subsection*{필수 예제 19-1}
-좌표가 2인 점을 출발하여 수직선 위를 움직이는 점 P의 시각 $t$에서의 속도 $v(t)$가 $v(t) = 6t^2 - 18t + 12$일 때, 다음을 구하여라. \\
-(1) 시각 $t=3$에서의 점 P의 위치 \\
-(2) 시각 $t=1$에서 $t=3$까지 점 P의 위치의 변화량 \\
-(3) 시각 $t=1$에서 $t=3$까지 점 P가 움직인 거리
+수직선 위를 움직이는 점 P의 시각 $t$ 에서의 속도 $v(t)$ 는 $v(t)=(t^2-1)e^{-t}$ 이고, $t=0$ 일 때 점 P는 원점에 있다.\\
+(1) $v(t)$ 가 최소가 되는 시각 $t$ 를 구하여라.\\
+(2) $t=1$ 일 때의 점 P의 위치를 구하여라.\\
+(3) $t=-2$ 일 때부터 $t=2$ 일 때까지 점 P가 움직인 거리를 구하여라.
 
 \begin{studybox}
-시각 $t$에서의 점 P의 위치를 $x$라고 하면 $x = x_0 + \int_{0}^{t} v(t) dt$ (단, $x_0$은 $t=0$일 때의 위치)
+점 P의 위치의 변화량과 점 P가 움직인 거리를 구분할 수 있어야 한다.
+점 P의 위치의 변화량 $\Rightarrow \int_{a}^{b} v(t) dt$, 움직인 거리 $\Rightarrow \int_{a}^{b} |v(t)| dt$
 \end{studybox}
 
 \textbf{모범답안} \\
-(1) $x = 2 + \int_{0}^{3} (6t^2 - 18t + 12) dt = 2 + [2t^3 - 9t^2 + 12t]_0^3 = \mathbf{11}$ \\
-(2) $\int_{1}^{3} (6t^2 - 18t + 12) dt = [2t^3 - 9t^2 + 12t]_1^3 = 9 - 5 = \mathbf{4}$ \\
-(3) $v(t) = 6(t-1)(t-2)$ 이므로 1에서 3까지의 움직인 거리는 
-$\int_{1}^{2} |v(t)| dt + \int_{2}^{3} |v(t)| dt = |[2t^3 - 9t^2 + 12t]_1^2| + |[2t^3 - 9t^2 + 12t]_2^3| = 1 + 5 = \mathbf{6}$
+(1) $v^{\prime}(t)=2te^{-t}+(t^2-1)(-e^{-t})=-(t^2-2t-1)e^{-t}$ \\
+$v^{\prime}(t)=0$ 에서 $t=1\pm\sqrt{2}$. 증감을 조사하면 $t=1-\sqrt{2}$ 일 때 최소이다. \textbf{답: $t=1-\sqrt{2}$} \\
+(2) 시각 $t$ 에서의 점 P의 위치를 $x(t)$ 라고 하자. $t=0$ 일 때 원점에 있으므로
+$x(-1) = 0 + \int_{0}^{-1} v(t) dt = \int_{0}^{-1} (t^2-1)e^{-t} dt = [-(t+1)^2 e^{-t}]_0^{-1} = \mathbf{1}$ \\
+(3) $l = \int_{-2}^{2} |t^2-1|e^{-t} dt = \int_{-2}^{-1} (t^2-1)e^{-t} dt + \int_{-1}^{1} (1-t^2)e^{-t} dt + \int_{1}^{2} (t^2-1)e^{-t} dt$ \\
+$= [-(t+1)^2 e^{-t}]_{-2}^{-1} + [(t+1)^2 e^{-t}]_{-1}^{1} + [-(t+1)^2 e^{-t}]_{1}^{2} = \mathbf{e^2 + 8e^{-1} - 9e^{-2}}$
 
 \subsection*{필수 예제 19-2}
-지상 10m의 높이에서 $30m/s$의 속도로 지면과 수직하게 위로 던져 올린 물체의 $t$초 후의 속도 $v(t)$가 $v(t) = 30 - 10t$일 때, 다음을 구하여라. \\
-(1) 던져 올린 후 2초가 지났을 때, 지면으로부터의 높이 \\
-(2) 이 물체가 최고 높이에 도달했을 때, 지면으로부터의 높이 \\
-(3) 던져 올린 후 4초 동안 물체가 움직인 거리
+수직선 위를 움직이는 두 점 $P_1, P_2$ 의 시각 $t$ 에서의 속도 $v_1, v_2$ 는 $v_1 = \sin t, v_2 = 1 - \cos t$ 라고 한다. 또, $t=0$ 일 때 두 점은 모두 원점에 있다. 선분 $P_1P_2$ 의 중점을 Q라고 할 때, 다음 물음에 답하여라.\\
+(1) 시각 $t$ 에서의 점 Q의 속도 $v(t)$ 를 $v_1, v_2$ 로 나타내어라.\\
+(2) 시각 $t$ 에서의 점 Q의 위치를 $t$ 로 나타내어라.\\
+(3) $t=0$ 일 때부터 $t=2\pi$ 일 때까지 점 Q가 움직인 거리 $l$ 을 구하여라.
 
 \textbf{모범답안} \\
-(1) $h = 10 + \int_{0}^{2} (30 - 10t) dt = 10 + [30t - 5t^2]_0^2 = \mathbf{50(m)}$ \\
-(2) $v(t) = 30 - 10t = 0$ 에서 $t=3$이므로 $h = 10 + \int_{0}^{3} (30 - 10t) dt = \mathbf{55(m)}$ \\
-(3) $\int_{0}^{4} |30 - 10t| dt = \int_{0}^{3} (30 - 10t) dt + \int_{3}^{4} -(30 - 10t) dt = 45 + 5 = \mathbf{50(m)}$
+(1) 위치 $x = \dfrac{1}{2}(x_1 + x_2)$ 이므로 $v(t) = \dfrac{dx}{dt} = \dfrac{1}{2}(\dfrac{dx_1}{dt} + \dfrac{dx_2}{dt}) = \mathbf{\dfrac{1}{2}(v_1 + v_2)}$ \\
+(2) $v(t) = \dfrac{1}{2}(\sin t + 1 - \cos t)$ 이므로 $x = \int_{0}^{t} \dfrac{1}{2}(\sin t - \cos t + 1) dt = \mathbf{\dfrac{1}{2}(-\cos t - \sin t + t + 1)}$ \\
+(3) $l = \dfrac{1}{2} \int_{0}^{2\pi} |\sqrt{2}\sin(t - \dfrac{\pi}{4}) + 1| dt = \dots = \mathbf{\dfrac{\pi+4}{2}}$
+
+\subsection*{필수 예제 19-3}
+수직선 위를 움직이는 두 점 A, B의 시각 $t$ 에서의 속도가 각각 $\sin t, \cos 2t$ 이고, $t=0$ 일 때 점 A는 원점에서, 점 B는 좌표가 1인 점에서 동시에 출발한다.\\
+(1) $0 < t \le 2\pi$ 에서 점 A와 B가 만나는 횟수를 구하여라.\\
+(2) $0 < t \le 2\pi$ 에서 점 A와 B가 가장 멀어질 때의 시각 $t$ 를 구하여라. 또, 이때 두 점 사이의 거리를 구하여라.
+
+\begin{studybox}
+두 점의 위치 $x_A, x_B$ 는 각각 $x_A = x_1 + \int_{0}^{t} v_A dt$, $x_B = x_2 + \int_{0}^{t} v_B dt$ 이다.
+\end{studybox}
+
+\textbf{모범답안} \\
+(1) $x_A = 1 - \cos t, x_B = 1 + \dfrac{1}{2}\sin 2t$. $x_A = x_B \Rightarrow \cos t(\sin t + 1) = 0$. $t = \dfrac{\pi}{2}, \dfrac{3}{2}\pi$ 이므로 \textbf{2회} \\
+(2) $f(t) = x_B - x_A = \dfrac{1}{2}\sin 2t + \cos t$. $f^{\prime}(t) = -(2\sin t - 1)(\sin t + 1) = 0$ 에서 $t = \dfrac{\pi}{6}, \dfrac{5}{6}\pi, \dfrac{3}{2}\pi$. $|f(t)|$ 의 최대는 $t = \dfrac{\pi}{6}, \dfrac{5}{6}\pi$ 일 때 \textbf{거리 $\dfrac{3\sqrt{3}}{4}$}
+
+\subsection*{필수 예제 19-4}
+다음 주어진 구간에서 곡선의 길이 $l$ 을 구하여라.\\
+(1) $y = \dfrac{1}{2}(e^x + e^{-x}) (-1 \le x \le 1)$ \quad\\
+(2) $y = \ln x (1 \le x \le 2)$
+
+\textbf{모범답안} \\
+(1) $l = 2 \int_{0}^{1} \sqrt{1 + \dfrac{1}{4}(e^x - e^{-x})^2} dx = \int_{0}^{1} (e^x + e^{-x}) dx = \mathbf{e - \dfrac{1}{e}}$ \\
+(2) $l = \int_{1}^{2} \dfrac{\sqrt{x^2+1}}{x} dx = [t + \dfrac{1}{2}\ln \dfrac{t-1}{t+1}]_{\sqrt{2}}^{\sqrt{5}} = \mathbf{\sqrt{5} - \sqrt{2} + \ln \dfrac{(\sqrt{5}-1)(\sqrt{2}+1)}{2}}$
 
 \subsection*{필수 예제 19-5}
-좌표평면 위를 움직이는 점 P의 시각 $t$에서의 위치 $(x, y)$가 $x = e^t \cos t, y = e^t \sin t$일 때, 시각 $t=0$에서 $t=1$까지 점 P가 움직인 거리 $s$를 구하여라.
+$a > 0, 0 \le t \le 2\pi$ 일 때, 매개변수로 나타낸 곡선 $x = a(t - \sin t), y = a(1 - \cos t)$ 의 길이를 구하여라.
 
 \textbf{모범답안} \\
-$\frac{dx}{dt} = e^t(\cos t - \sin t), \frac{dy}{dt} = e^t(\sin t + \cos t)$ \\
-$\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 = e^{2t}(\cos^2 t - 2\sin t \cos t + \sin^2 t + \sin^2 t + 2\sin t \cos t + \cos^2 t) = 2e^{2t}$ \\
-$s = \int_{0}^{1} \sqrt{2e^{2t}} dt = \sqrt{2} \int_{0}^{1} e^t dt = \sqrt{2}[e^t]_0^1 = \mathbf{\sqrt{2}(e-1)}$
+$l = \int_{0}^{2\pi} \sqrt{a^2(1 - \cos t)^2 + a^2 \sin^2 t} dt = a \int_{0}^{2\pi} \sqrt{2(1 - \cos t)} dt = 2a \int_{0}^{2\pi} \sin \dfrac{t}{2} dt = \mathbf{8a}$
+
+\subsection*{필수 예제 19-6}
+좌표평면 위를 움직이는 점 P의 시각 $t$ 에서의 위치가 $(e^{-t} \cos t, e^{-t} \sin t)$ 일 때, 다음 물음에 답하여라.\\
+(1) 시각 $t$ 에서의 점 P의 속력을 구하여라.\\
+(2) $t=0$ 일 때부터 $t=a(a > 0)$ 일 때까지 점 P가 움직인 거리 $l$ 을 구하여라.\\
+(3) (2)에서 $a \to \infty$ 일 때, $l$ 의 극한값을 구하여라.
+
+\textbf{모범답안} \\
+(1) $\dfrac{dx}{dt} = -e^{-t}(\sin t + \cos t), \dfrac{dy}{dt} = -e^{-t}(\sin t - \cos t)$. 속력은 \textbf{$\sqrt{2}e^{-t}$} \\
+(2) $l = \int_{0}^{a} \sqrt{2}e^{-t} dt = \mathbf{\sqrt{2}(1 - e^{-a})}$ \\
+(3) $\lim_{a \to \infty} l = \mathbf{\sqrt{2}}$
 
 \end{document}
