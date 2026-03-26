@@ -254,11 +254,25 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@inbox=\box63
 \enit@count@id=\count298
 \enitdp@description=\count299
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+)
+
+/Users/hyeongyeongseo/project/latex/JS_integral/contents/integralformula.tex:25: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 \author{현경서 T}ß
+                           
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count300
 \l__pdf_internal_box=\box64
-) (./integralformula.aux)
+)
+No file integralformula.aux.
 \openout1 = `integralformula.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
@@ -277,7 +291,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
 LaTeX Font Info:    ... okay on input line 26.
 LaTeX Font Info:    Checking defaults for LUC/nanummj/m/n on input line 26.
 LaTeX Font Info:    Trying to load font information for LUC+nanummj on input line 26.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
+(/usr/local/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 File: lucnanummj.fd 2013/02/12 v0.1 Nanum Myeongjo font definitions
 )
 LaTeX Font Info:    ... okay on input line 26.
@@ -316,36 +330,39 @@ LaTeX Font Info:    ... okay on input line 26.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+
+
+[1
+
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+) [2]
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-[2] (./integralformula.aux)
+[3] (./integralformula.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3552 strings out of 473190
- 54460 string characters out of 5715800
- 466187 words of memory out of 5000000
- 26727 multiletter control sequences out of 15000+600000
+ 3549 strings out of 473190
+ 54388 string characters out of 5715800
+ 466145 words of memory out of 5000000
+ 26726 multiletter control sequences out of 15000+600000
  582488 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,9n,65p,289b,307s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbac.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbad.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbae.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb4.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbce.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb>
-Output written on integralformula.pdf (2 pages, 2073085 bytes).
+Output written on integralformula.pdf (3 pages, 2073600 bytes).
 PDF statistics:
- 297 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
+ 300 PDF objects out of 1000 (max. 8388607)
+ 179 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

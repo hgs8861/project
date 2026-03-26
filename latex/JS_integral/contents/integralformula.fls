@@ -64,13 +64,12 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/enumitem/enumitem.sty
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./integralformula.aux
-INPUT ./integralformula.aux
-INPUT integralformula.aux
 OUTPUT integralformula.aux
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd
+OUTPUT integralformula.pdf
+INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc8.tfm
@@ -153,8 +152,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc6.
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbce.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc1.tfm
-OUTPUT integralformula.pdf
-INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbb2.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbad.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc1.tfm

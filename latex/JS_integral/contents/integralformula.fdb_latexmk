@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1774507359.76895 "/Users/hyeongyeongseo/project/latex/JS_integral/contents/integralformula.tex" "integralformula.pdf" "integralformula" 1774507360.5157 0
-  "/Users/hyeongyeongseo/project/latex/JS_integral/contents/integralformula.tex" 1774507358.73559 3201 ac2683e8a1c3138e1bf603d2cf9a5e8a ""
+["pdflatex"] 1774507378.48684 "/Users/hyeongyeongseo/project/latex/JS_integral/contents/integralformula.tex" "integralformula.pdf" "integralformula" 1774507379.22763 2
+  "/Users/hyeongyeongseo/project/latex/JS_integral/contents/integralformula.tex" 1774507377.30261 3203 2c28e473a65b3d6bc917733035f07906 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -163,8 +163,8 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1771991736 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1771991698 3345742 e1b7a268227fea185a7bc4b98e1d0bda ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "integralformula.aux" 1774507360.15436 140 4c6b81d1b11e307d2482e64aa967d4e2 "pdflatex"
-  "integralformula.tex" 1774507358.73559 3201 ac2683e8a1c3138e1bf603d2cf9a5e8a ""
+  "integralformula.aux" 1774507378.8713 140 ba222b3eccb08aeec2efcd94ee1d05b3 "pdflatex"
+  "integralformula.tex" 1774507377.30261 3203 2c28e473a65b3d6bc917733035f07906 ""
   (generated)
   "integralformula.aux"
   "integralformula.log"
