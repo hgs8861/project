@@ -1,0 +1,80 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- UNIVERSAL PREAMBLE BLOCK ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{float}
+
+% 한글 설정을 위한 패키지
+\usepackage{kotex} 
+
+% 만약 XeLaTeX을 사용하고 시스템에 Noto 폰트가 있다면 아래 주석을 해제하세요.
+% \usepackage{fontspec}
+% \setmainfont{Noto Sans}
+% \setmainhangulfont{Noto Sans CJK KR}
+
+\usepackage{enumitem}
+\setlist[itemize]{label=-}
+
+\title{\textbf{적분 공식 총정리}}
+\date{}
+\author{현경서 T}ß
+\begin{document}
+
+\maketitle
+
+
+\renewcommand{\arraystretch}{2} 
+\begin{longtable}{>{\raggedright\arraybackslash}p{4cm} | >{\raggedright\arraybackslash}p{6cm} | >{\raggedright\arraybackslash}p{5.5cm}}
+    \toprule
+    \textbf{함수 형태 $f(x)$} & \textbf{부정적분 결과 $\int f(x) \, dx$} & \textbf{전략 및 핵심 포인트} \\
+    \midrule
+    \endhead 
+
+    \multicolumn{3}{c}{\textbf{[1. 기초 및 초등 함수]}} \\ \midrule
+    $x^n$ ($n \neq -1$) & $\dfrac{1}{n+1}x^{n+1} + C$ & 다항함수 적분법 \\
+    $\dfrac{1}{x}$ & $\ln|x| + C$ & 분모가 1차인 분수식 ($x \neq 0$) \\
+    $e^x$ & $e^x + C$ & 지수함수 (자기 자신) \\
+    $a^x$ ($a > 0, a \neq 1$) & $\dfrac{a^x}{\ln a} + C$ & 밑이 $e$가 아닐 때 $\ln a$로 보정 \\
+    $\sin x$ & $-\cos x + C$ & 삼각함수 기본 (부호 주의) \\
+    $\cos x$ & $\sin x + C$ & 삼각함수 기본 \\
+    $\sec^2 x$ & $\tan x + C$ & $\tan x$ 미분 역관계 \\
+    \midrule
+
+    \multicolumn{3}{c}{\textbf{[2. 삼각함수의 응용 및 변형]}} \\ \midrule
+    $\tan x$ & $\ln |\sec x| + C$ & $\frac{\sin x}{\cos x}$ 변형 후 치환 \\
+    $\sin^2 x, \cos^2 x$ & $\frac{1}{2}x \mp \frac{1}{4}\sin 2x + C$ & 반각 공식 활용 \\
+    \midrule
+
+    \multicolumn{3}{c}{\textbf{[3. 주요 치환적분 및 삼각치환]}} \\ \midrule
+    $\dfrac{f'(x)}{f(x)}$ & $\ln|f(x)| + C$ & 분모 치환 전략 \\
+    $\dfrac{1}{\sqrt{a^2 - x^2}}$ & $\arcsin\left(\dfrac{x}{a}\right) + C$ & $x = a \sin \theta$ 치환 \\
+    \midrule
+
+    \multicolumn{3}{c}{\textbf{[4. 부분적분법 (LIATE 전략)]}} \\ \midrule
+    $\ln x$ & $x \ln x - x + C$ & $u = \ln x, dv = dx$ \\
+    \midrule
+
+    \multicolumn{3}{c}{\textbf{[5. 오일러 공식 활용]}} \\ \midrule
+    $e^{ax} \cos bx$ & $\dfrac{e^{ax}}{a^2+b^2}(a \cos bx + b \sin bx) + C$ & 복소 지수함수 활용 \\
+    \bottomrule
+\end{longtable}
+
+
+\begin{enumerate}
+    \item \textbf{1단계 (구조 분석):} 기본 공식형인지, 함수의 곱 형태인지 파악합니다.
+    \item \textbf{2단계 (치환 및 변형):} 속미분이 존재하는지 확인합니다.
+    \item \textbf{3단계 (전략 선택):}
+    \begin{itemize} % 오타 제거됨
+        \item 무리식 $\sqrt{a^2-x^2}$ $\rightarrow$ 삼각치환
+        \item 서로 다른 함수군 $\rightarrow$ 부분적분(LIATE)
+        \item 지수와 삼각함수의 곱 $\rightarrow$ 오일러 공식 활용
+    \end{itemize}
+    \item \textbf{4단계 (검산):} 결과값을 미분하여 확인합니다.
+\end{enumerate}
+
+\end{document}
