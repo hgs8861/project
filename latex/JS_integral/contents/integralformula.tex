@@ -1,39 +1,36 @@
-\documentclass[11pt, a4paper]{article}
+\documentclass[12pt, a4paper]{article}
 
-% --- UNIVERSAL PREAMBLE BLOCK ---
+% --- 필수 패키지 설정 (내용 유지) ---
 \usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
 \usepackage{amsmath, amssymb}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{longtable}
 \usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{graphicx}
 \usepackage{float}
 
-% 한글 설정을 위한 패키지
-\usepackage{kotex} 
+% 한글 처리를 위한 가장 안정적인 설정 (폰트 에러 방지)
+\usepackage{kotex}
 
-% 만약 XeLaTeX을 사용하고 시스템에 Noto 폰트가 있다면 아래 주석을 해제하세요.
-% \usepackage{fontspec}
-% \setmainfont{Noto Sans}
-% \setmainhangulfont{Noto Sans CJK KR}
-
-\usepackage{enumitem}
+% 리스트 레이블 설정 (기존 내용)
 \setlist[itemize]{label=-}
 
-\title{\textbf{적분 공식 총정리}}
+\title{\textbf{적분 공식}}
+\author{현경서 T}
 \date{}
-\author{현경서 T}ß
+
 \begin{document}
 
 \maketitle
 
-
-\renewcommand{\arraystretch}{2} 
+\renewcommand{\arraystretch}{2} % 행 간격 조절
 \begin{longtable}{>{\raggedright\arraybackslash}p{4cm} | >{\raggedright\arraybackslash}p{6cm} | >{\raggedright\arraybackslash}p{5.5cm}}
     \toprule
     \textbf{함수 형태 $f(x)$} & \textbf{부정적분 결과 $\int f(x) \, dx$} & \textbf{전략 및 핵심 포인트} \\
     \midrule
-    \endhead 
+    \endhead % 모든 페이지 상단에 헤더 반복
 
     \multicolumn{3}{c}{\textbf{[1. 기초 및 초등 함수]}} \\ \midrule
     $x^n$ ($n \neq -1$) & $\dfrac{1}{n+1}x^{n+1} + C$ & 다항함수 적분법 \\
@@ -43,38 +40,53 @@
     $\sin x$ & $-\cos x + C$ & 삼각함수 기본 (부호 주의) \\
     $\cos x$ & $\sin x + C$ & 삼각함수 기본 \\
     $\sec^2 x$ & $\tan x + C$ & $\tan x$ 미분 역관계 \\
+    $\csc^2 x$ & $-\cot x + C$ & $\cot x$ 미분 역관계 \\
+    $\sec x \tan x$ & $\sec x + C$ & $\sec x$ 미분 역관계 \\
     \midrule
 
     \multicolumn{3}{c}{\textbf{[2. 삼각함수의 응용 및 변형]}} \\ \midrule
-    $\tan x$ & $\ln |\sec x| + C$ & $\frac{\sin x}{\cos x}$ 변형 후 치환 \\
-    $\sin^2 x, \cos^2 x$ & $\frac{1}{2}x \mp \frac{1}{4}\sin 2x + C$ & 반각 공식 활용 \\
+    $\tan x$ & $\ln |\sec x| + C = -\ln |\cos x| + C$ & $\frac{\sin x}{\cos x}$ 변형 후 $u=\cos x$ 치환 \\
+    $\sec x$ & $\ln |\sec x + \tan x| + C$ & 분자·분모에 $(\sec x + \tan x)$ 곱하기 \\
+    $\csc x$ & $-\ln |\csc x + \cot x| + C$ & 분자·분모에 $(\csc x + \cot x)$ 곱하기 \\
+    $\cot x$ & $\ln |\sin x| + C$ & $\frac{\cos x}{\sin x}$ 변형 후 $u=\sin x$ 치환 \\
+    $\sin^2 x, \cos^2 x$ & $\frac{1}{2}x \mp \frac{1}{4}\sin 2x + C$ & 반각 공식 활용 ($\frac{1 \mp \cos 2x}{2}$) \\
     \midrule
 
     \multicolumn{3}{c}{\textbf{[3. 주요 치환적분 및 삼각치환]}} \\ \midrule
-    $\dfrac{f'(x)}{f(x)}$ & $\ln|f(x)| + C$ & 분모 치환 전략 \\
-    $\dfrac{1}{\sqrt{a^2 - x^2}}$ & $\arcsin\left(\dfrac{x}{a}\right) + C$ & $x = a \sin \theta$ 치환 \\
+    $\dfrac{f'(x)}{f(x)}$ & $\ln|f(x)| + C$ & **분모 치환**: 분모의 미분이 분자에 있음 \\
+    $\dfrac{1}{\sqrt{a^2 - x^2}}$ & $\arcsin\left(\dfrac{x}{a}\right) + C$ & $x = a \sin \theta$ 삼각치환 \\
+    $\dfrac{1}{a^2 + x^2}$ & $\dfrac{1}{a} \arctan\left(\dfrac{x}{a}\right) + C$ & $x = a \tan \theta$ 삼각치환 \\
+    $\dfrac{1}{(a^2 + x^2)^{3/2}}$ & $\dfrac{x}{a^2\sqrt{a^2 + x^2}} + C$ & $x = a \tan \theta$ 치환 후 $\cos \theta$ 적분 \\
+    $\dfrac{1}{(a^2 - x^2)^{3/2}}$ & $\dfrac{x}{a^2\sqrt{a^2 - x^2}} + C$ & $x = a \sin \theta$ 치환 후 $\sec^2 \theta$ 적분 \\
     \midrule
 
     \multicolumn{3}{c}{\textbf{[4. 부분적분법 (LIATE 전략)]}} \\ \midrule
-    $\ln x$ & $x \ln x - x + C$ & $u = \ln x, dv = dx$ \\
+    $\ln x$ & $x \ln x - x + C$ & $u = \ln x, dv = dx$ 설정 \\
+    $x e^{ax}, x \cos ax$ & 다항식 차수 감소 전략 & 도표 적분법(Tabular Integration) 권장 \\
     \midrule
 
-    \multicolumn{3}{c}{\textbf{[5. 오일러 공식 활용]}} \\ \midrule
-    $e^{ax} \cos bx$ & $\dfrac{e^{ax}}{a^2+b^2}(a \cos bx + b \sin bx) + C$ & 복소 지수함수 활용 \\
+    \multicolumn{3}{c}{\textbf{[5. 오일러 공식(Euler's Formula) 활용]}} \\ \midrule
+    $e^{ax} \cos bx$ & $\dfrac{e^{ax}}{a^2+b^2}(a \cos bx + b \sin bx) + C$ & $\text{Re}\int e^{(a+bi)x} dx$ 계산 \\
+    $e^{ax} \sin bx$ & $\dfrac{e^{ax}}{a^2+b^2}(a \sin bx - b \cos bx) + C$ & $\text{Im}\int e^{(a+bi)x} dx$ 계산 \\
+    $\cos^n x, \sin^n x$ & (복소 지수함수의 전개식 형태) & $\cos x = \frac{e^{ix}+e^{-ix}}{2}$ 대입 후 이항전개 \\
+    \midrule
+
+    \multicolumn{3}{c}{\textbf{[6. 유리함수 및 기타]}} \\ \midrule
+    $\dfrac{1}{x^2 - a^2}$ & $\dfrac{1}{2a} \ln \left| \dfrac{x-a}{x+a} \right| + C$ & **부분분수 분해**: 인수분해 후 분리 \\
     \bottomrule
 \end{longtable}
 
-
 \begin{enumerate}
     \item \textbf{1단계 (구조 분석):} 기본 공식형인지, 함수의 곱 형태인지 파악합니다.
-    \item \textbf{2단계 (치환 및 변형):} 속미분이 존재하는지 확인합니다.
+    \item \textbf{2단계 (치환 및 변형):} 속미분이 존재하는지 확인하고, 유리함수는 부분분수로, 삼각함수는 항등식이나 오일러 공식을 통해 지수 형태로 바꿉니다.
     \item \textbf{3단계 (전략 선택):}
-    \begin{itemize} % 오타 제거됨
-        \item 무리식 $\sqrt{a^2-x^2}$ $\rightarrow$ 삼각치환
+    \begin{itemize}
+        \item 무리식 $\sqrt{a^2-x^2}$ 또는 $(a^2 \pm x^2)^{3/2}$ $\rightarrow$ 삼각치환
+        \item $\sec x, \csc x$ 단독 형태 $\rightarrow$ 특정 식을 곱하는 전형적인 테크닉 사용
         \item 서로 다른 함수군 $\rightarrow$ 부분적분(LIATE)
-        \item 지수와 삼각함수의 곱 $\rightarrow$ 오일러 공식 활용
+        \item 지수와 삼각함수의 곱 $\rightarrow$ 오일러 공식을 통한 복소수 적분 (강력 추천)
     \end{itemize}
-    \item \textbf{4단계 (검산):} 결과값을 미분하여 확인합니다.
+    \item \textbf{4단계 (검산):} 결과값을 미분하여 피적분함수가 나오는지 확인합니다.
 \end{enumerate}
 
 \end{document}
