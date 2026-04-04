@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage{kotex}
-\usepackage{amsmath, amssymb, amsthm}
+\usepackage{amsmath, amssymb, amsthm, graphicx,float, wrapfig}
 \usepackage{geometry}
 \usepackage{tcolorbox}
 \usepackage{enumitem}
@@ -29,6 +29,7 @@
 \title{\textbf{미적분 - 제13장 부정적분}}
 \author{현경서T}
 \date{}
+\graphicspath{{graph/}}
 
 \begin{document}
 
@@ -103,7 +104,7 @@
 \begin{studybox}
 (1), (2), (3) 피적분함수를 간단히 한 다음 구한다.\\
 (4), (5) 아래 정석을 이용하여 피적분함수를 하나로 묶어 간단히 한 다음 구한다.\\
-\textbf{정석}: $\displaystyle \int f(x)dx \pm \int g(x)dx = \int \{f(x) \pm g(x)\}dx$ (복부호동순)
+$\displaystyle \int f(x)dx \pm \int g(x)dx = \int \{f(x) \pm g(x)\}dx$ (복부호동순)
 \end{studybox}
 
 \textbf{모범답안}
@@ -149,7 +150,7 @@ $x^r$ 의 꼴로 변형한 다음 $\displaystyle \int x^r dx = \frac{1}{r+1}x^{r
 
 \begin{studybox}
 두 조건식의 좌변은 각각 $\{f(x)+g(x)\}'$ 과 $\{f(x)g(x)\}'$ 이다. 따라서 부정적분을 통해 $f(x)+g(x)$ 와 $f(x)g(x)$ 를 구할 수 있다.\\
-\textbf{정석}: $\displaystyle \frac{d}{dx}F(x)=f(x) \iff F(x)=\int f(x)dx$
+$\displaystyle \frac{d}{dx}F(x)=f(x) \iff F(x)=\int f(x)dx$
 \end{studybox}
 
 \textbf{모범답안}\\
@@ -173,7 +174,7 @@ $\mathbf{f(x)=x^2+2, \quad g(x)=x-1}$
 \end{enumerate}
 
 \begin{studybox}
-피적분함수를 공식을 적용할 수 있는 꼴로 변형한다. 삼각함수의 경우 $\sin x, \cos x, \sec^2 x, \csc^2 x$ 등을 포함한 식으로, 지수함수의 경우 $e^x, a^x$ 꼴로 변형한다.
+피적분함수를 공식을 적용할 수 있는 꼴로 변형한다.\\ 삼각함수의 경우 $\sin x, \cos x, \sec^2 x, \csc^2 x$ 등을 포함한 식으로,\\ 지수함수의 경우 $e^x, a^x$ 꼴로 변형한다.
 \end{studybox}
 
 \textbf{모범답안}
