@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1775358357.3359 "/Users/hyeongyeongseo/project/latex/JS_integral/contents/15.미적분.tex" "15.미적분.pdf" "15.미적분" 1775358358.62877 0
-  "/Users/hyeongyeongseo/project/latex/JS_integral/contents/15.미적분.tex" 1775358357.02223 15544 1a4ef8a75a143acacf52c2f9bd948f37 ""
+["pdflatex"] 1775462016.28537 "/Users/hyeongyeongseo/project/latex/JS_integral/contents/15.미적분.tex" "15.미적분.pdf" "15.미적분" 1775462017.78918 0
+  "/Users/hyeongyeongseo/project/latex/JS_integral/contents/15.미적분.tex" 1775462016.06244 15775 150e07aa16b51a37fb48d4ac066ef534 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcbx1440.tfm" 1136768653 1536 31d7b1d6f1ef88de2aa925487cab16c7 ""
@@ -82,14 +82,11 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd7.tfm" 1364599308 880 c8f4f02efbb915a390350590022001e9 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
-  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb" 1248133631 32378 2b20eba6bb36c716382b6d96240eaa69 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb" 1248133631 32166 b0c356b15f19587482a9217ce1d8fa67 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
-  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
-  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
@@ -269,8 +266,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1771991736 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1771991698 3345742 e1b7a268227fea185a7bc4b98e1d0bda ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "15.미적분.aux" 1775358358.13238 32 1b174032087fb90900fa6203d3bb0a7e "pdflatex"
-  "15.미적분.tex" 1775358357.02223 15544 1a4ef8a75a143acacf52c2f9bd948f37 ""
+  "15.미적분.aux" 1775462017.35715 32 1b174032087fb90900fa6203d3bb0a7e "pdflatex"
+  "15.미적분.tex" 1775462016.06244 15775 150e07aa16b51a37fb48d4ac066ef534 ""
+  "graph/graph13.png" 1775461257.56954 308498 0ef04b11c9a58b04e574c235983245d0 ""
+  "graph/graph14.png" 1775461289.64994 814444 4cfab68665af6eaa7bb03ea201c77784 ""
   (generated)
   "15.미적분.aux"
   "15.미적분.log"
