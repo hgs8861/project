@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage{kotex}
-\usepackage{amsmath, amssymb, amsthm}
+\usepackage{amsmath, amssymb, amsthm, graphicx,float, wrapfig}
 \usepackage{geometry}
 \usepackage{tcolorbox}
 \usepackage{enumitem}
@@ -29,6 +29,7 @@
 \title{\textbf{미적분 - 제17장 넓이와 적분}}
 \author{수학의 정석}
 \date{}
+\graphicspath{{graph/}}
 
 \begin{document}
 
@@ -51,14 +52,6 @@
 \end{enumerate}
 \end{conceptbox}
 
-\begin{advicebox}
-\textbf{1° 곡선과 $x$ 축 사이의 넓이}\\
-이미 수학 II에서 정적분과 넓이 사이의 관계를 공부했지만 이에 대하여 다시 정리해 보자. 함수 $f(t)$ 가 구간 $[a, b]$ 에서 연속이고 $f(t) \ge 0$ 일 때, $a \le x \le b$ 인 $x$ 에 대하여 곡선 $y=f(t)$ 와 $t$ 축 및 두 직선 $t=a, t=x$ 로 둘러싸인 도형의 넓이를 $S(x)$ 라고 하면 $S'(x)=f(x)$ 이므로 $S(x)$ 는 $f(x)$ 의 부정적분 중 하나이다. 이때 $f(x)$ 의 다른 한 부정적분을 $F(x)$ 라고 하면 $S(x)=F(x)+C$ (단, $C$ 는 상수) 이고, $S(a)=0$ 에서 $C=-F(a)$ 이므로 $S(b)=F(b)-F(a)=\int_{a}^{b}f(t)dt$ 이다. 구간 $[a, b]$ 에서 $f(x) \le 0$ 일 때에는 곡선 $y=f(x)$ 가 곡선 $y=-f(x)$ 와 $x$ 축에 대하여 대칭이고 $-f(x) \ge 0$ 이므로 곡선 $y=f(x)$ 와 $x$ 축 및 두 직선 $x=a, x=b$ 로 둘러싸인 도형의 넓이를 $S$ 라고 하면 $S = \int_a^b \{-f(x)\} dx = -\int_a^b f(x) dx$ 이다.
-
-\textbf{2° 곡선과 $y$ 축 사이의 넓이}\\
-곡선과 $x$ 축 사이의 넓이를 구할 때와 같은 방법으로 생각하면 된다. 구간 $[\alpha, \beta]$ 에서 $g(y) \ge 0$ 일 때, 곧 곡선 $x=g(y)$ 가 $y$ 축의 오른쪽에 있을 때 넓이는 $S = \int_{\alpha}^{\beta} g(y) dy$ 이다. 한편 구간 $[\alpha, \beta]$ 에서 $g(y) \le 0$ 일 때, 곧 곡선 $x=g(y)$ 가 $y$ 축의 왼쪽에 있을 때에는 $S = -\int_{\alpha}^{\beta} g(y) dy$ 라고 해야 한다.
-\end{advicebox}
-
 \section*{§2. 두 곡선 사이의 넓이}
 
 \begin{conceptbox}[기본 정석]
@@ -66,13 +59,9 @@
 \begin{enumerate}[label=(\arabic*)]
     \item 구간 $[a, b]$ 에서 $f(x) \ge g(x)$ 일 때, $y=f(x)$ 와 $y=g(x)$ 의 그래프로 둘러싸인 도형의 넓이 $S$ 는 $S = \int_a^b \{f(x) - g(x)\} dx$
     \item 구간 $[\alpha, \beta]$ 에서 $f(y) \ge g(y)$ 일 때, $x=f(y)$ 와 $x=g(y)$ 의 그래프로 둘러싸인 도형의 넓이 $S$ 는 $S = \int_{\alpha}^{\beta} \{f(y) - g(y)\} dy$
+    \item 일반적인 경우 $S = \int_a^b |f(x) - g(x)| dx$
 \end{enumerate}
 \end{conceptbox}
-
-\begin{advicebox}
-\textbf{두 곡선 사이의 넓이}\\
-구간 $[a, b]$ 에서 $f(x) \ge g(x)$ 일 때, 두 곡선 $y=f(x), y=g(x)$ 와 두 직선 $x=a, x=b$ 로 둘러싸인 도형의 넓이 $S$ 는 위에 있는 그래프의 식 $f(x)$ 에서 아래에 있는 그래프의 식 $g(x)$ 를 뺀 $f(x)-g(x)$ 를 $x=a$ 에서 $x=b$ 까지 적분한 값이 된다. 이것은 두 곡선이 모두 $x$ 축 아래에 있거나 $x$ 축을 사이에 두고 있는 경우에도 성립하며, 일반적인 경우 $S = \int_a^b |f(x) - g(x)| dx$ 로 나타낼 수 있다.
-\end{advicebox}
 
 \section*{§3. 매개변수로 나타낸 곡선과 넓이}
 
@@ -104,6 +93,10 @@
 (2) $f(x)=x^3-x^2-x+1=(x-1)^2(x+1)$. 곡선과 $x$ 축의 교점은 $x=1, -1$. 구간 $[-1, 1]$에서 $f(x) \ge 0$ 이므로 \\
 $S = \int_{-1}^{1} (x^3-x^2-x+1) dx = 2\int_{0}^{1} (-x^2+1) dx = 2[-\dfrac{1}{3}x^3+x]_0^1 = \mathbf{\dfrac{4}{3}}$
 
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
 \subsection*{필수 예제 17-2}
 다음 곡선과 직선으로 둘러싸인 도형의 넓이 $S$ 를 구하여라.
 \begin{enumerate}[label=(\arabic*)]
@@ -116,18 +109,40 @@ $S = \int_{-1}^{1} (x^3-x^2-x+1) dx = 2\int_{0}^{1} (-x^2+1) dx = 2[-\dfrac{1}{3
 \end{studybox}
 
 \textbf{모범답안} \\
-(1) $y=x \sin x = 0$ ($0 \le x \le 2\pi$)에서 $x=0, \pi, 2\pi$. $0 \le x \le \pi$ 에서 $y \ge 0$, $\pi \le x \le 2\pi$ 에서 $y \le 0$ 이므로 \\
-$S = \int_0^{\pi} x \sin x dx - \int_{\pi}^{2\pi} x \sin x dx = \pi + 1 - (-3\pi - 1) = \mathbf{4\pi}$ \\
-(2) $y^2 = \dfrac{1-x}{x}$ 에서 $x = \dfrac{1}{1+y^2}$. $S = 2\int_0^1 x dy = 2\int_0^1 \dfrac{1}{1+y^2} dy$. $y = \tan \theta$ 로 치환하면 \\
-$S = 2\int_0^{\pi/4} 1 d\theta = 2[\theta]_0^{\pi/4} = \mathbf{\dfrac{\pi}{2}}$
+\begin{wrapfigure}[4]{l}{0.2\textwidth}
+    \centering
+    \includegraphics[width=0.2\textwidth]{graph18.png}
+\end{wrapfigure} 
+(1) $y=x \sin x = 0$ ($0 \le x \le 2\pi$)에서 $x=0, \pi, 2\pi$. \\
+$0 \le x \le \pi$ 에서 $y \ge 0$,\\ $\pi \le x \le 2\pi$ 에서 $y \le 0$ 이므로 \\ $S = \int_0^{\pi} x \sin x dx - \int_{\pi}^{2\pi} x \sin x dx = \pi + 1 - (-3\pi - 1) = 4\pi$ \\
+
+\begin{wrapfigure}[3]{l}{0.18\textwidth}
+    \vspace{-50pt}
+    \centering
+    \includegraphics[width=0.18\textwidth]{graph19.png}
+\end{wrapfigure} 
+(2) $y^2 = \dfrac{1-x}{x}$ 에서 $x = \dfrac{1}{1+y^2}$. $S = 2\int_0^1 x dy = 2\int_0^1 \dfrac{1}{1+y^2} dy$. \\ $y = \tan \theta$ 로 치환하면  $S = 2\int_0^{\pi/4} 1 d\theta = 2[\theta]_0^{\pi/4} = \dfrac{\pi}{2}$
+
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
 
 \subsection*{필수 예제 17-3}
 함수 $f(x)=e^x+1$ 의 역함수를 $g(x)$ 라고 하자. $a$ 가 양의 상수일 때, 다음 정적분의 값을 구하여라.
 \[ \int_0^a f(x) dx + \int_2^{f(a)} g(x) dx \]
 
+\begin{studybox}
+역함수의 그래프는 $y=x$ 대칭임을 이용 
+\end{studybox}
+
 \textbf{모범답안} \\
 역함수의 정적분 성질 $\int_0^a f(x) dx + \int_{f(0)}^{f(a)} g(y) dy = af(a) - 0 \cdot f(0)$ 을 이용한다. \\
 $f(0)=2$ 이므로 $\int_0^a f(x) dx + \int_2^{f(a)} g(x) dx = a f(a) = \mathbf{a(e^a+1)}$
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
 
 \subsection*{필수 예제 17-4}
 다음 곡선과 직선 또는 곡선과 곡선으로 둘러싸인 도형의 넓이 $S$ 를 구하여라.
@@ -137,14 +152,27 @@ $f(0)=2$ 이므로 $\int_0^a f(x) dx + \int_2^{f(a)} g(x) dx = a f(a) = \mathbf{
 \end{enumerate}
 
 \begin{studybox}
-정석: 넓이 문제 그래프의 절편, 교점을 정확히 나타낸다.
+넓이 문제 그래프의 절편, 교점을 정확히 나타낸다.
 \end{studybox}
 
 \textbf{모범답안} \\
+\begin{wrapfigure}[3]{l}{0.25\textwidth}
+    \centering
+    \includegraphics[width=0.25\textwidth]{graph20.png}
+\end{wrapfigure} 
 (1) 교점 $xe^{1-x}=x$ 에서 $x=0, 1$. 구간 $[0, 1]$ 에서 $xe^{1-x} \ge x$ 이므로 \\
 $S = \int_0^1 (xe^{1-x}-x) dx = [-xe^{1-x}-e^{1-x}-\dfrac{1}{2}x^2]_0^1 = (-1-1-\dfrac{1}{2}) - (0-e-0) = \mathbf{e-\dfrac{5}{2}}$ \\
+
+\begin{wrapfigure}[3]{l}{0.3\textwidth}
+    \centering
+    \includegraphics[width=0.3\textwidth]{graph21.png}
+\end{wrapfigure} 
 (2) $\sin x = \cos 2x = 1-2 \sin^2 x$ 에서 $\sin x = 1/2, -1$. 교점 $x = \pi/6, 5\pi/6, 3\pi/2$. \\
 $S = \int_{\pi/6}^{5\pi/6} (\sin x - \cos 2x) dx + \int_{5\pi/6}^{3\pi/2} (\cos 2x - \sin x) dx = \mathbf{\dfrac{3\sqrt{3}}{2} + 1}$
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
 
 \subsection*{필수 예제 17-5}
 다음 직선과 곡선 또는 곡선과 곡선으로 둘러싸인 도형의 넓이 $S$ 를 구하여라.
@@ -158,10 +186,27 @@ $x$ 에 관하여 적분하기 복잡하거나 어려울 때는 $x$ 를 $y$ 의 
 \end{studybox}
 
 \textbf{모범답안} \\
+\begin{wrapfigure}[4]{l}{0.23\textwidth}
+    \vspace{-20pt}
+    \centering
+    \includegraphics[width=0.23\textwidth]{graph22.png}
+\end{wrapfigure} 
 (1) 교점 $y^2+2y=y+2$ 에서 $y=-2, 1$. 구간 $[-2, 1]$ 에서 $y+2 \ge y^2+2y$ 이므로 \\
 $S = \int_{-2}^1 \{(y+2)-(y^2+2y)\} dy = \int_{-2}^1 (-y^2-y+2) dy = [-\dfrac{1}{3}y^3-\dfrac{1}{2}y^2+2y]_{-2}^1 = \mathbf{\dfrac{9}{2}}$ \\
+
+\begin{wrapfigure}[4]{l}{0.23\textwidth}
+    \vspace{-20pt}
+    \centering
+    \includegraphics[width=0.23\textwidth]{graph23.png}
+\end{wrapfigure} 
 (2) 교점 $y=1, 2$. 포물선 $x=(y-2)^2+1$ 과 반원 $x=1+\sqrt{1-(y-1)^2}$ 이므로 \\
-$S = \int_1^2 \{1+\sqrt{1-(y-1)^2} - ((y-2)^2+1)\} dy = \int_1^2 \sqrt{1-(y-1)^2} dy - \int_1^2 (y-2)^2 dy = \mathbf{\dfrac{\pi}{4} - \dfrac{1}{3}}$
+$S = \int_1^2 \{1+\sqrt{1-(y-1)^2} - ((y-2)^2+1)\} dy = \int_1^2 \sqrt{1-(y-1)^2} dy - \int_1^2 (y-2)^2 dy = \mathbf{\dfrac{\pi}{4} - \dfrac{1}{3}}$ \\\\
+
+
+
+\vspace{3cm}
+\hrule
+\vspace{0.5cm}
 
 \subsection*{필수 예제 17-6}
 다음 물음에 답하여라.
@@ -172,10 +217,19 @@ $S = \int_1^2 \{1+\sqrt{1-(y-1)^2} - ((y-2)^2+1)\} dy = \int_1^2 \sqrt{1-(y-1)^2
 \end{enumerate}
 
 \textbf{모범답안} \\
+\begin{wrapfigure}[4]{l}{0.3\textwidth}
+    \vspace{-20pt}
+    \centering
+    \includegraphics[width=0.3\textwidth]{graph24.png}
+\end{wrapfigure} 
 (1) $y'=1/x$, $x=e$ 에서 $y'=1/e$. 접선은 $y-1 = \dfrac{1}{e}(x-e) \therefore y = \dfrac{1}{e}x$. \\
 (2) $y'=\dfrac{2 \ln x}{x}, y''=\dfrac{2(1-\ln x)}{x^2}$. 변곡점 $(e, 1)$. 개형은 $x=1$ 에서 극소(0)를 갖는다. \\
 (3) $y=(\ln x)^2 \implies x=e^{\sqrt{y}}, x=e^{-\sqrt{y}}$. $S = \int_0^4 (e^{\sqrt{y}}-e^{-\sqrt{y}}) dy$. $\sqrt{y}=t$ 치환 시 \\
-$S = \int_0^2 (e^t-e^{-t})2t dt = 2[t(e^t+e^{-t}) - (e^t-e^{-t})]_0^2 = \mathbf{2(e^2 + 3e^{-2})}$ (오류 수정: 원문 계산 참조 요망) $\rightarrow$ 원문 결과: \textbf{2}.
+$S = \int_0^2 (e^t-e^{-t})2t dt = 2[t(e^t+e^{-t}) - (e^t-e^{-t})]_0^2 = \mathbf{2(e^2 + 3e^{-2})}$.
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
 
 \subsection*{필수 예제 17-7}
 곡선 $y=\sin 2x$ ($0 \le x \le \pi/2$)와 $x$ 축으로 둘러싸인 도형의 넓이를 곡선 $y=k \cos x$ 가 이등분하도록 실수 $k$ 의 값을 정하여라.
@@ -185,6 +239,10 @@ $S = \int_0^2 (e^t-e^{-t})2t dt = 2[t(e^t+e^{-t}) - (e^t-e^{-t})]_0^2 = \mathbf{
 $\int_{\alpha}^{\pi/2} (\sin 2x - k \cos x) dx = \dfrac{1}{2} \int_0^{\pi/2} \sin 2x dx = 1/2$. \\
 $[-\dfrac{1}{2} \cos 2x - k \sin x]_{\alpha}^{\pi/2} = 1/2$. 정리하면 $k^2-4k+2=0$. $0<k<2$ 이므로 $\mathbf{k=2-\sqrt{2}}$.
 
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
+
 \subsection*{필수 예제 17-8}
 방정식 $2x^2 + 2xy + y^2 = 1$ 이 나타내는 곡선으로 둘러싸인 도형의 넓이를 구하여라.
 
@@ -192,16 +250,38 @@ $[-\dfrac{1}{2} \cos 2x - k \sin x]_{\alpha}^{\pi/2} = 1/2$. 정리하면 $k^2-4
 정석연구: 준 방정식에서 $y = -x \pm \sqrt{1-x^2}$ ($-1 \le x \le 1$). 직선 $y=-x$ 와 반원 $y = \pm \sqrt{1-x^2}$ 을 합친 것으로 생각한다.
 \end{studybox}
 
-\textbf{모범답안} \\
+\textbf{모범답안} 
+\begin{wrapfigure}[5]{r}{0.3\textwidth}
+    \vspace{-20pt}
+    \centering
+    \includegraphics[width=0.3\textwidth]{graph25.png}
+\end{wrapfigure} 
 $S = \int_{-1}^1 \{(-x + \sqrt{1-x^2}) - (-x - \sqrt{1-x^2})\} dx = \int_{-1}^1 2 \sqrt{1-x^2} dx$. \\
-이는 반지름 1인 원의 넓이와 같으므로 $S = \mathbf{\pi}$.
+이는 반지름 1인 원의 넓이와 같으므로 $S = \mathbf{\pi}$.\\\\
+
+\vspace{0.5cm}
+\hrule
+\vspace{0.5cm}
 
 \subsection*{필수 예제 17-9}
 매개변수로 나타낸 곡선 $x=2t, y=t^2-1$ 과 $x$ 축으로 둘러싸인 도형의 넓이를 구하여라.
 
-\textbf{모범답안} \\
+\begin{studybox}
+$ x=f(\theta), y=g(\theta), f(\alpha)=a, f(\beta)=b$ 이면 $\Rightarrow$ $\int_{a}^{b} y dx=\int_{\alpha}^{\beta} g(\theta) f'(\theta) d\theta$ 
+\end{studybox}
+
+\textbf{모범답안} 
+\begin{wrapfigure}[3]{r}{0.3\textwidth}
+    \vspace{-25pt}
+    \centering
+    \includegraphics[width=0.3\textwidth]{graph26.png}
+\end{wrapfigure} 
 $y=0 \implies t=\pm 1$. $t=1$ 일 때 $x=2, t=-1$ 일 때 $x=-2$. \\
 $S = -\int_{-2}^2 y dx = -\int_{-1}^1 (t^2-1) \cdot 2 dt = -4[\dfrac{1}{3}t^3-t]_0^1 = \mathbf{\dfrac{8}{3}}$
+
+\vspace{2cm}
+\hrule
+\vspace{0.5cm}
 
 \subsection*{필수 예제 17-10}
 매개변수로 나타낸 함수 $x=a(\theta - \sin \theta), y=a(1 - \cos \theta)$ ($a>0, 0 \le \theta \le 2\pi$)의 그래프와 $x$ 축으로 둘러싸인 도형의 넓이를 구하여라.
