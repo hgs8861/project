@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1775627841.45863 "/Users/hyeongyeongseo/project/latex/JS_integral/contents/17.미적분.tex" "17.미적분.pdf" "17.미적분" 1775627843.8581 0
-  "/Users/hyeongyeongseo/project/latex/JS_integral/contents/17.미적분.tex" 1775627841.26369 12164 a33ef092f5315b7e1620f0eea7e91ccf ""
+["pdflatex"] 1775805104.51653 "/Users/hyeongyeongseo/project/latex/JS_integral/contents/17.미적분.tex" "17.미적분.pdf" "17.미적분" 1775805107.10088 0
+  "/Users/hyeongyeongseo/project/latex/JS_integral/contents/17.미적분.tex" 1775805104.12249 12289 8758ddf43afbb5312ff00f39b6859b4a ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcbx1440.tfm" 1136768653 1536 31d7b1d6f1ef88de2aa925487cab16c7 ""
@@ -283,8 +283,8 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1771991736 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1771991698 3345742 e1b7a268227fea185a7bc4b98e1d0bda ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "17.미적분.aux" 1775627843.40401 32 4d1825978335c8847f72f7c473f9edc8 "pdflatex"
-  "17.미적분.tex" 1775627841.26369 12164 a33ef092f5315b7e1620f0eea7e91ccf ""
+  "17.미적분.aux" 1775805106.62904 32 f852561997c05a7d986acd1deeb530ec "pdflatex"
+  "17.미적분.tex" 1775805104.12249 12289 8758ddf43afbb5312ff00f39b6859b4a ""
   "graph/graph18.png" 1775535217.44562 532035 d17beed8a2e040e41d730d2ed99b6326 ""
   "graph/graph19.png" 1775535243.70984 584565 d671b28addc3af52459e332b87b1e2ec ""
   "graph/graph20.png" 1775535302.03345 378163 5e33cc3f6d7a3f4805f987b52cb526f5 ""

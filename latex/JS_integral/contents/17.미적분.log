@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.25)  8 APR 2026 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.25)  10 APR 2026 16:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -614,58 +614,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--162
  []
 
 
+
+[4 <./graph/graph19.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 162--165
 
  []
 
-<graph/graph21.png, id=87, 1771.61874pt x 1003.75pt>
+<graph/graph21.png, id=94, 1771.61874pt x 1003.75pt>
 File: graph/graph21.png Graphic file (type png)
 <use graph/graph21.png>
-Package pdftex.def Info: graph/graph21.png  used on input line 168.
+Package pdftex.def Info: graph/graph21.png  used on input line 169.
 (pdftex.def)             Requested size: 136.57462pt x 77.37628pt.
-
-
-[4 <./graph/graph19.png> <./graph/graph20.png>]
-<graph/graph22.png, id=96, 1014.79124pt x 1003.75pt>
+<graph/graph22.png, id=95, 1014.79124pt x 1003.75pt>
 File: graph/graph22.png Graphic file (type png)
 <use graph/graph22.png>
-Package pdftex.def Info: graph/graph22.png  used on input line 192.
+Package pdftex.def Info: graph/graph22.png  used on input line 193.
 (pdftex.def)             Requested size: 104.7042pt x 103.55128pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--193
+Underfull \hbox (badness 10000) in paragraph at lines 189--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--196
+Underfull \hbox (badness 10000) in paragraph at lines 194--197
 
  []
 
-<graph/graph23.png, id=97, 1003.75pt x 1769.61125pt>
+<graph/graph23.png, id=96, 1003.75pt x 1769.61125pt>
 File: graph/graph23.png Graphic file (type png)
 <use graph/graph23.png>
-Package pdftex.def Info: graph/graph23.png  used on input line 200.
+Package pdftex.def Info: graph/graph23.png  used on input line 201.
 (pdftex.def)             Requested size: 104.7042pt x 184.58607pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
 
  []
 
 
 
-[5 <./graph/graph21.png> <./graph/graph22.png> <./graph/graph23.png>]
+[5 <./graph/graph20.png> <./graph/graph21.png> <./graph/graph22.png> <./graph/graph23.png>]
 <graph/graph24.png, id=104, 1452.42625pt x 1003.75pt>
 File: graph/graph24.png Graphic file (type png)
 <use graph/graph24.png>
-Package pdftex.def Info: graph/graph24.png  used on input line 223.
+Package pdftex.def Info: graph/graph24.png  used on input line 222.
 (pdftex.def)             Requested size: 136.57462pt x 94.37701pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--224
+Underfull \hbox (badness 10000) in paragraph at lines 218--223
 
  []
 
@@ -709,7 +708,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 273--278
 
 
 
-[7 <./graph/graph25.png> <./graph/graph26.png>] (./17.미적분.aux)
+[7 <./graph/graph25.png> <./graph/graph26.png>]
+
+[8] (./17.미적분.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -722,16 +723,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  18831 strings out of 473190
  398177 string characters out of 5715800
- 802839 words of memory out of 5000000
+ 803839 words of memory out of 5000000
  41698 multiletter control sequences out of 15000+600000
  592750 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,7n,105p,505b,669s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbac.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbad.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbae.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb4.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbba.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbb.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd4.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc4.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/uhc/umj/umj03.pfb>
-Output written on 17.미적분.pdf (7 pages, 8054147 bytes).
+Output written on 17.미적분.pdf (8 pages, 8059515 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
+ 406 PDF objects out of 1000 (max. 8388607)
+ 235 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
