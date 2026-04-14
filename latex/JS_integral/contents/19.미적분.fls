@@ -320,13 +320,13 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc2.
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmac.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb9.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb9.tfm
-OUTPUT 19.미적분.pdf
-INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbd3.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbba.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbc7.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmbb.tfm
+OUTPUT 19.미적분.pdf
+INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbd3.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbba.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmd4.tfm
@@ -362,6 +362,10 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb6.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjbd6.tfm
+INPUT ./graph/graph42.png
+INPUT ./graph/graph42.png
+INPUT ./graph/graph42.png
+INPUT ./graph/graph42.png
 INPUT 19.미적분.aux
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

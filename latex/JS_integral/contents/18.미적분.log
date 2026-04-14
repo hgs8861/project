@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.25)  10 APR 2026 16:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.2.25)  14 APR 2026 08:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -614,9 +614,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--117
 
 
 [3 <./graph/graph28.png>]
-
-[4]
-<graph/graph29.png, id=93, 1068.99374pt x 1003.75pt>
+<graph/graph29.png, id=89, 1068.99374pt x 1003.75pt>
 File: graph/graph29.png Graphic file (type png)
 <use graph/graph29.png>
 Package pdftex.def Info: graph/graph29.png  used on input line 163.
@@ -626,6 +624,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--164
 
  []
 
+
+
+[4]
 <graph/graph31.png, id=94, 1206.5075pt x 1003.75pt>
 File: graph/graph31.png Graphic file (type png)
 <use graph/graph31.png>
@@ -674,10 +675,7 @@ Overfull \hbox (87.93054pt too wide) detected at line 221
 \OML/cmm/m/it/10.95 V \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^Y [][] x[] [] xdx \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 ^^Y\OT1/cmr/m/n/10.95 ([\OML/cmm/m/it/10.95 x[] [] x\OT1/cmr/m/n/10.95 ][] \OMS/cmsy/m/n/10.95 ^^@ [][] \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 x [] xdx\OT1/cmr/m/n/10.95 ) = [] \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/m/n/10.95 [[] \OML/cmm/m/it/10.95 x\OT1/cmr/m/n/10.95 ][] = []
  []
 
-
-
-[6 <./graph/graph32.png> <./graph/graph33.png>]
-<graph/graph34.png, id=107, 1137.24875pt x 1003.75pt>
+<graph/graph34.png, id=102, 1137.24875pt x 1003.75pt>
 File: graph/graph34.png Graphic file (type png)
 <use graph/graph34.png>
 Package pdftex.def Info: graph/graph34.png  used on input line 239.
@@ -702,15 +700,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 240--242
 
  []
 
-<graph/graph35.png, id=108, 1003.75pt x 1019.81pt>
+<graph/graph35.png, id=103, 1003.75pt x 1019.81pt>
 File: graph/graph35.png Graphic file (type png)
 <use graph/graph35.png>
 Package pdftex.def Info: graph/graph35.png  used on input line 246.
 (pdftex.def)             Requested size: 91.04742pt x 92.49474pt.
 
 
-[7 <./graph/graph34.png> <./graph/graph35.png>]
-<graph/graph36.png, id=117, 1447.4075pt x 1003.75pt>
+[6 <./graph/graph32.png> <./graph/graph33.png> <./graph/graph34.png>]
+<graph/graph36.png, id=111, 1447.4075pt x 1003.75pt>
 File: graph/graph36.png Graphic file (type png)
 <use graph/graph36.png>
 Package pdftex.def Info: graph/graph36.png  used on input line 282.
@@ -720,7 +718,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 278--283
 
  []
 
-<graph/graph37.png, id=118, 1041.8925pt x 1002.74625pt>
+
+
+[7 <./graph/graph35.png> <./graph/graph36.png>]
+<graph/graph37.png, id=119, 1041.8925pt x 1002.74625pt>
 File: graph/graph37.png Graphic file (type png)
 <use graph/graph37.png>
 Package pdftex.def Info: graph/graph37.png  used on input line 300.
@@ -730,10 +731,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 296--301
 
  []
 
-
-
-[8 <./graph/graph36.png> <./graph/graph37.png>]
-<graph/graph38.png, id=124, 1003.75pt x 1031.855pt>
+<graph/graph38.png, id=120, 1003.75pt x 1031.855pt>
 File: graph/graph38.png Graphic file (type png)
 <use graph/graph38.png>
 Package pdftex.def Info: graph/graph38.png  used on input line 322.
@@ -745,7 +743,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 315--323
 
 
 
-[9 <./graph/graph38.png>] (./18.미적분.aux)
+[8 <./graph/graph37.png> <./graph/graph38.png>] (./18.미적분.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -756,18 +754,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 18909 strings out of 473190
- 399755 string characters out of 5715800
- 805839 words of memory out of 5000000
- 41775 multiletter control sequences out of 15000+600000
+ 18865 strings out of 473190
+ 398882 string characters out of 5715800
+ 806839 words of memory out of 5000000
+ 41731 multiletter control sequences out of 15000+600000
  593595 words of font info for 156 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 98i,7n,105p,505b,1016s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,7n,105p,505b,688s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbac.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbad.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbae.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbb8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbba.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbb.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbbd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbc8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbcd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjbd6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmac.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmad.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmae.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb4.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmb9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmba.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbb.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmbe.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmc9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmca.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcc.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmcd.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmce.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd0.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd1.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd2.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd3.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd4.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd5.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/nanumtype1/nanummjmd7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/uhc/umj/umj03.pfb>
-Output written on 18.미적분.pdf (9 pages, 10249810 bytes).
+Output written on 18.미적분.pdf (8 pages, 10248738 bytes).
 PDF statistics:
- 420 PDF objects out of 1000 (max. 8388607)
- 240 compressed objects within 3 object streams
+ 417 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

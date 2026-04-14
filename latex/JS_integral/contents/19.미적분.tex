@@ -57,7 +57,7 @@ $f(b) - f(a) = \{x_{0} + \int_{t_{0}}^{b} v(t) dt\} - \{x_{0} + \int_{t_{0}}^{a}
 \end{advicebox}
 
 \begin{advicebox}
-\textbf{2. 구분구적법을 이용한 속도와 거리의 관계} \\
+\textbf{2. 구분구적법을 이용한 속도와 거리의 관계} 
 속도와 거리의 관계를 앞에서 공부한 구분구적법을 이용하여 다음과 같이 생각할 수도 있다. 속도가 일정할 때
 \[ (\text{속도}) \times (\text{시간}) = (\text{거리}) \]
 수직선 위를 움직이는 점 P의 시각 $t$ 에서의 속도가 $v(t)$ 일 때, $v(t)$ 가 연속이고 $v(t) \ge 0$ 이면 점 P가 움직인 거리는 
@@ -97,7 +97,8 @@ $\dfrac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}} = f^{\prime}(t_k)$ \\
 을 만족시키는 $t_k$ 가 구간 $(x_{k-1}, x_k)$ 에 존재한다.
 \[ \overline{P_kP_{k-1}}^2 = (x_k - x_{k-1})^2 + \{f(x_k) - f(x_{k-1})\}^2 = [1 + \{f^{\prime}(t_k)\}^2](x_k - x_{k-1})^2 \]
 \[ \therefore \overline{P_kP_{k-1}} = \sqrt{1 + \{f^{\prime}(t_k)\}^2}(x_k - x_{k-1}) \]
-$n \to \infty$ 일 때 이 합의 극한값은 $\int_{a}^{b} \sqrt{1 + \{f^{\prime}(x)\}^2} dx$ 이고, 이 값이 곡선의 길이이다.
+$n \to \infty$ 일 때 $t_k \to x_k$ 이므로 \\
+이 합의 극한값은 $\int_{a}^{b} \sqrt{1 + \{f^{\prime}(x)\}^2} dx$ 이고, 이 값이 곡선의 길이이다.
 \end{advicebox}
 
 \begin{advicebox}
@@ -183,6 +184,11 @@ $= [-(t+1)^2 e^{-t}]_{-2}^{-1} + [(t+1)^2 e^{-t}]_{-1}^{1} + [-(t+1)^2 e^{-t}]_{
 $a > 0, 0 \le t \le 2\pi$ 일 때, 매개변수로 나타낸 곡선 $x = a(t - \sin t), y = a(1 - \cos t)$ 의 길이를 구하여라.
 
 \textbf{모범답안} \\
+\begin{wrapfigure}[2]{l}{0.25\textwidth}
+    \vspace{-30pt}
+    \centering
+    \includegraphics[width=0.25\textwidth]{graph42.png}
+\end{wrapfigure} 
 $l = \int_{0}^{2\pi} \sqrt{a^2(1 - \cos t)^2 + a^2 \sin^2 t} dt = a \int_{0}^{2\pi} \sqrt{2(1 - \cos t)} dt = 2a \int_{0}^{2\pi} \sin \dfrac{t}{2} dt = \mathbf{8a}$
 
 \vspace{0.5cm}
@@ -195,8 +201,14 @@ $l = \int_{0}^{2\pi} \sqrt{a^2(1 - \cos t)^2 + a^2 \sin^2 t} dt = a \int_{0}^{2\
 (2) $t=0$ 일 때부터 $t=a(a > 0)$ 일 때까지 점 P가 움직인 거리 $l$ 을 구하여라.\\
 (3) (2)에서 $a \to \infty$ 일 때, $l$ 의 극한값을 구하여라.
 
+\begin{studybox}
+  $t=a$ 일때부터 $t=b$ 일 때까지 점 P가 움직인 거리 $l$ 은 $\int_{a}^{b} \sqrt{(\dfrac{dx}{dt})^2 + (\dfrac{dy}{dt})^2} dt$ 
+  따라서 속력은 $\sqrt{(\dfrac{dx}{dt})^2 + (\dfrac{dy}{dt})^2}$ 이다.
+\end{studybox}
+
 \textbf{모범답안} \\
-(1) $\dfrac{dx}{dt} = -e^{-t}(\sin t + \cos t), \dfrac{dy}{dt} = -e^{-t}(\sin t - \cos t)$. 속력은 \textbf{$\sqrt{2}e^{-t}$} \\
+(1) $\dfrac{dx}{dt} = -e^{-t}(\sin t + \cos t), \dfrac{dy}{dt} = -e^{-t}(\sin t - \cos t)$.\\
+ 속력은 $\sqrt{(\dfrac{dx}{dt})^2 + (\dfrac{dy}{dt})^2}= \sqrt{2}e^{-t}$ \\
 (2) $l = \int_{0}^{a} \sqrt{2}e^{-t} dt = \mathbf{\sqrt{2}(1 - e^{-a})}$ \\
 (3) $\lim_{a \to \infty} l = \mathbf{\sqrt{2}}$
 
