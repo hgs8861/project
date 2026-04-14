@@ -1,55 +1,76 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage{kotex}
-\usepackage{amsmath, amssymb}
-\usepackage{geometry}
+\documentclass[10pt, a4paper]{article} % 글자 크기를 10pt로 축소
+
+% --- 1. 필수 패키지 설정 ---
+\usepackage[a4paper, top=18mm, bottom=15mm, left=12mm, right=12mm, headheight=25pt, headsep=8mm]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{fancyhdr}
 \usepackage{enumitem}
+\usepackage{array}
+\usepackage{longtable}
 
-% --- 여백 및 간격 설정 ---
-\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
-\linespread{1.3}
-\setlength{\parskip}{1em}
+% --- 2. 한글 설정 (가장 표준적인 kotex 사용) ---
+% 별도의 폰트 파일 없이 시스템 기본 한글 폰트를 사용합니다.
+\usepackage{kotex}
 
-\title{\textbf{미적분 - Chapter 13 연습문제}}
-\date{}
+% --- 3. 헤더 설정 ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\large \textbf{미적분 : chapter 13 연습문제}}
+\rhead{\small 학번: \underline{\hspace{3.5cm}} 이름: \underline{\hspace{3cm}}}
+\cfoot{\small \thepage}
+\renewcommand{\headrulewidth}{0.6pt} % 선 두께 0.6pt 유지
+
+% --- 4. 문제 박스 명령어 정의 ---
+% 글자 크기를 \small로 지정하여 더 작게 출력
+\newcounter{probcount}
+\newcommand{\exercise}[1]{%
+    \stepcounter{probcount}%
+    \begin{minipage}[t][110mm][t]{0.44\textwidth}
+        \small % 문제 내부 글자 크기 축소
+        \vspace{1mm}
+        \noindent \textbf{문제 \arabic{probcount}.} #1
+    \end{minipage}%
+}
 
 \begin{document}
-\maketitle
 
-\section*{기본 문제}
-
-\begin{enumerate}
-    \item \textbf{Exercise 13-1}\\
-    $f(x)=\int(x \ln x+e^{x}+x+1)dx$ 일 때, 다음 극한값을 구하여라.
+% --- 5. 문제 입력 섹션 ---
+% {p|p} 구조로 중앙 세로줄만 생성
+\noindent
+\begin{longtable}{p{0.47\textwidth} | p{0.47\textwidth}}
+    
+    % [1페이지 상단] 문제 1 & 2
+    \exercise{$f(x)=\int(x \ln x+e^{x}+x+1)dx$ 일 때, 다음 극한값을 구하여라.
     \begin{enumerate}[label=(\arabic*)]
         \item $\displaystyle \lim_{h\rightarrow0}\frac{f(1+h)-f(1)}{h}$
         \item $\displaystyle \lim_{h\rightarrow0}\frac{f(1+h+h^{2})-f(1-h)}{h}$
-    \end{enumerate}
-
-    \item \textbf{Exercise 13-3}\\
-    다음 부정적분을 구하여라.
+    \end{enumerate}}
+    & 
+    \exercise{다음 부정적분을 구하여라.
     \begin{enumerate}[label=(\arabic*)]
         \item $\displaystyle \int\frac{3 \sin^{3}x-3 \sin x+\cos^{3}x-2}{\cos^{2}x}dx$
         \item $\displaystyle \int\frac{1}{\tan(x/2)+\cot(x/2)}dx$
-    \end{enumerate}
-\end{enumerate}
+    \end{enumerate}}\\
+    \hline
 
-\section*{실력 문제}
-
-\begin{enumerate}
-    \item \textbf{Exercise 13-5}\\
-    $x>0$에서 정의된 연속함수 $f(x)$ 에 대하여 함수 $(x-1)f(x)$ 의 도함수는 $\frac{1}{x}$ 이다. 이때, $f(x)$ 를 구하여라.
-
-    \item \textbf{Exercise 13-8}\\
-    미분가능한 함수 $f(x)$ 가 모든 실수 $x$에 대하여 $f'(x)=-f(x)+e^{-x}\cos x$ 를 만족시킨다. $g(x)=e^{x}f(x)$ 이고 $f(0)=1$ 일 때, 다음 물음에 답하여라.
+% 페이지 중앙 가로선 (십자 모양 완성)
+    % [1페이지 하단] 문제 3 & 4
+    \exercise{$x>0$에서 정의된 연속함수 $f(x)$ 에 대하여 함수 $(x-1)f(x)$ 의 도함수는 $\frac{1}{x}$ 이다. 이때, $f(x)$ 를 구하여라.}
+    & 
+    \exercise{미분가능한 함수 $f(x)$ 가 모든 실수 $x$에 대하여 $f'(x)=-f(x)+e^{-x}\cos x$ 를 만족시킨다. $g(x)=e^{x}f(x)$ 이고 $f(0)=1$ 일 때, 다음 물음에 답하여라.
     \begin{enumerate}[label=(\arabic*)]
-        \item $g''(x)$ 를 구하여라.
-        \item $f(x)$ 를 구하여라.
-    \end{enumerate}
-
-    \item \textbf{Exercise 13-9}\\
-    미분가능한 함수 $f(x)$ 가 모든 실수 $x$에 대하여 
+    \item $g''(x)$ 를 구하여라.
+    \item $f(x)$ 를 구하여라.
+    \end{enumerate}} \\
+ 
+% --- 2페이지로 자동 전환 ---
+    
+    \exercise{미분가능한 함수 $f(x)$ 가 모든 실수 $x$에 대하여 
     \[ f(x)=f(-x)+2x, \quad f(x)f'(x)+f(-x)f'(-x)=6 \cos x+2 \]
-    를 만족시킬 때, $f(x)$ 를 구하여라.
-\end{enumerate}
+    를 만족시킬 때, $f(x)$ 를 구하여라.}
+    & \\
+    
+   
+\end{longtable}
 
 \end{document}
