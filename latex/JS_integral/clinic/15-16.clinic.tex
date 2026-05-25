@@ -1,0 +1,76 @@
+\documentclass[12pt, a4paper]{article}
+
+% Required Packages
+\usepackage{amsmath, amssymb, graphicx}
+\usepackage{kotex} % For Korean text
+\usepackage{geometry}
+\usepackage{enumitem} % [label=...] 옵션을 사용하기 위해 필수적인 패키지입니다.
+\usepackage{setspace}
+\graphicspath{{graph/}}
+\geometry{a4paper, margin=1in}
+\title{CLINIC 15-16}
+\setstretch{1.3}
+
+\begin{document}
+\maketitle
+\date{}
+
+\begin{enumerate}
+\item 다음 부정적분을 구하여라.
+   % itemize 대신 enumerate를 사용하고, enumitem 패키지 덕분에 아래 옵션이 정상 작동합니다.
+   \begin{enumerate}[label=(\arabic*)] 
+    \item $\displaystyle\int_{0}^{\ln 3} \dfrac{e^{3x}}{e^x+1} dx - \int_{\ln 3}^{0} \dfrac{1}{e^t+1} dt$
+    \item $\displaystyle\int_{0}^{1} |e^x-2| dx$
+    \item $\displaystyle\int_{\pi/6}^{\pi/2} \dfrac{\cos x}{\sin x + \sin^3 x} dx$
+    \item $\displaystyle\int_{1}^{e} \ln x^{\dfrac{1}{x}} dx$
+    \item $\displaystyle\int_{0}^{a} \sqrt{a^2-x^2} dx$
+    \item $\displaystyle\int_{0}^{1} \ln(\sqrt{x^2+1}-x) dx$
+    \item $\displaystyle\int_{0}^{1} x^2 e^{2x} dx$ 
+  \end{enumerate}
+
+\item $f(y) = \displaystyle\int_{0}^{y} e^{ax}\cos x dx$ 일 때,$\displaystyle\lim_{y \to \infty} f(y)$의 값이 존재하기 위한 $a$의 범위와 극한값을 구하여라.
+
+\item 정적분을 이용하여 다음 급수의 합을 구하여라. 
+  \begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle \lim_{n \to \infty} \dfrac{(n+1)^3 + (n+2)^3 + \dots + (2n)^3}{1^3 + 2^3 + \dots + n^3}$
+    \item $\displaystyle \lim_{n \to \infty} \sum_{k=1}^{n} \dfrac{k}{n^2} \cos \dfrac{\pi k^2}{2n^2}$
+    \item $\displaystyle \lim_{n \to \infty} (\ln \sqrt[n]{\dfrac{n+1}{n}} + \ln \sqrt[n]{\dfrac{n+2}{n}} + \dots + \ln \sqrt[n]{\dfrac{n+n}{n}})$
+    \item $\displaystyle \lim_{n \to \infty} ( \dfrac{n+2}{n^2+1} + \dfrac{n+4}{n^2+4} + \dots + \dfrac{n+2n}{n^2+k^2} )$  
+  \end{enumerate}
+
+\item 다음 극한값을 구하여라. 
+$\displaystyle \lim_{t \to \infty} t \int_{0}^{\dfrac{2}{t}} \dfrac{|x-1|}{x^2+2} dx$
+
+\item 자연수 $n$에 대하여 $I_n = \displaystyle\int_{0}^{\pi/2} \sin^n x dx$ 라 할 때, $I_n = \dfrac{n-1}{n} I_{n-2}$ ($n \ge 2$)가 성립함을 증명하여라.
+
+\item 함수 $f(x) = e^x(ax+b)$ 가 모든 실수 $x$ 에 대하여 $f(x) = \displaystyle \int_{0}^{x} (x-t)f^{\prime}(t) dt + e^x + x$ 를 만족시킬 때, 상수 $a, b$ 의 값을 구하여라. 
+
+\item $f(x) = \displaystyle \int_{x}^{x+1} e^{t^3-7t} dt$ 가 극대가 되는 $x$ 의 값을 구하여라.
+
+\item $n$ 이 자연수일 때, 다음 부등식을 증명하여라. 
+\begin{enumerate}[label=(\arabic*)]
+    \item $\dfrac{1}{2(n+1)} < \displaystyle \int_{0}^{1} \dfrac{x^n}{1+x^2} dx < \dfrac{1}{n+1}$
+    \item $\dfrac{1}{3} < \displaystyle \int_{0}^{1} x^{( \sin x + \cos x )^2} dx < \dfrac{1}{2}$
+\end{enumerate}
+
+\item 함수 $f(x)$가 모든 실수 $x$에 대하여 $f(x) = f(x+2)$를 만족시키고, $-1 \le x \le 1$일 때 $f(x) = |x|$이다. 이때, $\int_{0}^{2} e^{-x} f(x) \, dx$의 값을 구하여라.
+
+\item 미분가능한 함수 $f(x)$가 모든 실수 $x$에 대하여 $f(1-x) = 1-f(x)$를 만족시킬 때, 다음을 증명하여라.
+\begin{enumerate} [label=(\arabic*), leftmargin=8mm, nosep]
+    \item $f'(0) = f'(1)$
+    \item $\int_{0}^{1} f(x) \, dx = \frac{1}{2}$
+\end{enumerate}
+
+\item 다음 세 조건을 만족시키는 모든 미분가능한 함수 $f(x)$ 에 대하여 $\displaystyle \int_0^2 f(x) dx$ 의 최솟원을 구하여라.
+    \begin{enumerate}[label=(\roman*), nosep]
+        \item $f(0)=1, f^{\prime}(0)=1$
+        \item $0 < a < b < 2$ 이면 $f^{\prime}(a) \le f^{\prime}(b)$ 이다.
+        \item 구간 $(0, 1)$ 에서 $f^{\prime\prime}(x) = e^x$ 이다.
+    \end{enumerate}
+
+\item 연속함수 $f(x)$가 모든 실수 $t$에 대하여 $\int_{0}^{2} x f(tx) \, dx = 4t^2 $
+을 만족시킬 때, $f(2)$의 값을 구하여라.
+
+\end{enumerate}
+
+\end{document}
