@@ -8,6 +8,8 @@
 \usepackage{array}
 \usepackage{longtable}
 \usepackage{kotex}
+\usepackage{graphicx,float, wrapfig}
+\usepackage{setspace}
 
 % --- 2. 헤더 설정 ---
 \pagestyle{fancy}
@@ -27,50 +29,77 @@
         \noindent \textbf{문제 \arabic{probcount}.} #1
     \end{minipage}%
 }
-
+\graphicspath{{graph/}}
+\setstretch{1.3}
 \begin{document}
 
 \noindent
 \begin{longtable}{p{0.47\textwidth} | p{0.47\textwidth}}
     
     % [기본 문제 섹션]
-    \exercise{다음 곡선과 $x$ 축으로 둘러싸인 도형의 넓이를 구하여라.
+    \exercise{다음 곡선 및 직선으로 둘러싸인 도형의 넓이를 구하여라.
     \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
-        \item $y = -x^2 - 2x + 3$
-        \item $y = (x-1)^2(x+2)$
+        \item $y = \tan x, \quad x = \frac{\pi}{3}, \quad y = 0$
+        \item $y = (1 - \cos x)\sin x \quad (0 \le x \le \pi), \quad y = 0$       
+        \item $y = e^x - 1, \quad y = 4e^{-x} - 1, \quad y = 0$        
+        \item $y = \sqrt{-x+1}, \quad y = 0, \quad y = 2, \quad x = 0$  
+        \item $y = \ln(2-x), \quad y = 0, \quad x = 0$      
+        \item $y^2 = 2x, \quad x^2 = 2y$
     \end{enumerate}} 
     & 
-    \exercise{곡선 $y = (x^2-a) \sin x$ ($0 \le x \le \pi$)와 $x$ 축으로 둘러싸인 두 부분의 넓이가 같도록 상수 $a$ 의 값을 정하여라. (단, $0 < a < \pi^2$)} \\
+    \exercise{미분가능한 함수 $f(x)$가 모든 실수 $x$에 대하여 $f(x)<0$, $f'(x)>0$을 만족시키고 $f(0)=-6$이다. 곡선 $y=f(x)$ 위의 점 $\text{A}(t, f(t))$ (단, $t>0$)에서 $x$축에 내린 수선의 발을 $\text{B}$라 하고, 점 $\text{A}$에서의 접선이 $x$축과 만나는 점을 $\text{C}$라고 하자. 삼각형 $\text{ABC}$의 넓이가 $e^{-3t}$일 때, 곡선 $y=f(x)$와 $x$축, $y$축 및 직선 $x=\ln2$로 둘러싸인 도형의 넓이를 구하여라.} \\
     \hline 
     
     \exercise{곡선 $y = x \sin x$ ($0 \le x \le \pi/2$)와 $x$ 축 및 두 직선 $x=k, y=\pi/2$ 로 둘러싸인 두 부분의 넓이가 같을 때, 상수 $k$ 의 값을 구하여라. (단, $0 < k < \pi/2$)} 
     & 
-    \exercise{자연수 $n$ 에 대하여 구간 $[n\pi, (n+2)\pi]$ 에서 곡선 $y = 3^n \cos \dfrac{1}{2}x$ 와 $x$ 축으로 둘러싸인 도형의 넓이를 $S_n$ 이라고 할 때, $\sum_{n=1}^{\infty} \dfrac{16}{S_n}$ 의 값을 구하여라.} \\
-    
+    \begin{wrapfigure}[15]{r}{0.18\textwidth}
+        \centering
+        \includegraphics[width=0.18\textwidth]{graph1.png}
+    \end{wrapfigure} 
+
+    \exercise{오른쪽 그림과 같이 곡선 $y=\log_a x$와 $x$축 및 직선 $x=e$로 둘러싸인 도형을 곡선 $y=\log_b x$가 두 부분 $\text{A}$와 $\text{B}$로 나눈다. $\text{A}$의 넓이가 $\frac{2}{\ln b}$일 때, $\text{B}$의 넓이를 $a$로 나타내어라. 단, $1<a<b$이다.} \\
 
     \exercise{함수 $y = \ln \dfrac{x}{a}$ 의 그래프와 $x$ 축, $y$ 축 및 직선 $y=1$ 로 둘러싸인 도형의 넓이 $S$ 가 직선 $x=3$ 에 의하여 이등분될 때, 양수 $a$ 의 값을 구하여라.} 
     & 
     % [실력 문제 섹션]
-    \exercise{다음 곡선 또는 직선으로 둘러싸인 도형의 넓이를 구하여라.
-    \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
-        \item $y = x^2, y = 4\sqrt{x}-3$
-        \item $y^2 = 2x, x^2 = 2y$
-    \end{enumerate}} \\
+    \exercise{곡선 $y=xe^{-x}$과 이 곡선의 변곡점에서의 접선 및 $y$축으로 둘러싸인 도형의 넓이를 구하여라.} \\
     \hline 
     
-    \exercise{곡선 $y = e^x \cos x$ ($0 \le x \le \pi$)와 $y = e^x \sin x$ ($0 \le x \le \pi$) 및 두 직선 $x=0, x=\pi$ 로 둘러싸인 도형의 넓이를 구하여라.} 
+    \exercise{다음 곡선과 $x$축으로 둘러싸인 도형의 넓이를 구하여라.(1)(2)\\
+    다음 곡선 또는 직선으로 둘러싸인 도형의 넓이를 구하여라. (3)(4)
+     \begin{enumerate}[label=(\arabic*), leftmargin=8mm, nosep]
+        \item $y = \sqrt{x^3 - x^2 - 8x + 12}$
+        \item $y = e^{-x}\sin x \quad (0 \le x \le 2\pi)$       
+        \item $y = e^x\cos x \quad (0 \le x \le \pi), \quad y = e^x\sin x \quad (0 \le x \le \pi), \quad x = 0, \quad x = \pi$        
+        \item $y = \frac{xe^{x^2}}{e^{x^2} + 1}, \quad y = \frac{2}{3}x$  
+    \end{enumerate}}
     & 
     \exercise{방정식 $|\ln x| + |\ln y| = 1$ 이 나타내는 곡선으로 둘러싸인 도형의 넓이를 구하여라.} \\
    
+    \begin{wrapfigure}[15]{r}{0.18\textwidth}
+        \centering
+        \includegraphics[width=0.18\textwidth]{graph2.png}
+    \end{wrapfigure} 
 
-    \exercise{곡선 $y = \cos x$ ($0 \le x \le \pi/2$)와 이 곡선 위의 점 $(\alpha, \cos \alpha)$ 에서의 접선 및 $x$ 축으로 둘러싸인 도형의 넓이가 1일 때, $\sin \alpha$ 의 값을 구하여라.} 
+    \exercise{오른쪽 그림과 같이 두 곡선
+     $ y = a\cos x \quad \left(\text{단, } 0 \le x \le \frac{\pi}{2}\right), y = b\sin x \quad (\text{단, } 0 \le x \le \pi)$
+    와 $x$축, $y$축으로 둘러싸인 세 부분의 넓이 $S_1$, $S_2$, $S_3$을 구하여라. 단, $a>0$, $b>0$이다.} 
     & 
-    \exercise{점 $(1/2, 0)$ 에서 곡선 $y = xe^x$ 에 그은 두 접선과 이 곡선으로 둘러싸인 도형의 넓이를 구하여라.} \\
+    \exercise{곡선 $y = x\cos x$ (단, $x \ge 0$)가 직선 $y = x$에 접하는 점을 원점에 가까운 순서로 $\text{P}_0$(원점), $\text{P}_1$, $\text{P}_2$, $\cdots$, $\text{P}_{n-1}$, $\text{P}_n$, $\cdots$이라 하고, 자연수 $n$에 대하여 선분 $\text{P}_{n-1}\text{P}_n$과 곡선 $y = x\cos x$로 둘러싸인 도형의 넓이를 $A_n$이라고 하자.
+    \begin{enumerate}
+        \item[(1)] $A_n$을 $n$으로 나타내어라.
+        \item[(2)] $S_n = \sum_{k=1}^{n} A_k$를 $n$으로 나타내어라.
+    \end{enumerate}} \\
     \hline
+
+    \begin{wrapfigure}[15]{r}{0.18\textwidth}
+        \centering
+        \includegraphics[width=0.18\textwidth]{graph3.png}
+    \end{wrapfigure} 
 
     \exercise{두 곡선 $y = \ln x, y = 2 \ln x$ 와 이 두 곡선에 동시에 접하는 직선으로 둘러싸인 도형의 넓이를 구하여라.} 
     & 
-    \exercise{곡선 $y = x \cos x$ ($x \ge 0$)가 직선 $y=x$ 에 접하는 점을 원점에 가까운 순서로 $P_0, P_1, \dots$ 라 하자. 점 $P_{n-1}$ 과 $P_n$ 사이에서 곡선과 직선으로 둘러싸인 도형의 넓이를 $S_n$ 이라 할 때, $\sum_{n=1}^{\infty} \dfrac{1}{S_n}$ 의 값을 구하여라.} \\
+    \exercise{매개변수 $t$로 나타낸 곡선 $x = 3t^2$, $y = 3t - t^3$으로 둘러싸인 도형의 넓이를 구하여라.} \\
     
 
 \end{longtable}
