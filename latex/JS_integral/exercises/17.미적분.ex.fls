@@ -145,12 +145,12 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb0.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc0.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb5.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmc6.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmca.tfm
 INPUT ./graph/graph1.png
 INPUT ./graph/graph1.png
 INPUT ./graph/graph1.png
 OUTPUT 17.미적분.ex.pdf
 INPUT ./graph/graph1.png
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmca.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/nanumtype1/nanummjmb6.tfm
 INPUT ./graph/graph2.png
 INPUT ./graph/graph2.png
