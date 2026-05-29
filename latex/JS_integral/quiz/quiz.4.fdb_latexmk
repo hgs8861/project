@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1780019938.35409 "c:/Users/USER/Desktop/project/latex/JS_integral/quiz.4.tex" "quiz.4.pdf" "quiz.4" 1780019939.21275 0
-  "c:/Users/USER/Desktop/project/latex/JS_integral/quiz.4.tex" 1780019937 1122 01d0733c4cc03c70f44e39ff1a3f3e36 ""
+["pdflatex"] 1780020327.87114 "c:/Users/USER/Desktop/project/latex/JS_integral/quiz/quiz.4.tex" "quiz.4.pdf" "quiz.4" 1780020328.77644 2
+  "c:/Users/USER/Desktop/project/latex/JS_integral/quiz/quiz.4.tex" 1780020326 1165 8420f615ab3a7532277a63fce0416532 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1755075921 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1755065650 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1755065650 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -87,8 +87,8 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1755097355 5574045 c1864b6d576eca8ff04839113c3d8c41 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1755098199 3605799 b16085c568bbf43ec0a1a32c164f2cc1 ""
   "c:/texlive/2025/texmf.cnf" 1755097321 713 e69b156964470283e0530f5060668171 ""
-  "quiz.4.aux" 1780019939 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "quiz.4.tex" 1780019937 1122 01d0733c4cc03c70f44e39ff1a3f3e36 ""
+  "quiz.4.aux" 1780020328 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "quiz.4.tex" 1780020326 1165 8420f615ab3a7532277a63fce0416532 ""
   (generated)
   "quiz.4.aux"
   "quiz.4.log"
