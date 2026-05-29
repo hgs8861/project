@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1780017199.47523 "c:/Users/USER/Desktop/project/latex/JS_integral/exercises/18.미적분.ex.tex" "18.미적분.ex.pdf" "18.미적분.ex" 1780017200.5735 0
-  "18.미적분.ex.aux" 1780017200 109 87893892a23fd1a117f807ca59d6b29a "pdflatex"
-  "18.미적분.ex.tex" 1780017196 3444 62b0c3d361ceb276ee7ccf652b56c313 ""
-  "c:/Users/USER/Desktop/project/latex/JS_integral/exercises/18.미적분.ex.tex" 1780017196 3444 62b0c3d361ceb276ee7ccf652b56c313 ""
+["pdflatex"] 1780017321.01375 "c:/Users/USER/Desktop/project/latex/JS_integral/exercises/18.미적분.ex.tex" "18.미적분.ex.pdf" "18.미적분.ex" 1780017322.08111 0
+  "18.미적분.ex.aux" 1780017321 109 87893892a23fd1a117f807ca59d6b29a "pdflatex"
+  "18.미적분.ex.tex" 1780017319 3481 3fef1a21d5609b607403ce39b697ff1f ""
+  "c:/Users/USER/Desktop/project/latex/JS_integral/exercises/18.미적분.ex.tex" 1780017319 3481 3fef1a21d5609b607403ce39b697ff1f ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1755075921 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1755065650 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1755065650 996 a18840b13b499c08ac2de96a99eda4bc ""
@@ -134,6 +134,7 @@
   "c:/texlive/2025/texmf-dist/tex/latex/kotex-utf/lucenc.dfu" 1755080998 6872 ca6f43e14ece30d6ac49ead1624e387b ""
   "c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1755081213 30351 a2b09edc6c93a742566b222c33d0278e ""
   "c:/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd" 1755085009 606 98e762485af72dfce2b68e2919fca6ec ""
+  "c:/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty" 1755090478 22490 8cac309b79a4c53a4ffce4b1b07aead0 ""
   "c:/texlive/2025/texmf-dist/tex/latex/tools/array.sty" 1755093973 15698 f5f20b24886bb50156054c53e19b13fd ""
   "c:/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty" 1755093973 15912 618223a798a4d829f4d8e1ccf24e518f ""
   "c:/texlive/2025/texmf-dist/tex/plain/kotex-plain/kotexutf-core.tex" 1755080991 22796 cdbc6dbba903a5287c558339ae446988 ""

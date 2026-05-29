@@ -58,6 +58,8 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/kotex-utf/lucenc.dfu
 INPUT c:/texlive/2025/texmf-dist/tex/latex/kotex-utf/lucenc.dfu
 INPUT c:/texlive/2025/texmf-dist/tex/latex/cjk-ko/kolabels-utf.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/cjk-ko/kolabels-utf.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT ./18.미적분.ex.aux
