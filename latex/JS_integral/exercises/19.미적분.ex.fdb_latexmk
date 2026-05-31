@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1780270947.81881 "c:/Users/USER/Desktop/project/latex/JS_integral/exercises/19.미적분.ex.tex" "19.미적분.ex.pdf" "19.미적분.ex" 1780270948.91817 0
-  "19.미적분.ex.aux" 1780270948 109 87893892a23fd1a117f807ca59d6b29a "pdflatex"
-  "19.미적분.ex.tex" 1780270944 3815 ef9b11e65e1c00fd8c79bad472b2d36b ""
-  "c:/Users/USER/Desktop/project/latex/JS_integral/exercises/19.미적분.ex.tex" 1780270944 3815 ef9b11e65e1c00fd8c79bad472b2d36b ""
+["pdflatex"] 1780271205.65831 "c:/Users/USER/Desktop/project/latex/JS_integral/exercises/19.미적분.ex.tex" "19.미적분.ex.pdf" "19.미적분.ex" 1780271206.75385 0
+  "19.미적분.ex.aux" 1780271206 109 87893892a23fd1a117f807ca59d6b29a "pdflatex"
+  "19.미적분.ex.tex" 1780271203 3837 a5e22c4e75ef4203c6bd58f099693f7c ""
+  "c:/Users/USER/Desktop/project/latex/JS_integral/exercises/19.미적분.ex.tex" 1780271203 3837 a5e22c4e75ef4203c6bd58f099693f7c ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1755071004 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1755075921 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm" 1755073689 1536 c09172c8f235393e6235bb4758357c41 ""
@@ -147,6 +147,7 @@
   "c:/texlive/2025/texmf-dist/tex/latex/kotex-utf/lucenc.dfu" 1755080998 6872 ca6f43e14ece30d6ac49ead1624e387b ""
   "c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1755081213 30351 a2b09edc6c93a742566b222c33d0278e ""
   "c:/texlive/2025/texmf-dist/tex/latex/nanumtype1/lucnanummj.fd" 1755085009 606 98e762485af72dfce2b68e2919fca6ec ""
+  "c:/texlive/2025/texmf-dist/tex/latex/setspace/setspace.sty" 1755090478 22490 8cac309b79a4c53a4ffce4b1b07aead0 ""
   "c:/texlive/2025/texmf-dist/tex/latex/tools/array.sty" 1755093973 15698 f5f20b24886bb50156054c53e19b13fd ""
   "c:/texlive/2025/texmf-dist/tex/latex/tools/longtable.sty" 1755093973 15912 618223a798a4d829f4d8e1ccf24e518f ""
   "c:/texlive/2025/texmf-dist/tex/plain/kotex-plain/kotexutf-core.tex" 1755080991 22796 cdbc6dbba903a5287c558339ae446988 ""
