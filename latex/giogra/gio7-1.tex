@@ -14,10 +14,12 @@
 \usepackage{amsthm}
 \usepackage{multirow} 
 \usepackage{array}
-\usepackage{tcolorbox}% For proofs
+\usepackage{tcolorbox}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}% For proofs
 
 \graphicspath{{graph/}}
-\title{7. 이차 곡면}
+\title{7.1 곡면의 종류}
 \date{}
 \author{}
 \setstretch{1.3}
@@ -107,6 +109,23 @@
 \hline
 \end{tabular}
 \end{center}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[hide axis, view={115}{20}, width=5.5cm, height=5.5cm]
+\addplot3[
+    surf, shader=faceted, faceted color=teal!60, fill=teal!12, opacity=0.55,
+    domain=0:180, domain y=0:360, samples=14, samples y=18, z buffer=sort,
+]
+({1.3*sin(x)*cos(y)}, {1.3*sin(x)*sin(y)}, {1.3*cos(x)});
+\addplot3[thick, red] coordinates {(0,0,0) (0.92,0.92,0)};
+\node at (axis cs:0,0,0)[anchor=north east, red]{\footnotesize $C$};
+\node at (axis cs:0.55,0.55,0)[anchor=south, red]{\footnotesize $r$};
+\end{axis}
+\end{tikzpicture}
+\caption{구면: 중심 $C$와 반지름 $r$}
+\end{figure}
 
 \subsection*{EXAMPLE 1 (아폴로니우스 구면)}
 두 정점 \(O(0,0,0),\ Q(a,0,0)\ (a\ne0)\)로부터 거리의 비가 일정한 점 \(P(x,y,z)\)의 자취.\\
@@ -209,7 +228,43 @@ x^2+y^2=\frac{a^2}{b^2}z^2
     직원추면 \(x^2+y^2=k^2z^2\ (k=\tan\alpha)\)를 평면으로 자를 때, 축과 평면이 이루는 각을 \(\phi\)라 하면 잘린 단면은 다음과 같이 결정된다 (좌표변환 후 판별식 \(\delta=\cos^2\phi(\tan^2\alpha-\tan^2\phi)\)의 부호로 판정).
 \end{tcolorbox}
 
-% ---- 그림 삽입 위치 2 (★가장 중요★): 원뿔 + 평면 각도별 단면 ----
+\begin{figure}[h]
+\centering
+% 패널 1: 타원 (완만한 평면)
+\begin{tikzpicture}
+\begin{axis}[hide axis, view={110}{12}, width=4.3cm, height=4.3cm]
+\addplot3[surf, shader=faceted, faceted color=gray!55, fill=gray!12, opacity=0.55,
+  domain=-1.6:1.6, domain y=0:360, samples=10, samples y=22, z buffer=sort]
+  ({x*cos(y)}, {x*sin(y)}, {1.7*x});
+\draw[fill=teal!40, opacity=0.55, draw=teal!70!black, thick]
+  (axis cs:-1.1,-1.1,1.4) -- (axis cs:1.1,-1.1,2.2) --
+  (axis cs:1.1,1.1,2.2) -- (axis cs:-1.1,1.1,1.4) -- cycle;
+\end{axis}
+\end{tikzpicture}
+% 패널 2: 포물선 (모선과 평행한 평면)
+\begin{tikzpicture}
+\begin{axis}[hide axis, view={110}{12}, width=4.3cm, height=4.3cm]
+\addplot3[surf, shader=faceted, faceted color=gray!55, fill=gray!12, opacity=0.55,
+  domain=-1.6:1.6, domain y=0:360, samples=10, samples y=22, z buffer=sort]
+  ({x*cos(y)}, {x*sin(y)}, {1.7*x});
+\draw[fill=orange!40, opacity=0.55, draw=orange!70!black, thick]
+  (axis cs:-1.1,-1.1,0.15) -- (axis cs:1.1,-1.1,2.75) --
+  (axis cs:1.1,1.1,2.75) -- (axis cs:-1.1,1.1,0.15) -- cycle;
+\end{axis}
+\end{tikzpicture}
+% 패널 3: 쌍곡선 (축에 가까운 급한 평면, 양쪽 nappe 통과)
+\begin{tikzpicture}
+\begin{axis}[hide axis, view={110}{12}, width=4.3cm, height=4.3cm]
+\addplot3[surf, shader=faceted, faceted color=gray!55, fill=gray!12, opacity=0.55,
+  domain=-1.6:1.6, domain y=0:360, samples=10, samples y=22, z buffer=sort]
+  ({x*cos(y)}, {x*sin(y)}, {1.7*x});
+\draw[fill=red!40, opacity=0.55, draw=red!70!black, thick]
+  (axis cs:-0.55,-1.1,-2.3) -- (axis cs:0.55,-1.1,2.3) --
+  (axis cs:0.55,1.1,2.3) -- (axis cs:-0.55,1.1,-2.3) -- cycle;
+\end{axis}
+\end{tikzpicture}
+\caption{직원추면(회색)을 각기 다른 각도의 평면(색 있는 사각형)으로 자를 때: 왼쪽부터 타원, 포물선, 쌍곡선 단면}
+\end{figure}
 
 \begin{center}
 \renewcommand{\arraystretch}{1.3}
@@ -258,6 +313,22 @@ x^2+y^2=\frac{a^2}{b^2}z^2
     회전축이 아닌 변수를 \(\sqrt{(\cdot)^2+(\cdot)^2}\)로 치환한다.
 \end{tcolorbox}
 
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[hide axis, view={110}{15}, width=5.5cm, height=5.5cm]
+\addplot3[
+    surf, shader=faceted, faceted color=teal!60, fill=teal!15, opacity=0.7,
+    domain=-1.3:1.3, domain y=0:360, samples=12, samples y=20, z buffer=sort,
+]
+({(0.35*x^2+0.5)*cos(y)}, {x}, {(0.35*x^2+0.5)*sin(y)});
+\addplot3[thick, red, domain=-1.3:1.3, samples=20, samples y=0]
+({0.35*x^2+0.5}, {x}, {0});
+\end{axis}
+\end{tikzpicture}
+\caption{곡선 $f(x,y)=0$(빨간선)을 $y$축으로 회전시킨 회전면}
+\end{figure}
+
 % ---- 그림 삽입 위치 3: 회전면 생성 원리 ----
 
 \begin{center}
@@ -295,6 +366,19 @@ y^2+z^2=m^2x^2 \quad(\text{직원추면})
 (x^2+y^2+z^2+a^2-b^2)^2=4a^2(x^2+y^2)
 \]
 
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[hide axis, view={115}{25}, width=5.5cm, height=5.5cm]
+\addplot3[
+    surf, shader=faceted, faceted color=violet!50, fill=violet!15, opacity=0.8,
+    domain=0:360, domain y=0:360, samples=18, samples y=18, z buffer=sort,
+]
+({(2+0.8*cos(y))*cos(x)}, {(2+0.8*cos(y))*sin(x)}, {0.8*sin(y)});
+\end{axis}
+\end{tikzpicture}
+\caption{원환면(torus)}
+\end{figure}
 % ---- 그림 삽입 위치 4: 완성된 원환면 ----
 \section*{연습문제 7.1}
 \begin{enumerate}
