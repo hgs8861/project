@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.14)  23 JUL 2026 18:34
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.14)  24 JUL 2026 09:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -487,8 +487,7 @@ Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
 \extratabsurround=\skip62
 \backup@length=\skip63
 \ar@cellbox=\box80
-)
-No file gio7.aux.
+) (./gio7.aux)
 \openout1 = `gio7.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
@@ -610,6 +609,7 @@ Package fontspec Info:
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->"[UnDotumBold.ttf]/OT:language=dflt;extend=1.05;"
 
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -665,69 +665,37 @@ Overfull \hbox (5.73267pt too wide) in paragraph at lines 51--64
 LaTeX Font Info:    Font shape `TU/UnBatang.ttf(0)/bx/n' in size <12> not available
 (Font)              Font shape `TU/UnBatang.ttf(0)/b/n' tried instead on input line 69.
 
-LaTeX Warning: File `sphere_center_radius.png' not found on input line 97.
-
-c:/Users/hyeon/OneDrive/바탕 화면/project/latex/giogra/gio7.tex:97: Unable to load picture or PDF file 'sphere_center_radius.png'.
-<to be read again> 
-                   }
-l.97 ...h=0.4\textwidth]{sphere_center_radius.png}
-                                                  
-The requested image couldn't be read because
-it was not a recognized image format.
-
-
-c:/Users/hyeon/OneDrive/바탕 화면/project/latex/giogra/gio7.tex:97: Package graphics Error: Division by 0.
-
-See the graphics package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.97 ...h=0.4\textwidth]{sphere_center_radius.png}
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-File: sphere_center_radius.png Graphic file (type bmp)
-<sphere_center_radius.png>
-
 
 [1
 
 ]
 
 LaTeX Font Warning: Font shape `TU/UnBatang.ttf(0)/m/it' undefined
-(Font)              using `TU/UnBatang.ttf(0)/m/n' instead on input line 146.
+(Font)              using `TU/UnBatang.ttf(0)/m/n' instead on input line 141.
 
 
 
 [2]
 
-LaTeX Warning: File `cone_conic_sections.png' not found on input line 220.
+[3]
 
-c:/Users/hyeon/OneDrive/바탕 화면/project/latex/giogra/gio7.tex:220: Unable to load picture or PDF file 'cone_conic_sections.png'.
-<to be read again> 
-                   }
-l.220 ...h=0.8\textwidth]{cone_conic_sections.png}
-                                                  
-The requested image couldn't be read because
-it was not a recognized image format.
+[4] (./gio7.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-20>
+ ***********
 
 
-c:/Users/hyeon/OneDrive/바탕 화면/project/latex/giogra/gio7.tex:220: Package graphics Error: Division by 0.
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-See the graphics package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.220 ...h=0.8\textwidth]{cone_conic_sections.png}
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+ ) 
+Here is how much of TeX's memory you used:
+ 23400 strings out of 468442
+ 480256 string characters out of 5449248
+ 888717 words of memory out of 5000000
+ 51509 multiletter control sequences out of 15000+600000
+ 633401 words of font info for 95 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 102i,12n,106p,497b,2781s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-File: cone_conic_sections.png Graphic file (type bmp)
-<cone_conic_sections.png>
-
-
-[3
+Output written on gio7.pdf (4 pages).
