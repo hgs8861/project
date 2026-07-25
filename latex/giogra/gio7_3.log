@@ -3,8 +3,8 @@ entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/hyeon/OneDrive/바탕 화면/project/latex/giogra/gio7_2"
-(c:/Users/hyeon/OneDrive/바탕 화면/project/latex/giogra/gio7_2.tex
+**"c:/Users/hyeon/OneDrive/바탕 화면/project/latex/giogra/gio7_3"
+(c:/Users/hyeon/OneDrive/바탕 화면/project/latex/giogra/gio7_3.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -533,8 +533,8 @@ Package pgfplots: loading complementary utilities for your pgf version...
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (c:/texlive/2025/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (./gio7_2.aux)
-\openout1 = `gio7_2.aux'.
+))) (./gio7_3.aux)
+\openout1 = `gio7_3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
 LaTeX Font Info:    ... okay on input line 47.
@@ -706,47 +706,27 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Font shape `TU/UnBatang.ttf(0)/bx/n' in size <10> not available
 (Font)              Font shape `TU/UnBatang.ttf(0)/b/n' tried instead on input line 55.
 
-Overfull \hbox (14.26857pt too wide) in paragraph at lines 53--68
- [] 
- []
-
-LaTeX Font Info:    Font shape `TU/UnBatang.ttf(0)/bx/n' in size <12> not available
-(Font)              Font shape `TU/UnBatang.ttf(0)/b/n' tried instead on input line 77.
-
 
 [1
 
 ]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
-[2]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Font Info:    Font shape `TU/UnBatang.ttf(0)/bx/n' in size <12> not available
+(Font)              Font shape `TU/UnBatang.ttf(0)/b/n' tried instead on input line 131.
 
 
-
-[3]
-
-[4]
-
-[5]
-
-[6] (./gio7_2.aux)
+[2] (./gio7_3.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 34428 strings out of 468442
- 843849 string characters out of 5449248
- 1680523 words of memory out of 5000000
- 62387 multiletter control sequences out of 15000+600000
- 636174 words of font info for 106 fonts, out of 8000000 for 9000
+ 34313 strings out of 468442
+ 841686 string characters out of 5449248
+ 1599971 words of memory out of 5000000
+ 62286 multiletter control sequences out of 15000+600000
+ 633385 words of font info for 93 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 102i,13n,106p,789b,3326s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,11n,106p,789b,3144s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on gio7_2.pdf (6 pages).
+Output written on gio7_3.pdf (2 pages).
