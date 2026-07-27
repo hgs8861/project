@@ -1,0 +1,66 @@
+\# 선형대수학 학습지 작업 규칙
+
+
+
+\## 작업 방식
+
+\- 원본: elementary linear.pdf (Howard Anton, \*Elementary Linear Algebra: Applications Version\*, 12th Edition, 영문 269쪽)
+
+\- \*\*언어: 문서 전체를 원본과 같은 영어로 작성\*\*한다 (번역하지 않음). 박스 제목/구조 라벨도 영어로 (예: "Definition \& Key Rules", "Theorem", "Exercise Set 1.1", "EXAMPLE n", "SOLUTION:"). 정의/정리/증명/예제의 수학적 내용과 번호(예제 번호, 정리 번호)는 원문 그대로 유지
+
+\- \*\*주의\*\*: 이 PDF(269쪽)에는 원서 목차에 나오는 모든 장이 아니라 \*\*1장, 2장, 7장, 8장\*\*의 본문만 실제로 포함되어 있음 (맨 앞 Contents 페이지는 원서 전체 목차가 그대로 스캔되어 있어 혼동 주의). 작업 범위는 이 네 개 장으로 한정
+
+\- \*\*연습문제(Exercise Set) 선별\*\*: 각 절 본문의 numbered exercise 전체를 다 신지 않고, 전체 문항 수의 \*\*약 1/2\*\*만 선별하여 제시한다 (난이도/유형이 고르게 섞이도록 선택). True-False Exercises, Working with Technology 같은 \*\*supplementary exercise(보충 연습문제) 세트는 반영하지 않는다\*\*(수록하지 않음)
+
+\- \*\*Historical Note는 앞으로 생략한다\*\*(수록하지 않음)
+
+\- 각 절(예: 1.1, 1.2 ...)마다 원본 페이지를 직접 이미지로 확인(pdftoppm 또는 view)한 뒤 내용 재구성
+
+\- OCR 텍스트가 있다면 참고만 하고, 이미지로 직접 검증할 것
+
+\- 수식이 깨진 경우 앞뒤 맥락(예제 풀이 결과, 최종 답)으로 역산해서 정합성 확인 후 재구성
+
+\- 이미지 확인 시 view 도구가 간헐적으로 안 보일 수 있으니, standalone 클래스로 별도 크롭 후
+
+&nbsp; pdftoppm으로 변환한 결과의 픽셀 크기(가로세로 비율)까지 확인해서 정상 렌더링 여부 판단
+
+
+
+\## LaTeX 스타일 (이차곡면 프로젝트와 동일)
+
+\- 정의/핵심규칙 박스: tcolorbox, colback=teal!4, colframe=teal!65!black
+
+&nbsp; - 박스 안에서 "정의"와 "핵심 규칙"을 \\rule로 구분
+
+\- 정리(theorem) 박스: colback=red!4, colframe=red!60!black
+
+\- 장 시작 개요 박스: colback=blue!5, colframe=blue!60!black
+
+\- 모든 표는 세로줄 포함 (|l|l|l| 형식)
+
+\- 예제는 \\subsection\*{EXAMPLE n} 형식, SOLUTION은 \\textbf{SOLUTION:}
+
+
+
+\## 이미지 (선형대수학 맞춤)
+
+\- 벡터/2D 다이어그램: 순수 TikZ (좌표평면, 화살표 벡터, 직교좌표)
+
+\- 선형변환(회전, 반사, 전단, 스케일): before/after 두 개 격자를 나란히 배치
+
+\- 3D 벡터공간, 평면, 외적: pgfplots 3D (이차곡면 프로젝트와 동일한 axis/surf 패턴 재사용)
+
+\- 행렬 자체는 그림이 아니라 LaTeX bmatrix로 표현 (이미지로 만들지 않음)
+
+\- 고유벡터/고유공간: 원래 벡터와 변환된 벡터를 같은 그림에 화살표로 비교
+
+\- 매 그림마다 xelatex로 컴파일 테스트 후 코드 제출, standalone 크롭으로 비율 확인
+
+
+
+\## 산출물
+
+\- 모든 .tex 파일은 작성 후 반드시 xelatex로 컴파일해서 같은 폴더에 .pdf까지 생성할 것
+
+\- 컴파일 에러가 나면 로그를 스스로 읽고 고친 뒤 재컴파일할 것
+
