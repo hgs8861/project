@@ -1,0 +1,400 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper,left=3cm, right=3cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\title{1.3 Matrices and Matrix Operations}
+\date{}
+\author{}
+\setstretch{1.3}
+
+\titleformat{name=\section, numberless}
+  {\normalfont\large\bfseries\color{blue}}
+  {}
+  {0pt}
+  {}
+\geometry{a4paper, margin=1in}
+
+% Red subheading style (matches the textbook's red section headers)
+\newcommand{\redheading}[1]{{\vspace{2mm}\noindent\Large\bfseries\color{red!55!black} #1\par}\vspace{2mm}}
+
+\newtheoremstyle{mystyle}
+  {}{}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{mystyle}
+
+\newcommand{\deftitle}[1]{
+\tcbset{colback=teal!4, colframe=teal!65!black, title=#1, fonttitle=\bfseries, boxrule=0.5mm, arc=3mm}}
+
+\begin{document}
+\maketitle
+
+{\itshape\color{blue!45!black}
+Rectangular arrays of numbers arise in many contexts beyond augmented matrices. This section studies matrices as objects in their own right, defining addition, subtraction, and multiplication on them.\par}
+
+\redheading{Matrix Notation and Terminology}
+
+Rectangular arrays occur in many contexts. For example, the table below records the hours a student spent on three subjects during a week:
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\hline
+ & Mon. & Tues. & Wed. & Thurs. & Fri. & Sat. & Sun.\\
+\hline
+Math & 2 & 3 & 2 & 4 & 1 & 4 & 2\\
+\hline
+History & 0 & 3 & 1 & 4 & 3 & 2 & 2\\
+\hline
+Language & 4 & 1 & 3 & 1 & 0 & 0 & 2\\
+\hline
+\end{tabular}
+\end{center}
+
+Suppressing the headings leaves a rectangular array called a \textbf{matrix}:
+\[
+\begin{bmatrix}2&3&2&4&1&4&2\\0&3&1&4&3&2&2\\4&1&3&1&0&0&2\end{bmatrix}
+\]
+
+\begin{tcolorbox}[colback=teal!4, colframe=teal!65!black, title=Definition 1, fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+A \textbf{matrix} is a rectangular array of numbers. The numbers in the array are called the \textbf{entries} of the matrix.
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 1 | Examples of Matrices}
+\[
+\begin{bmatrix}1&2\\3&0\\-1&4\end{bmatrix},\quad
+\begin{bmatrix}2&1&0&-3\end{bmatrix},\quad
+\begin{bmatrix}e&\pi&-\sqrt2\\0&\tfrac12&1\\0&0&0\end{bmatrix},\quad
+\begin{bmatrix}1\\3\end{bmatrix},\quad
+\begin{bmatrix}4\end{bmatrix}
+\]
+
+The \textbf{size} of a matrix is given as (rows) $\times$ (columns): the matrices above have sizes $3\times2$, $1\times4$, $3\times3$, $2\times1$, and $1\times1$. A matrix with one row (like the second above) is a \textbf{row vector} (or \textbf{row matrix}); one with one column (the fourth above) is a \textbf{column vector} (or \textbf{column matrix}); the fifth is both. We use capital letters for matrices and lowercase for numerical quantities (\textbf{scalars}, always real unless noted otherwise), e.g.\ $A=\begin{bmatrix}2&1&7\\3&4&2\end{bmatrix}$.
+
+The entry in row $i$, column $j$ of $A$ is denoted $a_{ij}$, so a general $m\times n$ matrix is
+\[
+A=\begin{bmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\a_{21}&a_{22}&\cdots&a_{2n}\\\vdots&\vdots& &\vdots\\a_{m1}&a_{m2}&\cdots&a_{mn}\end{bmatrix} \tag{1}
+\]
+written compactly as $A=[a_{ij}]_{m\times n}$ or $A=[a_{ij}]$. The entry in row $i$, column $j$ is also written $(A)_{ij}$, so $(A)_{ij}=a_{ij}$; e.g.\ for $A=\begin{bmatrix}2&-3\\7&0\end{bmatrix}$, $(A)_{11}=2,(A)_{12}=-3,(A)_{21}=7,(A)_{22}=0$.
+
+Row and column vectors are usually denoted by boldface lowercase letters, needing only a single subscript:
+\[
+\mathbf{a}=[a_1\ \ a_2\ \ \cdots\ \ a_n]\qquad\text{and}\qquad \mathbf{b}=\begin{bmatrix}b_1\\b_2\\\vdots\\b_m\end{bmatrix}
+\]
+
+A matrix $A$ with $n$ rows and $n$ columns is a \textbf{square matrix of order $n$}; the entries $a_{11},a_{22},\dots,a_{nn}$ (boxed below) form its \textbf{main diagonal}:
+\[
+\begin{bmatrix}\boxed{a_{11}}&a_{12}&\cdots&a_{1n}\\a_{21}&\boxed{a_{22}}&\cdots&a_{2n}\\\vdots&\vdots& \ddots&\vdots\\a_{n1}&a_{n2}&\cdots&\boxed{a_{nn}}\end{bmatrix} \tag{2}
+\]
+
+\redheading{Operations on Matrices}
+
+So far matrices have only abbreviated linear systems. We now develop an ``arithmetic of matrices'' -- addition, subtraction, and multiplication.
+
+\begin{tcolorbox}[colback=teal!4, colframe=teal!65!black, title=Definition 2, fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+Two matrices are \textbf{equal} if they have the same size and their corresponding entries are equal.
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 2 | Equality of Matrices}
+For $A=\begin{bmatrix}2&1\\3&x\end{bmatrix}$, $B=\begin{bmatrix}2&1\\3&5\end{bmatrix}$, $C=\begin{bmatrix}2&1&0\\3&4&0\end{bmatrix}$: $A=B$ only if $x=5$; $A=C$ is impossible for any $x$, since they differ in size.
+
+\begin{tcolorbox}[colback=teal!4, colframe=teal!65!black, title=Definition 3, fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+If $A$ and $B$ have the same size, the \textbf{sum} $A+B$ adds corresponding entries, and the \textbf{difference} $A-B$ subtracts them. Matrices of different sizes cannot be added or subtracted.
+\end{tcolorbox}
+In symbols, for $A=[a_{ij}]$, $B=[b_{ij}]$ of the same size:
+\[
+(A+B)_{ij}=a_{ij}+b_{ij}\qquad\text{and}\qquad (A-B)_{ij}=a_{ij}-b_{ij}
+\]
+
+\subsection*{EXAMPLE 3 | Addition and Subtraction}
+For $A=\begin{bmatrix}2&1&0&3\\-1&0&2&4\\4&-2&7&0\end{bmatrix}$, $B=\begin{bmatrix}-4&3&5&1\\2&2&0&-1\\3&2&-4&5\end{bmatrix}$, $C=\begin{bmatrix}1&1\\2&2\end{bmatrix}$:
+\[
+A+B=\begin{bmatrix}-2&4&5&4\\1&2&2&3\\7&0&3&5\end{bmatrix},\qquad
+A-B=\begin{bmatrix}6&-2&-5&2\\-3&-2&2&5\\1&-4&11&-5\end{bmatrix}
+\]
+$A+C,B+C,A-C,B-C$ are all undefined (size mismatch).
+
+\begin{tcolorbox}[colback=teal!4, colframe=teal!65!black, title=Definition 4, fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+For any matrix $A$ and scalar $c$, the \textbf{product} $cA$ multiplies every entry of $A$ by $c$; $cA$ is a \textbf{scalar multiple} of $A$.
+\end{tcolorbox}
+In symbols, $(cA)_{ij}=c(A)_{ij}=ca_{ij}$.
+
+\subsection*{EXAMPLE 4 | Scalar Multiples}
+For $A=\begin{bmatrix}2&3&4\\1&3&1\end{bmatrix}$, $B=\begin{bmatrix}0&2&7\\-1&3&-5\end{bmatrix}$, $C=\begin{bmatrix}9&-6&3\\3&0&12\end{bmatrix}$:
+\[
+2A=\begin{bmatrix}4&6&8\\2&6&2\end{bmatrix},\qquad
+(-1)B=\begin{bmatrix}0&-2&-7\\1&-3&5\end{bmatrix},\qquad
+\tfrac13C=\begin{bmatrix}3&-2&1\\1&0&4\end{bmatrix}
+\]
+$(-1)B$ is usually written $-B$.
+
+Multiplying matrices entry by entry (as with addition) turns out not to be useful. Instead:
+
+\begin{tcolorbox}[colback=teal!4, colframe=teal!65!black, title=Definition 5, fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+If $A$ is $m\times r$ and $B$ is $r\times n$, the \textbf{product} $AB$ is the $m\times n$ matrix whose $(i,j)$ entry is found by multiplying corresponding entries of row $i$ of $A$ and column $j$ of $B$, then adding the products.
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 5 | Multiplying Matrices}
+For $A=\begin{bmatrix}1&2&4\\2&6&0\end{bmatrix}$ ($2\times3$) and $B=\begin{bmatrix}4&1&4&3\\0&-1&3&1\\2&7&5&2\end{bmatrix}$ ($3\times4$), $AB$ is $2\times4$. E.g., row 2 of $A$ with column 3 of $B$: $(2)(4)+(6)(3)+(0)(5)=26$; row 1 of $A$ with column 4 of $B$: $(1)(3)+(2)(1)+(4)(2)=13$. Computing all entries:
+\[
+AB=\begin{bmatrix}12&27&30&13\\8&-4&26&12\end{bmatrix}
+\]
+
+Matrix multiplication requires the number of columns of the first factor to equal the number of rows of the second; otherwise the product is undefined. Writing the sizes side by side, the inner numbers must match, and the outer numbers give the product's size:
+\[
+\underset{m\times r}{A}\quad\underset{r\times n}{B}\ \to\ \underset{m\times n}{AB} \tag{3}
+\]
+
+\subsection*{EXAMPLE 6 | Determining Whether a Product Is Defined}
+For $A$ ($3\times4$), $B$ ($4\times7$), $C$ ($7\times3$): $AB$ is defined ($3\times7$); $BC$ is defined ($4\times3$); $CA$ is defined ($7\times4$); $AC$, $CB$, $BA$ are all undefined.
+
+In general, for $A=[a_{ij}]$ ($m\times r$) and $B=[b_{ij}]$ ($r\times n$), the row-column rule gives
+\[
+(AB)_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+a_{i3}b_{3j}+\cdots+a_{ir}b_{rj} \tag{5}
+\]
+
+\redheading{Partitioned Matrices}
+
+A matrix can be \textbf{partitioned} into smaller \textbf{submatrices} by inserting rules between selected rows/columns. For a general $3\times4$ matrix $A$, three useful partitions are into four submatrices, into its three row vectors $\mathbf{r}_1,\mathbf{r}_2,\mathbf{r}_3$, or into its four column vectors $\mathbf{c}_1,\mathbf{c}_2,\mathbf{c}_3,\mathbf{c}_4$.
+
+\redheading{Matrix Multiplication by Columns and by Rows}
+
+Partitioning lets us extract a single row or column of $AB$ without computing the whole product:
+\[
+AB=A[\mathbf{b}_1\ \ \mathbf{b}_2\ \ \cdots\ \ \mathbf{b}_n]=[A\mathbf{b}_1\ \ A\mathbf{b}_2\ \ \cdots\ \ A\mathbf{b}_n] \tag{6}
+\quad(AB\text{ column by column})
+\]
+\[
+AB=\begin{bmatrix}\mathbf{a}_1\\\mathbf{a}_2\\\vdots\\\mathbf{a}_m\end{bmatrix}B=\begin{bmatrix}\mathbf{a}_1B\\\mathbf{a}_2B\\\vdots\\\mathbf{a}_mB\end{bmatrix} \tag{7}
+\quad(AB\text{ row by row})
+\]
+In words:
+\[
+j\text{th column of }AB=A[j\text{th column of }B] \tag{8}
+\]
+\[
+i\text{th row of }AB=[i\text{th row of }A]B \tag{9}
+\]
+
+\subsection*{EXAMPLE 7 | Example 5 Revisited}
+For $A,B$ as in Example 5, the second column of $AB$ is
+\[
+\begin{bmatrix}1&2&4\\2&6&0\end{bmatrix}\begin{bmatrix}1\\-1\\7\end{bmatrix}=\begin{bmatrix}27\\-4\end{bmatrix}
+\]
+and the first row of $AB$ is $\begin{bmatrix}1&2&4\end{bmatrix}\begin{bmatrix}4&1&4&3\\0&-1&3&1\\2&7&5&2\end{bmatrix}=\begin{bmatrix}12&27&30&13\end{bmatrix}$.
+
+\redheading{Matrix Products as Linear Combinations}
+
+\begin{tcolorbox}[colback=teal!4, colframe=teal!65!black, title=Definition 6, fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+If $A_1,\dots,A_r$ are matrices of the same size and $c_1,\dots,c_r$ are scalars, then $c_1A_1+c_2A_2+\cdots+c_rA_r$ is called a \textbf{linear combination} of $A_1,\dots,A_r$ with \textbf{coefficients} $c_1,\dots,c_r$.
+\end{tcolorbox}
+
+For an $m\times n$ matrix $A$ and $n\times1$ vector $\mathbf{x}=[x_1\ \cdots\ x_n]^T$,
+\[
+A\mathbf{x}=\begin{bmatrix}a_{11}x_1+\cdots+a_{1n}x_n\\ \vdots \\ a_{m1}x_1+\cdots+a_{mn}x_n\end{bmatrix}
+=x_1\begin{bmatrix}a_{11}\\\vdots\\a_{m1}\end{bmatrix}+x_2\begin{bmatrix}a_{12}\\\vdots\\a_{m2}\end{bmatrix}+\cdots+x_n\begin{bmatrix}a_{1n}\\\vdots\\a_{mn}\end{bmatrix} \tag{10}
+\]
+which proves:
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.3.1, boxrule=0.5mm, arc=3mm]
+If $A$ is $m\times n$ and $\mathbf{x}$ is $n\times1$, then $A\mathbf{x}$ is a linear combination of the column vectors of $A$ with coefficients from $\mathbf{x}$.
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 8 | Matrix Products as Linear Combinations}
+\[
+\begin{bmatrix}-1&3&2\\1&2&-3\\2&1&-2\end{bmatrix}\begin{bmatrix}2\\-1\\3\end{bmatrix}=\begin{bmatrix}1\\-9\\-3\end{bmatrix}
+\quad\Longleftrightarrow\quad
+2\begin{bmatrix}-1\\1\\2\end{bmatrix}-1\begin{bmatrix}3\\2\\1\end{bmatrix}+3\begin{bmatrix}2\\-3\\-2\end{bmatrix}=\begin{bmatrix}1\\-9\\-3\end{bmatrix}
+\]
+
+\subsection*{EXAMPLE 9 | Columns of a Product $AB$ as Linear Combinations}
+From Example 5, $AB=\begin{bmatrix}1&2&4\\2&6&0\end{bmatrix}\begin{bmatrix}4&1&4&3\\0&-1&3&1\\2&7&5&2\end{bmatrix}=\begin{bmatrix}12&27&30&13\\8&-4&26&12\end{bmatrix}$. By (6) and Theorem 1.3.1, the $j$th column of $AB$ is the linear combination of $A$'s columns with coefficients from column $j$ of $B$:
+\[
+\begin{bmatrix}12\\8\end{bmatrix}=4\begin{bmatrix}1\\2\end{bmatrix}+0\begin{bmatrix}2\\6\end{bmatrix}+2\begin{bmatrix}4\\0\end{bmatrix},\quad
+\begin{bmatrix}27\\-4\end{bmatrix}=\begin{bmatrix}1\\2\end{bmatrix}-\begin{bmatrix}2\\6\end{bmatrix}+7\begin{bmatrix}4\\0\end{bmatrix}
+\]
+\[
+\begin{bmatrix}30\\26\end{bmatrix}=4\begin{bmatrix}1\\2\end{bmatrix}+3\begin{bmatrix}2\\6\end{bmatrix}+5\begin{bmatrix}4\\0\end{bmatrix},\quad
+\begin{bmatrix}13\\12\end{bmatrix}=3\begin{bmatrix}1\\2\end{bmatrix}+\begin{bmatrix}2\\6\end{bmatrix}+2\begin{bmatrix}4\\0\end{bmatrix}
+\]
+
+\redheading{Column-Row Expansion}
+
+If $m\times r$ matrix $A$ is partitioned into columns $\mathbf{c}_1,\dots,\mathbf{c}_r$ and $r\times n$ matrix $B$ into rows $\mathbf{r}_1,\dots,\mathbf{r}_r$, then each term $\mathbf{c}_i\mathbf{r}_i$ is $m\times n$, and
+\[
+AB=\mathbf{c}_1\mathbf{r}_1+\mathbf{c}_2\mathbf{r}_2+\cdots+\mathbf{c}_r\mathbf{r}_r \tag{11}
+\]
+called the \textbf{column-row expansion} of $AB$.
+
+\subsection*{EXAMPLE 10 | Column-Row Expansion}
+For $AB=\begin{bmatrix}1&3\\2&-1\end{bmatrix}\begin{bmatrix}2&0&4\\-3&5&1\end{bmatrix}$: $\mathbf{c}_1=\begin{bmatrix}1\\2\end{bmatrix},\mathbf{c}_2=\begin{bmatrix}3\\-1\end{bmatrix}$; $\mathbf{r}_1=[2\ 0\ 4],\mathbf{r}_2=[-3\ 5\ 1]$. So
+\[
+AB=\begin{bmatrix}1\\2\end{bmatrix}[2\ \ 0\ \ 4]+\begin{bmatrix}3\\-1\end{bmatrix}[-3\ \ 5\ \ 1]
+=\begin{bmatrix}2&0&4\\4&0&8\end{bmatrix}+\begin{bmatrix}-9&15&3\\3&-5&-1\end{bmatrix}
+=\begin{bmatrix}-7&15&7\\7&-5&7\end{bmatrix}
+\]
+
+\redheading{Summarizing Matrix Multiplication}
+
+Five equivalent ways to compute a matrix product:
+\begin{enumerate}
+    \item Entry by entry (Definition 5)
+    \item Row-column method (Formula (5))
+    \item Column by column (Formula (6))
+    \item Row by row (Formula (7))
+    \item Column-row expansion (Formula (11))
+\end{enumerate}
+
+\redheading{Matrix Form of a Linear System}
+
+For $m$ equations in $n$ unknowns, equal matrices means the system is equivalent to a single matrix equation:
+\[
+\begin{bmatrix}a_{11}x_1+\cdots+a_{1n}x_n\\\vdots\\a_{m1}x_1+\cdots+a_{mn}x_n\end{bmatrix}=\begin{bmatrix}b_1\\\vdots\\b_m\end{bmatrix}
+\quad\Longleftrightarrow\quad
+\begin{bmatrix}a_{11}&\cdots&a_{1n}\\\vdots& &\vdots\\a_{m1}&\cdots&a_{mn}\end{bmatrix}\begin{bmatrix}x_1\\\vdots\\x_n\end{bmatrix}=\begin{bmatrix}b_1\\\vdots\\b_m\end{bmatrix}
+\]
+Naming these matrices $A,\mathbf{x},\mathbf{b}$, the system becomes the single equation
+\[
+A\mathbf{x}=\mathbf{b}
+\]
+$A$ is the \textbf{coefficient matrix}; adjoining $\mathbf{b}$ as a last column gives the augmented matrix $[A\mid\mathbf{b}]$.
+
+\redheading{Transpose of a Matrix}
+
+We close with two operations that have no analog in ordinary arithmetic.
+
+\begin{tcolorbox}[colback=teal!4, colframe=teal!65!black, title=Definition 7, fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+For any $m\times n$ matrix $A$, the \textbf{transpose} $A^T$ is the $n\times m$ matrix obtained by interchanging the rows and columns of $A$: the first column of $A^T$ is the first row of $A$, and so on.
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 11 | Some Transposes}
+\[
+A=\begin{bmatrix}a_{11}&a_{12}&a_{13}&a_{14}\\a_{21}&a_{22}&a_{23}&a_{24}\\a_{31}&a_{32}&a_{33}&a_{34}\end{bmatrix}\!,\
+B=\begin{bmatrix}2&3\\1&4\\5&6\end{bmatrix}\!,\ C=[1\ 3\ 5],\ D=[4]
+\]
+\[
+A^T=\begin{bmatrix}a_{11}&a_{21}&a_{31}\\a_{12}&a_{22}&a_{32}\\a_{13}&a_{23}&a_{33}\\a_{14}&a_{24}&a_{34}\end{bmatrix}\!,\
+B^T=\begin{bmatrix}2&1&5\\3&4&6\end{bmatrix}\!,\ C^T=\begin{bmatrix}1\\3\\5\end{bmatrix}\!,\ D^T=[4]
+\]
+
+The entry in row $i$, column $j$ of $A^T$ equals the entry in row $j$, column $i$ of $A$:
+\[
+(A^T)_{ij}=(A)_{ji} \tag{14}
+\]
+For a square matrix, $A^T$ can also be obtained by ``reflecting'' $A$ about its main diagonal -- interchanging entries symmetric about that diagonal:
+\[
+A=\begin{bmatrix}1&-2&4\\3&7&0\\-5&8&6\end{bmatrix}\ \longrightarrow\ A^T=\begin{bmatrix}1&3&-5\\-2&7&8\\4&0&6\end{bmatrix} \tag{15}
+\]
+
+\redheading{Trace of a Matrix}
+
+\begin{tcolorbox}[colback=teal!4, colframe=teal!65!black, title=Definition 8, fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+For a square matrix $A$, the \textbf{trace} of $A$, written $\operatorname{tr}(A)$, is the sum of the entries on its main diagonal. The trace is undefined if $A$ is not square.
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 12 | Trace}
+For $A=\begin{bmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{bmatrix}$ and $B=\begin{bmatrix}-1&2&7&0\\3&5&-8&4\\1&2&7&-3\\4&-2&1&0\end{bmatrix}$:
+\[
+\operatorname{tr}(A)=a_{11}+a_{22}+a_{33},\qquad \operatorname{tr}(B)=-1+5+7+0=11
+\]
+
+\section*{Exercise Set 1.3}
+\begin{enumerate}
+    \item[1.] Suppose $A,B,C,D,E$ have sizes $(4\times5),(4\times5),(5\times2),(4\times2),(5\times4)$. Determine whether each expression is defined, and if so, give the size of the result.\\
+    (a) $BA$\quad (b) $AB^T$\quad (c) $AC+D$\quad (d) $E(AC)$\quad (e) $A-3E^T$\quad (f) $E(5B+A)$
+
+    \item[3.] Using $A=\begin{bmatrix}3&0\\-1&2\\1&1\end{bmatrix}$, $B=\begin{bmatrix}4&-1\\0&2\end{bmatrix}$, $C=\begin{bmatrix}1&4&2\\3&1&5\end{bmatrix}$, $D=\begin{bmatrix}1&5&2\\-1&0&1\\3&2&4\end{bmatrix}$, $E=\begin{bmatrix}6&1&3\\-1&1&2\\4&1&3\end{bmatrix}$, compute if defined:\\
+    (a) $D+E$\ (b) $D-E$\ (c) $5A$\ (d) $-7C$\ (e) $2B-C$\ (f) $4E-2D$\\
+    (g) $-3(D+2E)$\ (h) $A-A$\ (i) $\operatorname{tr}(D)$\ (j) $\operatorname{tr}(D-3E)$\ (k) $4\operatorname{tr}(7B)$\ (l) $\operatorname{tr}(A)$
+
+    \item[4.] Using the matrices from Exercise 3, compute if defined:\\
+    (a) $2A^T+C$\ (b) $D^T-E^T$\ (c) $(D-E)^T$\ (d) $B^T+5C^T$\ (e) $\tfrac12C^T-\tfrac14A$\ (f) $B-B^T$\\
+    (g) $2E^T-3D^T$\ (h) $(2E^T-3D^T)^T$\ (i) $(CD)E$\ (j) $C(BA)$\ (k) $\operatorname{tr}(DE^T)$\ (l) $\operatorname{tr}(BC)$
+
+    \item[7.] Using $A=\begin{bmatrix}3&-2&7\\6&5&4\\0&4&9\end{bmatrix}$, $B=\begin{bmatrix}6&-2&4\\0&1&3\\7&7&5\end{bmatrix}$, use the row or column method to find:\\
+    (a) the first row of $AB$\quad (b) the third row of $AB$\quad (c) the second column of $AB$\\
+    (d) the first column of $BA$\quad (e) the third row of $AA$\quad (f) the third column of $AA$
+
+    \item[9.] Using $A,B$ from Exercise 7:\\
+    (a) Express each column of $AA$ as a linear combination of the columns of $A$.\\
+    (b) Express each column of $BB$ as a linear combination of the columns of $B$.
+
+    \item[11.] Find matrices $A,\mathbf{x},\mathbf{b}$ expressing each system as $A\mathbf{x}=\mathbf{b}$, and write out the equation.\\
+    (a) $2x_1-3x_2+5x_3=7,\ 9x_1-x_2+x_3=-1,\ x_1+5x_2+4x_3=0$\\
+    (b) $4x_1-3x_3+x_4=1,\ 5x_1+x_2-8x_4=3,\ 2x_1-5x_2+9x_3-x_4=0,\ 3x_2-x_3+7x_4=2$
+
+    \item[13.] Express each matrix equation as a system of linear equations.\\
+    (a) $\begin{bmatrix}5&6&-7\\-1&-2&3\\0&4&-1\end{bmatrix}\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}2\\0\\3\end{bmatrix}$\qquad
+    (b) $\begin{bmatrix}1&1&1\\2&3&0\\5&-3&-6\end{bmatrix}\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}2\\2\\-9\end{bmatrix}$
+
+    \item[15.] Find all values of $k$, if any, satisfying
+    \[
+    \begin{bmatrix}k&1&1\end{bmatrix}\begin{bmatrix}1&1&0\\1&0&2\\0&2&-3\end{bmatrix}\begin{bmatrix}k\\1\\1\end{bmatrix}=0
+    \]
+
+    \item[17.] Use the column-row expansion of $AB$ to express the product as a sum of matrix products, for $A=\begin{bmatrix}4&-3\\2&-1\end{bmatrix}$, $B=\begin{bmatrix}0&1&2\\-2&3&1\end{bmatrix}$.
+
+    \item[21.] For the linear system in Example 5 of Section 1.2, express the general solution obtained there as a linear combination of column vectors containing only numerical entries. [\emph{Suggestion:} write the general solution as one column vector, split it into column vectors each containing at most one parameter, then factor out the parameters.]
+
+    \item[23.] Solve for $a,b,c,d$:
+    \[
+    \begin{bmatrix}a&3\\-1&a+b\end{bmatrix}=\begin{bmatrix}4&d-2c\\d+2c&-2\end{bmatrix}
+    \]
+
+    \item[25.] (a) Show that if $A$ has a row of zeros and $B$ is any matrix for which $AB$ is defined, then $AB$ also has a row of zeros.\\
+    (b) State and justify a similar result for a column of zeros.
+
+    \item[27.] How many $3\times3$ matrices $A$ satisfy $A\begin{bmatrix}x\\y\\z\end{bmatrix}=\begin{bmatrix}x+y\\x-y\\0\end{bmatrix}$ for \emph{all} $x,y,z$?
+
+    \item[29.] A matrix $B$ is a \textbf{square root} of $A$ if $BB=A$.\\
+    (a) Find two square roots of $A=\begin{bmatrix}2&2\\2&2\end{bmatrix}$.\\
+    (b) How many different square roots can you find of $A=\begin{bmatrix}5&0\\0&9\end{bmatrix}$?\\
+    (c) Do you think every $2\times2$ matrix has at least one square root? Explain.
+
+    \item[30.] Let $0$ denote the $2\times2$ zero matrix.\\
+    (a) Is there a $2\times2$ matrix $A\ne0$ with $AA=0$? Justify your answer.\\
+    (b) Is there a $2\times2$ matrix $A\ne0$ with $AA=A$? Justify your answer.
+
+    \item[32.] Find a $4\times4$ matrix $A=[a_{ij}]$ satisfying:\\
+    (a) $a_{ij}=i+j$\qquad (b) $a_{ij}=i^{j-1}$\qquad
+    (c) $a_{ij}=\begin{cases}1 & |i-j|>1\\ -1 & |i-j|\le1\end{cases}$
+
+    \item[33.] Type I, II, III items cost \$1, \$2, \$3 each; the table gives the numbers purchased each month:\\
+    \begin{center}
+    \begin{tabular}{|l|c|c|c|}
+    \hline
+     & Type I & Type II & Type III\\
+    \hline
+    Jan. & 3 & 4 & 3\\
+    \hline
+    Feb. & 5 & 6 & 0\\
+    \hline
+    Mar. & 2 & 9 & 4\\
+    \hline
+    Apr. & 1 & 1 & 7\\
+    \hline
+    \end{tabular}
+    \end{center}
+    What does the following product represent?
+    \[
+    \begin{bmatrix}3&4&3\\5&6&0\\2&9&4\\1&1&7\end{bmatrix}\begin{bmatrix}1\\2\\3\end{bmatrix}
+    \]
+
+    \item[35.] \textbf{(Working with Proofs)} Prove: if $A,B$ are $n\times n$, then $\operatorname{tr}(A+B)=\operatorname{tr}(A)+\operatorname{tr}(B)$.
+\end{enumerate}
+
+\end{document}
