@@ -1,0 +1,199 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper,left=3cm, right=3cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\title{1.6 More on Linear Systems and Invertible Matrices}
+\date{}
+\author{}
+\setstretch{1.3}
+
+\titleformat{name=\section, numberless}
+  {\normalfont\large\bfseries\color{blue}}
+  {}
+  {0pt}
+  {}
+\geometry{a4paper, margin=1in}
+
+% Red subheading style (matches the textbook's red section headers)
+\newcommand{\redheading}[1]{{\vspace{2mm}\noindent\Large\bfseries\color{red!55!black} #1\par}\vspace{2mm}}
+
+\newtheoremstyle{mystyle}
+  {}{}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{mystyle}
+
+\begin{document}
+\maketitle
+
+{\itshape\color{blue!45!black}
+This section shows how the inverse of a matrix can be used to solve a linear system, and develops further results about invertible matrices.\par}
+
+\redheading{Number of Solutions of a Linear System}
+
+Section 1.1 asserted (from Figures 1.1.1, 1.1.2) that every linear system has zero, one, or infinitely many solutions. We can now prove it.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.6.1, boxrule=0.5mm, arc=3mm]
+A system of linear equations has zero, one, or infinitely many solutions. There are no other possibilities.
+\end{tcolorbox}
+\textbf{Proof} For $A\mathbf{x}=\mathbf{b}$, exactly one of ``no solutions,'' ``exactly one,'' or ``more than one'' holds; it suffices to show the last case gives infinitely many. Suppose $\mathbf{x}_1,\mathbf{x}_2$ are distinct solutions and let $\mathbf{x}_0=\mathbf{x}_1-\mathbf{x}_2\ne\mathbf{0}$. Then $A\mathbf{x}_0=A\mathbf{x}_1-A\mathbf{x}_2=\mathbf{b}-\mathbf{b}=\mathbf{0}$, so for any scalar $k$,
+\[
+A(\mathbf{x}_1+k\mathbf{x}_0)=A\mathbf{x}_1+k(A\mathbf{x}_0)=\mathbf{b}+k\mathbf{0}=\mathbf{b}
+\]
+Since $\mathbf{x}_0\ne\mathbf{0}$ and $k$ ranges over infinitely many scalars, $A\mathbf{x}=\mathbf{b}$ has infinitely many solutions. $\blacksquare$
+
+\redheading{Solving Linear Systems by Matrix Inversion}
+
+Beyond Gauss--Jordan and Gaussian elimination, invertibility gives an explicit \emph{formula} for the solution.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.6.2, boxrule=0.5mm, arc=3mm]
+If $A$ is an invertible $n\times n$ matrix, then for every $n\times1$ matrix $\mathbf{b}$, the system $A\mathbf{x}=\mathbf{b}$ has exactly one solution: $\mathbf{x}=A^{-1}\mathbf{b}$.
+\end{tcolorbox}
+\textbf{Proof} $A(A^{-1}\mathbf{b})=\mathbf{b}$ shows $\mathbf{x}=A^{-1}\mathbf{b}$ is a solution. If $\mathbf{x}_0$ is any solution, then $A\mathbf{x}_0=\mathbf{b}$, and multiplying by $A^{-1}$ gives $\mathbf{x}_0=A^{-1}\mathbf{b}$ -- so it's the only one. $\blacksquare$
+
+\subsection*{EXAMPLE 1 | Solution of a Linear System Using $A^{-1}$}
+Solve $x_1+2x_2+3x_3=5,\ 2x_1+5x_2+3x_3=3,\ x_1+8x_3=17$.
+
+\textbf{SOLUTION:} In matrix form $A\mathbf{x}=\mathbf{b}$ with $A=\begin{bmatrix}1&2&3\\2&5&3\\1&0&8\end{bmatrix}$. From Example 4 of Section 1.5, $A^{-1}=\begin{bmatrix}-40&16&9\\13&-5&-3\\5&-2&-1\end{bmatrix}$, so
+\[
+\mathbf{x}=A^{-1}\mathbf{b}=\begin{bmatrix}-40&16&9\\13&-5&-3\\5&-2&-1\end{bmatrix}\begin{bmatrix}5\\3\\17\end{bmatrix}=\begin{bmatrix}1\\-1\\2\end{bmatrix}
+\]
+i.e., $x_1=1,x_2=-1,x_3=2$. (This method only applies when the system is square and the coefficient matrix is invertible.)
+
+\redheading{Linear Systems with a Common Coefficient Matrix}
+
+For a sequence $A\mathbf{x}=\mathbf{b}_1,\dots,A\mathbf{x}=\mathbf{b}_k$ sharing an invertible $A$, the solutions $\mathbf{x}_i=A^{-1}\mathbf{b}_i$ need one inversion and $k$ multiplications. More efficiently, form
+\[
+[A\mid\mathbf{b}_1\mid\mathbf{b}_2\mid\cdots\mid\mathbf{b}_k] \tag{1}
+\]
+and reduce to reduced row echelon form by Gauss--Jordan elimination, solving all $k$ systems at once -- and this works even when $A$ is not invertible.
+
+\subsection*{EXAMPLE 2 | Solving Two Linear Systems at Once}
+Solve (a) $x_1+2x_2+3x_3=4,\ 2x_1+5x_2+3x_3=5,\ x_1+8x_3=9$ and (b) $x_1+2x_2+3x_3=1,\ 2x_1+5x_2+3x_3=6,\ x_1+8x_3=-6$.
+
+\textbf{SOLUTION:} Both share the coefficient matrix of Example 1. Augmenting with both constant columns:
+\[
+\left[\begin{array}{ccc|cc}1&2&3&4&1\\2&5&3&5&6\\1&0&8&9&-6\end{array}\right]
+\ \xrightarrow{\text{reduce to RREF}}\
+\left[\begin{array}{ccc|cc}1&0&0&1&2\\0&1&0&0&1\\0&0&1&1&-1\end{array}\right]
+\]
+The last two columns give the solutions: (a) $x_1=1,x_2=0,x_3=1$; (b) $x_1=2,x_2=1,x_3=-1$.
+
+\redheading{Properties of Invertible Matrices}
+
+To show $A$ is invertible has meant finding $B$ with $AB=BA=I$. In fact, either equation alone forces the other.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.6.3, boxrule=0.5mm, arc=3mm]
+Let $A$ be square.\\
+(a) If $BA=I$ for square $B$, then $B=A^{-1}$.\\
+(b) If $AB=I$ for square $B$, then $B=A^{-1}$.
+\end{tcolorbox}
+\textbf{Proof (a)} It suffices to show $A$ is invertible; then multiplying $BA=I$ on the right by $A^{-1}$ gives $B=A^{-1}$. By Theorem 1.5.3, it suffices to show $A\mathbf{x}=\mathbf{0}$ has only the trivial solution. If $A\mathbf{x}_0=\mathbf{0}$, multiplying on the left by $B$ gives $BA\mathbf{x}_0=B\mathbf{0}$, i.e., $\mathbf{x}_0=\mathbf{0}$. $\blacksquare$
+
+\redheading{Equivalence Theorem}
+
+We can now add two more statements to Theorem 1.5.3.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.6.4 -- Equivalent Statements, boxrule=0.5mm, arc=3mm]
+For an $n\times n$ matrix $A$, the following are equivalent:\\
+(a) $A$ is invertible.\quad (b) $A\mathbf{x}=\mathbf{0}$ has only the trivial solution.\\
+(c) The reduced row echelon form of $A$ is $I_n$.\quad (d) $A$ is a product of elementary matrices.\\
+(e) $A\mathbf{x}=\mathbf{b}$ is consistent for every $n\times1$ matrix $\mathbf{b}$.\\
+(f) $A\mathbf{x}=\mathbf{b}$ has exactly one solution for every $n\times1$ matrix $\mathbf{b}$.
+\end{tcolorbox}
+\textbf{Proof} Since (a)--(d) are already equivalent (Theorem 1.5.3), it suffices to show $(a)\Rightarrow(f)\Rightarrow(e)\Rightarrow(a)$.
+
+$(a)\Rightarrow(f)$: This is Theorem 1.6.2.
+
+$(f)\Rightarrow(e)$: Immediate, since having exactly one solution implies consistency.
+
+$(e)\Rightarrow(a)$: Apply consistency to each of the systems $A\mathbf{x}=\mathbf{e}_1,\dots,A\mathbf{x}=\mathbf{e}_n$ (where $\mathbf{e}_i$ is the $i$th standard unit column). Taking solutions $\mathbf{x}_1,\dots,\mathbf{x}_n$ as columns of a matrix $C=[\mathbf{x}_1\mid\cdots\mid\mathbf{x}_n]$, then $AC=[A\mathbf{x}_1\mid\cdots\mid A\mathbf{x}_n]=[\mathbf{e}_1\mid\cdots\mid\mathbf{e}_n]=I$. By Theorem 1.6.3(b), $C=A^{-1}$, so $A$ is invertible. $\blacksquare$
+
+We know invertible factors give an invertible product; the converse also holds.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.6.5, boxrule=0.5mm, arc=3mm]
+Let $A,B$ be square of the same size. If $AB$ is invertible, then $A$ and $B$ are both invertible.
+\end{tcolorbox}
+\textbf{Proof} First, $B$ is invertible: if $B\mathbf{x}_0=\mathbf{0}$ for some $\mathbf{x}_0$, then $(AB)\mathbf{x}_0=A(B\mathbf{x}_0)=A\mathbf{0}=\mathbf{0}$; since $AB$ is invertible, Theorem 1.6.4 forces $\mathbf{x}_0=\mathbf{0}$, so $B\mathbf{x}=\mathbf{0}$ has only the trivial solution and $B$ is invertible. Then $A=A(BB^{-1})=(AB)B^{-1}$ is a product of invertible matrices, hence invertible. $\blacksquare$
+
+A fundamental question recurs throughout the text:
+
+\begin{tcolorbox}[colback=blue!5, colframe=blue!60!black, title=A Fundamental Problem, boxrule=0.5mm, arc=3mm]
+For a fixed $m\times n$ matrix $A$, find all $m\times1$ matrices $\mathbf{b}$ for which $A\mathbf{x}=\mathbf{b}$ is consistent.
+\end{tcolorbox}
+If $A$ is invertible, Theorem 1.6.2 fully answers this: every $\mathbf{b}$ works. Otherwise (non-square, or square but singular), $\mathbf{b}$ must usually satisfy some condition, found as in the next examples.
+
+\subsection*{EXAMPLE 3 | Determining Consistency by Elimination}
+What must $b_1,b_2,b_3$ satisfy for $x_1+x_2+2x_3=b_1,\ x_1+x_3=b_2,\ 2x_1+x_2+3x_3=b_3$ to be consistent?
+
+\textbf{SOLUTION:} Row-reducing the augmented matrix $\begin{bmatrix}1&1&2&b_1\\1&0&1&b_2\\2&1&3&b_3\end{bmatrix}$ (add $-1\times$row 1 to row 2 and $-2\times$row 1 to row 3; multiply row 2 by $-1$; add row 2 to row 3) yields
+\[
+\begin{bmatrix}1&1&2&b_1\\0&1&1&b_1-b_2\\0&0&0&b_3-b_2-b_1\end{bmatrix}
+\]
+so the system is consistent iff $b_3-b_2-b_1=0$, i.e., $b_3=b_1+b_2$ -- that is, iff $\mathbf{b}=\begin{bmatrix}b_1\\b_2\\b_1+b_2\end{bmatrix}$ for arbitrary $b_1,b_2$.
+
+\subsection*{EXAMPLE 4 | Determining Consistency by Elimination}
+What must $b_1,b_2,b_3$ satisfy for $x_1+2x_2+3x_3=b_1,\ 2x_1+5x_2+3x_3=b_2,\ x_1+8x_3=b_3$ to be consistent?
+
+\textbf{SOLUTION:} Reducing $\begin{bmatrix}1&2&3&b_1\\2&5&3&b_2\\1&0&8&b_3\end{bmatrix}$ to reduced row echelon form gives
+\[
+\begin{bmatrix}1&0&0&-40b_1+16b_2+9b_3\\0&1&0&13b_1-5b_2-3b_3\\0&0&1&5b_1-2b_2-b_3\end{bmatrix} \tag{2}
+\]
+Here $b_1,b_2,b_3$ are unrestricted -- the system is always consistent, with unique solution
+\[
+x_1=-40b_1+16b_2+9b_3,\quad x_2=13b_1-5b_2-3b_3,\quad x_3=5b_1-2b_2-b_3 \tag{3}
+\]
+for all $b_1,b_2,b_3$. (This coefficient matrix is precisely the invertible $A$ of Example 1 -- consistent with Theorem 1.6.4(e).)
+
+\section*{Exercise Set 1.6}
+\begin{enumerate}
+    \item[1.] Solve by inverting the coefficient matrix and using Theorem 1.6.2.\\
+    $x_1+x_2=2,\quad 5x_1+6x_2=9$
+
+    \item[3.] $x_1+3x_2+x_3=4,\quad 2x_1+2x_2+x_3=-1,\quad 2x_1+3x_2+x_3=3$
+
+    \item[6.] $-x-2y-3z=0,\quad w+x+4y+4z=7,\quad w+3x+7y+9z=4,\quad -w-2x-4y-6z=6$
+
+    \item[7.] Solve for $x_1,x_2$ in terms of $b_1,b_2$: $3x_1+5x_2=b_1,\quad x_1+2x_2=b_2$
+
+    \item[9.] Solve the linear systems together by reducing an appropriate augmented matrix to reduced row echelon form.\\
+    $x_1-5x_2=b_1,\quad 3x_1+2x_2=b_2$\\
+    (i) $b_1=1,b_2=4$\qquad (ii) $b_1=-2,b_2=5$
+
+    \item[13.] Determine conditions on the $b_i$'s, if any, for the system to be consistent.\\
+    $x_1+3x_2=b_1,\quad -2x_1+x_2=b_2$
+
+    \item[15.] $x_1-2x_2+5x_3=b_1,\quad 4x_1-5x_2+8x_3=b_2,\quad -3x_1+3x_2-3x_3=b_3$
+
+    \item[18.] For $A=\begin{bmatrix}2&1&2\\2&2&-2\\3&1&1\end{bmatrix}$, $\mathbf{x}=\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}$:\\
+    (a) Show that $A\mathbf{x}=\mathbf{x}$ can be rewritten as $(A-I)\mathbf{x}=\mathbf{0}$, and use this to solve $A\mathbf{x}=\mathbf{x}$.\\
+    (b) Solve $A\mathbf{x}=4\mathbf{x}$.
+
+    \item[19.] Solve the matrix equation for $X$.
+    \[
+    \begin{bmatrix}1&-1&1\\2&3&0\\0&2&-1\end{bmatrix}X=\begin{bmatrix}2&-1&5&7&8\\4&0&-3&0&1\\3&5&-7&2&1\end{bmatrix}
+    \]
+
+    \item[21.] \textbf{(Working with Proofs)} Let $A\mathbf{x}=\mathbf{0}$ be a homogeneous system of $n$ equations in $n$ unknowns with only the trivial solution. Prove that for any positive integer $k$, $A^k\mathbf{x}=\mathbf{0}$ also has only the trivial solution.
+
+    \item[23.] \textbf{(Working with Proofs)} Let $A\mathbf{x}=\mathbf{b}$ be any consistent system, and let $\mathbf{x}_1$ be a fixed solution. Prove that every solution can be written $\mathbf{x}=\mathbf{x}_1+\mathbf{x}_0$ where $\mathbf{x}_0$ solves $A\mathbf{x}=\mathbf{0}$, and that every matrix of this form is a solution.
+
+    \item[24.] \textbf{(Working with Proofs)} Use part (a) of Theorem 1.6.3 to prove part (b).
+\end{enumerate}
+
+\end{document}

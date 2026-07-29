@@ -1,0 +1,315 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper,left=3cm, right=3cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{longtable}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\title{1.4 Inverses; Algebraic Properties of Matrices}
+\date{}
+\author{}
+\setstretch{1.3}
+
+\titleformat{name=\section, numberless}
+  {\normalfont\large\bfseries\color{blue}}
+  {}
+  {0pt}
+  {}
+\geometry{a4paper, margin=1in}
+
+% Red subheading style (matches the textbook's red section headers)
+\newcommand{\redheading}[1]{{\vspace{2mm}\noindent\Large\bfseries\color{red!55!black} #1\par}\vspace{2mm}}
+
+\newtheoremstyle{mystyle}
+  {}{}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{mystyle}
+
+\begin{document}
+\maketitle
+
+{\itshape\color{blue!45!black}
+This section studies the algebraic properties of matrix operations: many rules of arithmetic for real numbers carry over to matrices, but some do not.\par}
+
+\redheading{Properties of Matrix Addition and Scalar Multiplication}
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.4.1 -- Properties of Matrix Arithmetic, boxrule=0.5mm, arc=3mm]
+Whenever the sizes permit the indicated operations:
+\begin{align*}
+(a)&\ A+B=B+A &&\text{[Commutative law for addition]}\\
+(b)&\ A+(B+C)=(A+B)+C &&\text{[Associative law for addition]}\\
+(c)&\ A(BC)=(AB)C &&\text{[Associative law for multiplication]}\\
+(d)&\ A(B+C)=AB+AC &&\text{[Left distributive law]}\\
+(e)&\ (B+C)A=BA+CA &&\text{[Right distributive law]}\\
+(f)&\ A(B-C)=AB-AC\\
+(g)&\ (B-C)A=BA-CA\\
+(h)&\ a(B+C)=aB+aC\\
+(i)&\ a(B-C)=aB-aC\\
+(j)&\ (a+b)C=aC+bC\\
+(k)&\ (a-b)C=aC-bC\\
+(l)&\ a(bC)=(ab)C\\
+(m)&\ a(BC)=(aB)C=B(aC)
+\end{align*}
+\end{tcolorbox}
+
+To prove any part, show both sides have the same size and matching entries. As a sample, we prove (d).
+
+\textbf{Proof (d)} Since $B,C$ must have the same size ($m\times n$, say) for $B+C$ to be defined, and $A$ must then have $m$ columns, $A$ has size $r\times m$, making $A(B+C)$ an $r\times n$ matrix -- as is $AB+AC$. For entries, with $A=[a_{ij}],B=[b_{ij}],C=[c_{ij}]$:
+\[
+(A(B+C))_{ij}=a_{i1}(b_{1j}+c_{1j})+\cdots+a_{im}(b_{mj}+c_{mj})=(AB)_{ij}+(AC)_{ij}=(AB+AC)_{ij}\ \blacksquare
+\]
+(There are three ways to prove two same-size matrices equal: matching entries, matching row vectors, or matching column vectors.)
+
+\textbf{Remark} Because addition and multiplication are associative, sums and products of three matrices can be written as $A+B+C$ and $ABC$ without parentheses -- any placement of parentheses gives the same result.
+
+\subsection*{EXAMPLE 1 | Associativity of Matrix Multiplication}
+For $A=\begin{bmatrix}1&2\\3&4\\0&1\end{bmatrix}$, $B=\begin{bmatrix}4&3\\2&1\end{bmatrix}$, $C=\begin{bmatrix}1&0\\2&3\end{bmatrix}$:
+\[
+AB=\begin{bmatrix}8&5\\20&13\\2&1\end{bmatrix},\quad BC=\begin{bmatrix}10&9\\4&3\end{bmatrix}
+\]
+\[
+(AB)C=\begin{bmatrix}18&15\\46&39\\4&3\end{bmatrix}=A(BC)
+\]
+confirming Theorem 1.4.1(c).
+
+\redheading{Properties of Matrix Multiplication}
+
+Unlike real numbers, $AB=BA$ can fail in three ways: (1) $AB$ defined but $BA$ not; (2) both defined but of different sizes; (3) both defined, same size, but unequal (next example).
+
+\subsection*{EXAMPLE 2 | Order Matters in Matrix Multiplication}
+For $A=\begin{bmatrix}-1&0\\2&3\end{bmatrix}$, $B=\begin{bmatrix}1&2\\3&0\end{bmatrix}$: $AB=\begin{bmatrix}-1&-2\\11&4\end{bmatrix}$ but $BA=\begin{bmatrix}3&6\\-3&0\end{bmatrix}$, so $AB\ne BA$.
+
+Hence \textbf{matrix multiplication is not commutative} in general; when $AB=BA$ happens to hold, $A$ and $B$ are said to \textbf{commute}.
+
+\redheading{Zero Matrices}
+
+A matrix of all zeros is a \textbf{zero matrix}, denoted $0$ (or $0_{m\times n}$ if the size matters). For same-size $A,0$: $A+0=0+A=A$, paralleling $a+0=a$.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.4.2 -- Properties of Zero Matrices, boxrule=0.5mm, arc=3mm]
+For a scalar $c$ and matrices of compatible size:
+\[
+(a)\ A+0=0+A=A\qquad (b)\ A-0=A\qquad (c)\ A-A=A+(-A)=0
+\]
+\[
+(d)\ 0A=0\qquad (e)\ \text{If } cA=0,\text{ then } c=0 \text{ or } A=0.
+\]
+\end{tcolorbox}
+
+Two more real-number laws fail for matrices: the \textbf{cancellation law} ($ab=ac,a\ne0\Rightarrow b=c$) and the zero-product law ($ab=0\Rightarrow a=0$ or $b=0$).
+
+\subsection*{EXAMPLE 3 | Failure of the Cancellation Law}
+For $A=\begin{bmatrix}0&1\\0&2\end{bmatrix}$, $B=\begin{bmatrix}1&1\\3&4\end{bmatrix}$, $C=\begin{bmatrix}2&5\\3&4\end{bmatrix}$: $AB=AC=\begin{bmatrix}3&4\\6&8\end{bmatrix}$, yet $A\ne0$ and $B\ne C$ -- so cancellation fails in general.
+
+\subsection*{EXAMPLE 4 | A Zero Product with Nonzero Factors}
+$A=\begin{bmatrix}0&1\\0&2\end{bmatrix}$, $B=\begin{bmatrix}3&7\\0&0\end{bmatrix}$: $AB=0$ though $A\ne0,B\ne0$.
+
+\redheading{Identity Matrices}
+
+A square matrix with 1's on the main diagonal and 0's elsewhere is an \textbf{identity matrix}, denoted $I$ (or $I_n$ for size $n$). For any $m\times n$ matrix $A$:
+\[
+AI_n=A\qquad\text{and}\qquad I_mA=A
+\]
+paralleling $a\cdot1=1\cdot a=a$.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.4.3, boxrule=0.5mm, arc=3mm]
+If $R$ is the reduced row echelon form of an $n\times n$ matrix $A$, then either $R$ has a row of zeros or $R=I_n$.
+\end{tcolorbox}
+\textbf{Proof} Either the last row of $R$ is all zeros, or it isn't -- in which case every row has a leading 1, and since these occur progressively farther right down the matrix, each must lie on the main diagonal; the rest of each such column is zero, so $R=I_n$. $\blacksquare$
+
+\redheading{Inverse of a Matrix}
+
+Every nonzero real $a$ has a reciprocal $a^{-1}$ with $a\cdot a^{-1}=a^{-1}\cdot a=1$. The matrix analog:
+
+\begin{tcolorbox}[colback=teal!4, colframe=teal!65!black, title=Definition 1, fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+If $A$ is square and there is a same-size $B$ with $AB=BA=I$, then $A$ is \textbf{invertible} (\textbf{nonsingular}) and $B$ is an \textbf{inverse} of $A$. If no such $B$ exists, $A$ is \textbf{singular}.
+\end{tcolorbox}
+
+Since $AB=BA=I$ is symmetric in $A,B$, if $B$ is an inverse of $A$ then $A$ is an inverse of $B$ -- they are \textbf{inverses of one another}.
+
+\subsection*{EXAMPLE 5 | An Invertible Matrix}
+For $A=\begin{bmatrix}2&-5\\-1&3\end{bmatrix}$, $B=\begin{bmatrix}3&5\\1&2\end{bmatrix}$: $AB=BA=I$, so each is the other's inverse.
+
+\subsection*{EXAMPLE 6 | A Class of Singular Matrices}
+A square matrix with a zero row or column is singular. E.g., for $A=\begin{bmatrix}1&4&0\\2&5&0\\3&6&0\end{bmatrix}$ with columns $\mathbf{c}_1,\mathbf{c}_2,\mathbf{0}$: for any $3\times3$ matrix $B$, $BA=B[\mathbf{c}_1\ \mathbf{c}_2\ \mathbf{0}]=[B\mathbf{c}_1\ B\mathbf{c}_2\ \mathbf{0}]$ has a zero column, so $BA\ne I$ -- $A$ is singular.
+
+\redheading{Properties of Inverses}
+
+Can an invertible matrix have more than one inverse? No:
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.4.4, boxrule=0.5mm, arc=3mm]
+If $B$ and $C$ are both inverses of $A$, then $B=C$.
+\end{tcolorbox}
+\textbf{Proof} $BA=I\Rightarrow(BA)C=IC=C$; but also $(BA)C=B(AC)=BI=B$, so $B=C$. $\blacksquare$
+
+So we may speak of ``the'' inverse of $A$, written $A^{-1}$:
+\[
+AA^{-1}=I\qquad\text{and}\qquad A^{-1}A=I \tag{1}
+\]
+(\textbf{Warning:} $A^{-1}$ is not $1/A$ -- division by matrices is not defined.)
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.4.5, boxrule=0.5mm, arc=3mm]
+$A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ is invertible if and only if $ad-bc\ne0$, in which case
+\[
+A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix} \tag{2}
+\]
+\end{tcolorbox}
+The quantity $ad-bc$ is the \textbf{determinant} of $A$, written $\det(A)$ or $\begin{vmatrix}a&b\\c&d\end{vmatrix}$ -- the product of the main-diagonal entries minus the product of the off-diagonal entries.
+
+\subsection*{EXAMPLE 7 | Calculating the Inverse of a $2\times2$ Matrix}
+(a) $A=\begin{bmatrix}6&1\\5&2\end{bmatrix}$: $\det(A)=7\ne0$, so $A^{-1}=\tfrac17\begin{bmatrix}2&-1\\-5&6\end{bmatrix}=\begin{bmatrix}\tfrac27&-\tfrac17\\-\tfrac57&\tfrac67\end{bmatrix}$.\\
+(b) $A=\begin{bmatrix}-1&2\\3&-6\end{bmatrix}$: $\det(A)=(-1)(-6)-(2)(3)=0$, so $A$ is not invertible.
+
+\subsection*{EXAMPLE 8 | Solution of a Linear System by Matrix Inversion}
+To solve $u=ax+by,\ v=cx+dy$ for $x,y$: write $\begin{bmatrix}u\\v\end{bmatrix}=\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}$. If $ad-bc\ne0$, multiply on the left by the inverse:
+\[
+\begin{bmatrix}a&b\\c&d\end{bmatrix}^{-1}\begin{bmatrix}u\\v\end{bmatrix}=\begin{bmatrix}x\\y\end{bmatrix}
+\quad\Longrightarrow\quad
+\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}\begin{bmatrix}u\\v\end{bmatrix}=\begin{bmatrix}x\\y\end{bmatrix}
+\]
+giving $x=\dfrac{du-bv}{ad-bc},\ y=\dfrac{av-cu}{ad-bc}$.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.4.6, boxrule=0.5mm, arc=3mm]
+If $A,B$ are invertible and the same size, then $AB$ is invertible and $(AB)^{-1}=B^{-1}A^{-1}$.
+\end{tcolorbox}
+\textbf{Proof} $(AB)(B^{-1}A^{-1})=A(BB^{-1})A^{-1}=AIA^{-1}=AA^{-1}=I$, and similarly $(B^{-1}A^{-1})(AB)=I$. $\blacksquare$
+
+This extends to any number of factors: \textit{a product of invertible matrices is invertible, and its inverse is the product of the inverses in reverse order.}
+
+\subsection*{EXAMPLE 9 | The Inverse of a Product}
+For $A=\begin{bmatrix}1&2\\1&3\end{bmatrix}$, $B=\begin{bmatrix}3&2\\2&2\end{bmatrix}$: $AB=\begin{bmatrix}7&6\\9&8\end{bmatrix}$, $(AB)^{-1}=\begin{bmatrix}4&-3\\-\tfrac92&\tfrac72\end{bmatrix}$; and $A^{-1}=\begin{bmatrix}3&-2\\-1&1\end{bmatrix}$, $B^{-1}=\begin{bmatrix}1&-1\\-1&\tfrac32\end{bmatrix}$, so $B^{-1}A^{-1}=\begin{bmatrix}4&-3\\-\tfrac92&\tfrac72\end{bmatrix}=(AB)^{-1}$, confirming Theorem 1.4.6.
+
+\redheading{Powers of a Matrix}
+
+For square $A$: $A^0=I$ and $A^n=\underbrace{AA\cdots A}_{n\text{ factors}}$; if $A$ is invertible, $A^{-n}=(A^{-1})^n=\underbrace{A^{-1}A^{-1}\cdots A^{-1}}_{n\text{ factors}}$. The usual exponent laws hold: $A^rA^s=A^{r+s}$ and $(A^r)^s=A^{rs}$.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.4.7, boxrule=0.5mm, arc=3mm]
+If $A$ is invertible and $n\ge0$ an integer:\\
+(a) $A^{-1}$ is invertible and $(A^{-1})^{-1}=A$.\\
+(b) $A^n$ is invertible and $(A^n)^{-1}=A^{-n}=(A^{-1})^n$.\\
+(c) $kA$ is invertible for nonzero scalar $k$, and $(kA)^{-1}=k^{-1}A^{-1}$.
+\end{tcolorbox}
+\textbf{Proof (c)} By Theorem 1.4.1(m),(l): $(kA)(k^{-1}A^{-1})=k^{-1}(kA)A^{-1}=(k^{-1}k)AA^{-1}=(1)I=I$, and similarly the other way. $\blacksquare$
+
+\subsection*{EXAMPLE 10 | Properties of Exponents}
+For $A=\begin{bmatrix}1&2\\1&3\end{bmatrix}$, $A^{-1}=\begin{bmatrix}3&-2\\-1&1\end{bmatrix}$: $A^{-3}=(A^{-1})^3=\begin{bmatrix}41&-30\\-15&11\end{bmatrix}$, and directly $A^3=\begin{bmatrix}11&30\\15&41\end{bmatrix}$ gives $(A^3)^{-1}=\begin{bmatrix}41&-30\\-15&11\end{bmatrix}=(A^{-1})^3$, as Theorem 1.4.7(b) guarantees.
+
+\subsection*{EXAMPLE 11 | The Square of a Matrix Sum}
+Since real numbers commute, $(a+b)^2=a^2+2ab+b^2$; but for matrices, $(A+B)^2=A^2+AB+BA+B^2$ in general, simplifying to $A^2+2AB+B^2$ only when $A,B$ commute.
+
+\redheading{Matrix Polynomials}
+
+For square $A$ ($n\times n$) and polynomial $p(x)=a_0+a_1x+\cdots+a_mx^m$, define the \textbf{matrix polynomial}
+\[
+p(A)=a_0I+a_1A+a_2A^2+\cdots+a_mA^m \tag{3}
+\]
+(substituting $A$ for $x$ and $a_0I$ for the constant term).
+
+\subsection*{EXAMPLE 12 | A Matrix Polynomial}
+For $p(x)=x^2-2x-5$, $A=\begin{bmatrix}-1&2\\1&3\end{bmatrix}$:
+\[
+p(A)=A^2-2A-5I=\begin{bmatrix}3&4\\2&11\end{bmatrix}-\begin{bmatrix}-2&4\\2&6\end{bmatrix}-\begin{bmatrix}5&0\\0&5\end{bmatrix}=\begin{bmatrix}0&0\\0&0\end{bmatrix}
+\]
+
+\textbf{Remark} Since $A^rA^s=A^{s+r}=A^sA^r$, powers of $A$ commute, so any two matrix polynomials in the same $A$ commute:
+\[
+p_1(A)p_2(A)=p_2(A)p_1(A) \tag{4}
+\]
+
+\redheading{Properties of the Transpose}
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.4.8, boxrule=0.5mm, arc=3mm]
+Whenever the sizes permit:\\
+(a) $(A^T)^T=A$\quad (b) $(A+B)^T=A^T+B^T$\quad (c) $(A-B)^T=A^T-B^T$\\
+(d) $(kA)^T=kA^T$\quad (e) $(AB)^T=B^TA^T$
+\end{tcolorbox}
+Parts (a)--(d) follow directly from ``transposing swaps rows and columns.'' Part (e) extends to any number of factors: \textit{the transpose of a product is the product of the transposes in reverse order.}
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.4.9, boxrule=0.5mm, arc=3mm]
+If $A$ is invertible, so is $A^T$, and $(A^T)^{-1}=(A^{-1})^T$.
+\end{tcolorbox}
+\textbf{Proof} By Theorem 1.4.8(e) and $I^T=I$: $A^T(A^{-1})^T=(A^{-1}A)^T=I^T=I$, and $(A^{-1})^TA^T=(AA^{-1})^T=I^T=I$. $\blacksquare$
+
+\subsection*{EXAMPLE 13 | Inverse of a Transpose}
+For $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ invertible ($\det A=ad-bc\ne0$), $A^T=\begin{bmatrix}a&c\\b&d\end{bmatrix}$ has the same determinant, so it too is invertible, and by Theorem 1.4.5, $(A^T)^{-1}$ works out to be exactly $(A^{-1})^T$ -- confirming Theorem 1.4.9.
+
+\section*{Exercise Set 1.4}
+\begin{enumerate}
+    \item[1.] For $A=\begin{bmatrix}3&-1\\2&4\end{bmatrix}$, $B=\begin{bmatrix}0&2\\1&-4\end{bmatrix}$, $C=\begin{bmatrix}4&1\\-3&-2\end{bmatrix}$, $a=4,b=-7$, verify:\\
+    (a) the associative law for addition\quad (b) the associative law for multiplication\\
+    (c) the left distributive law\quad (d) $(a+b)C=aC+bC$
+
+    \item[3.] Using the matrices from Exercise 1, verify:\\
+    (a) $(A^T)^T=A$\qquad (b) $(AB)^T=B^TA^T$
+
+    \item[5.] Use Theorem 1.4.5 to find the inverse of $A=\begin{bmatrix}2&-3\\4&4\end{bmatrix}$.
+
+    \item[10.] Find the inverse of $\begin{bmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{bmatrix}$.
+
+    \item[13.] For $A=\begin{bmatrix}2&-3\\4&4\end{bmatrix}$, $B=\begin{bmatrix}3&1\\5&2\end{bmatrix}$, $C=\begin{bmatrix}2&0\\0&3\end{bmatrix}$, verify $(ABC)^{-1}=C^{-1}B^{-1}A^{-1}$.
+
+    \item[15.] Given $(7A)^{-1}=\begin{bmatrix}-3&7\\1&-2\end{bmatrix}$, find $A$.
+
+    \item[19.] For $A=\begin{bmatrix}3&1\\2&1\end{bmatrix}$, compute (a) $A^3$\quad (b) $A^{-3}$\quad (c) $A^2-2A+I$.
+
+    \item[21.] For $A=\begin{bmatrix}3&1\\2&1\end{bmatrix}$, compute $p(A)$ for\\
+    (a) $p(x)=x-2$\quad (b) $p(x)=2x^2-x+1$\quad (c) $p(x)=x^3-2x+1$
+
+    \item[23.] For $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$, $B=\begin{bmatrix}0&1\\0&0\end{bmatrix}$, find all $a,b,c,d$ for which $A,B$ commute.
+
+    \item[25.] Use the method of Example 8 to find the unique solution of\\
+    $3x_1-2x_2=-1,\quad 4x_1+5x_2=3$
+
+    \item[30.] Verify $p(A)=p_1(A)p_2(A)$ for $p(x)=x^2-9=(x+3)(x-3)$ and an arbitrary square matrix $A$.
+
+    \item[31.] (a) Give an example of $2\times2$ matrices with $(A+B)(A-B)\ne A^2-B^2$.\\
+    (b) State a valid formula for $(A+B)(A-B)$.\\
+    (c) What condition on $A,B$ allows $(A+B)(A-B)=A^2-B^2$?
+
+    \item[32.] The equation $a^2=1$ has exactly two real solutions. Find at least eight solutions of $A^2=I_3$. [\emph{Hint:} look for solutions with all off-diagonal entries zero.]
+
+    \item[33.] (a) Show that if $A^2+2A+I=0$, then $A$ is invertible; find $A^{-1}$.\\
+    (b) Show that if $p(x)$ has nonzero constant term and $p(A)=0$, then $A$ is invertible.
+
+    \item[34.] Is it possible for $A^3$ to equal the identity matrix without $A$ being invertible? Explain.
+
+    \item[35.] Can a matrix with a zero row or column have an inverse? Explain.
+
+    \item[36.] Can a matrix with two identical rows or columns have an inverse? Explain.
+
+    \item[37.] Determine whether $A=\begin{bmatrix}1&0&1\\1&1&0\\0&1&1\end{bmatrix}$ is invertible, and if so find $A^{-1}$. [\emph{Hint:} solve $AX=I$ for $X$ by equating corresponding entries.]
+
+    \item[39.] Simplify, assuming $A,B,C,D$ invertible: $(AB)^{-1}(AC^{-1})(D^{-1}C^{-1})^{-1}D^{-1}$.
+
+    \item[41.] Show that if $R$ is $1\times n$ and $C$ is $n\times1$, then $RC=\operatorname{tr}(CR)$.
+
+    \item[43.] (a) Show that if $A$ is invertible and $AB=AC$, then $B=C$.\\
+    (b) Explain why part (a) and Example 3 do not contradict each other.
+
+    \item[45.] (a) Show that if $A,B,A+B$ are invertible matrices of the same size, then $A(A^{-1}+B^{-1})B(A+B)^{-1}=I$.\\
+    (b) What does part (a) tell you about the matrix $A^{-1}+B^{-1}$?
+
+    \item[46.] A square matrix $A$ is \textbf{idempotent} if $A^2=A$.\\
+    (a) Show that if $A$ is idempotent, so is $I-A$.\\
+    (b) Show that if $A$ is idempotent, then $2A-I$ is invertible and is its own inverse.
+
+    \item[47.] Show that if $A^k=0$ for some positive integer $k$, then $I-A$ is invertible and $(I-A)^{-1}=I+A+A^2+\cdots+A^{k-1}$.
+
+    \item[48.] Show that $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ satisfies $A^2-(a+d)A+(ad-bc)I=0$.
+
+    \item[51.] \textbf{(Working with Proofs)} Prove Theorem 1.4.1(a).
+\end{enumerate}
+
+\end{document}
