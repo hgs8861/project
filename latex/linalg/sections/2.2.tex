@@ -1,0 +1,289 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper,left=3cm, right=3cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{longtable}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{booktabs}
+
+\title{2.2 Evaluating Determinants by Row Reduction}
+\date{}
+\author{}
+\setstretch{1.3}
+
+\titleformat{name=\section, numberless}
+  {\normalfont\large\bfseries\color{blue}}
+  {}
+  {0pt}
+  {}
+\geometry{a4paper, margin=1in}
+
+\newcommand{\redheading}[1]{{\vspace{2mm}\noindent\Large\bfseries\color{red!55!black} #1\par}\vspace{2mm}}
+
+\newtheoremstyle{mystyle}
+  {}{}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{mystyle}
+
+\begin{document}
+\maketitle
+
+{\itshape\color{blue!45!black}
+In this section we show how to evaluate a determinant by reducing the associated matrix to row echelon form. This method generally requires less computation than cofactor expansion and is the method of choice for large matrices.\par}
+
+\vspace{2mm}
+
+\redheading{A Basic Theorem}
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.2.1}}, boxrule=0.5mm, arc=3mm]
+Let $A$ be a square matrix. If $A$ has a row of zeros or a column of zeros, then $\det(A)=0$.
+\end{tcolorbox}
+
+\textbf{Proof.} Expand along the zero row or column; every term is $0\cdot C_{ij}=0$. $\blacksquare$
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.2.2}}, boxrule=0.5mm, arc=3mm]
+Let $A$ be a square matrix. Then $\det(A)=\det(A^T)$.
+\end{tcolorbox}
+
+\textbf{Proof.} Transposing $A$ swaps its rows and columns; thus a cofactor expansion of $A$ along any row equals the cofactor expansion of $A^T$ along the corresponding column. $\blacksquare$
+
+\textbf{Remark.} Because $\det(A)=\det(A^T)$, every theorem about row operations on determinants has an analogous column version.
+
+\redheading{Elementary Row Operations}
+
+The following theorem describes how each type of elementary row (or column) operation affects $\det(A)$.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.2.3}}, boxrule=0.5mm, arc=3mm]
+Let $A$ be an $n\times n$ matrix, and let $B$ result from a single elementary row (or column) operation on $A$.
+\begin{enumerate}
+  \item[(a)] \textbf{Scale}: If a single row (or column) of $A$ is multiplied by a scalar $k$, then $\det(B)=k\det(A)$.
+  \item[(b)] \textbf{Interchange}: If two rows (or columns) of $A$ are interchanged, then $\det(B)=-\det(A)$.
+  \item[(c)] \textbf{Row addition}: If a multiple of one row (or column) of $A$ is added to another, then $\det(B)=\det(A)$.
+\end{enumerate}
+\end{tcolorbox}
+
+The following table illustrates Theorem 2.2.3 for the $3\times3$ case.
+
+\vspace{2mm}
+\noindent\textbf{Table 1}
+\vspace{1mm}
+
+\begin{center}
+\renewcommand{\arraystretch}{2.2}
+\begin{tabular}{|p{8.5cm}|p{5cm}|}
+\hline
+\textbf{Relationship} & \textbf{Operation} \\
+\hline
+$\begin{vmatrix}ka_{11}&ka_{12}&ka_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}
+=k\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}$
+
+$\det(B)=k\det(A)$
+&
+In $B$, the first row of $A$ was multiplied by $k$. \\
+\hline
+$\begin{vmatrix}a_{21}&a_{22}&a_{23}\\a_{11}&a_{12}&a_{13}\\a_{31}&a_{32}&a_{33}\end{vmatrix}
+=-\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}$
+
+$\det(B)=-\det(A)$
+&
+In $B$, the first and second rows of $A$ were interchanged. \\
+\hline
+$\begin{vmatrix}a_{11}+ka_{21}&a_{12}+ka_{22}&a_{13}+ka_{23}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}
+=\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}$
+
+$\det(B)=\det(A)$
+&
+In $B$, a multiple of row 2 of $A$ was added to row 1. \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{2mm}
+\textbf{Proof of (a).} Both determinants on the two sides of the first equation share the same cofactors $C_{11},C_{12},C_{13}$ along the first row (cofactors depend only on the \emph{other} rows). Expanding the left side along row 1:
+\[
+\begin{vmatrix}ka_{11}&ka_{12}&ka_{13}\\\cdots\end{vmatrix}
+=ka_{11}C_{11}+ka_{12}C_{12}+ka_{13}C_{13}
+=k(a_{11}C_{11}+a_{12}C_{12}+a_{13}C_{13})
+=k\det(A).\quad\blacksquare
+\]
+
+\redheading{Elementary Matrices}
+
+When $A=I_n$ in Theorem 2.2.3, $B$ is an elementary matrix $E$. The theorem then gives:
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.2.4}}, boxrule=0.5mm, arc=3mm]
+Let $E$ be an $n\times n$ elementary matrix.
+\begin{enumerate}
+  \item[(a)] If $E$ results from multiplying a row of $I_n$ by $k$, then $\det(E)=k$.
+  \item[(b)] If $E$ results from interchanging two rows of $I_n$, then $\det(E)=-1$.
+  \item[(c)] If $E$ results from adding a multiple of one row of $I_n$ to another, then $\det(E)=1$.
+\end{enumerate}
+\end{tcolorbox}
+
+\textbf{Remark.} The determinant of an elementary matrix is \emph{never} zero.
+
+\subsection*{EXAMPLE 1 | Determinants of Elementary Matrices}
+
+The following $4\times4$ elementary matrices illustrate Theorem 2.2.4:
+\[
+\begin{vmatrix}1&0&0&0\\0&3&0&0\\0&0&1&0\\0&0&0&1\end{vmatrix}=3,\quad
+\begin{vmatrix}0&0&0&1\\0&1&0&0\\0&0&1&0\\1&0&0&0\end{vmatrix}=-1,\quad
+\begin{vmatrix}1&0&0&7\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{vmatrix}=1
+\]
+(Row 2 of $I_4$ multiplied by 3; first and last rows of $I_4$ interchanged; 7 times last row added to first row.)
+
+\redheading{Matrices with Proportional Rows or Columns}
+
+If $A$ has two proportional rows, adding a suitable multiple of one to the other produces a zero row. Since row addition does not change $\det$ (Theorem 2.2.3(c)), and a zero-row matrix has $\det=0$ (Theorem 2.2.1), we get:
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.2.5}}, boxrule=0.5mm, arc=3mm]
+If a square matrix $A$ has two proportional rows or two proportional columns, then $\det(A)=0$.
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 2 | Proportional Rows or Columns}
+
+Each of the following has two proportional rows or columns, so each has determinant zero:
+\[
+\begin{bmatrix}-1&4\\-2&8\end{bmatrix},\qquad
+\begin{bmatrix}1&-2&7\\-4&8&5\\2&-4&3\end{bmatrix},\qquad
+\begin{bmatrix}3&-1&4&-5\\6&-2&5&2\\5&8&1&4\\-9&3&-12&15\end{bmatrix}
+\]
+(In the first, row 2 is $2\times$ row 1; in the second, row 2 is $-4\times$ row 1 while cols 1 and 2 are proportional ($-2\times$); in the third, row 4 is $-3\times$ row 1.)
+
+\redheading{Evaluating Determinants by Row Reduction}
+
+The strategy: reduce $A$ to upper triangular form by EROs (tracking the sign changes from interchanges and scalar factors), then multiply the diagonal entries.
+
+\subsection*{EXAMPLE 3 | Using Row Reduction to Evaluate a Determinant}
+Evaluate $\det(A)$ where $A=\begin{bmatrix}0&1&5\\3&-6&9\\2&6&1\end{bmatrix}$.
+
+\textbf{SOLUTION:}
+\begin{align*}
+\det(A)
+&=\begin{vmatrix}0&1&5\\3&-6&9\\2&6&1\end{vmatrix}
+=-\begin{vmatrix}3&-6&9\\0&1&5\\2&6&1\end{vmatrix}
+&&\text{(rows 1 \& 2 interchanged)}\\
+&=-3\begin{vmatrix}1&-2&3\\0&1&5\\2&6&1\end{vmatrix}
+&&\text{(factor 3 from row 1)}\\
+&=-3\begin{vmatrix}1&-2&3\\0&1&5\\0&10&-5\end{vmatrix}
+&&\text{($-2\cdot$row 1 added to row 3)}\\
+&=-3\begin{vmatrix}1&-2&3\\0&1&5\\0&0&-55\end{vmatrix}
+&&\text{($-10\cdot$row 2 added to row 3)}\\
+&=(-3)(-55)\begin{vmatrix}1&-2&3\\0&1&5\\0&0&1\end{vmatrix}
+&&\text{(factor $-55$ from row 3)}\\
+&=(-3)(-55)(1)=\boxed{165}
+\end{align*}
+
+\subsection*{EXAMPLE 4 | Using Column Operations to Evaluate a Determinant}
+Compute $\det(A)$ where $A=\begin{bmatrix}1&0&0&3\\2&7&0&6\\0&6&3&0\\7&3&1&-5\end{bmatrix}$.
+
+\textbf{SOLUTION:} Add $-3$ times column 1 to column 4 to put $A$ in lower triangular form:
+\[
+\det(A)=\det\begin{bmatrix}1&0&0&0\\2&7&0&0\\0&6&3&0\\7&3&1&-26\end{bmatrix}=(1)(7)(3)(-26)=\boxed{-546}
+\]
+
+\subsection*{EXAMPLE 5 | Row Operations and Cofactor Expansion}
+Evaluate $\det(A)$ where $A=\begin{bmatrix}3&5&-2&6\\1&2&-1&1\\2&4&1&5\\3&7&5&3\end{bmatrix}$.
+
+\textbf{SOLUTION:} Add multiples of row 2 to the other rows to create zeros in column 1:
+\[
+\det(A)=\begin{vmatrix}0&-1&1&3\\1&2&-1&1\\0&0&3&3\\0&1&8&0\end{vmatrix}
+\]
+Cofactor expand along column 1 (only $a_{21}=1$ is nonzero):
+\[
+=-1\cdot(-1)^{2+1}\begin{vmatrix}-1&1&3\\0&3&3\\1&8&0\end{vmatrix}
+=-\begin{vmatrix}-1&1&3\\0&3&3\\1&8&0\end{vmatrix}
+\]
+Add row 1 to row 3:
+\[
+=-\begin{vmatrix}-1&1&3\\0&3&3\\0&9&3\end{vmatrix}
+\]
+Cofactor expand along column 1:
+\[
+=-\bigl[(-1)(-1)^{1+1}\begin{vmatrix}3&3\\9&3\end{vmatrix}\bigr]
+=-[(-1)(9-27)]=-(18)=\boxed{-18}
+\]
+
+\section*{Exercise Set 2.2}
+
+\noindent\textit{In Exercises 1--4, verify that $\det(A)=\det(A^T)$.}
+
+\begin{enumerate}
+
+\item[1.] $A=\begin{bmatrix}-2&3\\1&4\end{bmatrix}$
+
+\item[3.] $A=\begin{bmatrix}2&-1&3\\1&2&4\\5&-3&6\end{bmatrix}$
+
+\noindent\textit{In Exercises 5--8, find the determinant of the given elementary matrix by inspection.}
+
+\item[5.] $\begin{bmatrix}1&0&0&0\\0&1&0&0\\0&0&-5&0\\0&0&0&1\end{bmatrix}$
+
+\item[7.] $\begin{bmatrix}1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{bmatrix}$
+
+\noindent\textit{In Exercises 9--13, evaluate the determinant of the matrix by first reducing to row echelon form and then using some combination of row operations and cofactor expansion.}
+
+\item[9.] $\begin{bmatrix}3&-6&9\\-2&7&-2\\0&1&5\end{bmatrix}$
+
+\item[11.] $\begin{bmatrix}2&1&3&1\\1&0&1&1\\0&2&1&0\\0&1&2&3\end{bmatrix}$
+
+\item[13.] $\begin{bmatrix}1&3&1&5&3\\-2&-7&0&-4&2\\0&0&1&0&1\\0&0&2&1&1\\0&0&0&1&1\end{bmatrix}$
+
+\noindent\textit{In Exercises 15--22, evaluate the determinant, given that $\begin{vmatrix}a&b&c\\d&e&f\\g&h&i\end{vmatrix}=-6$.}
+
+\item[15.] $\begin{vmatrix}d&e&f\\g&h&i\\a&b&c\end{vmatrix}$
+
+\item[17.] $\begin{vmatrix}3a&3b&3c\\-d&-e&-f\\4g&4h&4i\end{vmatrix}$
+
+\item[20.] $\begin{vmatrix}a&b&c\\2d&2e&2f\\g+3a&h+3b&i+3c\end{vmatrix}$
+
+\item[22.] $\begin{vmatrix}a&b&c\\d&e&f\\2a&2b&2c\end{vmatrix}$
+
+\item[23.] Use row reduction to show that
+\[
+\begin{vmatrix}1&1&1\\a&b&c\\a^2&b^2&c^2\end{vmatrix}=(b-a)(c-a)(c-b)
+\]
+
+\item[24.] Verify the formulas in parts (a) and (b) and then conjecture a general result.
+\begin{enumerate}
+\item[(a)] $\det\begin{bmatrix}0&0&a_{13}\\0&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{bmatrix}=-a_{13}a_{22}a_{31}$
+\item[(b)] $\det\begin{bmatrix}0&0&0&a_{14}\\0&0&a_{23}&a_{24}\\0&a_{32}&a_{33}&a_{34}\\a_{41}&a_{42}&a_{43}&a_{44}\end{bmatrix}=a_{14}a_{23}a_{32}a_{41}$
+\end{enumerate}
+
+\noindent\textit{In Exercises 25 and 27, confirm the identity without evaluating any of the determinants directly.}
+
+\item[25.] $\begin{vmatrix}a_1+b_1&b_1+c_1&c_1\\a_2+b_2&b_2+c_2&c_2\\a_3+b_3&b_3+c_3&c_3\end{vmatrix}=\begin{vmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{vmatrix}$
+
+\item[27.] $\begin{vmatrix}a_1+b_1&a_1-b_1&c_1\\a_2+b_2&a_2-b_2&c_2\\a_3+b_3&a_3-b_3&c_3\end{vmatrix}=-2\begin{vmatrix}a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3\end{vmatrix}$
+
+\noindent\textit{In Exercises 29--30, show that $\det(A)=0$ without directly evaluating the determinant.}
+
+\item[29.] $A=\begin{bmatrix}-2&8&1&4\\3&2&5&1\\1&10&6&5\\4&-6&4&3\end{bmatrix}$
+
+\item[33.] Let $A$ be an $n\times n$ matrix, and let $B$ be the matrix that results when the rows of $A$ are written in reverse order. State a theorem that describes how $\det(A)$ and $\det(B)$ are related.
+
+\item[34.] Find the determinant of the matrix
+\[
+\begin{bmatrix}a&b&b&b\\b&a&b&b\\b&b&a&b\\b&b&b&a\end{bmatrix}
+\]
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,410 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper,left=3cm, right=3cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{longtable}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{booktabs}
+
+\title{2.3 Properties of Determinants; Cramer's Rule}
+\date{}
+\author{}
+\setstretch{1.3}
+
+\titleformat{name=\section, numberless}
+  {\normalfont\large\bfseries\color{blue}}
+  {}
+  {0pt}
+  {}
+\geometry{a4paper, margin=1in}
+
+\newcommand{\redheading}[1]{{\vspace{2mm}\noindent\Large\bfseries\color{red!55!black} #1\par}\vspace{2mm}}
+
+\newtheoremstyle{mystyle}
+  {}{}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{mystyle}
+
+\begin{document}
+\maketitle
+
+{\itshape\color{blue!45!black}
+In this section we develop fundamental properties of determinants and use them to derive
+a formula for the inverse of an invertible matrix and formulas for solving certain linear systems.\par}
+
+\vspace{2mm}
+
+\redheading{Basic Properties of Determinants}
+
+For $n\times n$ matrices $A$ and $B$ and any scalar $k$, we consider possible relationships
+among $\det(kA)$, $\det(A+B)$, and $\det(AB)$.
+
+Since a common factor from any row can be moved through the determinant sign, and $kA$
+has $k$ as a common factor in each of its $n$ rows:
+\begin{equation}
+\boxed{\det(kA)=k^n\det(A)} \tag{1}
+\end{equation}
+For example:
+\[
+\begin{vmatrix}ka_{11}&ka_{12}&ka_{13}\\ka_{21}&ka_{22}&ka_{23}\\ka_{31}&ka_{32}&ka_{33}\end{vmatrix}
+=k^3\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}
+\]
+No simple relationship exists among $\det(A)$, $\det(B)$, and $\det(A+B)$; in particular,
+$\det(A+B)$ usually does \emph{not} equal $\det(A)+\det(B)$.
+
+\subsection*{EXAMPLE 1 | $\det(A+B)\neq\det(A)+\det(B)$}
+
+Let $A=\begin{bmatrix}1&2\\2&5\end{bmatrix}$, $B=\begin{bmatrix}3&1\\1&3\end{bmatrix}$, so
+$A+B=\begin{bmatrix}4&3\\3&8\end{bmatrix}$.
+Then $\det(A)=1$, $\det(B)=8$, $\det(A+B)=23$; thus $\det(A+B)\neq\det(A)+\det(B)$.
+
+There \emph{is} a useful relationship when matrices differ in exactly one row or column:
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.3.1}}, boxrule=0.5mm, arc=3mm]
+Let $A$, $B$, and $C$ be $n\times n$ matrices that differ only in a single row (say the
+$r$th), with the $r$th row of $C$ equal to the sum of the corresponding entries of
+$A$ and $B$. Then
+\[
+\det(C)=\det(A)+\det(B)
+\]
+The same result holds for columns.
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 2 | Sums of Determinants}
+
+Verify the following equality by evaluating each determinant:
+\[
+\det\begin{bmatrix}1&7&5\\2&0&3\\1+0&4+1&7+(-1)\end{bmatrix}
+=\det\begin{bmatrix}1&7&5\\2&0&3\\1&4&7\end{bmatrix}
++\det\begin{bmatrix}1&7&5\\2&0&3\\0&1&-1\end{bmatrix}
+\]
+
+\redheading{Determinant of a Matrix Product}
+
+Despite the complexity of matrix multiplication, a surprisingly simple relationship holds:
+\begin{equation}
+\det(AB)=\det(A)\det(B) \tag{2}
+\end{equation}
+We prove this by first establishing the following lemma.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Lemma 2.3.2}}, boxrule=0.5mm, arc=3mm]
+If $B$ is an $n\times n$ matrix and $E$ is an $n\times n$ elementary matrix, then
+\[
+\det(EB)=\det(E)\det(B)
+\]
+\end{tcolorbox}
+
+\textit{Proof.} Three cases corresponding to the three ERO types:
+
+\textbf{Case 1.} $E$ results from multiplying row $i$ of $I_n$ by $k$. Then $EB$ has
+row $i$ of $B$ scaled by $k$, so $\det(EB)=k\det(B)$ (Theorem 2.2.3(a)).
+Also $\det(E)=k$ (Theorem 2.2.4(a)), so $\det(EB)=\det(E)\det(B)$.
+
+\textbf{Cases 2 and 3.} The proofs for the row-interchange and row-addition cases
+follow the same pattern and are left as exercises. $\blacksquare$
+
+\textbf{Remark.} By repeated application of Lemma 2.3.2, if $E_1,E_2,\ldots,E_r$
+are $n\times n$ elementary matrices and $B$ is $n\times n$:
+\begin{equation}
+\det(E_1 E_2\cdots E_r B)=\det(E_1)\det(E_2)\cdots\det(E_r)\det(B) \tag{3}
+\end{equation}
+
+\redheading{Determinant Test for Invertibility}
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.3.3}}, boxrule=0.5mm, arc=3mm]
+A square matrix $A$ is invertible if and only if $\det(A)\neq 0$.
+\end{tcolorbox}
+
+\textit{Proof.} Let $R$ be the reduced row echelon form of $A$, and let
+$E_1,\ldots,E_r$ be the elementary matrices such that $R=E_r\cdots E_2 E_1 A$.
+From (3):
+\begin{equation}
+\det(R)=\det(E_r)\cdots\det(E_2)\det(E_1)\det(A) \tag{4}
+\end{equation}
+Since $\det(E_i)\neq 0$ for each $i$, $\det(A)$ and $\det(R)$ are either both zero or
+both nonzero.
+
+\begin{itemize}
+  \item If $A$ is invertible $\Rightarrow R=I$ (Thm.\ 1.6.4) $\Rightarrow \det(R)=1\neq 0$
+    $\Rightarrow \det(A)\neq 0$.
+  \item If $\det(A)\neq 0$ $\Rightarrow \det(R)\neq 0$ $\Rightarrow R$ has no zero row
+    (Thm.\ 1.4.3) $\Rightarrow R=I$ $\Rightarrow A$ invertible (Thm.\ 1.6.4). $\blacksquare$
+\end{itemize}
+
+\subsection*{EXAMPLE 3 | Determinant Test for Invertibility}
+
+Since the first and third rows of $A=\begin{bmatrix}1&2&3\\1&0&1\\2&4&6\end{bmatrix}$
+are proportional, $\det(A)=0$. Thus $A$ is not invertible.
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.3.4}}, boxrule=0.5mm, arc=3mm]
+If $A$ and $B$ are square matrices of the same size, then
+\[
+\det(AB)=\det(A)\det(B)
+\]
+\end{tcolorbox}
+
+\textit{Proof.}
+\textbf{Case 1.} $A$ not invertible $\Rightarrow AB$ not invertible (Thm.\ 1.6.5)
+$\Rightarrow \det(AB)=0$ and $\det(A)=0$, so $\det(AB)=\det(A)\det(B)=0$.
+
+\textbf{Case 2.} $A$ invertible $\Rightarrow A=E_1 E_2\cdots E_r$ (Thm.\ 1.6.4), so
+$AB=E_1\cdots E_r B$. Applying (3):
+\[
+\det(AB)=\det(E_1)\cdots\det(E_r)\det(B)=\det(E_1 E_2\cdots E_r)\det(B)=\det(A)\det(B). \;\blacksquare
+\]
+
+\subsection*{EXAMPLE 4 | Verifying $\det(AB)=\det(A)\det(B)$}
+
+Let $A=\begin{bmatrix}3&1\\2&1\end{bmatrix}$, $B=\begin{bmatrix}-1&3\\5&8\end{bmatrix}$,
+$AB=\begin{bmatrix}2&17\\3&14\end{bmatrix}$. Then
+\[
+\det(A)=1,\quad\det(B)=-23,\quad\det(AB)=-23=\det(A)\det(B).\quad\checkmark
+\]
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.3.5}}, boxrule=0.5mm, arc=3mm]
+If $A$ is invertible, then $\displaystyle\det(A^{-1})=\frac{1}{\det(A)}$.
+\end{tcolorbox}
+
+\textit{Proof.} Since $A^{-1}A=I$, we have $\det(A^{-1})\det(A)=\det(I)=1$, so
+$\det(A^{-1})=1/\det(A)$. $\blacksquare$
+
+\redheading{Adjoint of a Matrix}
+
+In the cofactor expansion of $\det(A)$ along row $i$, multiplying entries of row $i$
+by the cofactors of a \emph{different} row $j\neq i$ always yields zero (and likewise
+for columns).
+
+\subsection*{EXAMPLE 5 | Entries and Cofactors from Different Rows}
+
+Let $A=\begin{bmatrix}3&2&-1\\1&6&3\\2&-4&0\end{bmatrix}$.
+The cofactors of $A$ are:
+\[
+C_{11}=12,\quad C_{12}=6,\quad C_{13}=-16
+\]
+\[
+C_{21}=4,\quad C_{22}=2,\quad C_{23}=16
+\]
+\[
+C_{31}=12,\quad C_{32}=-10,\quad C_{33}=16
+\]
+
+Cofactor expansion along row 1: $\det(A)=3(12)+2(6)+(-1)(-16)=36+12+16=64$.\\
+Cofactor expansion along column 1: $\det(A)=3(12)+1(4)+2(12)=64$. \checkmark\\
+Row 1 entries $\times$ row 2 cofactors: $3C_{21}+2C_{22}+(-1)C_{23}=12+4-16=0$.\\
+Column 1 entries $\times$ column 2 cofactors: $3C_{12}+1C_{22}+2C_{32}=18+2-20=0$.
+
+\begin{tcolorbox}[colback=teal!4, colframe=teal!65!black,
+  title={\textbf{Definition 1}}, boxrule=0.5mm, arc=3mm]
+If $A$ is any $n\times n$ matrix and $C_{ij}$ is the cofactor of $a_{ij}$, then the
+\textbf{matrix of cofactors} from $A$ is
+\[
+\begin{bmatrix}C_{11}&C_{12}&\cdots&C_{1n}\\C_{21}&C_{22}&\cdots&C_{2n}\\
+\vdots&\vdots&&\vdots\\C_{n1}&C_{n2}&\cdots&C_{nn}\end{bmatrix}
+\]
+The transpose of this matrix is called the \textbf{adjoint} of $A$, denoted $\operatorname{adj}(A)$.
+\end{tcolorbox}
+
+\subsection*{EXAMPLE 6 | Adjoint of a $3\times 3$ Matrix}
+
+For $A=\begin{bmatrix}3&2&-1\\1&6&3\\2&-4&0\end{bmatrix}$ (from Example 5), the matrix of
+cofactors is $\begin{bmatrix}12&6&-16\\4&2&16\\12&-10&16\end{bmatrix}$, so
+\[
+\operatorname{adj}(A)=\begin{bmatrix}12&4&12\\6&2&-10\\-16&16&16\end{bmatrix}
+\]
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.3.6 --- Inverse of a Matrix Using Its Adjoint}}, boxrule=0.5mm, arc=3mm]
+If $A$ is an invertible $n\times n$ matrix, then
+\begin{equation}
+A^{-1}=\frac{1}{\det(A)}\operatorname{adj}(A) \tag{6}
+\end{equation}
+\end{tcolorbox}
+
+\textit{Proof.} The $(i,j)$ entry of $A\operatorname{adj}(A)$ is:
+\begin{equation}
+a_{i1}C_{j1}+a_{i2}C_{j2}+\cdots+a_{in}C_{jn} \tag{7}
+\end{equation}
+If $i=j$: this is the cofactor expansion of $\det(A)$ along row $i$.
+If $i\neq j$: entries from row $i$ multiply cofactors from row $j$, giving $0$ (Example 5).
+Therefore:
+\begin{equation}
+A\operatorname{adj}(A)=\begin{bmatrix}\det(A)&0&\cdots&0\\0&\det(A)&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&\det(A)\end{bmatrix}=\det(A)\cdot I \tag{8}
+\end{equation}
+Since $\det(A)\neq 0$, we have $A\!\left[\tfrac{1}{\det(A)}\operatorname{adj}(A)\right]=I$,
+so $A^{-1}=\tfrac{1}{\det(A)}\operatorname{adj}(A)$. $\blacksquare$
+
+\subsection*{EXAMPLE 7 | Using the Adjoint to Find an Inverse Matrix}
+
+Use Formula (6) to find the inverse of $A$ from Example 6.
+
+\textbf{SOLUTION:} From Example 5, $\det(A)=64$. Thus:
+\[
+A^{-1}=\frac{1}{\det(A)}\operatorname{adj}(A)=\frac{1}{64}\begin{bmatrix}12&4&12\\6&2&-10\\-16&16&16\end{bmatrix}
+=\begin{bmatrix}\dfrac{12}{64}&\dfrac{4}{64}&\dfrac{12}{64}\\[8pt]
+\dfrac{6}{64}&\dfrac{2}{64}&-\dfrac{10}{64}\\[8pt]
+-\dfrac{16}{64}&\dfrac{16}{64}&\dfrac{16}{64}\end{bmatrix}
+\]
+
+\redheading{Cramer's Rule}
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.3.7 --- Cramer's Rule}}, boxrule=0.5mm, arc=3mm]
+If $A\mathbf{x}=\mathbf{b}$ is a system of $n$ equations in $n$ unknowns with $\det(A)\neq 0$,
+the unique solution is
+\[
+x_1=\frac{\det(A_1)}{\det(A)},\quad
+x_2=\frac{\det(A_2)}{\det(A)},\quad\ldots,\quad
+x_n=\frac{\det(A_n)}{\det(A)}
+\]
+where $A_j$ is the matrix obtained by replacing the $j$th column of $A$ by
+$\mathbf{b}=\begin{bmatrix}b_1\\b_2\\\vdots\\b_n\end{bmatrix}$.
+\end{tcolorbox}
+
+\textit{Proof.} Since $\det(A)\neq 0$, $A$ is invertible and
+$\mathbf{x}=A^{-1}\mathbf{b}=\frac{1}{\det(A)}\operatorname{adj}(A)\mathbf{b}$.
+The $j$th entry is:
+\begin{equation}
+x_j=\frac{b_1 C_{1j}+b_2 C_{2j}+\cdots+b_n C_{nj}}{\det(A)} \tag{9}
+\end{equation}
+Since $A_j$ differs from $A$ only in column $j$, the cofactors of that column in $A_j$
+equal $C_{1j},\ldots,C_{nj}$ of $A$. Hence $\det(A_j)=b_1 C_{1j}+\cdots+b_n C_{nj}$,
+giving $x_j=\det(A_j)/\det(A)$. $\blacksquare$
+
+\subsection*{EXAMPLE 8 | Using Cramer's Rule to Solve a Linear System}
+
+Use Cramer's rule to solve:
+\[
+x_1+2x_3=6,\quad -3x_1+4x_2+6x_3=30,\quad -x_1-2x_2+3x_3=8
+\]
+
+\textbf{SOLUTION:}
+\[
+A=\begin{bmatrix}1&0&2\\-3&4&6\\-1&-2&3\end{bmatrix},\quad
+A_1=\begin{bmatrix}6&0&2\\30&4&6\\8&-2&3\end{bmatrix},\quad
+A_2=\begin{bmatrix}1&6&2\\-3&30&6\\-1&8&3\end{bmatrix},\quad
+A_3=\begin{bmatrix}1&0&6\\-3&4&30\\-1&-2&8\end{bmatrix}
+\]
+Therefore:
+\[
+x_1=\frac{\det(A_1)}{\det(A)}=\frac{-40}{44}=-\frac{10}{11},\qquad
+x_2=\frac{\det(A_2)}{\det(A)}=\frac{72}{44}=\frac{18}{11},\qquad
+x_3=\frac{\det(A_3)}{\det(A)}=\frac{152}{44}=\frac{38}{11}
+\]
+
+\redheading{Equivalence Theorem}
+
+By merging Theorem 2.3.3 with the earlier Theorem 1.6.4, we obtain:
+
+\begin{tcolorbox}[colback=red!4, colframe=red!60!black,
+  title={\textbf{Theorem 2.3.8 --- Equivalent Statements}}, boxrule=0.5mm, arc=3mm]
+If $A$ is an $n\times n$ matrix, the following statements are equivalent:
+\begin{enumerate}
+  \item[(a)] $A$ is invertible.
+  \item[(b)] $A\mathbf{x}=\mathbf{0}$ has only the trivial solution.
+  \item[(c)] The reduced row echelon form of $A$ is $I_n$.
+  \item[(d)] $A$ can be expressed as a product of elementary matrices.
+  \item[(e)] $A\mathbf{x}=\mathbf{b}$ is consistent for every $n\times 1$ matrix $\mathbf{b}$.
+  \item[(f)] $A\mathbf{x}=\mathbf{b}$ has exactly one solution for every $n\times 1$ matrix $\mathbf{b}$.
+  \item[(g)] $\det(A)\neq 0$.
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{5mm}
+
+\noindent\rule{\linewidth}{0.5pt}
+
+\section*{Exercise Set 2.3}
+
+\noindent\textit{In Exercises 1--3, verify that $\det(kA)=k^n\det(A)$.}
+
+\begin{enumerate}
+
+\item[1.] $A=\begin{bmatrix}-1&2\\3&4\end{bmatrix}$;\; $k=2$
+
+\item[3.] $A=\begin{bmatrix}2&-1&3\\3&2&1\\1&4&5\end{bmatrix}$;\; $k=-2$
+
+\noindent\textit{In Exercise 5, verify that $\det(AB)=\det(BA)$ and determine whether
+$\det(A+B)=\det(A)+\det(B)$.}
+
+\item[5.] $A=\begin{bmatrix}2&1&0\\3&4&0\\0&0&2\end{bmatrix}$,\quad
+$B=\begin{bmatrix}1&-1&3\\7&1&2\\5&0&1\end{bmatrix}$
+
+\noindent\textit{In Exercises 7--14, use determinants to decide whether the matrix is
+invertible.}
+
+\item[7.] $A=\begin{bmatrix}2&5&5\\-1&-1&0\\2&4&3\end{bmatrix}$
+
+\item[9.] $A=\begin{bmatrix}2&-3&5\\0&1&-3\\0&0&2\end{bmatrix}$
+
+\item[11.] $A=\begin{bmatrix}4&2&8\\-2&1&-4\\3&1&6\end{bmatrix}$
+
+\item[14.] $A=\begin{bmatrix}\sqrt{2}&-\sqrt{7}&0\\3\sqrt{2}&-3\sqrt{7}&0\\5&-9&0\end{bmatrix}$
+
+\noindent\textit{In Exercises 15--17, find the values of $k$ for which the matrix $A$
+is invertible.}
+
+\item[15.] $A=\begin{bmatrix}k-3&-2\\-2&k-2\end{bmatrix}$
+
+\item[17.] $A=\begin{bmatrix}1&2&4\\3&1&6\\k&3&2\end{bmatrix}$
+
+\noindent\textit{In Exercises 19 and 22, decide whether the matrix is invertible; if so,
+use the adjoint method to find its inverse.}
+
+\item[19.] $A=\begin{bmatrix}2&5&5\\-1&-1&0\\2&4&3\end{bmatrix}$
+
+\item[22.] $A=\begin{bmatrix}2&0&0\\8&1&0\\-5&3&6\end{bmatrix}$
+
+\noindent\textit{In Exercises 24--27, solve by Cramer's rule, where it applies.}
+
+\item[24.] $7x_1-2x_2=3$,\quad $3x_1+x_2=5$
+
+\item[25.] $4x+5y=2$,\quad $11x+y+2z=3$,\quad $x+5y+2z=1$
+
+\item[27.] $x_1-3x_2+x_3=4$,\quad $2x_1-x_2=-2$,\quad $4x_1-3x_3=0$
+
+\item[30.] Show that
+$A=\begin{bmatrix}\cos\theta&\sin\theta&0\\-\sin\theta&\cos\theta&0\\0&0&1\end{bmatrix}$
+is invertible for all values of $\theta$; then find $A^{-1}$ using Theorem~2.3.6.
+
+\item[33.] Let $A=\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}$ with $\det(A)=-7$.
+Find:
+\begin{enumerate}
+  \item[(a)] $\det(3A)$
+  \item[(b)] $\det(A^{-1})$
+  \item[(c)] $\det(2A^{-1})$
+  \item[(d)] $\det\bigl((2A)^{-1}\bigr)$
+  \item[(e)] $\det\begin{bmatrix}a&g&d\\b&h&e\\c&i&f\end{bmatrix}$
+\end{enumerate}
+
+\item[34.] In each part, find the determinant given that $A$ is a $4\times 4$ matrix
+with $\det(A)=-2$:
+\begin{enumerate}
+  \item[(a)] $\det(-A)$
+  \item[(b)] $\det(A^{-1})$
+  \item[(c)] $\det(2A^T)$
+  \item[(d)] $\det(A^3)$
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
