@@ -1,0 +1,173 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\setstretch{1.3}
+\renewcommand{\figurename}{그림}
+\titleformat{name=\section,numberless}
+  {\normalfont\large\bfseries\color{blue}}{}
+  {0pt}{}
+
+\title{1.10 일반적인 등거리 변환}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+
+\section*{1.10 일반적인 등거리 변환}
+
+\begin{tcolorbox}[
+  colback=red!4, colframe=red!60!black,
+  title=정리 1.10.1,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+모든 등거리 변환 $f : \mathbb{E}^n \to \mathbb{E}^n$은
+\textbf{회전, 평행 이동 그리고 반사의 합성}이다.
+
+\end{tcolorbox}
+
+\textbf{개략적인 증명} ($n = 2$인 경우; 일반적인 경우도 비슷한 방법으로 증명된다).
+
+$\mathbb{E}^2$에서 좌표를 정하자.
+한 쌍의 수직인 수선을 잡고 네 개의 사분면에 번호를 붙인다.
+각 점에 한 축($X = x$축)으로부터의 거리 $(\pm y)$와 다른 축($Y = y$축)으로부터의 거리 $(\pm x)$를 재어 좌표 $(x,y)$를 대응시킨다.
+
+등거리 변환 $f$는 $X$와 $Y$를 다른 수직인 직선의 쌍으로 보낸다. 이를 다음과 같이 정하자.
+\[
+  X' = f(X), \qquad Y' = f(Y)
+\]
+$T(0,0) = f(0,0)$을 만족하는 평행 이동 $T$를 선택하자.
+$f(0,0)$을 중심으로 하고 $T(X)$를 $X'$으로 보내는 회전을 $R$이라 하자
+(이와 같은 회전은 두 개가 있는데, 회전각은 $180°$만큼 차이가 난다).
+$T(X)$의 양의 부분을 $X'$의 양의 부분으로 보내는 회전을 $R$이라 하자.
+그러면 합성 $R \circ T$는 $X$를 $X'$으로 보낸다.
+또한 $R \circ T$가 각을 보존하므로 $Y$를 $Y'$으로 보낸다.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>=Stealth, scale=1.0]
+  % --- Left: original axes ---
+  \draw[->] (-0.3,0) -- (2.2,0) node[right]{$x$};
+  \draw[->] (0,-0.3) -- (0,2.2) node[above]{$y$};
+  \node[below] at (1.3,0) {$a$};
+  \node[left]  at (0,1.1) {$b$};
+  \draw[fill=white] (0,1.6) circle (2.5pt);
+
+  % arrow f
+  \draw[->, thick] (2.5,1.0) -- (3.8,1.0) node[midway, above]{$f$};
+
+  % --- Right: rotated axes ---
+  \begin{scope}[xshift=4.5cm, rotate=35]
+    \draw[->] (-0.3,0) -- (2.2,0) node[right]{$x'$};
+    \draw[->] (0,-0.3) -- (0,2.2) node[above]{$y'$};
+    \node[below] at (1.3,0) {$a$};
+    \node[left]  at (0,1.1) {$b$};
+    \draw[fill=white] (0,1.6) circle (2.5pt);
+  \end{scope}
+\end{tikzpicture}
+\caption{등거리 변환 $f$에 의한 좌표 축의 이동}
+\label{fig:1.51}
+\end{figure}
+
+\begin{itemize}\setlength\itemsep{2pt}
+  \item \textbf{경우 1}: $R \circ T$가 $Y$의 양의 부분을 $Y'$의 양의 부분으로 보내면,
+    $f$와 $R \circ T$가 좌표 축을 동일하게 대응시키므로 $f = R \circ T$.
+
+  \item \textbf{경우 2}: 그렇지 않으면,
+    $F$를 $X'$에 대한 반사라 하자.
+    그러면 $F \circ R \circ T$는 $X$의 양의 부분을 $X'$의 양의 부분으로 보내고
+    $Y$의 양의 부분을 $Y'$의 양의 부분으로 보낸다.
+    따라서 $f = F \circ R \circ T$.
+\end{itemize}
+
+어느 경우에나 $f$는 평행 이동, 회전, 그리고 반사의 합성이다.
+\hfill $\square$
+
+\begin{tcolorbox}[
+  colback=red!4, colframe=red!60!black,
+  title=따름정리 1.10.1,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+모든 등거리 변환은 \textbf{반사만의 합성}으로 표현된다.
+
+\end{tcolorbox}
+
+\textbf{증명.}\quad
+정리 1.5.1과 문제 1.6.1로부터 $\mathbb{E}^2$에서 모든 회전과 모든 평행 이동은 반사들의 합성이다.
+$\mathbb{E}^n$에서도 똑같이 성립한다(증명도 비슷하다).
+\hfill $\square$
+
+\bigskip
+
+\begin{tcolorbox}[
+  colback=red!4, colframe=red!60!black,
+  title=따름정리 1.10.2\quad ($\mathbb{R}^2$에서의 일반적인 등거리 변환 공식),
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+모든 등거리 변환 $f : \mathbb{R}^2 \to \mathbb{R}^2$는 다음과 같이 표현된다.
+\[
+  f(x, y) \;=\;
+  \bigl(a_0 + x\cos\theta \mp y\sin\theta,\;\;
+        b_0 + x\sin\theta \pm y\cos\theta\bigr)
+  \qquad \text{(부호동순)} \tag{1.6}
+\]
+여기서 $a_0,\, b_0$와 $\theta$는 상수로서, $\mathbb{R}^2$의 표준 좌표 계에서
+$f(0,0) = (a_0, b_0)$이고,
+$f$가 \textbf{향을 보존}하면 식 (1.6)에서 \textbf{더하기(+)}, 향을 뒤바꾸면 \textbf{빼기(--)}이다.
+
+\end{tcolorbox}
+
+\textbf{증명.}\quad
+$(a_0, b_0) = f(0,0)$이라 하자.
+$f(0,0)$을 시점으로 하고, 종점이 $f(1,0)$, $f(0,1)$인 벡터를 각각 $\vec{v}$, $\vec{w}$라 하자.
+\[
+  \vec{v} = f(1,0) - f(0,0), \qquad \vec{w} = f(0,1) - f(0,0)
+\]
+$f$가 등거리 변환이므로 $\vec{v}$와 $\vec{w}$는 서로 수직인 단위 벡터이다.
+그러므로 다음을 만족하는 각 $\theta$가 존재한다.
+\[
+  \vec{v} = (\cos\theta,\; \sin\theta), \qquad
+  \vec{w} = \pm(-\sin\theta,\; \cos\theta) \tag{1.7}
+\]
+$\vec{w}$에 대한 식에서 $f$가 향을 보존하면 \textbf{더하기}, 그렇지 않으면 \textbf{빼기}이다.
+
+$f$는 $x$축을 $(a_0, b_0)$를 원점으로 하는 축 $X'$으로 보내고 양의 방향은 $\vec{v}$ 방향에 대응시킨다.
+또한 $f$는 $y$축을 $(a_0, b_0)$를 원점으로 하는 축 $Y'$으로 보내고 양의 방향은 $\vec{w}$ 방향에 대응시킨다.
+각 점 $f(x,y)$의 $X'Y'$좌표는 $(x,y)$의 $xy$좌표와 동일하므로
+\[
+  f(x,y) = (a_0,\, b_0) + x\,\vec{v} + y\,\vec{w}
+\]
+식 (1.7)을 위의 식에 적용하면 결과의 식 (1.6)을 얻는다.
+\hfill $\square$
+
+\subsection*{연습문제 1.10}
+
+\begin{enumerate}
+  \item \textbf{(문제 1.10.1)}\quad
+    $f : \mathbb{E}^2 \to \mathbb{E}^2$가 향을 보존하는 등거리 변환이면
+    $f$는 평행 이동이거나 회전임을 보여라.\\
+    \textit{(도움말: $f(P) \neq P$인 점 $P$를 선택한다.
+    $P$를 원점으로 하고 $f(P)$가 $x$축의 양의 부분에 놓이는 좌표 계를 만들어라.
+    선분 $\overline{Pf(P)}$의 수직 이등분선과 선분 $\overline{f(P)f(f(P))}$의 수직 이등분선의
+    교점을 $C$라 하자. $f(C) = C$임을 보이고,
+    $f$가 $C$를 중심으로 하고 회전각이 $\angle PCf(P)$인 회전임을 유도하여라.
+    두 선분의 수직 이등분선이 만나지 않는 경우에는
+    $f$가 평행 이동이거나 회전각이 $180°$인 회전임을 보여라.)}
+
+  \item \textbf{(문제 1.10.2)}\quad
+    $\mathbb{E}^2$ 또는 $\mathbb{E}^3$에서 모든 등거리 변환의 역함수가 존재함을 보여라.\\
+    \textit{(도움말: 문제 1.4.2, 식 (1.1), 식 (1.2)와 함께 정리 1.10.1을 사용하여
+    등거리 변환의 역함수를 만들어 보아라.)}
+\end{enumerate}
+
+\end{document}

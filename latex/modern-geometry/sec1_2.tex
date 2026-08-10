@@ -1,0 +1,168 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\setstretch{1.3}
+\renewcommand{\figurename}{그림}
+\titleformat{name=\section,numberless}
+  {\normalfont\large\bfseries\color{blue}}{}
+  {0pt}{}
+
+% 유기적 실루엣 (높이≈1.2)
+\newcommand{\drawbird}{%
+  \draw[fill=black!72, draw=none]
+    plot[smooth cycle, tension=0.70] coordinates {%
+      (0.00,1.20)(-0.20,1.05)(-0.38,0.70)(-0.30,0.30)%
+      (-0.05,0.00)(0.20,0.05)(0.28,0.40)(0.18,0.85)%
+    };%
+}
+% 동일 실루엣 ×1.45 확대
+\newcommand{\drawbigbird}{%
+  \draw[fill=black!72, draw=none]
+    plot[smooth cycle, tension=0.70] coordinates {%
+      (0.00,1.74)(-0.29,1.52)(-0.55,1.02)(-0.44,0.44)%
+      (-0.07,0.00)(0.29,0.07)(0.41,0.58)(0.26,1.23)%
+    };%
+}
+
+\title{1.2 등거리 변환과 합동}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+
+\section*{1.2 등거리 변환과 합동}
+
+\begin{tcolorbox}[
+  colback=teal!4, colframe=teal!65!black,
+  title=정의 \& 핵심 규칙,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+\textbf{\textcolor{teal!65!black}{정의 1.2.1 (등거리 변환).}}\quad
+함수 $f : \mathbb{E}^n \to \mathbb{E}^n$이 임의의 두 점 $P, Q$에 대해
+\[
+  f(P)\,f(Q) \;=\; PQ
+\]
+를 만족하면 $f$를 \textbf{등거리 변환(isometry)}이라 한다.
+(유클리드 등거리 변환, 유클리드 운동, 유클리드 변환이라고도 부른다.)
+
+\noindent\textcolor{teal!50!black}{\rule{\linewidth}{0.4pt}}
+
+\textbf{\textcolor{teal!65!black}{핵심 규칙 (보존량).}}\quad
+등거리 변환은 거리를 보존하므로, 다음을 모두 보존한다.
+
+\smallskip
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{|l|l|}
+\hline
+보존되는 양 & 이유 \\
+\hline
+길이(거리) & 정의에 의해 직접 보존 \\
+각 & 길이로부터 코사인 법칙으로 유도 \\
+넓이·부피 & 길이와 각으로부터 유도 \\
+\hline
+\end{tabular}
+\end{center}
+
+\smallskip
+$\Rightarrow$ 등거리 변환은 모든 기하학적 도형의 \textbf{크기와 모양}을 보존한다.
+
+\end{tcolorbox}
+
+\medskip
+\textbf{보기 1.2.1.}\quad
+선분 $\overline{PQ}$는 $P$와 $Q$를 잇는 가장 짧은 곡선이다.
+$f$가 등거리 변환이면 거리를 보존하므로 $f(\overline{PQ})$도 $f(P)$와 $f(Q)$를 잇는
+가장 짧은 곡선, 즉 선분이다. 따라서
+\[
+  f\!\left(\overline{PQ}\right) = \overline{f(P)\,f(Q)}
+\]
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[>=Stealth]
+  % === 왼쪽: 등거리 변환 f ===
+  \drawbird
+  \node[above, inner sep=1pt] at ( 0.00, 1.27) {\footnotesize $P$};
+  \node[below, inner sep=1pt] at (-0.05, 0.00) {\footnotesize $Q$};
+
+  \draw[->, thick] (0.60,0.60) -- (1.90,0.60) node[midway,above]{$f$};
+
+  \begin{scope}[xshift=2.55cm]
+    \drawbird
+    \node[above, inner sep=1pt] at ( 0.00, 1.27) {\footnotesize $f(P)$};
+    \node[below, inner sep=1pt] at (-0.05, 0.00) {\footnotesize $f(Q)$};
+  \end{scope}
+
+  \node[below] at (1.27,-0.38) {등거리 변환};
+
+  % === 구분선 ===
+  \draw[dashed, gray!60, line width=0.5pt] (3.58,-0.52) -- (3.58,1.68);
+
+  % === 오른쪽: 등거리 변환 아님 g ===
+  \begin{scope}[xshift=4.18cm]
+    \drawbird
+    \node[above, inner sep=1pt] at ( 0.00, 1.27) {\footnotesize $P$};
+    \node[below, inner sep=1pt] at (-0.05, 0.00) {\footnotesize $Q$};
+
+    \draw[->, thick] (0.60,0.60) -- (1.90,0.60) node[midway,above]{$g$};
+
+    \begin{scope}[xshift=2.55cm]
+      \drawbigbird
+      \node[above, inner sep=1pt] at ( 0.00, 1.82) {\footnotesize $g(P)$};
+      \node[below, inner sep=1pt] at (-0.07, 0.00) {\footnotesize $g(Q)$};
+    \end{scope}
+
+    \node[below] at (1.27,-0.38) {등거리 변환이 아니다};
+  \end{scope}
+\end{tikzpicture}
+\caption{유클리드 공간에서의 함수 ($f$는 등거리 변환, $g$는 아님)}
+\label{fig:1.1}
+\end{figure}
+
+\begin{tcolorbox}[
+  colback=teal!4, colframe=teal!65!black,
+  title=정의 1.2.2\quad 합동,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+두 부분집합 $A, B \subset \mathbb{E}^n$에 대해
+$f(A) = B$를 만족하는 등거리 변환 $f$가 존재하면,
+$A$와 $B$는 \textbf{합동(congruent)}이라 하고
+\[
+  A \;\cong\; B
+\]
+로 나타낸다.
+
+\end{tcolorbox}
+
+\medskip
+\subsection*{연습문제 1.2}
+
+\begin{enumerate}
+  \item \textbf{(문제 1.2.1)}
+    \begin{enumerate}
+      \item[(a)] 등거리 변환은 단사(일대일) 함수임을 보여라.\\
+        (즉, $f$가 등거리 변환이고 $P \neq Q$이면 $f(P) \neq f(Q)$임을 보여라.)
+      \item[(b)] $f$가 등거리 변환이고 역함수 $f^{-1}$이 존재하면, $f^{-1}$도 등거리 변환임을 보여라.
+    \end{enumerate}
+
+  \item \textbf{(문제 1.2.2)}\quad
+    $C \subset \mathbb{E}^2$를 중심 $P$, 반지름 $r$인 원이라 하자.
+    등거리 변환 $f : \mathbb{E}^2 \to \mathbb{E}^2$에 대해
+    $f(C)$가 중심 $f(P)$, 반지름 $r$인 원임을 증명하여라.\\
+    \textit{(도움말: 중심 $f(P)$, 반지름 $r$인 원을 $C'$이라 하고
+    $f(C) \subset C'$와 $f^{-1}(C') \subset C$가 성립함을 보여라.)}
+\end{enumerate}
+
+\end{document}

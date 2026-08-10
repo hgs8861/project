@@ -1,0 +1,116 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\setstretch{1.3}
+\renewcommand{\figurename}{그림}
+\titleformat{name=\section,numberless}
+  {\normalfont\large\bfseries\color{blue}}{}
+  {0pt}{}
+
+\title{1.3 평면에서의 반사}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+
+\section*{1.3 평면에서의 반사}
+
+\textbf{핵심 사실:} 모든 유클리드 등거리 변환은 \textbf{반사(reflection)}, \textbf{평행 이동}, \textbf{회전}의 합성으로 나타낼 수 있다.
+
+\begin{tcolorbox}[
+  colback=teal!4, colframe=teal!65!black,
+  title=정의 \& 핵심 규칙,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+\textbf{\textcolor{teal!65!black}{정의 (평면에서의 반사).}}\quad
+$\mathbb{E}^2$에서 점 $P$와 직선 $L$이 주어졌을 때, \textbf{$L$에 대한 $P$의 반사점} $P'$은
+$L$에 수직이고 $P$와 등거리인 반대쪽 점이다.
+\begin{itemize}\setlength\itemsep{0pt}
+  \item $L$에 수선 $M$을 내려 발을 $M$이라 하면: $P'M = PM$, $P'$는 $L$에 대해 $P$와 반대편
+  \item $P \in L$이면 $P' = P$
+\end{itemize}
+도형 전체의 반사 = 모든 점의 반사.
+
+\noindent\textcolor{teal!50!black}{\rule{\linewidth}{0.4pt}}
+
+\textbf{\textcolor{teal!65!black}{핵심 규칙 (반사의 3가지 구성법 --- 결과 동일).}}
+\begin{enumerate}\setlength\itemsep{2pt}
+  \item \textbf{접기}: 삼차원 공간에서 $L$을 중심으로 평면을 $180°$ 뒤집어 포갠다.\\
+    \textit{(이 방법이 반사가 등거리 변환인 이유를 직관적으로 설명한다.)}
+  \item \textbf{자와 컴퍼스}: $P \notin L$이면, $L$ 위에 중심을 두고 $P$를 지나는 두 원을 그린다.\\
+    두 원이 $L$ 반대편에서 만나는 점이 $P'$이다.
+  \item \textbf{좌표 공식} ($\mathbb{R}^2$에서 $x$축 반사):
+  \[
+    f(x, y) = (x,\,-y)
+  \]
+\end{enumerate}
+
+\end{tcolorbox}
+
+\textbf{방법 2의 근거.}\quad
+자와 컴퍼스에 의한 작도는 직선 $L$에 대한 반사가 $L$에 중심을 둔 원을 보존한다는 사실에 그 기반을 두고 있다.
+$C$를 중심이 $Z \in L$인 원이라 하고 $f$를 $L$에 대한 반사라 하자.
+$Z \in L$이므로 $f(Z) = Z$이고, $f$가 거리를 보존하므로 임의의 점 $Q$에 대해 $f(Q)Z = QZ$가 성립한다.
+특히 $Q \in C$이면 $f(Q)$는 또한 $C$ 위에 놓이게 된다.
+이러한 사실이 작도에 나오는 두 원에 대해 모두 성립하므로,
+$f$는 두 원의 교점을 $L$의 반대쪽 교점으로 보내게 된다.
+\hfill $\square$
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.05]
+  % Mirror line L (vertical)
+  \draw[thick] (0,-1.5) -- (0,1.8) node[above]{\small $L$};
+
+  % Points p and p' (open circles like original)
+  \draw[fill=white, thick] (-2.2,0.55) circle (3.5pt);
+  \node[left] at (-2.2,0.55) {$p$};
+  \draw[fill=white, thick] ( 2.2,0.55) circle (3.5pt);
+  \node[right] at ( 2.2,0.55) {$p'$};
+
+  % Perpendicular line M (dashed)
+  \draw[dashed, thick] (-2.2,0.55) -- (2.2,0.55);
+  \node[above, font=\small] at (0.6,0.55) {$M$};
+
+  % Right angle mark at (0, 0.55) in lower-right quadrant
+  \draw[thick] (0,0.38) -- (0.17,0.38) -- (0.17,0.55);
+
+  % d labels
+  \node[above, font=\small] at (-1.1,0.55) {$d$};
+  \node[above, font=\small] at ( 1.1,0.55) {$d$};
+
+  % 90° label
+  \node[below right, font=\scriptsize] at (0.05,0.55) {$90°$};
+\end{tikzpicture}
+\caption{직선에 대한 반사}
+\label{fig:1.2}
+\end{figure}
+
+\subsection*{연습문제 1.3}
+
+\begin{enumerate}
+  \item \textbf{(문제 1.3.1)}\quad
+    $\mathbb{R}^2$에서 임의의 직선 $ax + by + c = 0$에 대한 반사의 공식을
+    $a, b, c$를 사용하여 나타내어라.
+
+  \item \textbf{(문제 1.3.2)}
+    \begin{enumerate}
+      \item[(a)] 평면에서 임의의 두 원은 중심 사이의 거리와 반지름에 따라
+        정확히 두 점 또는 한 점에서 만나거나, 만나지 않음을 보여라.
+      \item[(b)] $\mathbb{E}^2$에서 두 원이 두 점에서 만나면, 두 원의 중심을
+        잇는 직선이 두 교점을 연결하는 선분을 수직 이등분함을 보여라.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
