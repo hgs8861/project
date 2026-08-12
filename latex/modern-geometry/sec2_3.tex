@@ -1,0 +1,271 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, 3d}
+
+\setstretch{1.3}
+\renewcommand{\figurename}{그림}
+\titleformat{name=\section,numberless}
+  {\normalfont\large\bfseries\color{blue}}{}
+  {0pt}{}
+
+\title{2.3 구면 삼각형의 여섯 개의 각}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+
+\section*{2.3 구면 삼각형의 여섯 개의 각}
+
+구면에서 측지 삼각형을 \textbf{구면 삼각형}이라 한다.
+$\triangle ABC$를 중심 $O$인 구면 위의 구면 삼각형이라 하고,
+꼭짓점 $A$의 대변을 $a$, $B$의 대변을 $b$, $C$의 대변을 $c$라 하자.
+
+\begin{tcolorbox}[
+  colback=teal!4, colframe=teal!65!black,
+  title=정의 \& 핵심 규칙,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+\textbf{\textcolor{teal!65!black}{여섯 개의 각.}}\quad
+구면 삼각형 $\triangle ABC$에는 \textbf{세 호각}(arc angle)과 \textbf{세 꼭짓각}(vertex angle)이 존재한다.
+
+\medskip
+$\vec{A} = \overrightarrow{OA},\;\vec{B} = \overrightarrow{OB},\;\vec{C} = \overrightarrow{OC}$로 표기하면:
+
+\textbf{호각} --- 삼각형의 각 변(호)에 대응하는 각:
+\[
+  \angle a = \angle(\vec{B},\vec{C}),\qquad
+  \angle b = \angle(\vec{C},\vec{A}),\qquad
+  \angle c = \angle(\vec{A},\vec{B})
+\]
+
+\textbf{꼭짓각} --- 각 꼭짓점에서 두 호가 이루는 각, 다음의 세 가지로 동일하게 정의된다.
+\begin{enumerate}\setlength\itemsep{1pt}
+  \item 꼭짓점 $A$에서 두 호 $\widehat{AB}$와 $\widehat{AC}$ 사이의 각
+  \item $A$에서 $\widehat{AB}$에 접하는 벡터 $\vec{V}$와 $\widehat{AC}$에 접하는 벡터 $\vec{W}$ 사이의 각
+  \item 두 평면 $\overline{ABO}$와 $\overline{ACO}$ 사이의 각
+\end{enumerate}
+
+\end{tcolorbox}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=1.05]
+  %--- Left: 꼭짓각 ---
+  \draw[thick] (0,0) circle (1.8cm);
+  \draw[thick, dashed] (0,0) ellipse (1.8cm and 0.42cm);
+  % Triangle vertices
+  \coordinate (A) at (1.1, 0.7);
+  \coordinate (B) at (-0.6, 1.6);
+  \coordinate (C) at (-0.9,-1.4);
+  % Arc sides of spherical triangle
+  \draw[thick] (B) arc (124:48:1.8cm);   % arc from B to A
+  \draw[thick] (A) arc (23:-60:1.8cm);   % arc from A to C (approx)
+  \draw[thick] (C) arc (236:128:1.8cm);  % arc from C to B
+  % Fill shaded region
+  \fill[gray!30, opacity=0.5] (A) arc(48:124:1.8cm) arc(128:236:1.8cm) arc(-60:23:1.8cm);
+  \node[right] at (A) {$A$};
+  \node[above] at (B) {$B$};
+  \node[below left] at (C) {$C$};
+  \node[below, font=\small] at (0,-2.1) {$\triangle ABC$의 꼭짓각};
+
+  %--- Right: 호각 (arc angles) ---
+  \begin{scope}[xshift=5cm]
+    \draw[thick] (0,0) circle (1.8cm);
+    \draw[thick, dashed] (0,0) ellipse (1.8cm and 0.42cm);
+    \coordinate (A2) at (1.1, 0.7);
+    \coordinate (B2) at (-0.6, 1.6);
+    \coordinate (C2) at (-0.9,-1.4);
+    \draw[thick] (B2) arc(124:48:1.8cm);
+    \draw[thick] (A2) arc(23:-60:1.8cm);
+    \draw[thick] (C2) arc(236:128:1.8cm);
+    \fill[gray!30, opacity=0.5] (A2) arc(48:124:1.8cm) arc(128:236:1.8cm) arc(-60:23:1.8cm);
+    % Arc labels
+    \node[above right, font=\small] at (0.85, 1.3) {$c$};
+    \node[right, font=\small] at (1.5, -0.3) {$b$};
+    \node[left, font=\small] at (-1.3, 0.2) {$a$};
+    \node[right] at (A2) {$A$};
+    \node[above] at (B2) {$B$};
+    \node[below left] at (C2) {$C$};
+    % Center dot
+    \fill (0,0) circle (2pt) node[below right, font=\scriptsize]{$O$};
+    \node[below, font=\small] at (0,-2.1) {$\triangle ABC$의 호각};
+  \end{scope}
+\end{tikzpicture}
+\caption{구면 삼각형의 여섯 개의 각 (그림 2.8)}
+\label{fig:2.8}
+\end{figure}
+
+\begin{tcolorbox}[
+  colback=red!4, colframe=red!60!black,
+  title=보조정리 2.3.1,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+구면 삼각형 $\triangle ABC$에 대해 다음이 성립한다.
+
+\textbf{1. 호각:}\;
+$\angle a = \angle(\vec{B},\vec{C}),\quad \angle b = \angle(\vec{C},\vec{A}),\quad \angle c = \angle(\vec{A},\vec{B})$
+
+\textbf{2. 꼭짓각:}
+\begin{align*}
+  \angle A &= \angle(\vec{A}\times\vec{B},\;\vec{A}\times\vec{C})\\
+  \angle B &= \angle(\vec{B}\times\vec{C},\;\vec{B}\times\vec{A})\\
+  \angle C &= \angle(\vec{C}\times\vec{A},\;\vec{C}\times\vec{B})
+\end{align*}
+
+\end{tcolorbox}
+
+\textbf{증명.}\quad
+1. 호각의 경우 정의로부터 자명하다.
+
+2. $\vec{A}\times\vec{B}$는 평면 $\overline{ABO}$에 수직이고 $\vec{A}\times\vec{C}$는 평면 $\overline{ACO}$에 수직이다.
+이로부터 $\angle A = \angle(\vec{A}\times\vec{B}, \vec{A}\times\vec{C})$이 ``거의'' 성립하는 것을 알 수 있는데,
+그 이유는 두 평면 사이의 각은 법벡터 사이의 각과 같기 때문이다.
+문제가 되는 것은 교차하는 두 평면이 서로 보각인 두 개의 각을 결정하기 때문에
+$\angle(\vec{A}\times\vec{B},\vec{A}\times\vec{C})$이 $\angle A$와 같은지 아니면
+$180°-\angle A$와 같은지이다.
+
+$A$에서 호 $\widehat{AB}$의 접선을 $\vec{V}$, 호 $\widehat{AC}$의 접선을 $\vec{W}$라 하면
+꼭짓각의 정의로부터
+\[
+  \angle A = \angle(\vec{V}, \vec{W}) \tag{2.4}
+\]
+$\vec{V}$와 $\vec{W}$가 $\vec{A}$에 수직이므로 오른손 법칙으로부터
+$\vec{A}\times\vec{V}$는 $\vec{V}$를 $\vec{A}$를 중심으로 오른쪽으로 $90°$ 회전시켜 얻은 방향을,
+$\vec{A}\times\vec{W}$는 $\vec{W}$를 $\vec{A}$를 중심으로 오른쪽으로 $90°$ 회전시켜 얻은 방향을 가리킨다.
+회전은 각을 보존하므로
+\[
+  \angle(\vec{V},\vec{W}) = \angle(\vec{A}\times\vec{V},\;\vec{A}\times\vec{W}) \tag{2.5}
+\]
+한편 $\vec{A}\times\vec{V}$는 $\vec{A}\times\vec{B}$와, $\vec{A}\times\vec{W}$는 $\vec{A}\times\vec{C}$와 동일한 방향을 가리킨다.
+따라서
+\[
+  \angle(\vec{A}\times\vec{V},\;\vec{A}\times\vec{W}) = \angle(\vec{A}\times\vec{B},\;\vec{A}\times\vec{C}) \tag{2.6}
+\]
+식 (2.4), (2.5), (2.6)으로부터 $\angle A = \angle(\vec{A}\times\vec{B},\vec{A}\times\vec{C})$. \hfill $\square$
+
+\begin{tcolorbox}[
+  colback=red!4, colframe=red!60!black,
+  title=정리 2.3.1,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+구면 삼각형 $\triangle ABC$에 대해 다음이 성립한다.
+\[
+  \angle A + \angle B + \angle C = \pi + \frac{\text{넓이}(\triangle ABC)}{R^2} \tag{2.7}
+\]
+여기서 단위는 라디안이고 $R$은 구의 반지름이다.
+특히, $\angle A + \angle B + \angle C > 180°$가 성립한다.
+
+\end{tcolorbox}
+
+\textbf{증명.}\quad
+구면의 점 $P$에 대해 $-P$를 $P$에서 지름을 그었을 때 반대쪽 끝점(대척점)이라 하자.
+$P$에서 각 $\theta$를 이루는 두 대원은 꼭짓점이 $P$와 $-P$인 구면의 한 조각(lune)을 둘러싸는데,
+이를 \textbf{조각}이라 부른다.
+
+구면의 전체 넓이는 $4\pi R^2$이고, 각 $\theta$에 대응하는 조각의 비율이 $\theta/(2\pi)$이므로
+\[
+  \text{넓이(조각)} = 2R^2\theta
+\]
+$\triangle ABC$의 각 꼭짓각에 대응하는 A-조각, B-조각, C-조각을 정의하면
+(예: A-조각 = 꼭짓점 $A, -A$를 갖고 호 $\widehat{AB}$를 경계의 일부로 하는 반구를 포함하는 조각)
+식의 포함관계로부터:
+\begin{align*}
+  \text{넓이}(A\text{-조각}) &= \text{넓이}(\triangle ABC) + \text{넓이}(\triangle(-A)BC) \tag{2.9}\\
+  \text{넓이}(B\text{-조각}) &= \text{넓이}(\triangle ABC) + \text{넓이}(\triangle A(-B)C) \tag{2.10}\\
+  \text{넓이}(C\text{-조각}) &= \text{넓이}(\triangle ABC) + \text{넓이}(\triangle(-A)(-B)C) \tag{2.12}
+\end{align*}
+구의 중심에 대한 반사 $f$는 등거리 변환이므로 $\triangle AB(-C)$와 $\triangle(-A)(-B)C$의 넓이가 같다.
+세 조각의 넓이의 합과 반구의 관계로부터:
+\[
+  \text{넓이}(A\text{-조각}) + \text{넓이}(B\text{-조각}) + \text{넓이}(C\text{-조각})
+  = \text{넓이}(H_C) + 2\,\text{넓이}(\triangle ABC) \tag{2.13}
+\]
+여기서 $H_C$는 $C$를 포함하고 $\widehat{AB}$를 경계의 일부로 하는 반구이고
+$\text{넓이}(H_C) = 2\pi R^2$이다.
+한편
+\[
+  \text{넓이}(A\text{-조각}) = 2R^2\angle A, \quad
+  \text{넓이}(B\text{-조각}) = 2R^2\angle B, \quad
+  \text{넓이}(C\text{-조각}) = 2R^2\angle C
+\]
+이를 식 (2.13)에 대입하면
+\[
+  2R^2\angle A + 2R^2\angle B + 2R^2\angle C = 2\pi R^2 + 2\,\text{넓이}(\triangle ABC)
+\]
+양변을 $2R^2$으로 나누면 식 (2.7)을 얻는다. \hfill $\square$
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[scale=1.0]
+  %--- Left: side view of lune (조각) ---
+  \draw[thick] (0,0) circle (1.6cm);
+  % Lune shading
+  \fill[gray!35, opacity=0.6]
+    (0, 1.6) arc (90:90+50:1.6cm) arc (140:-140:0.3cm and 1.6cm) arc (-90:-90+50:1.6cm) arc (40:140:0.3cm and 1.6cm);
+  % Full great circle (vertical)
+  \draw[thick] (0,0) ellipse (0.3cm and 1.6cm);
+  % Second great circle (tilted)
+  \draw[thick, dashed] (0,0) ellipse (0.5cm and 1.6cm);
+  % Angle arc
+  \draw[->] (0.15, 0.6) arc (70:40:0.6cm) node[midway, right, font=\small]{$\theta$};
+  \node[below, font=\small] at (0,-1.9) {옆에서 바라본 구};
+
+  %--- Right: top view ---
+  \begin{scope}[xshift=4.5cm]
+    \draw[thick] (0,0) circle (1.6cm);
+    % Lune shading (wedge from top)
+    \fill[gray!35, opacity=0.6] (0,0) -- (1.6,0) arc (0:50:1.6cm) -- (0,0);
+    % Two radii
+    \draw[thick] (0,0) -- (1.6,0);
+    \draw[thick] (0,0) -- ({1.6*cos(50)}, {1.6*sin(50)});
+    % Angle arc
+    \draw[->] (0.6,0) arc (0:50:0.6cm) node[midway, right, font=\small]{$\theta$};
+    % Full circle label
+    \node[above right, font=\small] at (1.2, 1.0) {$2\pi$};
+    \node[below, font=\small] at (0,-1.9) {위에서 바라본 구};
+  \end{scope}
+\end{tikzpicture}
+\caption{조각의 넓이 $= 2R^2\theta$ (그림 2.10)}
+\label{fig:2.10}
+\end{figure}
+
+\begin{tcolorbox}[
+  colback=red!4, colframe=red!60!black,
+  title=따름정리 2.3.1,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+구면의 한 영역이 그 내부에 적어도 한 개의 측지 삼각형을 포함하는 경우,
+그 영역과 평면의 영역 사이에는 등거리 변환이 존재하지 않는다.
+
+\end{tcolorbox}
+
+\textbf{증명.}\quad
+등거리 변환은 거리를 보존하므로 가장 짧은 곡선을 가장 짧은 곡선으로 대응시킨다.
+따라서 만약 구면의 영역과 평면의 영역 사이에 등거리 변환이 존재한다면,
+이 등거리 변환은 구면의 측지 삼각형을 평면의 측지 삼각형으로 보낸다.
+그런데 등거리 변환은 또한 각을 보존하므로,
+구면 삼각형의 내각의 합은 평면 삼각형의 내각의 합과 같아야 한다.
+이는 정리 2.3.1에 위배된다. \hfill $\square$
+
+\subsection*{연습문제 2.3}
+
+\begin{enumerate}
+  \item 반지름 $R = 1$인 단위 구면에서 내각이 각각
+    $\angle A = \angle B = \angle C = 90°$인 구면 삼각형의 넓이를 정리 2.3.1을 이용하여 구하여라.
+    이 삼각형을 구체적으로 묘사하여라.
+
+  \item 구면 삼각형의 넓이를 $S$라 할 때, \textbf{구면 잉여각}(spherical excess)을 $E = \angle A + \angle B + \angle C - \pi$로 정의한다.
+    반지름 $R$인 구면에서 $S = R^2 E$임을 정리 2.3.1로부터 확인하여라.
+\end{enumerate}
+
+\end{document}

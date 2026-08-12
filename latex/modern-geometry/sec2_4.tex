@@ -1,0 +1,115 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\setstretch{1.3}
+\renewcommand{\figurename}{그림}
+\titleformat{name=\section,numberless}
+  {\normalfont\large\bfseries\color{blue}}{}
+  {0pt}{}
+
+\title{2.4 변에 대한 코사인 법칙}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+
+\section*{2.4 변에 대한 코사인 법칙}
+
+$\triangle ABC$를 구면 삼각형이라 하고, 꼭짓점 $A$의 대변을 $a$, 꼭짓점 $B$의 대변을 $b$, 꼭짓점 $C$의 대변을 $c$라 하자.
+
+\begin{tcolorbox}[
+  colback=red!4, colframe=red!60!black,
+  title=정리 2.4.1 (변에 대한 코사인 법칙),
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+\[
+  \cos\angle a = \cos\angle b\cos\angle c + \sin\angle b\sin\angle c\cos\angle A
+\]
+
+\end{tcolorbox}
+
+\textbf{증명.}\quad
+내적을 사용하여 $\cos\angle A$를 계산하자.
+보조정리 2.3.1에 의해 $\angle A = \angle(\vec{A}\times\vec{B},\;\vec{A}\times\vec{C})$이므로 다음을 얻는다.
+
+\[
+  (\vec{A}\times\vec{B})\cdot(\vec{A}\times\vec{C})
+  = |\vec{A}\times\vec{B}|\,|\vec{A}\times\vec{C}|\cos\angle A
+\]
+
+한편, $\angle(\vec{A},\vec{B}) = \angle c$이고 $\angle(\vec{A},\vec{C}) = \angle b$이므로 다음을 얻는다.
+
+\[
+  |\vec{A}\times\vec{B}| = |\vec{A}||\vec{B}|\sin\angle c = R^2\sin\angle c,\qquad
+  |\vec{A}\times\vec{C}| = |\vec{A}||\vec{C}|\sin\angle b = R^2\sin\angle b
+\]
+
+따라서
+
+\begin{equation}
+  (\vec{A}\times\vec{B})\cdot(\vec{A}\times\vec{C})
+  = R^4\sin\angle b\sin\angle c\cos\angle A \tag{2.14}
+\end{equation}
+
+벡터 대수학의 표준 항등식$^{8)}$을 사용하여 식 (2.14)의 좌변을 다음과 같이 간단하게 만들 수 있다.
+
+\begin{align*}
+  (\vec{A}\times\vec{B})\cdot(\vec{A}\times\vec{C})
+  &= \det\begin{pmatrix}\vec{A}\cdot\vec{A} & \vec{A}\cdot\vec{C}\\[4pt]
+                         \vec{B}\cdot\vec{A} & \vec{B}\cdot\vec{C}\end{pmatrix} \\[6pt]
+  &= \det\begin{pmatrix}|\vec{A}|^2 & |\vec{A}||\vec{C}|\cos\angle b\\[4pt]
+                         |\vec{B}||\vec{A}|\cos\angle c & |\vec{B}||\vec{C}|\cos\angle a\end{pmatrix} \\[6pt]
+  &= \det\begin{pmatrix}R^2 & R^2\cos\angle b\\[4pt]
+                         R^2\cos\angle c & R^2\cos\angle a\end{pmatrix} \\[6pt]
+  &= R^4\cos\angle a - R^4\cos\angle b\cos\angle c
+\end{align*}
+
+이 결과와 식 (2.14)로부터 다음을 얻는다.
+
+\[
+  R^4\cos\angle a - R^4\cos\angle b\cos\angle c = R^4\sin\angle b\sin\angle c\cos\angle A
+\]
+
+마지막으로 양변을 $R^4$으로 나누고 양변에 $\cos\angle b\cos\angle c$를 더하면 된다. \hfill $\square$
+
+\medskip
+\noindent$^{8)}$\,\small$(\vec{X}\times\vec{Y})\cdot(\vec{Z}\times\vec{W})
+  = \det\!\begin{pmatrix}\vec{X}\cdot\vec{Z} & \vec{X}\cdot\vec{W}\\
+  \vec{Y}\cdot\vec{Z} & \vec{Y}\cdot\vec{W}\end{pmatrix}$\normalsize
+
+\bigskip
+
+\begin{tcolorbox}[
+  colback=teal!4, colframe=teal!65!black,
+  title=참고,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+삼각형을 풀기$^{9)}$ 위해 코사인 법칙을 사용할 때, 반올림에 의해 계산 결과가 정확하지 않을 수 있다.
+그러므로 모든 계산에서 적어도 소수점 아래 다섯 자리 혹은 여섯 자리까지 다루는 것이 좋다.
+더 좋은 방법은 중간 결과를 저장하기 위해 계산기의 메모리를 사용하면 계산기가 처리할 수 있는 한 계산이 정확해질 것이다.
+
+\end{tcolorbox}
+
+\noindent$^{9)}$\,\small`삼각형을 푼다'는 것은 삼각형의 세 각과 세 변의 길이를 알아 낸다는 뜻이다.\normalsize
+
+\subsection*{연습문제 2.4}
+
+\textbf{문제 2.4.1 (SAS와 SSS)}\quad 다음 구면 삼각형을 풀어라.
+\begin{enumerate}[(a)]
+  \item $\angle A = 60°$,\; $\angle b = 70°$,\; $\angle c = 80°$
+  \item $\angle a = 60°$,\; $\angle b = 70°$,\; $\angle c = 80°$
+\end{enumerate}
+
+\end{document}

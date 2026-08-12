@@ -1,0 +1,132 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc}
+
+\setstretch{1.3}
+\renewcommand{\figurename}{그림}
+\titleformat{name=\section,numberless}
+  {\normalfont\large\bfseries\color{blue}}{}
+  {0pt}{}
+
+\title{2.7 구면 삼각형에 대한 사인 법칙}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+
+\section*{2.7 구면 삼각형에 대한 사인 법칙}
+
+유클리드 평면의 사인 법칙과 완전히 대응하는 공식이 구면 위의 삼각형에서도 성립한다.
+
+\begin{tcolorbox}[
+  colback=red!4, colframe=red!60!black,
+  title=정리 2.7.1 (구면 사인 법칙),
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+구면 삼각형 $\triangle ABC$에 대해 다음이 성립한다.
+\[
+  \frac{\sin\angle a}{\sin\angle A}
+  = \frac{\sin\angle b}{\sin\angle B}
+  = \frac{\sin\angle c}{\sin\angle C}
+  = \frac{s\,\det[\vec{A},\vec{B},\vec{C}]}{\det[\vec{A}^*,\vec{B}^*,\vec{C}^*]}
+\]
+여기서 $s = \pm 1$은 $\det[\vec{A},\vec{B},\vec{C}]$의 부호이다.
+
+\end{tcolorbox}
+
+\textbf{증명.}\quad
+먼저 $\sin\angle A$를 $\det[\vec{A},\vec{B},\vec{C}]$를 사용하여 나타내자.
+
+정리 2.5.1의 증명에서 다음을 보였다.
+\[
+  \vec{B}^*\times\vec{C}^*
+  = \frac{\det[\vec{A},\vec{B},\vec{C}]}{R^2\sin\angle b\sin\angle c}\,\vec{A}
+\]
+따라서
+\[
+  |\vec{B}^*\times\vec{C}^*|
+  = \frac{|\det[\vec{A},\vec{B},\vec{C}]|}{R^2\sin\angle b\sin\angle c}\cdot R
+  = \frac{|\det[\vec{A},\vec{B},\vec{C}]|}{R\sin\angle b\sin\angle c}
+\]
+한편 $|\vec{B}^*| = |\vec{C}^*| = R$이고 $\angle(\vec{B}^*,\vec{C}^*) = \angle a^*$이므로
+\[
+  |\vec{B}^*\times\vec{C}^*| = R^2\sin\angle a^*
+\]
+따름정리 2.5.3에 의해 $\angle a^* = 180° - \angle A$이므로 $\sin\angle a^* = \sin\angle A$이다.
+이로부터 다음을 얻는다.
+\[
+  \sin\angle A = \frac{|\det[\vec{A},\vec{B},\vec{C}]|}{R^3\sin\angle b\sin\angle c}
+\]
+이어서 $\det[\vec{A}^*,\vec{B}^*,\vec{C}^*]$를 계산하자.
+
+쌍대 삼각형의 정의와 앞의 계산에서 다음을 얻는다.
+\begin{align*}
+  \vec{A}^*\times\vec{B}^*
+  &= \frac{\vec{B}\times\vec{C}}{R\sin\angle a}\times\frac{\vec{C}\times\vec{A}}{R\sin\angle b} \\
+  &= \frac{(\vec{B}\times\vec{C})\times(\vec{C}\times\vec{A})}{R^2\sin\angle a\sin\angle b} \\
+  &= \frac{\det[\vec{A},\vec{B},\vec{C}]\,\vec{C}}{R^2\sin\angle a\sin\angle b}
+\end{align*}
+따라서 스칼라 삼중곱을 계산하면
+\begin{align*}
+  \det[\vec{A}^*,\vec{B}^*,\vec{C}^*]
+  &= (\vec{A}^*\times\vec{B}^*)\cdot\vec{C}^* \\
+  &= \frac{\det[\vec{A},\vec{B},\vec{C}]\,\vec{C}}{R^2\sin\angle a\sin\angle b}
+     \cdot\frac{\vec{A}\times\vec{B}}{R\sin\angle c} \\
+  &= \frac{\det[\vec{A},\vec{B},\vec{C}]}{R^3\sin\angle a\sin\angle b\sin\angle c}
+     \bigl(\vec{C}\cdot(\vec{A}\times\vec{B})\bigr)
+\end{align*}
+여기서 $\vec{C}\cdot(\vec{A}\times\vec{B}) = \det[\vec{A},\vec{B},\vec{C}]$이므로 다음을 얻는다.
+\begin{equation}
+  \det[\vec{A}^*,\vec{B}^*,\vec{C}^*]
+  = \frac{\bigl(\det[\vec{A},\vec{B},\vec{C}]\bigr)^2}
+         {R^3\sin\angle a\sin\angle b\sin\angle c}
+  \tag{2.21}
+\end{equation}
+식 (2.21)로부터 다음을 얻는다.
+\[
+  \frac{s\,\det[\vec{A},\vec{B},\vec{C}]}{\det[\vec{A}^*,\vec{B}^*,\vec{C}^*]}
+  = s\,\det[\vec{A},\vec{B},\vec{C}]\cdot
+    \frac{R^3\sin\angle a\sin\angle b\sin\angle c}
+         {\bigl(\det[\vec{A},\vec{B},\vec{C}]\bigr)^2}
+  = \frac{s\,R^3\sin\angle a\sin\angle b\sin\angle c}{\det[\vec{A},\vec{B},\vec{C}]}
+\]
+또한 $s = \mathrm{sign}(\det[\vec{A},\vec{B},\vec{C}])$이므로 다음을 얻는다.
+\[
+  \frac{s\,\det[\vec{A},\vec{B},\vec{C}]}{\det[\vec{A}^*,\vec{B}^*,\vec{C}^*]}
+  = \frac{R^3\sin\angle a\sin\angle b\sin\angle c}{|\det[\vec{A},\vec{B},\vec{C}]|}
+  = \sin\angle a\cdot\frac{R^3\sin\angle b\sin\angle c}{|\det[\vec{A},\vec{B},\vec{C}]|}
+  = \frac{\sin\angle a}{\sin\angle A}
+\]
+대칭적으로 $\sin\angle b/\sin\angle B$와 $\sin\angle c/\sin\angle C$도 같은 공통값을 가짐을 보일 수 있다.
+\hfill $\square$
+
+\subsection*{연습문제 2.7}
+
+\begin{enumerate}[1.]
+  \item 구면 사인 법칙을 이용하여, 이등변 구면 삼각형
+    ($\angle b = \angle c$)이면 $\angle B = \angle C$임을 보여라.
+
+  \item 식 (2.21)로부터 다음이 성립함을 확인하여라.
+    \[
+      \bigl(\det[\vec{A}^*,\vec{B}^*,\vec{C}^*]\bigr)
+      \cdot\bigl(\det[\vec{A},\vec{B},\vec{C}]\bigr)
+      = \frac{\bigl(\det[\vec{A},\vec{B},\vec{C}]\bigr)^3}
+             {R^3\sin\angle a\sin\angle b\sin\angle c}
+    \]
+    또한 단위구 $(R=1)$에서
+    $\det[\vec{A}^*,\vec{B}^*,\vec{C}^*] = (\det[\vec{A},\vec{B},\vec{C}])^2/(\sin\angle a\sin\angle b\sin\angle c)$
+    임을 보여라.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,169 @@
+% !TeX program = xelatex
+\documentclass{article}
+\usepackage{kotex}
+\usepackage[a4paper, left=3cm, right=3cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, calc, 3d}
+
+\setstretch{1.3}
+\renewcommand{\figurename}{그림}
+\titleformat{name=\section,numberless}
+  {\normalfont\large\bfseries\color{blue}}{}
+  {0pt}{}
+
+\title{2.2 구면의 측지선}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+
+\section*{2.2 구면의 측지선}
+
+\begin{tcolorbox}[
+  colback=teal!4, colframe=teal!65!black,
+  title=정의 \& 핵심 규칙,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+\textbf{\textcolor{teal!65!black}{정의 2.2.1 (대원과 작은 원).}}\quad
+구면과 \textbf{구의 중심을 지나는 평면}과의 교선을 \textbf{대원(great circle)}이라 한다.
+구면에 있는 다른 원은 \textbf{작은 원(small circle)}이라 불린다.
+
+\noindent\textcolor{teal!50!black}{\rule{\linewidth}{0.4pt}}
+
+\textbf{\textcolor{teal!65!black}{호의 길이.}}\quad
+$A$와 $B$를 구면의 두 점이라 하고 $C$를 구의 중심이라 하자.
+$\angle ACB$에 대응하는 호 $\widehat{AB}$는 대원의 한 조각으로 길이가 다음과 같다.
+\[
+  \text{길이}(\widehat{AB}) \;=\; R \cdot \angle ACB
+\]
+여기서 $R$은 구의 반지름이고 $\angle ACB$는 라디안을 단위로 한다.
+
+\noindent\textcolor{teal!50!black}{\rule{\linewidth}{0.4pt}}
+
+\textbf{\textcolor{teal!65!black}{구면 좌표계.}}\quad
+구의 중심 $C$를 원점으로 하고 $z$축의 양의 부분이 점 $A$를 지나는 $\mathbb{E}^3$의 직교 좌표계에서,
+구면의 점 $P$의 \textbf{구면 좌표}는 $(R, \theta, \phi)$로 주어지는데
+\begin{itemize}\setlength\itemsep{0pt}
+  \item $R$ = 구의 반지름
+  \item $\phi = \angle PCA$ \quad (위도각, $0 \leq \phi \leq \pi$)
+  \item $\theta$ = 양의 $x$축과 $\overrightarrow{CP}$의 $xy$평면에의 정사영 사이의 각 \quad (경도각)
+\end{itemize}
+직교 좌표와의 관계:
+\[
+  x = R\sin\phi\cos\theta, \qquad y = R\sin\phi\sin\theta, \qquad z = R\cos\phi
+\]
+
+\end{tcolorbox}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.05]
+  %--- Left: 대원과 작은 원 ---
+  % Sphere
+  \draw[thick] (0,0) circle (1.8cm);
+  % Great circle (equator)
+  \draw[thick] (0,0) ellipse (1.8cm and 0.45cm);
+  \node[right, font=\small] at (1.82, -0.2) {대원};
+  % Small circle (upper)
+  \draw[thick] (0, 0.9) ellipse (1.4cm and 0.32cm);
+  \node[right, font=\small] at (1.42, 0.72) {작은 원};
+  % Centers
+  \fill (0,0) circle (2pt) node[below left, font=\scriptsize]{$C$};
+  \fill (0,0.9) circle (1.5pt);
+
+  %--- Right: 구면 좌표계 ---
+  \begin{scope}[xshift=5.5cm]
+    % z-axis
+    \draw[->, thick] (0,-0.3) -- (0, 2.2) node[above]{$z$};
+    % x-axis
+    \draw[->, thick] (-0.2, 0) -- (2.0, -0.7) node[right]{$x$};
+    % y-axis
+    \draw[->, thick] (-0.2, 0) -- (-1.5,-0.55) node[left]{$y$};
+    % Sphere outline (circle in xz plane)
+    \draw[thick] (0,0) circle (1.7cm);
+    % Point P on sphere
+    \coordinate (P) at (1.1, 1.3);
+    \fill (P) circle (2.5pt) node[above right]{$P$};
+    % Radius CP
+    \draw[thick] (0,0) -- (P) node[midway, above left, font=\small]{$R$};
+    % Angle phi (from z-axis to CP)
+    \draw[->] (0, 0.65) arc (90:50:0.65) node[midway, right, font=\small]{$\phi$};
+    % Projection of CP onto xy-plane (dashed)
+    \draw[dashed] (P) -- (1.1, 0);
+    \draw[dashed] (0,0) -- (1.1, 0);
+    % Angle theta label
+    \node[below right, font=\small] at (0.6, -0.1) {$\theta$};
+    % z-axis point A at top
+    \fill (0,1.7) circle (2pt) node[right, font=\small]{$A$};
+    % Center
+    \fill (0,0) circle (2pt) node[below right, font=\scriptsize]{$C$};
+  \end{scope}
+\end{tikzpicture}
+\caption{왼쪽: 대원과 작은 원\quad 오른쪽: 구면 좌표계 $(R,\theta,\phi)$}
+\label{fig:2.5-2.6}
+\end{figure}
+
+\begin{tcolorbox}[
+  colback=red!4, colframe=red!60!black,
+  title=정리 2.2.1,
+  fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
+
+구면에서 두 점 사이의 \textbf{가장 짧은 경로는 대원의 호}이다.
+
+\end{tcolorbox}
+
+\textbf{증명.}\quad
+$\sigma : [a,b] \to S$를 구면 $S$에서 다음을 만족하는 매개화된 곡선이라 하자.
+\[
+  \sigma(a) = A, \qquad \sigma(b) = B
+\]
+직교 좌표계에서의 매개화를 $\sigma(t) = (x(t), y(t), z(t))$라 하면 곡선 $\sigma$의 길이는 다음 공식에 의해 계산할 수 있다.
+\[
+  \text{길이}(\sigma) = \int_a^b \sqrt{x'(t)^2 + y'(t)^2 + z'(t)^2}\; dt \tag{2.2}
+\]
+구면 좌표계를 사용하여 매개화하면:
+\[
+  x(t) = R\sin\phi(t)\cos\theta(t), \quad
+  y(t) = R\sin\phi(t)\sin\theta(t), \quad
+  z(t) = R\cos\phi(t) \tag{2.3}
+\]
+(2.3)을 미분하면:
+\begin{align*}
+  x'(t) &= R\bigl[\phi'(t)\cos\phi(t)\cos\theta(t) - \theta'(t)\sin\phi(t)\sin\theta(t)\bigr],\\
+  y'(t) &= R\bigl[\phi'(t)\cos\phi(t)\sin\theta(t) + \theta'(t)\sin\phi(t)\cos\theta(t)\bigr],\\
+  z'(t) &= -R\phi'(t)\sin\phi(t)
+\end{align*}
+이를 식 (2.2)에 대입하면:
+\[
+  \text{길이}(\sigma)
+  = \int_a^b R\sqrt{\phi'(t)^2 + \theta'(t)^2\sin^2\!\phi(t)}\; dt
+  \;\geq\; \int_a^b R\phi'(t)\; dt
+  = R(\phi(b)-\phi(a))
+  = R(\angle BCA)
+  = \text{길이}(\widehat{AB})
+\]
+등호는 모든 $t$에 대해 $\theta'(t) = 0$ 또는 $\sin^2\phi(t) = 0$일 때,
+즉 $\sigma$가 호 $\widehat{AB}$를 벗어나지 않는 경우에 성립한다.
+\hfill $\square$
+
+\medskip
+\textbf{구면에서 측지선의 특성:}
+서로 다른 두 대원은 항상 어떤 한 지름의 양 끝점에서 만나기 때문에,
+구면에는 \textbf{평행한 측지선이 존재하지 않는다}(그림 2.7).
+
+\subsection*{연습문제 2.2}
+
+\begin{enumerate}
+  \item 반지름 $R$인 구면에서 두 점 $A$, $B$ 사이의 거리(최단 측지선 길이)가
+    $R \cdot \angle ACB$임을 이용하여, 북위 $34°$ 서경 $118°$(로스앤젤레스)와
+    북위 $51°$ 서경 $0°$(런던) 사이의 대원 거리를 지구 반지름 $R = 6{,}371\,\text{km}$로 계산하여라.
+\end{enumerate}
+
+\end{document}
