@@ -26,12 +26,8 @@
 
 \section*{2.5 쌍대 구면 삼각형}
 
-쌍대(혹은 ``극'') 삼각형이 중요한 이유는 꼭짓점은 원래 삼각형의 변에 대응되고
-변은 원래 삼각형의 꼭짓점에 대응되기 때문이다.
-따라서 원래 삼각형의 변에 대한 정리는 쌍대 삼각형의 꼭짓점에 대한 정리를 공짜로 제공하고,
-원래 삼각형의 꼭짓점에 대한 정리는 쌍대 삼각형의 변에 대한 정리를 제공한다.
-이러한 ``쌍대성''을 사용하면 우리의 수고를 반으로 줄일 수 있다.
-쌍대성은 수학의 여러 분야에서 사용된다.
+쌍대(혹은 ``극'') 삼각형에서 꼭짓점은 원래 삼각형의 변에, 변은 원래 삼각형의 꼭짓점에 대응된다.
+이 ``쌍대성''을 사용하면 한쪽의 정리가 다른 쪽 정리를 자동으로 제공하여 수고를 반으로 줄일 수 있다.
 
 \begin{tcolorbox}[
   colback=teal!4, colframe=teal!65!black,
@@ -46,91 +42,58 @@ $\vec{A}^*,\,\vec{B}^*,\,\vec{C}^*$가 다음과 같은 구면 삼각형 $\trian
   \vec{B}^* = \frac{\vec{C}\times\vec{A}}{R\sin\angle b},\qquad
   \vec{C}^* = \frac{\vec{A}\times\vec{B}}{R\sin\angle c}
 \]
-여기서 $R$은 구의 반지름이고, $O$가 구의 중심일 때
+여기서 $R$은 구의 반지름이고,
 $\vec{A}^* = \overrightarrow{OA^*}$, $\vec{B}^* = \overrightarrow{OB^*}$,
 $\vec{C}^* = \overrightarrow{OC^*}$이다.
 
 \end{tcolorbox}
 
-위의 식에서 상수 $R\sin\angle a$, $R\sin\angle b$, $R\sin\angle c$는 벡터의 크기를 조절하기 위한 것으로
-$|\vec{A}^*| = |\vec{B}^*| = |\vec{C}^*| = R$이 된다.
-(두 벡터 $\vec{V}$와 $\vec{W}$에 대해 $|\vec{V}\times\vec{W}| = |\vec{V}||\vec{W}|\sin\angle(\vec{V},\vec{W})$이고,
-보조정리 2.3.1에 의해 $\angle a = \angle(\vec{B},\vec{C})$,
-$\angle b = \angle(\vec{C},\vec{A})$, $\angle c = \angle(\vec{A},\vec{B})$임을 기억하자.)
-
-$\vec{A}^*$는 원래 삼각형의 변 $a$를 포함하는 평면 $\overline{BCO}$에 수직이다.
-비슷하게 $\vec{B}^*$는 $b$를 포함하는 평면에 수직이고 $\vec{C}^*$는 $c$를 포함하는 평면에 수직이다.
-이러한 의미로 쌍대 삼각형의 꼭짓점은 원래 삼각형의 변에 대응된다.
-다음 정리는 동일한 의미로 쌍대 삼각형의 변이 원래 삼각형의 꼭짓점에 대응됨을 보여준다.
-마지막으로 따름정리 2.5.3에 의해 쌍대 삼각형의 각각의 각은 원래 삼각형의 대응되는 각과 보각$^{10)}$ 관계이다.
+분모 $R\sin\angle a$ 등은 $|\vec{A}^*|=|\vec{B}^*|=|\vec{C}^*|=R$이 되도록 크기를 조절한다.
+$\vec{A}^*$는 변 $a$를 포함하는 평면 $\overline{BCO}$에 수직이며(마찬가지로 $\vec{B}^*$, $\vec{C}^*$도 각각 $b$, $c$를 포함하는 평면에 수직),
+이런 의미에서 쌍대 삼각형의 꼭짓점은 원래 삼각형의 변에 대응된다.
+아래 정리 2.5.1은 역으로 쌍대 삼각형의 변이 원래 삼각형의 꼭짓점에 대응됨을 보여주고,
+따름정리 2.5.3은 대응하는 각과 변이 서로 보각$^{10)}$ 관계임을 밝힌다.
 
 \begin{tcolorbox}[
   colback=red!4, colframe=red!60!black,
   title=정리 2.5.1,
   fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
 
-$A^*$, $B^*$, $C^*$를 정의 2.5.1에서의 쌍대 삼각형의 꼭짓점이라 하자.
-$a^*$를 $A^*$의 대변, $b^*$를 $B^*$의 대변, $c^*$를 $C^*$의 대변이라 하자.
-그러면 다음이 성립한다.
+쌍대 삼각형의 꼭짓점 $A^*$, $B^*$, $C^*$에 대해 $a^*$, $b^*$, $c^*$를 각각의 대변이라 하면 다음이 성립한다.
 \[
   \vec{A} = s\!\left(\frac{\vec{B}^*\times\vec{C}^*}{R\sin\angle a^*}\right),\qquad
   \vec{B} = s\!\left(\frac{\vec{C}^*\times\vec{A}^*}{R\sin\angle b^*}\right),\qquad
   \vec{C} = s\!\left(\frac{\vec{A}^*\times\vec{B}^*}{R\sin\angle c^*}\right)
 \]
-단, $s = \pm 1$로서 $\det[\vec{A},\vec{B},\vec{C}]$의 부호이다.$^{11)}$
+단, $s = \pm 1$은 $\det[\vec{A},\vec{B},\vec{C}]$의 부호이다.$^{11)}$
 
 \end{tcolorbox}
 
 \textbf{증명.}\quad
-$\vec{B}^*\times\vec{C}^*$를 계산하면 다음과 같다.
-\[
+정의에 의해
+\begin{equation}
   \vec{B}^*\times\vec{C}^*
-  = \left(\frac{\vec{C}\times\vec{A}}{R\sin\angle b}\right)
-    \times\left(\frac{\vec{A}\times\vec{B}}{R\sin\angle c}\right)
   = \frac{(\vec{C}\times\vec{A})\times(\vec{A}\times\vec{B})}{R^2\sin\angle b\sin\angle c}
   \tag{2.15}
-\]
-아래와 같이 주어지는 벡터 항등식을 기억하자.
+\end{equation}
+벡터 항등식 $\vec{X}\times(\vec{Y}\times\vec{Z}) = (\vec{X}\cdot\vec{Z})\vec{Y} - (\vec{X}\cdot\vec{Y})\vec{Z}$로부터
 \[
-  \vec{X}\times(\vec{Y}\times\vec{Z}) = (\vec{X}\cdot\vec{Z})\vec{Y} - (\vec{X}\cdot\vec{Y})\vec{Z}
-\]
-이를 사용하여 식 (2.15)에서 우변의 분자를 계산하면 다음과 같다.
-\begin{align*}
   (\vec{C}\times\vec{A})\times(\vec{A}\times\vec{B})
-  &= \bigl((\vec{C}\times\vec{A})\cdot\vec{B}\bigr)\vec{A}
-   - \bigl((\vec{C}\times\vec{A})\cdot\vec{A}\bigr)\vec{B} \\
-  &= \det[\vec{A},\vec{B},\vec{C}]\,\vec{A} + \vec{0}
-\end{align*}
-그러므로 다음을 얻는다.
-\[
-  \vec{B}^*\times\vec{C}^*
-  = \left(\frac{\det[\vec{A},\vec{B},\vec{C}]}{R^2\sin\angle b\sin\angle c}\right)\vec{A}
+  = \bigl((\vec{C}\times\vec{A})\cdot\vec{B}\bigr)\vec{A}
+   - \bigl((\vec{C}\times\vec{A})\cdot\vec{A}\bigr)\vec{B}
+  = \det[\vec{A},\vec{B},\vec{C}]\,\vec{A}
 \]
-이로부터 $\vec{A}$는 다음과 같다.
-\[
-  \vec{A} = \left(\frac{R^2\sin\angle b\sin\angle c}{\det[\vec{A},\vec{B},\vec{C}]}\right)
-  (\vec{B}^*\times\vec{C}^*)
-\]
-한편, $0°<\angle a^*,\angle b,\angle c < 180°$이므로
-$0 < \sin\angle a^*,\sin\angle b,\sin\angle c$이다.
-이로부터 다음을 얻는다.
-
-$\vec{A}$는 $s\!\left(\dfrac{\vec{B}^*\times\vec{C}^*}{R\sin\angle a^*}\right)$과 같은 방향을 가리킨다.
-
-또한, $|\vec{B}^*| = |\vec{C}^*| = R$이고 $\angle(\vec{B}^*,\vec{C}^*) = \angle a^*$이므로
-\[
-  \left|\frac{\vec{B}^*\times\vec{C}^*}{R\sin\angle a^*}\right|
-  = \frac{R^2\sin\angle a^*}{R\sin\angle a^*} = R
-\]
-따라서 $|\vec{A}| = R$이므로 다음이 성립한다.
-\[
-  \vec{A} = s\!\left(\frac{\vec{B}^*\times\vec{C}^*}{R\sin\angle a^*}\right)
-\]
-다른 등식도 비슷한 방법에 의해 유도된다. \hfill $\square$
+이를 (2.15)에 대입하면
+$\vec{B}^*\times\vec{C}^* = \dfrac{\det[\vec{A},\vec{B},\vec{C}]}{R^2\sin\angle b\sin\angle c}\,\vec{A}$.
+따라서 $\vec{A}$는 $\vec{B}^*\times\vec{C}^*$와 같은 방향이고,
+$|\vec{B}^*|=|\vec{C}^*|=R$이므로
+$\left|\dfrac{\vec{B}^*\times\vec{C}^*}{R\sin\angle a^*}\right| = R = |\vec{A}|$이다.
+따라서 $\vec{A} = s\!\left(\dfrac{\vec{B}^*\times\vec{C}^*}{R\sin\angle a^*}\right)$이 성립하고,
+나머지 등식도 같은 방법으로 얻는다. \hfill $\square$
 
 \smallskip
 \noindent$^{10)}$\,\small 두 보각은 합하면 $180°$가 된다.\normalsize\\
-\noindent$^{11)}$\,\small $\det[\vec{A},\vec{B},\vec{C}]$는 $\vec{A},\vec{B},\vec{C}$를 행벡터로 갖는 $3\times 3$ 행렬의 결정자(행렬식)이다.\normalsize
+\noindent$^{11)}$\,\small $\det[\vec{A},\vec{B},\vec{C}]$는 $\vec{A},\vec{B},\vec{C}$를 행벡터로 갖는 $3\times 3$ 행렬의 결정자이다.\normalsize
 
 \begin{tcolorbox}[
   colback=red!4, colframe=red!60!black,
@@ -158,16 +121,14 @@ ${}^*({}^*\!\triangle ABC) \cong \triangle ABC$
 
 \textbf{증명.}\quad
 따름정리 2.5.1에 의해 ${}^*({}^*\!\triangle ABC)$는 $\triangle ABC$와 같거나
-구의 중심에 대한 $\triangle ABC$의 반사와 같다. \hfill $\square$
+구의 중심에 대한 반사이다. \hfill $\square$
 
 \begin{tcolorbox}[
   colback=red!4, colframe=red!60!black,
   title=따름정리 2.5.3,
   fonttitle=\bfseries, boxrule=0.5mm, arc=3mm]
 
-$A^*$, $B^*$, $C^*$를 정의 2.5.1에서의 쌍대 삼각형의 꼭짓점이라 하자.
-$a^*$를 $A^*$의 대변, $b^*$를 $B^*$의 대변, $c^*$를 $C^*$의 대변이라 하자.
-그러면 다음이 성립한다.
+쌍대 삼각형의 꼭짓점 $A^*$, $B^*$, $C^*$에 대해 $a^*$, $b^*$, $c^*$를 각각의 대변이라 하면 다음이 성립한다.
 \begin{align}
   \angle A + \angle a^* = \angle A^* + \angle a &= 180°, \notag\\
   \angle B + \angle b^* = \angle B^* + \angle b &= 180°, \tag{2.16}\\
@@ -177,45 +138,31 @@ $a^*$를 $A^*$의 대변, $b^*$를 $B^*$의 대변, $c^*$를 $C^*$의 대변이�
 \end{tcolorbox}
 
 \textbf{증명.}\quad
-정의 2.5.1과 보조정리 2.3.1로부터 다음을 얻는다.
-\begin{align*}
-  \angle a^* &= \angle(\vec{B}^*,\vec{C}^*) \\
-             &= \angle(\vec{C}\times\vec{A},\;\vec{A}\times\vec{B}) \\
-             &= \angle(-\vec{A}\times\vec{C},\;\vec{A}\times\vec{B}) \\
-             &= 180° - \angle(\vec{A}\times\vec{C},\;\vec{A}\times\vec{B}) \\
-             &= 180° - \angle A
-\end{align*}
-따라서 다음이 성립한다.
+정의 2.5.1과 보조정리 2.3.1로부터
 \[
-  \angle A + \angle a^* = 180°
+  \angle a^*
+  = \angle(\vec{B}^*,\vec{C}^*)
+  = \angle(\vec{C}\times\vec{A},\;\vec{A}\times\vec{B})
+  = \angle(-\vec{A}\times\vec{C},\;\vec{A}\times\vec{B})
+  = 180° - \angle A
 \]
-이 결과를 $\triangle A^*B^*C^*$의 쌍대 $\triangle A^{**}B^{**}C^{**}$에 적용하면 다음을 얻는다.
+이므로 $\angle A + \angle a^* = 180°$이다.
+이 결과를 $\triangle A^*B^*C^*$에 적용하면
 \begin{equation}
   \angle A^* + \angle a^{**} = 180° \tag{2.17}
 \end{equation}
-여기서 $a^{**}$는 $A^{**}$의 대변이다.
-한편, 따름정리 2.5.2에 의해 $\triangle A^{**}B^{**}C^{**}$은 $\triangle ABC$와 합동이므로
-$\angle a^{**} \cong \angle a$이다.
-그러므로 식 (2.17)에 의해 다음이 성립한다.
-\[
-  \angle A^* + \angle a = 180°
-\]
-이로서 식 (2.16)의 첫 번째 식을 증명하였다.
-다른 두 식도 비슷한 방법을 적용하면 증명된다. \hfill $\square$
+따름정리 2.5.2에 의해 $\angle a^{**} = \angle a$이므로 $\angle A^* + \angle a = 180°$이 성립한다.
+나머지 두 식도 같은 방법으로 증명된다. \hfill $\square$
 
 \subsection*{연습문제 2.5}
 
 \textbf{문제 2.5.1}\quad
-a) $\mathbb{R}^3$에서 중심이 $(0,0,0)$인 단위 구에 있는 세 점 $A$, $B$, $C$가 다음과 같다.
-\[
-  A = (0,\,0,\,1),\qquad
-  B = \!\left(\frac{\sqrt{2}}{2},\;0,\;\frac{\sqrt{2}}{2}\right),\qquad
-  C = \!\left(0,\;\frac{\sqrt{3}}{2},\;\frac{1}{2}\right)
-\]
-이 때 $\triangle ABC$의 쌍대 삼각형의 꼭짓점을 찾아라.
+$\mathbb{R}^3$에서 중심이 원점인 단위 구에 있는 세 점이
+$A = (0,0,1)$,\; $B = \bigl(\tfrac{\sqrt{2}}{2},0,\tfrac{\sqrt{2}}{2}\bigr)$,\; $C = \bigl(0,\tfrac{\sqrt{3}}{2},\tfrac{1}{2}\bigr)$일 때,
 
-b) $\triangle ABC$와 쌍대 삼각형에 대해 직접 계산을 통해 정리 2.5.1,
-따름정리 2.5.1 그리고 따름정리 2.5.3이 성립함을 확인하여라.
+a) $\triangle ABC$의 쌍대 삼각형의 꼭짓점을 찾아라.
+
+b) 직접 계산을 통해 정리 2.5.1, 따름정리 2.5.1, 따름정리 2.5.3이 성립함을 확인하여라.
 
 c) 단위 구에 $\triangle ABC$와 ${}^*\!\triangle ABC$를 그려라.
 
