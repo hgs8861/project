@@ -182,6 +182,33 @@ k\ne1 & \left(x+\dfrac{ak^2}{1-k^2}\right)^2+y^2+z^2=\left(\dfrac{ak}{1-k^2}\rig
 \end{tabular}
 \end{center}
 
+% ============ 이미지 삽입 위치: 주면 정의/핵심규칙 박스 직후 ============
+% 도선(빨간 원, 밑면 곡선)을 따라 모선(파란 평행선)이 움직여 주면을 만드는 과정을 시각화.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[hide axis, view={115}{20}, width=6.5cm, height=6.5cm]
+% 주면 몸체 (반투명 원기둥)
+\addplot3[
+    surf, shader=faceted, faceted color=teal!45, fill=teal!10, opacity=0.4,
+    domain=0:360, domain y=0:2.6, samples=24, samples y=8, z buffer=sort,
+]
+({1.3*cos(x)}, {1.3*sin(x)}, {y});
+% 도선 (밑면 곡선, 빨강 강조)
+\addplot3[thick, red, domain=0:360, samples=40, samples y=0]
+({1.3*cos(x)}, {1.3*sin(x)}, {0});
+% 모선 (도선을 따라 평행하게 움직이는 직선들, 파랑)
+\foreach \ang in {0,45,90,135,180,225,270,315}{
+  \addplot3[thick, blue!70!black] coordinates
+    {(1.3*cos(\ang),1.3*sin(\ang),0) (1.3*cos(\ang),1.3*sin(\ang),2.6)};
+}
+\node at (axis cs:1.3,0,2.9)[blue!70!black]{\footnotesize 모선};
+\node at (axis cs:0,-1.3,-0.3)[red]{\footnotesize 도선};
+\end{axis}
+\end{tikzpicture}
+\caption{주면: 도선(빨강)을 따라 모선(파랑)이 평행하게 움직이며 곡면을 만든다}
+\end{figure}
+
 \subsection*{EXAMPLE 2}
 주면 \(x^2=4py\ (p>0)\)을 그려라.\\
 \textbf{SOLUTION:} \(z=0\)일 때 방정식은 \(xy\)평면 위의 포물선(도선). 이 포물선에 수직인 모선을 따라 움직이면 \textbf{포물주면}.
@@ -197,9 +224,32 @@ k\ne1 & \left(x+\dfrac{ak^2}{1-k^2}\right)^2+y^2+z^2=\left(\dfrac{ak}{1-k^2}\rig
     arc=3mm
     ]
     \textbf{\textcolor{teal!65!black}{정의.}}\quad
-    정점 \(O\)와 도선 위의 점을 지나는 모선이 만드는 곡면이 \textbf{추면}(cone)이며, 정점에 대해 대칭인 두 부분(nappe)으로 나뉜다.
+    한 점을 고정하고, 그 점을 지나는 직선을 정해진 곡선을 따라 움직이면 하나의 곡면이 생기는데, 이를 \textbf{추면}(cone surface)이라 한다.
 
     \noindent\textcolor{teal!50!black}{\rule{\linewidth}{0.4pt}}
+
+    \textbf{\textcolor{teal!65!black}{핵심 규칙.}}\quad
+    방정식이 \textbf{동차식}이면 원점이 정점인 추면이다.
+
+    \noindent\textcolor{teal!50!black}{\rule{\linewidth}{0.4pt}}
+
+    \textbf{\textcolor{teal!65!black}{추면의 구성요소.}}
+    \begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|l|p{8.5cm}|}
+    \hline
+    \textbf{용어} & \textbf{한 줄 요약} \\
+    \hline
+    정점 & 모든 모선이 공통으로 지나는 고정점 \\
+    \hline
+    도선 & 모선이 따라가는 기준 곡선 \\
+    \hline
+    모선 & 정점과 도선 위의 점을 잇는, 움직이는 직선 \\
+    \hline
+    축 & 추면이 대칭을 이룰 때, 정점을 지나는 대칭축 \\
+    \hline
+    \end{tabular}
+    \end{center}
 
     \textbf{\textcolor{teal!65!black}{핵심 규칙.}}\quad
     방정식이 \textbf{동차식}이면 원점이 정점인 추면이다. 예를 들어
@@ -211,22 +261,59 @@ k\ne1 & \left(x+\dfrac{ak^2}{1-k^2}\right)^2+y^2+z^2=\left(\dfrac{ak}{1-k^2}\rig
 
 \subsection*{EXAMPLE 3}
 원점을 정점, 원 \(x^2+y^2=a^2,\ z=b\ (b\ne0)\)을 도선으로 하는 추면.\\
-\textbf{SOLUTION:} 도선 위의 점 \((x_0,y_0,b)\)에서 \(x_0=\dfrac{bx}{z},\ y_0=\dfrac{by}{z}\)를 \(x_0^2+y_0^2=a^2\)에 대입:
+\textbf{SOLUTION:} 모선 $op$의 방정식은 $\frac{x}{x_0}=\frac{y}{y_0}=\frac{z}{z_0}$이므로 도선 위의 점 \((x_0,y_0,b)\)에서 \(x_0=\dfrac{bx}{z},\ y_0=\dfrac{by}{z}\)를 \(x_0^2+y_0^2=a^2\)에 대입:
 \[
 x^2+y^2=\frac{a^2}{b^2}z^2
 \]
 축이 \(z\)축, 축과 모선의 각 \(\alpha\)는 \(\tan\alpha=\dfrac{a}{b}\)인 \textbf{직원추면}.
 
-\begin{tcolorbox}[
-    colback=red!4,
+\begin{tcolorbox}[colback=red!4,
     colframe=red!60!black,
-    title=정리 1: 직원추면과 평면의 교선,
+    title=직원추면과 평면의 교선,
     fonttitle=\bfseries,
     boxrule=0.5mm,
-    arc=3mm
-    ]
-    직원추면 \(x^2+y^2=k^2z^2\ (k=\tan\alpha)\)를 평면으로 자를 때, 축과 평면이 이루는 각을 \(\phi\)라 하면 잘린 단면은 다음과 같이 결정된다 (좌표변환 후 판별식 \(\delta=\cos^2\phi(\tan^2\alpha-\tan^2\phi)\)의 부호로 판정).
+    arc=3mm]
+직원추면과 평면의 교선은 이차곡선이다.
 \end{tcolorbox}
+
+\begin{proof}
+직원추의 방정식은 \(x^2+y^2=k^2z^2\ (k=\tan\alpha)\)로 표시된다. 좌표축을 \((0,0,c)\)가 원점이 되도록 평행이동하는 좌표변환 \(x=x',\ y=y',\ z=z'+c\)를 시행하면
+\[
+x'^2+y'^2=k^2(z'+c)^2
+\]
+이 된다. 여기서 \(x'\)축을 둘레로 \(y',z'\)축을 \(\theta\)만큼 회전이동시키는 좌표변환
+\[
+x'=X,\quad y'=Y\cos\theta-Z\sin\theta,\quad z'=Y\sin\theta+Z\cos\theta
+\]
+를 대입하면
+\[
+X^2+(Y\cos\theta-Z\sin\theta)^2=k^2\{Y\sin\theta+Z\cos\theta+c\}^2
+\]
+이 곡면을 평면 \(Z=0\)으로 자르면
+\[
+X^2+(\cos^2\theta-k^2\sin^2\theta)Y^2-2ck^2\sin\theta\,Y-k^2c^2=0
+\]
+을 얻는다. 이 방정식이 나타내는 곡선의 종류는 \(Y^2\)의 계수
+\[
+\delta=\cos^2\theta-k^2\sin^2\theta=\cos^2\theta(1-\tan^2\alpha\tan^2\theta)
+\]
+의 부호로 판정된다. 축과 평면이 이루는 각을 \(\phi\ \left(0<\alpha,\phi<\dfrac{\pi}{2}\right)\)라 하면 \(\delta=\cos^2\phi(\tan^2\alpha-\tan^2\phi)\)이므로 다음과 같이 정리된다.
+
+\textbf{(i) \(c\ne0\)일 때 (평면이 정점을 지나지 않음):}
+\begin{itemize}
+    \item \(\phi>\alpha\)이면 \(\delta>0\) $\Rightarrow$ \textbf{타원}
+    \item \(\phi=\alpha\)이면 \(\delta=0\) $\Rightarrow$ \textbf{포물선}
+    \item \(\phi<\alpha\)이면 \(\delta<0\) $\Rightarrow$ \textbf{쌍곡선}
+\end{itemize}
+
+\textbf{(ii) \(c=0\)일 때 (평면이 정점을 지남):} 방정식은 \(X^2+(\cos^2\theta-k^2\sin^2\theta)Y^2=0\)이 되어
+\begin{itemize}
+    \item \(\phi>\alpha\)이면 \textbf{두 허직선}
+    \item \(\phi=\alpha\)이면 \textbf{겹치는 두 직선}
+    \item \(\phi<\alpha\)이면 \textbf{만나는 두 직선}
+\end{itemize}
+을 나타낸다.
+\end{proof}
 
 \begin{figure}[h]
 \centering
@@ -266,22 +353,6 @@ x^2+y^2=\frac{a^2}{b^2}z^2
 \caption{직원추면(회색)을 각기 다른 각도의 평면(색 있는 사각형)으로 자를 때: 왼쪽부터 타원, 포물선, 쌍곡선 단면}
 \end{figure}
 
-\begin{center}
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|l|l|l|}
-\hline
-평면 위치 & 각 \(\phi\)와 \(\alpha\)의 관계 & 교선 \\
-\hline
-\multirow{3}{*}{정점을 지나지 않음 (\(c\ne0\))} & \(\phi>\alpha\) & 타원 (원 포함) \\
- & \(\phi=\alpha\) & 포물선 \\
- & \(\phi<\alpha\) & 쌍곡선 \\
-\hline
-\multirow{3}{*}{정점을 지남 (\(c=0\))} & \(\phi>\alpha\) & 두 허직선 \\
- & \(\phi=\alpha\) & 겹치는 두 직선 \\
- & \(\phi<\alpha\) & 만나는 두 직선 \\
-\hline
-\end{tabular}
-\end{center}
 이 정리에 의해 이차곡선을 \textbf{원추곡선}(conic section)이라고도 한다.
 
 \subsection*{EXAMPLE 4}
@@ -353,13 +424,14 @@ x^2+y^2=\frac{a^2}{b^2}z^2
 \end{center}
 
 \subsection*{EXAMPLE 5}
-직선 \(z=mx\)를 \(x\)축에 대해 회전 $\to$ \(z\) 대신 \(\sqrt{y^2+z^2}\) 대입:
+직선 \(z=mx\)를 \(x\)축에 대해 회전시킨 직원 추의 방정식을 구하여라
+\textbf{SOLUTION:} $\to$ \(z\) 대신 \(\sqrt{y^2+z^2}\) 대입:
 \[
 y^2+z^2=m^2x^2 \quad(\text{직원추면})
 \]
-
 \subsection*{EXAMPLE 6}
-원 \((x-a)^2+z^2=b^2,\ y=0\)을 \(z\)축에 대해 회전 (원환면, torus) $\to$ \(x\) 대신 \(\sqrt{x^2+y^2}\) 대입:
+원 \((x-a)^2+z^2=b^2,\ y=0\)을 \(z\)축에 대해 회전시킨 원환면의 방정식을 구하여라
+\textbf{SOLUTION:} $\to$ \(x\) 대신 \(\sqrt{x^2+y^2}\) 대입:
 \[
 \left(\sqrt{x^2+y^2}-a\right)^2+z^2=b^2
 \ \Longrightarrow\
