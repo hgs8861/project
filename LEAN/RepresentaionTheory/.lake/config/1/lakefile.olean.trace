@@ -1,4 +1,4 @@
-{"platform": "arm64-apple-darwin24.6.0",
+{"platform": "x86_64-w64-windows-gnu",
  "options": {},
  "name": "mathlib",
  "leanHash": "d024af099ca4bf2c86f649261ebf59565dc8c622",

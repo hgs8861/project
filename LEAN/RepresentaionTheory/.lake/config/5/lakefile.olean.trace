@@ -1,4 +1,4 @@
-{"platform": "arm64-apple-darwin24.6.0",
+{"platform": "x86_64-w64-windows-gnu",
  "options":
  {"errorOnBuild":
   "ProofWidgets failed to reuse pre-built JS code. Please report this issue on the Lean Zulip."},
