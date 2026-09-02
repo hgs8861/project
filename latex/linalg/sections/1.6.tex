@@ -84,7 +84,7 @@ For a sequence $A\mathbf{x}=\mathbf{b}_1,\dots,A\mathbf{x}=\mathbf{b}_k$ sharing
 and reduce to reduced row echelon form by Gauss--Jordan elimination, solving all $k$ systems at once -- and this works even when $A$ is not invertible.
 
 \subsection*{EXAMPLE 2 | Solving Two Linear Systems at Once}
-Solve (a) $x_1+2x_2+3x_3=4,\ 2x_1+5x_2+3x_3=5,\ x_1+8x_3=9$ and (b) $x_1+2x_2+3x_3=1,\ 2x_1+5x_2+3x_3=6,\ x_1+8x_3=-6$.
+Solve\\ (a) $x_1+2x_2+3x_3=4,\ 2x_1+5x_2+3x_3=5,\ x_1+8x_3=9$ \\ (b) $x_1+2x_2+3x_3=1,\ 2x_1+5x_2+3x_3=6,\ x_1+8x_3=-6$.
 
 \textbf{SOLUTION:} Both share the coefficient matrix of Example 1. Augmenting with both constant columns:
 \[
@@ -92,7 +92,7 @@ Solve (a) $x_1+2x_2+3x_3=4,\ 2x_1+5x_2+3x_3=5,\ x_1+8x_3=9$ and (b) $x_1+2x_2+3x
 \ \xrightarrow{\text{reduce to RREF}}\
 \left[\begin{array}{ccc|cc}1&0&0&1&2\\0&1&0&0&1\\0&0&1&1&-1\end{array}\right]
 \]
-The last two columns give the solutions: (a) $x_1=1,x_2=0,x_3=1$; (b) $x_1=2,x_2=1,x_3=-1$.
+The last two columns give the solutions: \\ (a) $x_1=1,x_2=0,x_3=1$; \\ (b) $x_1=2,x_2=1,x_3=-1$.
 
 \redheading{Properties of Invertible Matrices}
 
@@ -103,7 +103,8 @@ Let $A$ be square.\\
 (a) If $BA=I$ for square $B$, then $B=A^{-1}$.\\
 (b) If $AB=I$ for square $B$, then $B=A^{-1}$.
 \end{tcolorbox}
-\textbf{Proof (a)} It suffices to show $A$ is invertible; then multiplying $BA=I$ on the right by $A^{-1}$ gives $B=A^{-1}$. By Theorem 1.5.3, it suffices to show $A\mathbf{x}=\mathbf{0}$ has only the trivial solution. If $A\mathbf{x}_0=\mathbf{0}$, multiplying on the left by $B$ gives $BA\mathbf{x}_0=B\mathbf{0}$, i.e., $\mathbf{x}_0=\mathbf{0}$. $\blacksquare$
+\textbf{Proof (a)} It suffices to show $A$ is invertible; then multiplying $BA=I$ on the right by $A^{-1}$ gives $B=A^{-1}$. \\
+By Theorem 1.5.3, it suffices to show $A\mathbf{x}=\mathbf{0}$ has only the trivial solution. If $A\mathbf{x}_0=\mathbf{0}$, multiplying on the left by $B$ gives $BA\mathbf{x}_0=B\mathbf{0}$, i.e., $\mathbf{x}_0=\mathbf{0}$. $\blacksquare$
 
 \redheading{Equivalence Theorem}
 
@@ -111,8 +112,10 @@ We can now add two more statements to Theorem 1.5.3.
 
 \begin{tcolorbox}[colback=red!4, colframe=red!60!black, title=Theorem 1.6.4 -- Equivalent Statements, boxrule=0.5mm, arc=3mm]
 For an $n\times n$ matrix $A$, the following are equivalent:\\
-(a) $A$ is invertible.\quad (b) $A\mathbf{x}=\mathbf{0}$ has only the trivial solution.\\
-(c) The reduced row echelon form of $A$ is $I_n$.\quad (d) $A$ is a product of elementary matrices.\\
+(a) $A$ is invertible.\\
+(b) $A\mathbf{x}=\mathbf{0}$ has only the trivial solution.\\
+(c) The reduced row echelon form of $A$ is $I_n$.\\
+(d) $A$ is a product of elementary matrices.\\
 (e) $A\mathbf{x}=\mathbf{b}$ is consistent for every $n\times1$ matrix $\mathbf{b}$.\\
 (f) $A\mathbf{x}=\mathbf{b}$ has exactly one solution for every $n\times1$ matrix $\mathbf{b}$.
 \end{tcolorbox}

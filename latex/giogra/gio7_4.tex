@@ -75,8 +75,25 @@ t^3-It^2+Jt-D=0,\qquad I=a+b+c,\quad J=ab+bc+ca-f^2-g^2-h^2,\quad D=\begin{vmatr
     \textbf{\textcolor{teal!65!black}{핵심 규칙.}}\quad
     종선과 경면이 \textbf{직교}(즉 곡면이 그 평면에 대해 대칭)하는 방향 \(\lambda,\mu,\nu\)를 구하면, 그 방향은 반드시 아래 특성방정식의 근이어야 한다. 근에 수직인 경면을 특별히 \textbf{주경면}이라 한다.
 \end{tcolorbox}
+\textbf{경면의 식 유도.}  점 \((x_0,y_0,z_0)\)를 지나고 방향코사인이 \(\lambda,\mu,\nu\)인 직선
+\[
+x=x_0+\lambda t,\quad y=y_0+\mu t,\quad z=z_0+\nu t
+\]
+과 곡면 \(F(x,y,z)=0\)의 교점은 \\
+$(a\lambda^2+b\mu^2+c\nu^2+2f\mu\nu+2g\nu\lambda+2h\lambda\mu)t^2 \\
++2\{(ax_0+hy_0+gz_0+l)\lambda+(hx_0+by_0+fz_0+m)\mu+(gx_0+fy_0+cz_0+n)\nu\}t \\
++F(x_0,y_0,z_0)=0$ \\
+을 만족하는 \(t\)의 값에 따라 결정된다. 두 교점을 잇는 현의 중점이 \((x_0,y_0,z_0)\)가 되려면 이 이차방정식이 절댓값이 같고 부호가 반대인 두 근을 가져야 하므로, \(t\)의 일차항 계수가 0이어야 한다:
+\[
+(ax_0+hy_0+gz_0+l)\lambda+(hx_0+by_0+fz_0+m)\mu+(gx_0+fy_0+cz_0+n)\nu=0
+\]
+위 식을 정리하면 
+\[
+(a\lambda+h\mu+g\nu)x+(h\lambda+b\mu+f\nu)y+(g\lambda+f\mu+c\nu)z+l\lambda+m\mu+n\nu=0 \tag{①}
+\]
+이 나오고 이는 평면의 방정식이다. 
 
-\textbf{유도.} 방향코사인 \(\lambda,\mu,\nu\)인 직선과 경면 ①이 직교할 조건은
+\textbf{주경면의 식 유도.} 방향코사인 \(\lambda,\mu,\nu\)인 직선과 경면 ①이 직교할 조건은
 \[
 \frac{a\lambda+h\mu+g\nu}{\lambda}=\frac{h\lambda+b\mu+f\nu}{\mu}=\frac{g\lambda+f\mu+c\nu}{\nu}
 \]
@@ -114,11 +131,15 @@ I=a+b+c,\qquad J=ab+bc+ca-f^2-g^2-h^2,\qquad D=\begin{vmatrix} a&h&g\\ h&b&f\\ g
 \end{tcolorbox}
 
 \begin{proof}
-\(t_1,t_2\)에 대응하는 방향코사인을 각각 \((\lambda_1,\mu_1,\nu_1),(\lambda_2,\mu_2,\nu_2)\)라 하면 각각 ②를 만족한다. \(t_1\)에 대한 식들에 순서대로 \(\lambda_2,\mu_2,\nu_2\)를 곱해 더하면
+\(t_1,t_2\)에 대응하는 방향코사인을 각각 \((\lambda_1,\mu_1,\nu_1),(\lambda_2,\mu_2,\nu_2)\)라 하면 각각 ②를 만족한다. \(t_1\)에 대한 ②의 식들에 순서대로 \(\lambda_2,\mu_2,\nu_2\)를 곱해 더하면
 \[
 a\lambda_1\lambda_2+b\mu_1\mu_2+c\nu_1\nu_2+h(\lambda_1\mu_2+\lambda_2\mu_1)+f(\mu_1\nu_2+\mu_2\nu_1)+g(\nu_1\lambda_2+\nu_2\lambda_1)-t_1(\lambda_1\lambda_2+\mu_1\mu_2+\nu_1\nu_2)=0
 \]
-같은 방법으로 \(t_2\)에 대해서도 좌변이 같은 식을 얻고, 두 식을 빼면
+같은 방법으로 \(t_2\)에 대해서도
+\[
+a\lambda_1\lambda_2+b\mu_1\mu_2+c\nu_1\nu_2+h(\lambda_1\mu_2+\lambda_2\mu_1)+f(\mu_1\nu_2+\mu_2\nu_1)+g(\nu_1\lambda_2+\nu_2\lambda_1)-t_2(\lambda_1\lambda_2+\mu_1\mu_2+\nu_1\nu_2)=0
+\]
+이와와 같은 식을 얻고, 두 식을 빼면
 \[
 (t_1-t_2)(\lambda_1\lambda_2+\mu_1\mu_2+\nu_1\nu_2)=0
 \]

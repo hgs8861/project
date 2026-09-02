@@ -1,14 +1,17 @@
 {"synthetic": false,
  "schemaVersion": "2025-09-10",
  "outputs":
- {"o": ["27fb3893ac7264f0.olean"],
+ {"o": ["83503246d78bdffe.olean"],
   "m": false,
-  "i": "552aad0ac8c1ed10.ilean",
-  "c": "97292815b0a1d790.c"},
+  "i": "6cf3ad2994377bc9.ilean",
+  "c": "2f9cec97c3484a07.c"},
  "log":
  [{"message":
    ".> LEAN_PATH=C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\build\\lib\\lean c:\\Users\\USER\\.elan\\toolchains\\leanprover--lean4---v4.30.0\\bin\\lean.exe C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\RepThe\\Basic.lean -o C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\build\\lib\\lean\\RepThe\\Basic.olean -i C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\build\\lib\\lean\\RepThe\\Basic.ilean -c C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\build\\ir\\RepThe\\Basic.c --setup C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\.lake\\build\\ir\\RepThe\\Basic.setup.json --json",
-   "level": "trace"}],
+   "level": "trace"},
+  {"message":
+   "RepThe/Basic.lean:109:49: This simp argument is unused:\n  TensorProduct.map_tmul\n\nHint: Omit it from the simp argument list.\n  simp ̵[̵T̵e̵n̵s̵o̵r̵P̵r̵o̵d̵u̵c̵t̵.̵m̵a̵p̵_̵t̵m̵u̵l̵]̵\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+   "level": "warning"}],
  "inputs":
  [["RepThe.Basic:deps",
    [["deps",
@@ -25,10 +28,10 @@
   ["Lean 4.30.0, commit d024af099ca4bf2c86f649261ebf59565dc8c622",
    "2f4703bb19086252"],
   ["C:\\Users\\USER\\Desktop\\project\\LEAN\\RepresentaionTheory\\RepThe\\Basic.lean",
-   "b5ef6902d5d85674"],
+   "0a36e671d1e2d982"],
   ["options", "00000000000006bb"],
   ["isModule: false", "feefd2a0d3a1847e"],
   ["Module.name: RepThe.Basic", "feac425f048dd591"],
   ["Package.id?: (some RepresentaionTheory)", "7f314b84ba8d6520"],
   ["Module.leanArgs: #[]", "00000000000006bb"]],
- "depHash": "613e51278a380eb0"}
+ "depHash": "7bd391f2bd4c1a61"}
