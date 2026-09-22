@@ -1,0 +1,51 @@
+\documentclass[12pt, a4paper]{article}
+
+% Required Packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{kotex}
+\usepackage{geometry}
+\geometry{a4paper, top=1.5cm, left=2.5cm, right=2.5cm, bottom=2.5cm}
+
+% Title
+\title{linear algebra Quiz 1}
+\author{5문제, 30분}
+\date{ 반번호이름 : \underline{\hspace{5cm}} }
+
+\begin{document}
+\vspace{-2cm}
+\maketitle 
+\begin{enumerate}
+    \item Prove the theorem. [10points]\\
+    For an $n\times n$ matrix $A$, the following are equivalent:\\
+    (a) $A$ is invertible.\\
+    (b) $A\mathbf{x}=\mathbf{0}$ has only the trivial solution.\\
+    (c) The reduced row echelon form of $A$ is $I_n$.\\
+    (d) $A$ is a product of elementary matrices.\\
+    (e) $A\mathbf{x}=\mathbf{b}$ is consistent for every $n\times1$ matrix $\mathbf{b}$.\\
+    (f) $A\mathbf{x}=\mathbf{b}$ has exactly one solution for every $n\times1$ matrix $\mathbf{b}$. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+    
+    \item Prove the theorem. [10points]\\
+    A system of linear equations has zero, one, or infinitely many solutions. \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ 
+          
+    \item Prove the theorem. [10points]\\
+    Every linear transformation from $R^n$ to $R^m$ is a matrix transformation, and conversely every matrix transformation is a linear transformation.  \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\   
+    
+    \item Write the adjoint matrix of A and prove the theorem. [10points]\\
+    If $A$ is an invertible $n\times n$ matrix, then
+$A^{-1}=\frac{1}{\det(A)}\operatorname{adj}(A)$ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+
+    \item Prove the theorem. [10points] \\
+    If $A\mathbf{x}=\mathbf{b}$ is a system of $n$ equations in $n$ unknowns with $\det(A)\neq 0$,
+the unique solution is
+\[
+x_1=\frac{\det(A_1)}{\det(A)},\quad
+x_2=\frac{\det(A_2)}{\det(A)},\quad\ldots,\quad
+x_n=\frac{\det(A_n)}{\det(A)}
+\]
+where $A_j$ is the matrix obtained by replacing the $j$th column of $A$ by
+$\mathbf{b}=\begin{bmatrix}b_1\\b_2\\\vdots\\b_n\end{bmatrix}$. \\ \\ \\ \\ \\ \\ \\ \\
+
+
+\end{enumerate}
+\end{document}
